@@ -1,0 +1,31 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\VSTO\DBHLAG.mdb</Value>
+    </Setting>
+    <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\ww.hl.lan\LM2\Public\VSTO\DBHLAG.mdb</Value>
+    </Setting>
+    <Setting Name="DBUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConfigTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ConfiguracionRobot</Value>
+    </Setting>
+    <Setting Name="ListSeparator" Type="System.Collections.Specialized.StringCollection" Scope="User">
+      <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;,&lt;/string&gt;
+  &lt;string&gt;;&lt;/string&gt;
+&lt;/ArrayOfString&gt;</Value>
+    </Setting>
+    <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Robot\Files Process</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="44f60dea-0f3a-44cd-881f-6b30229fbd15" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://vapps.dyndns-server.com:2455/HapagLloydService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HapagLloydService.xsd" MetadataType="Schema" ID="17646102-49b5-4f18-a45a-4f05ddd32d3f" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd4" />
+    <MetadataFile FileName="HapagLloydService1.xsd" MetadataType="Schema" ID="08ad742b-cd89-4cb3-acce-abafd4ff2b86" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HapagLloydService2.xsd" MetadataType="Schema" ID="6a00e516-6326-4e9f-b8b4-c72112943e2f" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HapagLloydService3.xsd" MetadataType="Schema" ID="a30081ac-849e-4335-9e30-f92e4cfbfa86" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HapagLloydService4.xsd" MetadataType="Schema" ID="01984947-92c7-4d39-8c9c-aa5c556f8312" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HapagLloydService.disco" MetadataType="Disco" ID="32af7194-3d8a-465a-86da-928bdad4c316" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?disco" />
+    <MetadataFile FileName="HapagLloydService.wsdl" MetadataType="Wsdl" ID="09a28600-1103-400c-9acd-bd6f1ca7d031" SourceId="1" SourceUrl="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.52083in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.26042in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Codigo Sap</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Usuario</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Fecha</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Salida Programada</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Salida Real</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox11">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Horas Extra</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox13">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Horas 25%</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox15">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Horas 35%</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox17">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Horas 100%</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox19">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hora 25% (Eq)</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox21">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hora 35% (Eq)</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Hora 100% (Eq)</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Estado</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="CodigoSap">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!CodigoSap.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>CodigoSap</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Usuario">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Usuario.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Usuario</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Fecha">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Fecha.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>d</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Fecha</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="SalidaProgramada">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!SalidaProgramada.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>SalidaProgramada</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="SalidaReal">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!SalidaReal.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>SalidaReal</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dtTiempoExtra">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dtTiempoExtra.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dtTiempoExtra</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dtHora25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dtHora25.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dtHora25</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dtHora35">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dtHora35.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dtHora35</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="dtHora100">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!dtHora100.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                                <Format>H:mm:ss</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>dtHora100</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Hora25">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Hora25.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Hora25</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Hora35">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Hora35.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Hora35</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Hora100">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Hora100.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Hora100</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Estado">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Estado.Value</Value>
+                              <Style>
+                                <FontFamily>Trebuchet MS</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Estado</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="Details" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.04167in</Top>
+        <Left>0.14583in</Left>
+        <Height>0.5in</Height>
+        <Width>13.78125in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Height>1.54353in</Height>
+    <Style />
+  </Body>
+  <Width>13.92708in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.96355in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox177">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>REPORTE DE HORAS EXTRA</Value>
+                  <Style>
+                    <FontFamily>Trebuchet MS</FontFamily>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>SemiBold</FontWeight>
+                    <Color>DarkBlue</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox177</rd:DefaultName>
+          <Top>0.41667in</Top>
+          <Left>4.80938in</Left>
+          <Height>0.27083in</Height>
+          <Width>4.32125in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <LeftMargin>0.25in</LeftMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>dsComisiones</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>7b696f44-4ecd-41fb-9a80-8896af7c89c4</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>DataSource1</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@fecha_inicio">
+            <Value>=Parameters!fecha_inicio.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@fecha_fin">
+            <Value>=Parameters!fecha_fin.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@usuario">
+            <Value>=Parameters!usuario.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>rhm.up_reporte_horas_extra</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="CodigoSap">
+          <DataField>CodigoSap</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdSolicitud">
+          <DataField>IdSolicitud</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Usuario">
+          <DataField>Usuario</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SalidaProgramada">
+          <DataField>SalidaProgramada</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="SalidaReal">
+          <DataField>SalidaReal</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dtTiempoExtra">
+          <DataField>dtTiempoExtra</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Hora25">
+          <DataField>Hora25</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Hora35">
+          <DataField>Hora35</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Hora100">
+          <DataField>Hora100</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="dtHora25">
+          <DataField>dtHora25</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dtHora35">
+          <DataField>dtHora35</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="dtHora100">
+          <DataField>dtHora100</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Estado">
+          <DataField>Estado</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="fecha_inicio">
+      <DataType>DateTime</DataType>
+      <Prompt>fecha inicio</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="fecha_fin">
+      <DataType>DateTime</DataType>
+      <Prompt>fecha fin</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="usuario">
+      <DataType>String</DataType>
+      <Prompt>usuario</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="Logocnp">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>1856fbf5-38bf-429a-a31a-9d55c80e27a3</rd:ReportID>
+</Report>

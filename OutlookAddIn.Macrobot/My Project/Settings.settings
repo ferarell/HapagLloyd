@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Macrobot\Database\MacrobotHL.accdb</Value>
+    </Setting>
+    <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Macrobot\Temp</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Macrobot\Log</Value>
+    </Setting>
+    <Setting Name="TOMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4biznessolutions@gmail.com</Value>
+    </Setting>
+    <Setting Name="CCMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BCCMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SupportMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ferarell@hotmail.com</Value>
+    </Setting>
+    <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Macrobot\MacrobotHL.accdb</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

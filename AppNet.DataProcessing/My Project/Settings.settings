@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="SharePoint_User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
+    </Setting>
+    <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hapag20192</Value>
+    </Setting>
+    <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\VSTO\DataProcessingHL.accdb</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Temp\Log</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

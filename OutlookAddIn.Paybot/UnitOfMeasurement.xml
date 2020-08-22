@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="UnitOfMeasurement.xsd" generated="2019-02-26T10:19:44">
+<Units>
+<HL_Code>BAL</HL_Code>
+<SUNAT_Code>BL</SUNAT_Code>
+<HL_Description>Per Bale</HL_Description>
+</Units>
+<Units>
+<HL_Code>BIL</HL_Code>
+<SUNAT_Code>ST</SUNAT_Code>
+<HL_Description>Per Bill of Lading</HL_Description>
+</Units>
+<Units>
+<HL_Code>BLL</HL_Code>
+<SUNAT_Code>BLL</SUNAT_Code>
+<HL_Description>Per barrel</HL_Description>
+</Units>
+<Units>
+<HL_Code>BOX</HL_Code>
+<SUNAT_Code>BX</SUNAT_Code>
+<HL_Description>Per Box</HL_Description>
+</Units>
+<Units>
+<HL_Code>CBF</HL_Code>
+<SUNAT_Code>FTQ</SUNAT_Code>
+<HL_Description>Per measurement, CBF (40 Cubic feet)</HL_Description>
+</Units>
+<Units>
+<HL_Code>CBM</HL_Code>
+<SUNAT_Code>MTQ</SUNAT_Code>
+<HL_Description>Per measurement, CBM (1 Cubic meter)</HL_Description>
+</Units>
+<Units>
+<HL_Code>CTR</HL_Code>
+<SUNAT_Code>CH</SUNAT_Code>
+<HL_Description>Per Container</HL_Description>
+</Units>
+<Units>
+<HL_Code>CWT</HL_Code>
+<SUNAT_Code>CWA</SUNAT_Code>
+<HL_Description>Per 100 pounds</HL_Description>
+</Units>
+<Units>
+<HL_Code>DAY</HL_Code>
+<SUNAT_Code>DAY</SUNAT_Code>
+<HL_Description>Per Day</HL_Description>
+</Units>
+<Units>
+<HL_Code>FFR</HL_Code>
+<SUNAT_Code>NPT</SUNAT_Code>
+<HL_Description>Per Freight Free</HL_Description>
+</Units>
+<Units>
+<HL_Code>FTN</HL_Code>
+<SUNAT_Code>A75</SUNAT_Code>
+<HL_Description>Per Freight Tons</HL_Description>
+</Units>
+<Units>
+<HL_Code>FTQ</HL_Code>
+<SUNAT_Code>FTQ</SUNAT_Code>
+<HL_Description>Per Cubic Foot</HL_Description>
+</Units>
+<Units>
+<HL_Code>GAL</HL_Code>
+<SUNAT_Code>5C</SUNAT_Code>
+<HL_Description>Per 100 gallons</HL_Description>
+</Units>
+<Units>
+<HL_Code>GLI</HL_Code>
+<SUNAT_Code>GLL</SUNAT_Code>
+<HL_Description>Per Gallon</HL_Description>
+</Units>
+<Units>
+<HL_Code>GRM</HL_Code>
+<SUNAT_Code>GRM</SUNAT_Code>
+<HL_Description>Per Gram</HL_Description>
+</Units>
+<Units>
+<HL_Code>HBX</HL_Code>
+<SUNAT_Code>NPT</SUNAT_Code>
+<HL_Description>Per Half Box</HL_Description>
+</Units>
+<Units>
+<HL_Code>HOU</HL_Code>
+<SUNAT_Code>HUR</SUNAT_Code>
+<HL_Description>Per Hour</HL_Description>
+</Units>
+<Units>
+<HL_Code>INQ</HL_Code>
+<SUNAT_Code>INH</SUNAT_Code>
+<HL_Description>Per Cubic inch</HL_Description>
+</Units>
+<Units>
+<HL_Code>ITM</HL_Code>
+<SUNAT_Code>PK</SUNAT_Code>
+<HL_Description>Per Item</HL_Description>
+</Units>
+<Units>
+<HL_Code>KGM</HL_Code>
+<SUNAT_Code>KGM</SUNAT_Code>
+<HL_Description>Per Kilogram</HL_Description>
+</Units>
+<Units>
+<HL_Code>LBR</HL_Code>
+<SUNAT_Code>LBR</SUNAT_Code>
+<HL_Description>Per Pound</HL_Description>
+</Units>
+<Units>
+<HL_Code>LGL</HL_Code>
+<SUNAT_Code>LTR</SUNAT_Code>
+<HL_Description>Per 379 litres</HL_Description>
+</Units>
+<Units>
+<HL_Code>LTK</HL_Code>
+<SUNAT_Code>E5</SUNAT_Code>
+<HL_Description>Per long ton (1016 KGM)</HL_Description>
+</Units>
+<Units>
+<HL_Code>LTL</HL_Code>
+<SUNAT_Code>E5</SUNAT_Code>
+<HL_Description>Per long ton (2250 lbs)</HL_Description>
+</Units>
+<Units>
+<HL_Code>LTN</HL_Code>
+<SUNAT_Code>LTN</SUNAT_Code>
+<HL_Description>Per ling ton</HL_Description>
+</Units>
+<Units>
+<HL_Code>LTR</HL_Code>
+<SUNAT_Code>LTR</SUNAT_Code>
+<HL_Description>Per Litre</HL_Description>
+</Units>
+<Units>
+<HL_Code>MAX</HL_Code>
+<SUNAT_Code>NPT</SUNAT_Code>
+<HL_Description>Per Maximun freight</HL_Description>
+</Units>
+<Units>
+<HL_Code>MBF</HL_Code>
+<SUNAT_Code>SMI</SUNAT_Code>
+<HL_Description>Per mille board feet (100 bf)</HL_Description>
+</Units>
+<Units>
+<HL_Code>MCB</HL_Code>
+<SUNAT_Code>BB</SUNAT_Code>
+<HL_Description>Per single mixed commodity box rate p.cont</HL_Description>
+</Units>
+<Units>
+<HL_Code>MIN</HL_Code>
+<SUNAT_Code>NPT</SUNAT_Code>
+<HL_Description>Per minimun freight</HL_Description>
+</Units>
+<Units>
+<HL_Code>MTQ</HL_Code>
+<SUNAT_Code>MTQ</SUNAT_Code>
+<HL_Description>Per cubic meter</HL_Description>
+</Units>
+<Units>
+<HL_Code>PCT</HL_Code>
+<SUNAT_Code>P1</SUNAT_Code>
+<HL_Description>Per cent of Change Amount</HL_Description>
+</Units>
+<Units>
+<HL_Code>PIE</HL_Code>
+<SUNAT_Code>PK</SUNAT_Code>
+<HL_Description>Per piece (for B/L only)</HL_Description>
+</Units>
+<Units>
+<HL_Code>SLT</HL_Code>
+<SUNAT_Code>20</SUNAT_Code>
+<HL_Description>Per slot (TEU Equivalent)</HL_Description>
+</Units>
+<Units>
+<HL_Code>STK</HL_Code>
+<SUNAT_Code>STN</SUNAT_Code>
+<HL_Description>Per short ton kilogram</HL_Description>
+</Units>
+<Units>
+<HL_Code>STL</HL_Code>
+<SUNAT_Code>STN</SUNAT_Code>
+<HL_Description>Per short ton (2000 LBS)</HL_Description>
+</Units>
+<Units>
+<HL_Code>STN</HL_Code>
+<SUNAT_Code>STN</SUNAT_Code>
+<HL_Description>Per short ton</HL_Description>
+</Units>
+<Units>
+<HL_Code>TCB</HL_Code>
+<SUNAT_Code>D90</SUNAT_Code>
+<HL_Description>Per measurement (2 CBM)</HL_Description>
+</Units>
+<Units>
+<HL_Code>TFT</HL_Code>
+<SUNAT_Code>A75</SUNAT_Code>
+<HL_Description>Per B/L Part of total Freighttons</HL_Description>
+</Units>
+<Units>
+<HL_Code>TNE</HL_Code>
+<SUNAT_Code>TNE</SUNAT_Code>
+<HL_Description>Per metric Ton</HL_Description>
+</Units>
+<Units>
+<HL_Code>TON</HL_Code>
+<SUNAT_Code>NT</SUNAT_Code>
+<HL_Description>Per weight per 1000 kilos</HL_Description>
+</Units>
+<Units>
+<HL_Code>UNI</HL_Code>
+<SUNAT_Code>PA</SUNAT_Code>
+<HL_Description>Per unit</HL_Description>
+</Units>
+<Units>
+<HL_Code>VAL</HL_Code>
+<SUNAT_Code>M4</SUNAT_Code>
+<HL_Description>Per % on FOB Value cargo, ad valorem</HL_Description>
+</Units>
+<Units>
+<HL_Code>WEE</HL_Code>
+<SUNAT_Code>WEE</SUNAT_Code>
+<HL_Description>Per week</HL_Description>
+</Units>
+<Units>
+<HL_Code>YDQ</HL_Code>
+<SUNAT_Code>YDQ</SUNAT_Code>
+<HL_Description>Per Cubic Yard</HL_Description>
+</Units>
+</dataroot>

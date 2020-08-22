@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="HapagLloydService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd2" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://vapps.dyndns-server.com:2455/HapagLloydService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHapagLloydService_ExecuteSQL_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_ExecuteSQL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_ExecuteSQLNonQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQuery" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_ExecuteSQLNonQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLNonQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdateTableWithBulkCopy_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTableWithBulkCopy" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdateTableWithBulkCopy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTableWithBulkCopyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdatingUsingTableAsParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatingUsingTableAsParameter" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdatingUsingTableAsParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatingUsingTableAsParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertContacts" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertBlackList_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBlackList" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertBlackList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertBlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatment" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdateColdTreatment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateColdTreatment" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_UpdateColdTreatment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateColdTreatmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatment" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatmentEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatmentEvents" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatmentEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatmentEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatmentEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatmentEvents" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatmentEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatmentEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatmentReadings_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatmentReadings" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertColdTreatmentReadings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertColdTreatmentReadingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatmentReadings_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatmentReadings" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_DeleteColdTreatmentReadings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteColdTreatmentReadingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertScheduleVoyage_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScheduleVoyage" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_InsertScheduleVoyage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertScheduleVoyageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IHapagLloydService">
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/ExecuteSQL" message="tns:IHapagLloydService_ExecuteSQL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/ExecuteSQLResponse" message="tns:IHapagLloydService_ExecuteSQL_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/ExecuteSQLNonQuery" message="tns:IHapagLloydService_ExecuteSQLNonQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/ExecuteSQLNonQueryResponse" message="tns:IHapagLloydService_ExecuteSQLNonQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTableWithBulkCopy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/UpdateTableWithBulkCopy" message="tns:IHapagLloydService_UpdateTableWithBulkCopy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/UpdateTableWithBulkCopyResponse" message="tns:IHapagLloydService_UpdateTableWithBulkCopy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatingUsingTableAsParameter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/UpdatingUsingTableAsParameter" message="tns:IHapagLloydService_UpdatingUsingTableAsParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/UpdatingUsingTableAsParameterResponse" message="tns:IHapagLloydService_UpdatingUsingTableAsParameter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertContacts" message="tns:IHapagLloydService_InsertContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertContactsResponse" message="tns:IHapagLloydService_InsertContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertBlackList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertBlackList" message="tns:IHapagLloydService_InsertBlackList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertBlackListResponse" message="tns:IHapagLloydService_InsertBlackList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatment" message="tns:IHapagLloydService_InsertColdTreatment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentResponse" message="tns:IHapagLloydService_InsertColdTreatment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateColdTreatment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/UpdateColdTreatment" message="tns:IHapagLloydService_UpdateColdTreatment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/UpdateColdTreatmentResponse" message="tns:IHapagLloydService_UpdateColdTreatment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatment" message="tns:IHapagLloydService_DeleteColdTreatment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentResponse" message="tns:IHapagLloydService_DeleteColdTreatment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatmentEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEvents" message="tns:IHapagLloydService_InsertColdTreatmentEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEventsResponse" message="tns:IHapagLloydService_InsertColdTreatmentEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatmentEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEvents" message="tns:IHapagLloydService_DeleteColdTreatmentEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEventsResponse" message="tns:IHapagLloydService_DeleteColdTreatmentEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatmentReadings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings" message="tns:IHapagLloydService_InsertColdTreatmentReadings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadingsResponse" message="tns:IHapagLloydService_InsertColdTreatmentReadings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatmentReadings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings" message="tns:IHapagLloydService_DeleteColdTreatmentReadings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadingsResponse" message="tns:IHapagLloydService_DeleteColdTreatmentReadings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertScheduleVoyage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertScheduleVoyage" message="tns:IHapagLloydService_InsertScheduleVoyage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertScheduleVoyageResponse" message="tns:IHapagLloydService_InsertScheduleVoyage_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHapagLloydService" type="tns:IHapagLloydService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQLNonQuery">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/ExecuteSQLNonQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTableWithBulkCopy">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/UpdateTableWithBulkCopy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatingUsingTableAsParameter">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/UpdatingUsingTableAsParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertContacts">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertBlackList">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertBlackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatment">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertColdTreatment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateColdTreatment">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/UpdateColdTreatment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatment">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/DeleteColdTreatment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatmentEvents">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatmentEvents">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertColdTreatmentReadings">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteColdTreatmentReadings">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertScheduleVoyage">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertScheduleVoyage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HapagLloydService">
+    <wsdl:port name="BasicHttpBinding_IHapagLloydService" binding="tns:BasicHttpBinding_IHapagLloydService">
+      <soap:address location="http://vapps.dyndns-server.com:2455/HapagLloydService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

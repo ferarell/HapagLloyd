@@ -1,0 +1,90 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DBColdTreatment.xlsx</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Money Twins</Value>
+    </Setting>
+    <Setting Name="MailServerHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailServerPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MailServerUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailServerPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailServerSsl" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MailTextSearch" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailTargetPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DataSourcePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\ww.hl.lan\LM2\Public\VSTO</Value>
+    </Setting>
+    <Setting Name="MaxTemp" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1.67</Value>
+    </Setting>
+    <Setting Name="DataTargetPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailTo" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Cesar.carranza@hlag.com;Veronica.Portella@hlag.com;Claudia.Pinillos@hlag.com</Value>
+    </Setting>
+    <Setting Name="MailSender" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MailEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="VendorSourcePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MDBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dbColdTreatment.accdb</Value>
+    </Setting>
+    <Setting Name="MDBDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\ww.hl.lan\LM2\Public\VSTO</Value>
+    </Setting>
+    <Setting Name="MaxReadingDays" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">90</Value>
+    </Setting>
+    <Setting Name="MailCC" Type="System.String" Scope="User">
+      <Value Profile="(Default)">perudownload@hlag.com</Value>
+    </Setting>
+    <Setting Name="CustomDataSourceFilter" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="MinTemp" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">1.11</Value>
+    </Setting>
+    <Setting Name="TextDelimiter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">;</Value>
+    </Setting>
+    <Setting Name="AudioEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="SharePoint_User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
+    </Setting>
+    <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hapag20192</Value>
+    </Setting>
+    <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>
+    </Setting>
+    <Setting Name="DBType" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

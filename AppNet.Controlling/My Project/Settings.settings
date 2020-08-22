@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Office 2010 Blue</Value>
+    </Setting>
+    <Setting Name="PaintStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ExplorerBar</Value>
+    </Setting>
+    <Setting Name="WebServiceURL" Type="(Web Service URL)" Scope="User">
+      <Value Profile="(Default)">http://apps.cnpsa.com:2250/HapagLloyd/HapagLloydService.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

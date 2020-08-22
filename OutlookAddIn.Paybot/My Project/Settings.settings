@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\VSTO\PaybotHL.accdb</Value>
+    </Setting>
+    <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\\ww.hl.lan\LM2\Public\VSTO\DBHLAG.mdb</Value>
+    </Setting>
+    <Setting Name="DBUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Paybot</Value>
+    </Setting>
+    <Setting Name="ReplyAllMails" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="TOMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4biznessolutions@gmail.com</Value>
+    </Setting>
+    <Setting Name="CCMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="BCCMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SupportMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">aremonfe@gmail.com</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Paybot\Log</Value>
+    </Setting>
+    <Setting Name="TRM_UserRest" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TRM_PasswordRest" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="TRM_GrantType" Type="System.String" Scope="User">
+      <Value Profile="(Default)">password</Value>
+    </Setting>
+    <Setting Name="TRM_UrlToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://plataformadepagosweb.tramarsa.com.pe</Value>
+    </Setting>
+    <Setting Name="TRM_UrlService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://104.45.136.32:1717/api/deuda/</Value>
+    </Setting>
+    <Setting Name="PPL_UrlSoap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://hapagqa.paperless.com.pe/axis2/services/Online?wsdl</Value>
+    </Setting>
+    <Setting Name="PPL_UserSoap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">adminppl</Value>
+    </Setting>
+    <Setting Name="PPL_PasswordSoap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">abc123</Value>
+    </Setting>
+    <Setting Name="PPL_TipoFolioSoap" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="PPL_TipoRetornoSoap" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="Paybot_HapagLloydPeru_PaperlessQA_Online" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://hapagqa.paperless.com.pe:80/axis2/services/Online.OnlineHttpSoap11Endpoint/</Value>
+    </Setting>
+    <Setting Name="CompanyTaxCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">20492185087</Value>
+    </Setting>
+    <Setting Name="CompanyName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">HAPAG-LLOYD PERU S.A.C.</Value>
+    </Setting>
+    <Setting Name="CompanyAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CALLE DEAN VALDIVIA 148 TORRE A PISO 03</Value>
+    </Setting>
+    <Setting Name="CompanyZipCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">150131</Value>
+    </Setting>
+    <Setting Name="CompanyDepartment" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LIMA</Value>
+    </Setting>
+    <Setting Name="CompanyProvince" Type="System.String" Scope="User">
+      <Value Profile="(Default)">LIMA</Value>
+    </Setting>
+    <Setting Name="CompanyDistrict" Type="System.String" Scope="User">
+      <Value Profile="(Default)">SAN ISIDRO</Value>
+    </Setting>
+    <Setting Name="SharePoint_User" Type="System.String" Scope="User">
+      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
+    </Setting>
+    <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">hapag20192</Value>
+    </Setting>
+    <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

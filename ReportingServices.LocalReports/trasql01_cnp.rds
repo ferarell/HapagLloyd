@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="trasql01_cnp">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=tramolsql01.tramarsa.com.pe;Initial Catalog=CNP</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>6c2d9661-f777-4c9d-9f1b-2f414a9a6243</DataSourceID>
+</RptDataSource>
