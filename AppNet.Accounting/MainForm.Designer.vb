@@ -19,7 +19,6 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.nbcMainMenu = New DevExpress.XtraNavBar.NavBarControl()
         Me.NavBarGroup1 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -54,7 +53,7 @@ Partial Class MainForm
         Me.NavBarGroup4 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem13 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem12 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
         CType(Me.nbcMainMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -264,7 +263,6 @@ Partial Class MainForm
         Me.Controls.Add(Me.nbcMainMenu)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.LookAndFeel.SkinName = "Money Twins"
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
         Me.Text = "MainForm"

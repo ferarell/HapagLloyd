@@ -185,4 +185,12 @@ Public Class MainForm
     Private Sub NavBarItem25_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem25.LinkClicked
         OpenForm(New LibroInventariosBalancesForm)
     End Sub
+
+    Private Sub NavBarItem10_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem10.LinkClicked
+        OpenForm(New AnexoClientesForm)
+    End Sub
+
+    Private Sub NavBarItem11_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem11.LinkClicked
+
+    End Sub
 End Class
