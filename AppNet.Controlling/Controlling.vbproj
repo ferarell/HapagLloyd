@@ -12,7 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -21,9 +21,9 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <PublishUrl>C:\DeployApps\ControllingWCF\</PublishUrl>
+    <PublishUrl>C:\DeployApps\Controlling\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -31,11 +31,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\ww.hl.lan\LM2\Public\Apps\ControllingWCF\</InstallUrl>
+    <InstallUrl>http://200.1.129.73:2455/Deploy/Controlling/</InstallUrl>
     <ProductName>Controlling</ProductName>
     <PublisherName>Hapag Lloyd Perú</PublisherName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -371,21 +372,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
-    <None Include="Service References\AppService\HapagLloydService1.disco" />
-    <None Include="Service References\AppService\HapagLloydService1.wsdl" />
-    <None Include="Service References\AppService\HapagLloydService5.xsd">
+    <None Include="Service References\AppService\HapagLloydService.disco" />
+    <None Include="Service References\AppService\HapagLloydService.wsdl" />
+    <None Include="Service References\AppService\HapagLloydService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\HapagLloydService51.xsd">
+    <None Include="Service References\AppService\HapagLloydService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\HapagLloydService52.xsd">
+    <None Include="Service References\AppService\HapagLloydService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\HapagLloydService53.xsd">
+    <None Include="Service References\AppService\HapagLloydService3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\AppService\HapagLloydService54.xsd">
+    <None Include="Service References\AppService\HapagLloydService4.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\AppService\Reference.svcmap">

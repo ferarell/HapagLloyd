@@ -19,6 +19,7 @@ Partial Class AnexoClientesForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AnexoClientesForm))
         Dim PivotGridGroup1 As DevExpress.XtraPivotGrid.PivotGridGroup = New DevExpress.XtraPivotGrid.PivotGridGroup()
@@ -42,15 +43,47 @@ Partial Class AnexoClientesForm
         Me.GridColumn35 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn36 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn38 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.gcLibroSunat = New DevExpress.XtraGrid.GridControl()
-        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList()
+        Me.gcAnexoClientes = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn39 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn3 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn6 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn7 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn8 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn9 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn10 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn11 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn12 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn16 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn13 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn14 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn18 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn19 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn37 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.fieldC11 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.bbiExportar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
-        Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.bar5 = New DevExpress.XtraBars.Bar()
+        Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
+        Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
+        Me.barStaticItem4 = New DevExpress.XtraBars.BarStaticItem()
+        Me.brsEstado = New DevExpress.XtraBars.BarStaticItem()
+        Me.beiProceso = New DevExpress.XtraBars.BarEditItem()
+        Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
+        Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
+        Me.bbiProcesar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiBuscar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiGuardar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
+        Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
+        Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiVistas = New DevExpress.XtraBars.BarSubItem()
         Me.bbiVistaGrilla = New DevExpress.XtraBars.BarButtonItem()
@@ -59,10 +92,13 @@ Partial Class AnexoClientesForm
         Me.bbiCronograma = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCartaNotarial = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiLetras = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
-        Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
+        Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.beArchivoOrigen = New DevExpress.XtraEditors.ButtonEdit()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -74,41 +110,25 @@ Partial Class AnexoClientesForm
         Me.fieldC18 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.fieldC19 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.lueSociedad = New DevExpress.XtraEditors.LookUpEdit()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
-        Me.bar5 = New DevExpress.XtraBars.Bar()
-        Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
-        Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
-        Me.barStaticItem4 = New DevExpress.XtraBars.BarStaticItem()
-        Me.brsEstado = New DevExpress.XtraBars.BarStaticItem()
-        Me.beiProceso = New DevExpress.XtraBars.BarEditItem()
-        Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
-        Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
-        Me.bbiProcesar = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiGuardar = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
-        Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
-        Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
-        Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.XtraFolderBrowserDialog1 = New DevExpress.XtraEditors.XtraFolderBrowserDialog()
-        Me.XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog()
+        Me.XtraOpenFileDialog1 = New DevExpress.XtraEditors.XtraOpenFileDialog(Me.components)
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gcLibroSunat, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gcAnexoClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.vpInputs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.beArchivoOrigen.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sePeriodo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.seEjercicio.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lueSociedad.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -118,7 +138,7 @@ Partial Class AnexoClientesForm
         'CardView1
         '
         Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn15, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn33, Me.GridColumn34, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38})
-        Me.CardView1.GridControl = Me.gcLibroSunat
+        Me.CardView1.GridControl = Me.gcAnexoClientes
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
         Me.CardView1.OptionsFind.AlwaysVisible = True
@@ -261,70 +281,203 @@ Partial Class AnexoClientesForm
         Me.GridColumn38.FieldName = "IdProyecto"
         Me.GridColumn38.Name = "GridColumn38"
         '
-        'gcLibroSunat
+        'gcAnexoClientes
         '
-        Me.gcLibroSunat.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.Append.Visible = False
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.Edit.Visible = False
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.EndEdit.Visible = False
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.ImageList = Me.imActionsBar24x24
-        Me.gcLibroSunat.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcAnexoClientes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcAnexoClientes.EmbeddedNavigator.Buttons.Append.Visible = False
+        Me.gcAnexoClientes.EmbeddedNavigator.Buttons.CancelEdit.Visible = False
+        Me.gcAnexoClientes.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.gcAnexoClientes.EmbeddedNavigator.Buttons.EndEdit.Visible = False
+        Me.gcAnexoClientes.EmbeddedNavigator.Buttons.Remove.Visible = False
         GridLevelNode1.LevelTemplate = Me.CardView1
         GridLevelNode1.RelationName = "Level1"
-        Me.gcLibroSunat.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
-        Me.gcLibroSunat.Location = New System.Drawing.Point(0, 0)
-        Me.gcLibroSunat.MainView = Me.GridView1
-        Me.gcLibroSunat.Name = "gcLibroSunat"
-        Me.gcLibroSunat.Size = New System.Drawing.Size(832, 232)
-        Me.gcLibroSunat.TabIndex = 0
-        Me.gcLibroSunat.UseEmbeddedNavigator = True
-        Me.gcLibroSunat.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.CardView1})
-        '
-        'imActionsBar24x24
-        '
-        Me.imActionsBar24x24.ImageStream = CType(resources.GetObject("imActionsBar24x24.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.imActionsBar24x24.TransparentColor = System.Drawing.Color.Transparent
-        Me.imActionsBar24x24.Images.SetKeyName(0, "ic_save.png")
-        Me.imActionsBar24x24.Images.SetKeyName(1, "ic_edit.png")
-        Me.imActionsBar24x24.Images.SetKeyName(2, "ic_new.png")
-        Me.imActionsBar24x24.Images.SetKeyName(3, "ic_copy.png")
-        Me.imActionsBar24x24.Images.SetKeyName(4, "ic_delete2.png")
-        Me.imActionsBar24x24.Images.SetKeyName(5, "ic_print.png")
-        Me.imActionsBar24x24.Images.SetKeyName(6, "ic_search2.png")
-        Me.imActionsBar24x24.Images.SetKeyName(7, "ic_search3.png")
-        Me.imActionsBar24x24.Images.SetKeyName(8, "ic_undo.png")
-        Me.imActionsBar24x24.Images.SetKeyName(9, "ic_close.png")
-        Me.imActionsBar24x24.Images.SetKeyName(10, "ic_save.png")
-        Me.imActionsBar24x24.Images.SetKeyName(11, "ic_search2.png")
-        Me.imActionsBar24x24.Images.SetKeyName(12, "ic_print.png")
-        Me.imActionsBar24x24.Images.SetKeyName(13, "ic_search3.png")
-        Me.imActionsBar24x24.Images.SetKeyName(14, "ic_mntTablas16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(15, "ic_first16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(16, "ic_previus16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(17, "ic_next16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(18, "ic_last16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(19, "Excel.ico")
-        Me.imActionsBar24x24.Images.SetKeyName(20, "ci_views16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(21, "ic_cardview16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(22, "ic_carouselview16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(23, "ic_gridview16x16.png")
-        Me.imActionsBar24x24.Images.SetKeyName(24, "Excel.ico")
-        Me.imActionsBar24x24.Images.SetKeyName(25, "previmg.png")
-        Me.imActionsBar24x24.Images.SetKeyName(26, "Pinion.png")
-        Me.imActionsBar24x24.Images.SetKeyName(27, "Close.png")
-        Me.imActionsBar24x24.Images.SetKeyName(28, "Table.png")
+        Me.gcAnexoClientes.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        Me.gcAnexoClientes.Location = New System.Drawing.Point(0, 0)
+        Me.gcAnexoClientes.MainView = Me.GridView1
+        Me.gcAnexoClientes.Name = "gcAnexoClientes"
+        Me.gcAnexoClientes.Size = New System.Drawing.Size(832, 232)
+        Me.gcAnexoClientes.TabIndex = 0
+        Me.gcAnexoClientes.UseEmbeddedNavigator = True
+        Me.gcAnexoClientes.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.CardView1})
         '
         'GridView1
         '
-        Me.GridView1.GridControl = Me.gcLibroSunat
-        Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
-        Me.GridView1.Images = Me.imActionsBar24x24
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn39, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn16, Me.GridColumn17, Me.GridColumn13, Me.GridColumn14, Me.GridColumn18, Me.GridColumn19, Me.GridColumn37})
+        Me.GridView1.GridControl = Me.gcAnexoClientes
+        Me.GridView1.GroupCount = 2
+        Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountFC", Me.GridColumn12, "{0:###,###,##0.00}", New Decimal(New Integer() {0, 0, 0, 131072})), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountLC", Me.GridColumn14, "{0:###,###,##0.00}", "0.00"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ValuatedAmountFC", Me.GridColumn16, "{0:###,###,##0.00}", "0.00"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ValuatedAmountLC", Me.GridColumn18, "{0:###,###,##0.00}", "0.00"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountGroupCurrency", Me.GridColumn17, "{0:###,###,##0.00}", "0.00"), New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", Me.GridColumn11, "TOTAL")})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
         Me.GridView1.OptionsView.ShowFooter = True
+        Me.GridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumn1, DevExpress.Data.ColumnSortOrder.Ascending), New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.GridColumn5, DevExpress.Data.ColumnSortOrder.Ascending)})
+        '
+        'GridColumn1
+        '
+        Me.GridColumn1.Caption = "Origin"
+        Me.GridColumn1.FieldName = "Origin"
+        Me.GridColumn1.Name = "GridColumn1"
+        Me.GridColumn1.Visible = True
+        Me.GridColumn1.VisibleIndex = 0
+        '
+        'GridColumn39
+        '
+        Me.GridColumn39.Caption = "Period"
+        Me.GridColumn39.FieldName = "Period"
+        Me.GridColumn39.Name = "GridColumn39"
+        Me.GridColumn39.Visible = True
+        Me.GridColumn39.VisibleIndex = 0
+        '
+        'GridColumn2
+        '
+        Me.GridColumn2.Caption = "Account"
+        Me.GridColumn2.FieldName = "ReconciliationAccount"
+        Me.GridColumn2.Name = "GridColumn2"
+        Me.GridColumn2.Visible = True
+        Me.GridColumn2.VisibleIndex = 1
+        '
+        'GridColumn3
+        '
+        Me.GridColumn3.Caption = "Customer Code"
+        Me.GridColumn3.FieldName = "CustomerCode"
+        Me.GridColumn3.Name = "GridColumn3"
+        Me.GridColumn3.Visible = True
+        Me.GridColumn3.VisibleIndex = 2
+        '
+        'GridColumn4
+        '
+        Me.GridColumn4.Caption = "Customer Tax Code"
+        Me.GridColumn4.FieldName = "CustomerTaxNumber"
+        Me.GridColumn4.Name = "GridColumn4"
+        Me.GridColumn4.Visible = True
+        Me.GridColumn4.VisibleIndex = 3
+        '
+        'GridColumn5
+        '
+        Me.GridColumn5.Caption = "Customer Name"
+        Me.GridColumn5.FieldName = "CustomerName"
+        Me.GridColumn5.Name = "GridColumn5"
+        Me.GridColumn5.Visible = True
+        Me.GridColumn5.VisibleIndex = 7
+        '
+        'GridColumn6
+        '
+        Me.GridColumn6.Caption = "Posting Date"
+        Me.GridColumn6.FieldName = "PostingDate"
+        Me.GridColumn6.Name = "GridColumn6"
+        Me.GridColumn6.Visible = True
+        Me.GridColumn6.VisibleIndex = 4
+        '
+        'GridColumn7
+        '
+        Me.GridColumn7.Caption = "Document Number"
+        Me.GridColumn7.FieldName = "DocumentNumber"
+        Me.GridColumn7.Name = "GridColumn7"
+        Me.GridColumn7.Visible = True
+        Me.GridColumn7.VisibleIndex = 5
+        '
+        'GridColumn8
+        '
+        Me.GridColumn8.Caption = "Document Date"
+        Me.GridColumn8.FieldName = "DocumentDate"
+        Me.GridColumn8.Name = "GridColumn8"
+        Me.GridColumn8.Visible = True
+        Me.GridColumn8.VisibleIndex = 6
+        '
+        'GridColumn9
+        '
+        Me.GridColumn9.Caption = "Reference"
+        Me.GridColumn9.FieldName = "Reference"
+        Me.GridColumn9.Name = "GridColumn9"
+        Me.GridColumn9.Visible = True
+        Me.GridColumn9.VisibleIndex = 7
+        '
+        'GridColumn10
+        '
+        Me.GridColumn10.Caption = "Document Type"
+        Me.GridColumn10.FieldName = "DocumentType"
+        Me.GridColumn10.Name = "GridColumn10"
+        Me.GridColumn10.Visible = True
+        Me.GridColumn10.VisibleIndex = 8
+        '
+        'GridColumn11
+        '
+        Me.GridColumn11.Caption = "Foreign Currency"
+        Me.GridColumn11.FieldName = "ForeignCurrency"
+        Me.GridColumn11.Name = "GridColumn11"
+        Me.GridColumn11.Visible = True
+        Me.GridColumn11.VisibleIndex = 9
+        '
+        'GridColumn12
+        '
+        Me.GridColumn12.Caption = "Amount FC"
+        Me.GridColumn12.FieldName = "AmountFC"
+        Me.GridColumn12.Name = "GridColumn12"
+        Me.GridColumn12.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountFC", "{0:###,###,##0.00}")})
+        Me.GridColumn12.Visible = True
+        Me.GridColumn12.VisibleIndex = 10
+        '
+        'GridColumn16
+        '
+        Me.GridColumn16.Caption = "Valuated Amount FC"
+        Me.GridColumn16.FieldName = "ValuatedAmountFC"
+        Me.GridColumn16.Name = "GridColumn16"
+        Me.GridColumn16.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ValuatedAmountFC", "{0:###,###,##0.00}")})
+        Me.GridColumn16.Visible = True
+        Me.GridColumn16.VisibleIndex = 11
+        '
+        'GridColumn17
+        '
+        Me.GridColumn17.Caption = "Amount Group Currency"
+        Me.GridColumn17.FieldName = "AmountGroupCurrency"
+        Me.GridColumn17.Name = "GridColumn17"
+        Me.GridColumn17.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountGroupCurrency", "{0:###,###,##0.00}")})
+        Me.GridColumn17.Visible = True
+        Me.GridColumn17.VisibleIndex = 12
+        '
+        'GridColumn13
+        '
+        Me.GridColumn13.Caption = "Local Currency"
+        Me.GridColumn13.FieldName = "LocalCurrency"
+        Me.GridColumn13.Name = "GridColumn13"
+        Me.GridColumn13.Visible = True
+        Me.GridColumn13.VisibleIndex = 13
+        '
+        'GridColumn14
+        '
+        Me.GridColumn14.Caption = "Amount LC"
+        Me.GridColumn14.FieldName = "AmountLC"
+        Me.GridColumn14.Name = "GridColumn14"
+        Me.GridColumn14.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "AmountLC", "{0:###,###,##0.00}")})
+        Me.GridColumn14.Visible = True
+        Me.GridColumn14.VisibleIndex = 14
+        '
+        'GridColumn18
+        '
+        Me.GridColumn18.Caption = "Valuated Amount LC"
+        Me.GridColumn18.FieldName = "ValuatedAmountLC"
+        Me.GridColumn18.Name = "GridColumn18"
+        Me.GridColumn18.Summary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ValuatedAmountLC", "{0:###,###,##0.00}")})
+        Me.GridColumn18.Visible = True
+        Me.GridColumn18.VisibleIndex = 15
+        '
+        'GridColumn19
+        '
+        Me.GridColumn19.Caption = "Line Item"
+        Me.GridColumn19.FieldName = "LineItem"
+        Me.GridColumn19.Name = "GridColumn19"
+        Me.GridColumn19.Visible = True
+        Me.GridColumn19.VisibleIndex = 16
+        '
+        'GridColumn37
+        '
+        Me.GridColumn37.Caption = "Net Due Date"
+        Me.GridColumn37.FieldName = "NetDueDate"
+        Me.GridColumn37.Name = "GridColumn37"
+        Me.GridColumn37.Visible = True
+        Me.GridColumn37.VisibleIndex = 17
         '
         'fieldC11
         '
@@ -339,6 +492,7 @@ Partial Class AnexoClientesForm
         '
         Me.bbiExportar.Caption = "&Exportar"
         Me.bbiExportar.Id = 21
+        Me.bbiExportar.ImageOptions.Image = CType(resources.GetObject("bbiExportar.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiExportar.ImageOptions.ImageIndex = 19
         Me.bbiExportar.Name = "bbiExportar"
         Me.bbiExportar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
@@ -351,13 +505,120 @@ Partial Class AnexoClientesForm
         Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 419)
         '
-        'BarDockControl4
+        'bmActions
         '
-        Me.BarDockControl4.CausesValidation = False
-        Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(832, 47)
-        Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 419)
+        Me.bmActions.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.bar5, Me.brBarraAcciones})
+        Me.bmActions.DockControls.Add(Me.BarDockControl1)
+        Me.bmActions.DockControls.Add(Me.BarDockControl2)
+        Me.bmActions.DockControls.Add(Me.BarDockControl3)
+        Me.bmActions.DockControls.Add(Me.BarDockControl4)
+        Me.bmActions.Form = Me
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.barStaticItem4, Me.brsEstado, Me.bbiProcesar, Me.bbiCerrar, Me.beiProceso, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExportar, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiGuardar, Me.bbiBuscar})
+        Me.bmActions.MaxItemId = 30
+        Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1})
+        '
+        'bar5
+        '
+        Me.bar5.BarName = "Custom 3"
+        Me.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom
+        Me.bar5.DockCol = 0
+        Me.bar5.DockRow = 0
+        Me.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom
+        Me.bar5.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.brsDescripcion), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.brsEstado), New DevExpress.XtraBars.LinkPersistInfo(Me.beiProceso)})
+        Me.bar5.OptionsBar.AllowQuickCustomization = False
+        Me.bar5.OptionsBar.DrawDragBorder = False
+        Me.bar5.OptionsBar.MultiLine = True
+        Me.bar5.OptionsBar.UseWholeRow = True
+        Me.bar5.Text = "Custom 3"
+        '
+        'brsDescripcion
+        '
+        Me.brsDescripcion.Id = 30
+        Me.brsDescripcion.Name = "brsDescripcion"
+        '
+        'barStaticItem3
+        '
+        Me.barStaticItem3.Caption = "0 / 0"
+        Me.barStaticItem3.Id = 31
+        Me.barStaticItem3.Name = "barStaticItem3"
+        '
+        'barStaticItem4
+        '
+        Me.barStaticItem4.Caption = "Estado"
+        Me.barStaticItem4.Id = 46
+        Me.barStaticItem4.Name = "barStaticItem4"
+        '
+        'brsEstado
+        '
+        Me.brsEstado.Caption = "Lectura"
+        Me.brsEstado.Id = 47
+        Me.brsEstado.Name = "brsEstado"
+        '
+        'beiProceso
+        '
+        Me.beiProceso.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.beiProceso.Edit = Me.rpiProceso
+        Me.beiProceso.EditWidth = 150
+        Me.beiProceso.Id = 0
+        Me.beiProceso.Name = "beiProceso"
+        '
+        'rpiProceso
+        '
+        Me.rpiProceso.Name = "rpiProceso"
+        Me.rpiProceso.ShowTitle = True
+        '
+        'brBarraAcciones
+        '
+        Me.brBarraAcciones.BarName = "Custom 5"
+        Me.brBarraAcciones.DockCol = 0
+        Me.brBarraAcciones.DockRow = 0
+        Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiProcesar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiBuscar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGuardar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExportar, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiCerrar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
+        Me.brBarraAcciones.OptionsBar.UseWholeRow = True
+        Me.brBarraAcciones.Text = "Custom 5"
+        '
+        'bbiProcesar
+        '
+        Me.bbiProcesar.Caption = "&Procesar"
+        Me.bbiProcesar.Id = 33
+        Me.bbiProcesar.ImageOptions.Image = CType(resources.GetObject("bbiProcesar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiProcesar.ImageOptions.ImageIndex = 26
+        Me.bbiProcesar.ImageOptions.LargeImageIndex = 7
+        Me.bbiProcesar.Name = "bbiProcesar"
+        '
+        'bbiBuscar
+        '
+        Me.bbiBuscar.Caption = "&Buscar"
+        Me.bbiBuscar.Id = 29
+        Me.bbiBuscar.ImageOptions.Image = CType(resources.GetObject("bbiBuscar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiBuscar.Name = "bbiBuscar"
+        '
+        'bbiGuardar
+        '
+        Me.bbiGuardar.Caption = "&Guardar"
+        Me.bbiGuardar.Id = 27
+        Me.bbiGuardar.ImageOptions.Image = CType(resources.GetObject("bbiGuardar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiGuardar.Name = "bbiGuardar"
+        '
+        'bbiCerrar
+        '
+        Me.bbiCerrar.Caption = "&Cerrar"
+        Me.bbiCerrar.Id = 41
+        Me.bbiCerrar.ImageOptions.Image = CType(resources.GetObject("bbiCerrar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiCerrar.ImageOptions.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.LargeImageIndex = 0
+        Me.bbiCerrar.Name = "bbiCerrar"
+        Me.bbiCerrar.ShortcutKeyDisplayString = "Alt+C"
+        '
+        'BarDockControl1
+        '
+        Me.BarDockControl1.CausesValidation = False
+        Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(832, 47)
         '
         'BarDockControl2
         '
@@ -367,13 +628,13 @@ Partial Class AnexoClientesForm
         Me.BarDockControl2.Manager = Me.bmActions
         Me.BarDockControl2.Size = New System.Drawing.Size(832, 29)
         '
-        'BarDockControl1
+        'BarDockControl4
         '
-        Me.BarDockControl1.CausesValidation = False
-        Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(832, 47)
+        Me.BarDockControl4.CausesValidation = False
+        Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BarDockControl4.Location = New System.Drawing.Point(832, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 419)
         '
         'BarButtonItem1
         '
@@ -427,6 +688,20 @@ Partial Class AnexoClientesForm
         Me.bbiLetras.Id = 16
         Me.bbiLetras.Name = "bbiLetras"
         '
+        'BarButtonItem3
+        '
+        Me.BarButtonItem3.Caption = "5.1 Movimiento Contable"
+        Me.BarButtonItem3.Id = 25
+        Me.BarButtonItem3.Name = "BarButtonItem3"
+        Me.BarButtonItem3.Tag = "1"
+        '
+        'BarButtonItem4
+        '
+        Me.BarButtonItem4.Caption = "5.3 Plan Contable"
+        Me.BarButtonItem4.Id = 26
+        Me.BarButtonItem4.Name = "BarButtonItem4"
+        Me.BarButtonItem4.Tag = "2"
+        '
         'RepositoryItemLookUpEdit1
         '
         Me.RepositoryItemLookUpEdit1.AutoHeight = False
@@ -439,15 +714,17 @@ Partial Class AnexoClientesForm
         Me.RepositoryItemImageComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(), New DevExpress.XtraEditors.Controls.EditorButton()})
         Me.RepositoryItemImageComboBox1.Name = "RepositoryItemImageComboBox1"
         '
-        'bbiCerrar
+        'RepositoryItemRadioGroup1
         '
-        Me.bbiCerrar.Caption = "&Cerrar"
-        Me.bbiCerrar.Id = 41
-        Me.bbiCerrar.ImageOptions.Image = CType(resources.GetObject("bbiCerrar.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiCerrar.ImageOptions.ImageIndex = 27
-        Me.bbiCerrar.ImageOptions.LargeImageIndex = 0
-        Me.bbiCerrar.Name = "bbiCerrar"
-        Me.bbiCerrar.ShortcutKeyDisplayString = "Alt+C"
+        Me.RepositoryItemRadioGroup1.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Nacionales"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "No Domiciliados")})
+        Me.RepositoryItemRadioGroup1.Name = "RepositoryItemRadioGroup1"
+        '
+        'RepositoryItemComboBox1
+        '
+        Me.RepositoryItemComboBox1.AutoHeight = False
+        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"Nacionales", "No Domiciliados"})
+        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
         'vpInputs
         '
@@ -581,123 +858,6 @@ Partial Class AnexoClientesForm
         Me.lueSociedad.Size = New System.Drawing.Size(394, 20)
         Me.lueSociedad.TabIndex = 0
         '
-        'bmActions
-        '
-        Me.bmActions.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.bar5, Me.brBarraAcciones})
-        Me.bmActions.DockControls.Add(Me.BarDockControl1)
-        Me.bmActions.DockControls.Add(Me.BarDockControl2)
-        Me.bmActions.DockControls.Add(Me.BarDockControl3)
-        Me.bmActions.DockControls.Add(Me.BarDockControl4)
-        Me.bmActions.Form = Me
-        Me.bmActions.Images = Me.imActionsBar24x24
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.barStaticItem4, Me.brsEstado, Me.bbiProcesar, Me.bbiCerrar, Me.beiProceso, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExportar, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiGuardar})
-        Me.bmActions.MaxItemId = 29
-        Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1})
-        '
-        'bar5
-        '
-        Me.bar5.BarName = "Custom 3"
-        Me.bar5.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom
-        Me.bar5.DockCol = 0
-        Me.bar5.DockRow = 0
-        Me.bar5.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom
-        Me.bar5.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.brsDescripcion), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem3), New DevExpress.XtraBars.LinkPersistInfo(Me.barStaticItem4), New DevExpress.XtraBars.LinkPersistInfo(Me.brsEstado), New DevExpress.XtraBars.LinkPersistInfo(Me.beiProceso)})
-        Me.bar5.OptionsBar.AllowQuickCustomization = False
-        Me.bar5.OptionsBar.DrawDragBorder = False
-        Me.bar5.OptionsBar.MultiLine = True
-        Me.bar5.OptionsBar.UseWholeRow = True
-        Me.bar5.Text = "Custom 3"
-        '
-        'brsDescripcion
-        '
-        Me.brsDescripcion.Id = 30
-        Me.brsDescripcion.Name = "brsDescripcion"
-        '
-        'barStaticItem3
-        '
-        Me.barStaticItem3.Caption = "0 / 0"
-        Me.barStaticItem3.Id = 31
-        Me.barStaticItem3.Name = "barStaticItem3"
-        '
-        'barStaticItem4
-        '
-        Me.barStaticItem4.Caption = "Estado"
-        Me.barStaticItem4.Id = 46
-        Me.barStaticItem4.Name = "barStaticItem4"
-        '
-        'brsEstado
-        '
-        Me.brsEstado.Caption = "Lectura"
-        Me.brsEstado.Id = 47
-        Me.brsEstado.Name = "brsEstado"
-        '
-        'beiProceso
-        '
-        Me.beiProceso.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
-        Me.beiProceso.Edit = Me.rpiProceso
-        Me.beiProceso.EditWidth = 150
-        Me.beiProceso.Id = 0
-        Me.beiProceso.Name = "beiProceso"
-        '
-        'rpiProceso
-        '
-        Me.rpiProceso.Name = "rpiProceso"
-        Me.rpiProceso.ShowTitle = True
-        '
-        'brBarraAcciones
-        '
-        Me.brBarraAcciones.BarName = "Custom 5"
-        Me.brBarraAcciones.DockCol = 0
-        Me.brBarraAcciones.DockRow = 0
-        Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiProcesar, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiGuardar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExportar, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiCerrar, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
-        Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
-        Me.brBarraAcciones.OptionsBar.UseWholeRow = True
-        Me.brBarraAcciones.Text = "Custom 5"
-        '
-        'bbiProcesar
-        '
-        Me.bbiProcesar.Caption = "&Procesar"
-        Me.bbiProcesar.Id = 33
-        Me.bbiProcesar.ImageOptions.Image = CType(resources.GetObject("bbiProcesar.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiProcesar.ImageOptions.ImageIndex = 26
-        Me.bbiProcesar.ImageOptions.LargeImageIndex = 7
-        Me.bbiProcesar.Name = "bbiProcesar"
-        '
-        'bbiGuardar
-        '
-        Me.bbiGuardar.Caption = "&Guardar"
-        Me.bbiGuardar.Id = 27
-        Me.bbiGuardar.ImageOptions.Image = CType(resources.GetObject("bbiGuardar.ImageOptions.Image"), System.Drawing.Image)
-        Me.bbiGuardar.Name = "bbiGuardar"
-        '
-        'BarButtonItem3
-        '
-        Me.BarButtonItem3.Caption = "5.1 Movimiento Contable"
-        Me.BarButtonItem3.Id = 25
-        Me.BarButtonItem3.Name = "BarButtonItem3"
-        Me.BarButtonItem3.Tag = "1"
-        '
-        'BarButtonItem4
-        '
-        Me.BarButtonItem4.Caption = "5.3 Plan Contable"
-        Me.BarButtonItem4.Id = 26
-        Me.BarButtonItem4.Name = "BarButtonItem4"
-        Me.BarButtonItem4.Tag = "2"
-        '
-        'RepositoryItemRadioGroup1
-        '
-        Me.RepositoryItemRadioGroup1.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "Nacionales"), New DevExpress.XtraEditors.Controls.RadioGroupItem(Nothing, "No Domiciliados")})
-        Me.RepositoryItemRadioGroup1.Name = "RepositoryItemRadioGroup1"
-        '
-        'RepositoryItemComboBox1
-        '
-        Me.RepositoryItemComboBox1.AutoHeight = False
-        Me.RepositoryItemComboBox1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"Nacionales", "No Domiciliados"})
-        Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
-        '
         'BarButtonItem2
         '
         Me.BarButtonItem2.Caption = "&Cerrar"
@@ -737,7 +897,7 @@ Partial Class AnexoClientesForm
         Me.SplitContainerControl2.Horizontal = False
         Me.SplitContainerControl2.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainerControl2.Name = "SplitContainerControl2"
-        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcLibroSunat)
+        Me.SplitContainerControl2.Panel1.Controls.Add(Me.gcAnexoClientes)
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.PivotGridControl1)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
@@ -745,13 +905,10 @@ Partial Class AnexoClientesForm
         Me.SplitContainerControl2.SplitterPosition = 232
         Me.SplitContainerControl2.TabIndex = 0
         '
-        'XtraFolderBrowserDialog1
-        '
-        Me.XtraFolderBrowserDialog1.SelectedPath = "XtraFolderBrowserDialog1"
-        '
         'XtraOpenFileDialog1
         '
         Me.XtraOpenFileDialog1.FileName = "XtraOpenFileDialog1"
+        Me.XtraOpenFileDialog1.Multiselect = True
         '
         'AnexoClientesForm
         '
@@ -767,20 +924,20 @@ Partial Class AnexoClientesForm
         Me.Name = "AnexoClientesForm"
         Me.Text = "Anexo de Clientes"
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gcLibroSunat, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gcAnexoClientes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.vpInputs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.beArchivoOrigen.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.sePeriodo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.seEjercicio.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PivotGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lueSociedad.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.bmActions, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -813,8 +970,7 @@ Partial Class AnexoClientesForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents sePeriodo As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents seEjercicio As DevExpress.XtraEditors.SpinEdit
-    Friend WithEvents gcLibroSunat As DevExpress.XtraGrid.GridControl
-    Private WithEvents imActionsBar24x24 As System.Windows.Forms.ImageList
+    Friend WithEvents gcAnexoClientes As DevExpress.XtraGrid.GridControl
     Friend WithEvents CardView1 As DevExpress.XtraGrid.Views.Card.CardView
     Friend WithEvents GridColumn15 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn20 As DevExpress.XtraGrid.Columns.GridColumn
@@ -859,6 +1015,26 @@ Partial Class AnexoClientesForm
     Friend WithEvents bbiGuardar As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl
     Friend WithEvents SplitContainerControl2 As DevExpress.XtraEditors.SplitContainerControl
-    Friend WithEvents XtraFolderBrowserDialog1 As DevExpress.XtraEditors.XtraFolderBrowserDialog
     Friend WithEvents XtraOpenFileDialog1 As DevExpress.XtraEditors.XtraOpenFileDialog
+    Friend WithEvents bbiBuscar As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents GridColumn1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn3 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn6 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn7 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn8 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn9 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn10 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn11 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn12 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn13 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn14 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn16 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn17 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn18 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn19 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn37 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GridColumn39 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

@@ -240,8 +240,8 @@ Module SharedObjects
 
     Friend Sub ExportarExcel(sender As System.Object)
         Dim sPath As String = Path.GetTempPath
-        Dim sFileName = (FileIO.FileSystem.GetTempFileName).Replace(".tmp", ".xls")
-        sender.MainView.ExportToXls(sFileName)
+        Dim sFileName = (FileIO.FileSystem.GetTempFileName).Replace(".tmp", ".xlsx")
+        sender.MainView.ExportToXlsx(sFileName)
         If IO.File.Exists(sFileName) Then
             Dim oXls As New Excel.Application 'Crea el objeto excel 
             oXls.Workbooks.Open(sFileName, , False) 'El true es para abrir el archivo en modo Solo lectura (False si lo quieres de otro modo)

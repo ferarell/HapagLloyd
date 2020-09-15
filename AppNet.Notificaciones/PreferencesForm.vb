@@ -21,6 +21,7 @@ Public Class PreferencesForm
             My.Settings.TimeBetweenMails = seWaitTime.Text
             My.Settings.Country = lueCountry.EditValue
             My.Settings.Save()
+            NotificationsWcfForm.bsiCountry.Caption = "Country: " & My.Settings.Country
         Catch ex As Exception
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Finally

@@ -21,6 +21,7 @@
     <SccProvider>
     </SccProvider>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>C:\DeployApps\Accounting\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -35,12 +36,11 @@
     <ProductName>Accounting</ProductName>
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
-    <ApplicationVersion>1.1.1.%2a</ApplicationVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.1.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -213,6 +213,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnexoProveedoresForm.Designer.vb">
+      <DependentUpon>AnexoProveedoresForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AnexoProveedoresForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="BalanceComprobacionForm.Designer.vb">
       <DependentUpon>BalanceComprobacionForm.vb</DependentUpon>
@@ -439,6 +445,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AnexoProveedoresForm.resx">
+      <DependentUpon>AnexoProveedoresForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BalanceComprobacionForm.resx">
       <DependentUpon>BalanceComprobacionForm.vb</DependentUpon>
       <SubType>Designer</SubType>

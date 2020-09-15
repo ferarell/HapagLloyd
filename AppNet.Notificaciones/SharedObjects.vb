@@ -8,6 +8,13 @@ Imports System.Net.Mail
 Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices
 Imports DevExpress.XtraGrid.Views.Grid
+Imports System.Text.RegularExpressions
+Imports DevExpress.XtraPrinting
+Imports DevExpress.XtraPrinting.Native
+Imports DevExpress.XtraExport.Xlsx
+Imports DevExpress.Export
+Imports DevExpress.XtraBars.FluentDesignSystem
+Imports DevExpress.XtraExport
 
 Module SharedObjects
     Friend DBFileName As String = ""
@@ -409,16 +416,45 @@ Module SharedObjects
     Friend Function FillDataTable(Sheet As String) As System.Data.DataTable
         Return LoadExcel(DBFileName, Sheet).Tables(0)
     End Function
+    Friend Sub ExportarExcel1(sender As System.Object)
+        Dim options As New XlsxExportOptionsEx()
+        options.LayoutMode = DevExpress.Export.LayoutMode.Standard
+        options.ExportType = DevExpress.Export.ExportType.WYSIWYG
+        options.AllowConditionalFormatting = DevExpress.Utils.DefaultBoolean.True
+        options.AllowSortingAndFiltering = DevExpress.Utils.DefaultBoolean.True
+        options.AllowSparklines = DevExpress.Utils.DefaultBoolean.True
+        options.ApplyFormattingToEntireColumn = DevExpress.Utils.DefaultBoolean.True
+        options.RawDataMode = False
+
+
+        'options.GetFormat = ExportFormat.Xlsx
+        'options.GetCellFormatString += options_GetCellFormatString
+        'Dim result = GridViewExtension.ExportToXlsx(TryCast(Session("settings"), GridViewSettings), Products, True, options)
+        Dim sPath As String = Path.GetTempPath
+        Dim sFileName = (FileIO.FileSystem.GetTempFileName).Replace(".tmp", ".xlsx")
+        sender.MainView.ExportToXlsx(sFileName, options)
+        'Dim ogv As New GridView
+        'ogv.ExportToXlsx(sFileName, options)
+        If IO.File.Exists(sFileName) Then
+            Dim oXls As New Excel.Application 'Crea el objeto excel 
+            oXls.Workbooks.Open(sFileName, , False) 'El true es para abrir el archivo en modo Solo lectura (False si lo quieres de otro modo)
+            oXls.Visible = True
+            oXls.WindowState = Excel.XlWindowState.xlMaximized 'Para que la ventana aparezca maximizada.
+        End If
+    End Sub
 
     Friend Sub ExportarExcel(sender As System.Object)
         Dim oGridView As New GridView
         oGridView = sender.MainView
         Dim sPath As String = Path.GetTempPath
-        Dim sFileName = (FileIO.FileSystem.GetTempFileName).Replace(".tmp", ".xls")
-        'oGridView.OptionsPrint.ExpandAllDetails = True
+        Dim sFileName = (FileIO.FileSystem.GetTempFileName).Replace(".tmp", ".xlsx")
+        oGridView.OptionsPrint.ExpandAllDetails = True
         oGridView.OptionsPrint.AutoWidth = False
-        oGridView.BestFitMaxRowCount = oGridView.RowCount
-        oGridView.ExportToXls(sFileName)
+        oGridView.OptionsPrint.UsePrintStyles = True
+        'oGridView.BestFitMaxRowCount = oGridView.RowCount
+        DevExpress.Export.ExportSettings.DefaultExportType = ExportType.WYSIWYG
+        'oGridView.OptionsBehavior.row
+        oGridView.ExportToXlsx(sFileName)
         If IO.File.Exists(sFileName) Then
             Dim oXls As New Excel.Application 'Crea el objeto excel 
             oXls.Workbooks.Open(sFileName, , False) 'El true es para abrir el archivo en modo Solo lectura (False si lo quieres de otro modo)
@@ -439,7 +475,7 @@ Module SharedObjects
         End If
     End Sub
 
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Public Function Contains(ByVal str As String, ByVal ParamArray values As String()) As Boolean
         For Each value In values
             If str.Contains(value) Then
@@ -783,7 +819,7 @@ Module SharedObjects
                             Else
                                 sValues = sValues & ", " & drValues.Item(dtSchema.Rows.IndexOf(row))
                             End If
-                         End If
+                        End If
                     End If
                 Next
                 sQuery = "insert into [" & Table & "] (" & sColumns & ") values (" & sValues & ")"
@@ -819,6 +855,14 @@ Module SharedObjects
             End Try
             Return bResult
         End Using
+    End Function
+
+    Public Function IsValidEmail(ByVal email As String) As Boolean
+        If email.Trim() = "" Then
+            Return False
+        End If
+        Return Regex.IsMatch(email, "^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*[-\.\w]*[-\.\w]@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$")
+        'Return True
     End Function
 
 End Module

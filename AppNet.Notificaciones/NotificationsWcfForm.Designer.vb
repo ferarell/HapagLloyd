@@ -36,6 +36,7 @@ Partial Class NotificationsWcfForm
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiConfiguration = New DevExpress.XtraBars.BarButtonItem()
         Me.Bar3 = New DevExpress.XtraBars.Bar()
+        Me.bsiCountry = New DevExpress.XtraBars.BarStaticItem()
         Me.bsiUser = New DevExpress.XtraBars.BarStaticItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
@@ -53,6 +54,7 @@ Partial Class NotificationsWcfForm
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcMainData = New DevExpress.XtraGrid.GridControl()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn2 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -64,7 +66,6 @@ Partial Class NotificationsWcfForm
         Me.SplitContainerControl4 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
         Me.gcBookingFilter = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn4 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn5 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -88,7 +89,6 @@ Partial Class NotificationsWcfForm
         Me.ImageListBoxControl1 = New DevExpress.XtraEditors.ImageListBoxControl()
         Me.OpenFileDialog3 = New System.Windows.Forms.OpenFileDialog()
         Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
-        Me.bsiCountry = New DevExpress.XtraBars.BarStaticItem()
         CType(Me.RepositoryItemCheckEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,6 +100,7 @@ Partial Class NotificationsWcfForm
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.gcMainData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl2.SuspendLayout()
@@ -112,7 +113,6 @@ Partial Class NotificationsWcfForm
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl3.SuspendLayout()
         CType(Me.gcBookingFilter, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl4.SuspendLayout()
@@ -175,10 +175,10 @@ Partial Class NotificationsWcfForm
         Me.beiRegime.Caption = "Regime"
         Me.beiRegime.Description = "Regime"
         Me.beiRegime.Edit = Me.RepositoryItemComboBox1
+        Me.beiRegime.EditWidth = 101
         Me.beiRegime.Id = 14
         Me.beiRegime.Name = "beiRegime"
         Me.beiRegime.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
-        Me.beiRegime.Width = 101
         '
         'RepositoryItemComboBox1
         '
@@ -190,66 +190,66 @@ Partial Class NotificationsWcfForm
         'bbiOpenFile
         '
         Me.bbiOpenFile.Caption = "&Open Layout"
-        Me.bbiOpenFile.Glyph = CType(resources.GetObject("bbiOpenFile.Glyph"), System.Drawing.Image)
         Me.bbiOpenFile.Id = 8
+        Me.bbiOpenFile.ImageOptions.Image = CType(resources.GetObject("bbiOpenFile.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiOpenFile.Name = "bbiOpenFile"
         '
         'bbiLoadContacts
         '
         Me.bbiLoadContacts.Caption = "&Load Contacts"
-        Me.bbiLoadContacts.Glyph = CType(resources.GetObject("bbiLoadContacts.Glyph"), System.Drawing.Image)
         Me.bbiLoadContacts.Id = 9
+        Me.bbiLoadContacts.ImageOptions.Image = CType(resources.GetObject("bbiLoadContacts.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiLoadContacts.Name = "bbiLoadContacts"
         '
         'bbiAttachFiles
         '
         Me.bbiAttachFiles.Caption = "&Attach Files"
-        Me.bbiAttachFiles.Glyph = CType(resources.GetObject("bbiAttachFiles.Glyph"), System.Drawing.Image)
         Me.bbiAttachFiles.Id = 7
+        Me.bbiAttachFiles.ImageOptions.Image = CType(resources.GetObject("bbiAttachFiles.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiAttachFiles.Name = "bbiAttachFiles"
         '
         'bbiImportContacts
         '
         Me.bbiImportContacts.Caption = "&Import Contacts"
-        Me.bbiImportContacts.Glyph = CType(resources.GetObject("bbiImportContacts.Glyph"), System.Drawing.Image)
         Me.bbiImportContacts.Id = 10
+        Me.bbiImportContacts.ImageOptions.Image = CType(resources.GetObject("bbiImportContacts.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiImportContacts.Name = "bbiImportContacts"
         '
         'bbiMessagePreview
         '
         Me.bbiMessagePreview.Caption = "&Preview"
-        Me.bbiMessagePreview.Glyph = CType(resources.GetObject("bbiMessagePreview.Glyph"), System.Drawing.Image)
         Me.bbiMessagePreview.Id = 6
+        Me.bbiMessagePreview.ImageOptions.Image = CType(resources.GetObject("bbiMessagePreview.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiMessagePreview.Name = "bbiMessagePreview"
         '
         'bbiSendByDocument
         '
         Me.bbiSendByDocument.Caption = "&Send by Booking / BL"
-        Me.bbiSendByDocument.Glyph = CType(resources.GetObject("bbiSendByDocument.Glyph"), System.Drawing.Image)
         Me.bbiSendByDocument.Id = 0
+        Me.bbiSendByDocument.ImageOptions.Image = CType(resources.GetObject("bbiSendByDocument.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiSendByDocument.Name = "bbiSendByDocument"
         '
         'bbiSendAllByGroups
         '
         Me.bbiSendAllByGroups.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left
         Me.bbiSendAllByGroups.Caption = "Send All by Groups"
-        Me.bbiSendAllByGroups.Glyph = CType(resources.GetObject("bbiSendAllByGroups.Glyph"), System.Drawing.Image)
         Me.bbiSendAllByGroups.Id = 15
+        Me.bbiSendAllByGroups.ImageOptions.Image = CType(resources.GetObject("bbiSendAllByGroups.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiSendAllByGroups.Name = "bbiSendAllByGroups"
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "&Close"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 2
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiClose.Name = "bbiClose"
         '
         'bbiConfiguration
         '
         Me.bbiConfiguration.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.bbiConfiguration.Caption = "&Configuration"
-        Me.bbiConfiguration.Glyph = CType(resources.GetObject("bbiConfiguration.Glyph"), System.Drawing.Image)
         Me.bbiConfiguration.Id = 5
+        Me.bbiConfiguration.ImageOptions.Image = CType(resources.GetObject("bbiConfiguration.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiConfiguration.Name = "bbiConfiguration"
         '
         'Bar3
@@ -265,43 +265,55 @@ Partial Class NotificationsWcfForm
         Me.Bar3.OptionsBar.UseWholeRow = True
         Me.Bar3.Text = "Barra de estado"
         '
+        'bsiCountry
+        '
+        Me.bsiCountry.Caption = "Country:"
+        Me.bsiCountry.Id = 16
+        Me.bsiCountry.ImageOptions.Image = CType(resources.GetObject("bsiCountry.ImageOptions.Image"), System.Drawing.Image)
+        Me.bsiCountry.ImageOptions.LargeImage = CType(resources.GetObject("bsiCountry.ImageOptions.LargeImage"), System.Drawing.Image)
+        Me.bsiCountry.Name = "bsiCountry"
+        Me.bsiCountry.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
         'bsiUser
         '
         Me.bsiUser.Caption = "User:"
-        Me.bsiUser.Glyph = CType(resources.GetObject("bsiUser.Glyph"), System.Drawing.Image)
         Me.bsiUser.Id = 3
-        Me.bsiUser.LargeGlyph = CType(resources.GetObject("bsiUser.LargeGlyph"), System.Drawing.Image)
+        Me.bsiUser.ImageOptions.Image = CType(resources.GetObject("bsiUser.ImageOptions.Image"), System.Drawing.Image)
+        Me.bsiUser.ImageOptions.LargeImage = CType(resources.GetObject("bsiUser.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bsiUser.Name = "bsiUser"
         Me.bsiUser.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
-        Me.bsiUser.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'BarDockControl1
         '
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(948, 91)
+        Me.BarDockControl1.Manager = Me.BarManager1
+        Me.BarDockControl1.Size = New System.Drawing.Size(948, 95)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 426)
+        Me.BarDockControl2.Manager = Me.BarManager1
         Me.BarDockControl2.Size = New System.Drawing.Size(948, 30)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 91)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 335)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 95)
+        Me.BarDockControl3.Manager = Me.BarManager1
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 331)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(948, 91)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 335)
+        Me.BarDockControl4.Location = New System.Drawing.Point(948, 95)
+        Me.BarDockControl4.Manager = Me.BarManager1
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 331)
         '
         'bbiBlackList
         '
@@ -350,10 +362,10 @@ Partial Class NotificationsWcfForm
         'XtraTabControl1
         '
         Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XtraTabControl1.Location = New System.Drawing.Point(0, 91)
+        Me.XtraTabControl1.Location = New System.Drawing.Point(0, 95)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(948, 335)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(948, 331)
         Me.XtraTabControl1.TabIndex = 13
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
         '
@@ -361,7 +373,7 @@ Partial Class NotificationsWcfForm
         '
         Me.XtraTabPage1.Controls.Add(Me.SplitContainerControl1)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(943, 310)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(943, 306)
         Me.XtraTabPage1.Text = "Contact List"
         '
         'SplitContainerControl1
@@ -377,7 +389,7 @@ Partial Class NotificationsWcfForm
         Me.SplitContainerControl1.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(943, 310)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(943, 306)
         Me.SplitContainerControl1.SplitterPosition = 216
         Me.SplitContainerControl1.TabIndex = 8
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -390,7 +402,11 @@ Partial Class NotificationsWcfForm
         Me.gcMainData.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcMainData.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcMainData.EmbeddedNavigator.Buttons.First.Visible = False
+        Me.gcMainData.EmbeddedNavigator.Buttons.ImageList = Me.ImageCollection1
         Me.gcMainData.EmbeddedNavigator.Buttons.Remove.Visible = False
+        Me.gcMainData.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() {New DevExpress.XtraEditors.NavigatorCustomButton(0, 0, True, True, "Export to Excel", "Excel")})
+        Me.gcMainData.EmbeddedNavigator.Padding = New System.Windows.Forms.Padding(2)
+        Me.gcMainData.EmbeddedNavigator.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application
         Me.gcMainData.Location = New System.Drawing.Point(0, 0)
         Me.gcMainData.MainView = Me.GridView1
         Me.gcMainData.Name = "gcMainData"
@@ -399,13 +415,21 @@ Partial Class NotificationsWcfForm
         Me.gcMainData.UseEmbeddedNavigator = True
         Me.gcMainData.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
+        'ImageCollection1
+        '
+        Me.ImageCollection1.ImageSize = New System.Drawing.Size(24, 24)
+        Me.ImageCollection1.ImageStream = CType(resources.GetObject("ImageCollection1.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
+        Me.ImageCollection1.Images.SetKeyName(0, "exporttoxls_32x32.png")
+        '
         'GridView1
         '
         Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3})
         Me.GridView1.GridControl = Me.gcMainData
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsClipboard.AllowExcelFormat = DevExpress.Utils.DefaultBoolean.[True]
         Me.GridView1.OptionsSelection.MultiSelect = True
+        Me.GridView1.OptionsSelection.ShowCheckBoxSelectorInPrintExport = DevExpress.Utils.DefaultBoolean.[True]
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
         '
@@ -448,7 +472,7 @@ Partial Class NotificationsWcfForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(939, 86)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(939, 82)
         Me.SplitContainerControl2.SplitterPosition = 209
         Me.SplitContainerControl2.TabIndex = 9
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -460,25 +484,24 @@ Partial Class NotificationsWcfForm
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl1.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(209, 86)
+        Me.GroupControl1.Size = New System.Drawing.Size(209, 82)
         Me.GroupControl1.TabIndex = 1
         Me.GroupControl1.Text = "Match Codes List"
         '
         'MemoEdit1
         '
         Me.MemoEdit1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MemoEdit1.Location = New System.Drawing.Point(2, 55)
+        Me.MemoEdit1.Location = New System.Drawing.Point(2, 56)
         Me.MemoEdit1.MenuManager = Me.BarManager1
         Me.MemoEdit1.Name = "MemoEdit1"
-        Me.MemoEdit1.Size = New System.Drawing.Size(205, 29)
+        Me.MemoEdit1.Size = New System.Drawing.Size(205, 24)
         Me.MemoEdit1.TabIndex = 0
-        Me.MemoEdit1.UseOptimizedRendering = True
         '
         'rgMatchCode
         '
         Me.rgMatchCode.Dock = System.Windows.Forms.DockStyle.Top
         Me.rgMatchCode.EditValue = "A"
-        Me.rgMatchCode.Location = New System.Drawing.Point(2, 21)
+        Me.rgMatchCode.Location = New System.Drawing.Point(2, 22)
         Me.rgMatchCode.MenuManager = Me.BarManager1
         Me.rgMatchCode.Name = "rgMatchCode"
         Me.rgMatchCode.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
@@ -498,7 +521,7 @@ Partial Class NotificationsWcfForm
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.GroupControl4)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(726, 86)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(726, 82)
         Me.SplitContainerControl4.SplitterPosition = 477
         Me.SplitContainerControl4.TabIndex = 0
         Me.SplitContainerControl4.Text = "SplitContainerControl4"
@@ -509,7 +532,7 @@ Partial Class NotificationsWcfForm
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(477, 86)
+        Me.GroupControl3.Size = New System.Drawing.Size(477, 82)
         Me.GroupControl3.TabIndex = 0
         Me.GroupControl3.Text = "Filter List"
         '
@@ -523,23 +546,14 @@ Partial Class NotificationsWcfForm
         Me.gcBookingFilter.EmbeddedNavigator.Buttons.ImageList = Me.ImageCollection1
         Me.gcBookingFilter.EmbeddedNavigator.Buttons.Remove.Visible = False
         Me.gcBookingFilter.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() {New DevExpress.XtraEditors.NavigatorCustomButton(0, 2, True, True, "Load From Excel File", "LoadExcel")})
-        Me.gcBookingFilter.Location = New System.Drawing.Point(2, 21)
+        Me.gcBookingFilter.Location = New System.Drawing.Point(2, 22)
         Me.gcBookingFilter.MainView = Me.GridView2
         Me.gcBookingFilter.MenuManager = Me.BarManager1
         Me.gcBookingFilter.Name = "gcBookingFilter"
-        Me.gcBookingFilter.Size = New System.Drawing.Size(473, 63)
+        Me.gcBookingFilter.Size = New System.Drawing.Size(473, 58)
         Me.gcBookingFilter.TabIndex = 0
         Me.gcBookingFilter.UseEmbeddedNavigator = True
         Me.gcBookingFilter.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
-        '
-        'ImageCollection1
-        '
-        Me.ImageCollection1.ImageStream = CType(resources.GetObject("ImageCollection1.ImageStream"), DevExpress.Utils.ImageCollectionStreamer)
-        Me.ImageCollection1.Images.SetKeyName(0, "Excel.png")
-        Me.ImageCollection1.InsertGalleryImage("exporttotxt_16x16.png", "images/export/exporttotxt_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/export/exporttotxt_16x16.png"), 1)
-        Me.ImageCollection1.Images.SetKeyName(1, "exporttotxt_16x16.png")
-        Me.ImageCollection1.InsertGalleryImage("exporttoxlsx_16x16.png", "images/export/exporttoxlsx_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/export/exporttoxlsx_16x16.png"), 2)
-        Me.ImageCollection1.Images.SetKeyName(2, "exporttoxlsx_16x16.png")
         '
         'GridView2
         '
@@ -570,7 +584,7 @@ Partial Class NotificationsWcfForm
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl4.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(245, 86)
+        Me.GroupControl4.Size = New System.Drawing.Size(245, 82)
         Me.GroupControl4.TabIndex = 0
         Me.GroupControl4.Text = "Black List"
         '
@@ -584,11 +598,11 @@ Partial Class NotificationsWcfForm
         Me.gcBlackList.EmbeddedNavigator.Buttons.ImageList = Me.ImageCollection1
         Me.gcBlackList.EmbeddedNavigator.Buttons.Remove.Visible = False
         Me.gcBlackList.EmbeddedNavigator.CustomButtons.AddRange(New DevExpress.XtraEditors.NavigatorCustomButton() {New DevExpress.XtraEditors.NavigatorCustomButton(0, 1, True, True, "Load From Text File", "LoadText")})
-        Me.gcBlackList.Location = New System.Drawing.Point(2, 21)
+        Me.gcBlackList.Location = New System.Drawing.Point(2, 22)
         Me.gcBlackList.MainView = Me.GridView3
         Me.gcBlackList.MenuManager = Me.BarManager1
         Me.gcBlackList.Name = "gcBlackList"
-        Me.gcBlackList.Size = New System.Drawing.Size(241, 63)
+        Me.gcBlackList.Size = New System.Drawing.Size(241, 58)
         Me.gcBlackList.TabIndex = 1
         Me.gcBlackList.UseEmbeddedNavigator = True
         Me.gcBlackList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
@@ -612,7 +626,7 @@ Partial Class NotificationsWcfForm
         '
         Me.XtraTabPage2.Controls.Add(Me.SplitContainerControl3)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(943, 312)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(943, 306)
         Me.XtraTabPage2.Text = "Message"
         '
         'SplitContainerControl3
@@ -628,7 +642,7 @@ Partial Class NotificationsWcfForm
         Me.SplitContainerControl3.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.GroupControl2)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(943, 312)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(943, 306)
         Me.SplitContainerControl3.SplitterPosition = 700
         Me.SplitContainerControl3.TabIndex = 1
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -637,7 +651,7 @@ Partial Class NotificationsWcfForm
         '
         Me.richEditControl.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple
         Me.richEditControl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.richEditControl.EnableToolTips = True
+        Me.richEditControl.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel
         Me.richEditControl.Location = New System.Drawing.Point(0, 115)
         Me.richEditControl.MenuManager = Me.BarManager1
         Me.richEditControl.Name = "richEditControl"
@@ -649,11 +663,9 @@ Partial Class NotificationsWcfForm
         Me.richEditControl.Options.Export.Html.EmbedImages = True
         Me.richEditControl.Options.Export.Html.HtmlNumberingListExportFormat = DevExpress.XtraRichEdit.Export.Html.HtmlNumberingListExportFormat.PlainTextFormat
         Me.richEditControl.Options.Export.Mht.HtmlNumberingListExportFormat = DevExpress.XtraRichEdit.Export.Html.HtmlNumberingListExportFormat.PlainTextFormat
-        Me.richEditControl.Options.Fields.UseCurrentCultureDateTimeFormat = False
         Me.richEditControl.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
-        Me.richEditControl.Options.MailMerge.KeepLastParagraph = False
         Me.richEditControl.Options.VerticalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
-        Me.richEditControl.Size = New System.Drawing.Size(696, 193)
+        Me.richEditControl.Size = New System.Drawing.Size(696, 187)
         Me.richEditControl.TabIndex = 3
         '
         'panelControl
@@ -747,31 +759,21 @@ Partial Class NotificationsWcfForm
         Me.GroupControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(235, 308)
+        Me.GroupControl2.Size = New System.Drawing.Size(235, 302)
         Me.GroupControl2.TabIndex = 0
         Me.GroupControl2.Text = "Attachment File List"
         '
         'ImageListBoxControl1
         '
         Me.ImageListBoxControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ImageListBoxControl1.Location = New System.Drawing.Point(2, 21)
+        Me.ImageListBoxControl1.Location = New System.Drawing.Point(2, 22)
         Me.ImageListBoxControl1.Name = "ImageListBoxControl1"
-        Me.ImageListBoxControl1.Size = New System.Drawing.Size(231, 285)
+        Me.ImageListBoxControl1.Size = New System.Drawing.Size(231, 278)
         Me.ImageListBoxControl1.TabIndex = 0
         '
         'vpInputs
         '
         Me.vpInputs.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
-        '
-        'bsiCountry
-        '
-        Me.bsiCountry.Caption = "Country:"
-        Me.bsiCountry.Glyph = CType(resources.GetObject("bsiCountry.Glyph"), System.Drawing.Image)
-        Me.bsiCountry.Id = 16
-        Me.bsiCountry.LargeGlyph = CType(resources.GetObject("bsiCountry.LargeGlyph"), System.Drawing.Image)
-        Me.bsiCountry.Name = "bsiCountry"
-        Me.bsiCountry.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
-        Me.bsiCountry.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'NotificationsWcfForm
         '
@@ -799,6 +801,7 @@ Partial Class NotificationsWcfForm
         CType(Me.SplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.gcMainData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplitContainerControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl2.ResumeLayout(False)
@@ -811,7 +814,6 @@ Partial Class NotificationsWcfForm
         CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl3.ResumeLayout(False)
         CType(Me.gcBookingFilter, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ImageCollection1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl4.ResumeLayout(False)
@@ -832,6 +834,7 @@ Partial Class NotificationsWcfForm
         CType(Me.ImageListBoxControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.vpInputs, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
@@ -902,5 +905,5 @@ Partial Class NotificationsWcfForm
     Friend WithEvents RepositoryItemComboBox1 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents vpInputs As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
     Friend WithEvents bbiSendAllByGroups As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents bsiCountry As DevExpress.XtraBars.BarStaticItem
+    Public WithEvents bsiCountry As DevExpress.XtraBars.BarStaticItem
 End Class

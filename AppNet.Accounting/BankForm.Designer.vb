@@ -99,7 +99,7 @@ Partial Class BankForm
         Me.lueSociedad.Margin = New System.Windows.Forms.Padding(2)
         Me.lueSociedad.Name = "lueSociedad"
         Me.lueSociedad.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueSociedad.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyDescription", 60, "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTaxCode", "RUC"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyAddress", "Dirección", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.lueSociedad.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyDescription", "Descripción", 60, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTaxCode", "RUC"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyAddress", "Dirección", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueSociedad.Properties.NullText = ""
         Me.lueSociedad.Size = New System.Drawing.Size(394, 20)
         Me.lueSociedad.TabIndex = 0
@@ -209,10 +209,12 @@ Partial Class BankForm
         Me.lueCuenta.Location = New System.Drawing.Point(130, 59)
         Me.lueCuenta.Margin = New System.Windows.Forms.Padding(2)
         Me.lueCuenta.Name = "lueCuenta"
-        Me.lueCuenta.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFit
+        Me.lueCuenta.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
+        Me.lueCuenta.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         Me.lueCuenta.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueCuenta.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Sociedad", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankCode", "BancoCódigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankDescription", "BancoDescripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankFormat", "Formato", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankCurrency", "Moneda"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountBankCode", "CuentaBancaria"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountCode1", "CuentaContable1"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountCode2", "CuentaContable2", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.lueCuenta.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Sociedad", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankCode", "BancoCódigo", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankDescription", "BancoDescripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankFormat", "Formato", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BankCurrency", "Moneda"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountBankCode", "CuentaBancaria"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountCode1", "CuentaContable1"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccountCode2", "CuentaContable2", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueCuenta.Properties.NullText = ""
+        Me.lueCuenta.Properties.PopupWidthMode = DevExpress.XtraEditors.PopupWidthMode.ContentWidth
         Me.lueCuenta.Size = New System.Drawing.Size(394, 20)
         Me.lueCuenta.TabIndex = 1
         '
@@ -261,21 +263,21 @@ Partial Class BankForm
         'bbiProcesar
         '
         Me.bbiProcesar.Caption = "&Procesar"
-        Me.bbiProcesar.Glyph = CType(resources.GetObject("bbiProcesar.Glyph"), System.Drawing.Image)
         Me.bbiProcesar.Id = 33
-        Me.bbiProcesar.ImageIndex = 26
+        Me.bbiProcesar.ImageOptions.Image = CType(resources.GetObject("bbiProcesar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiProcesar.ImageOptions.ImageIndex = 26
+        Me.bbiProcesar.ImageOptions.LargeImageIndex = 7
         Me.bbiProcesar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
-        Me.bbiProcesar.LargeImageIndex = 7
         Me.bbiProcesar.Name = "bbiProcesar"
         '
         'bbiCerrar
         '
         Me.bbiCerrar.Caption = "&Cerrar"
-        Me.bbiCerrar.Glyph = CType(resources.GetObject("bbiCerrar.Glyph"), System.Drawing.Image)
         Me.bbiCerrar.Id = 41
-        Me.bbiCerrar.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.Image = CType(resources.GetObject("bbiCerrar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiCerrar.ImageOptions.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.LargeImageIndex = 0
         Me.bbiCerrar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiCerrar.LargeImageIndex = 0
         Me.bbiCerrar.Name = "bbiCerrar"
         Me.bbiCerrar.ShortcutKeyDisplayString = "Ctrl+C"
         '
@@ -284,6 +286,7 @@ Partial Class BankForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
+        Me.BarDockControl1.Manager = Me.bmActions
         Me.BarDockControl1.Size = New System.Drawing.Size(615, 47)
         '
         'BarDockControl2
@@ -291,6 +294,7 @@ Partial Class BankForm
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 300)
+        Me.BarDockControl2.Manager = Me.bmActions
         Me.BarDockControl2.Size = New System.Drawing.Size(615, 29)
         '
         'BarDockControl3
@@ -298,6 +302,7 @@ Partial Class BankForm
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 253)
         '
         'BarDockControl4
@@ -305,6 +310,7 @@ Partial Class BankForm
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
         Me.BarDockControl4.Location = New System.Drawing.Point(615, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 253)
         '
         'imActionsBar24x24
@@ -350,7 +356,7 @@ Partial Class BankForm
         '
         Me.bsiVistas.Caption = "Vistas"
         Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageIndex = 20
+        Me.bsiVistas.ImageOptions.ImageIndex = 20
         Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
         Me.bsiVistas.Name = "bsiVistas"
         '
@@ -358,14 +364,14 @@ Partial Class BankForm
         '
         Me.bbiVistaGrilla.Caption = "Grilla"
         Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageIndex = 23
+        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
         Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
         '
         'bbiTarjeta
         '
         Me.bbiTarjeta.Caption = "Tarjeta"
         Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageIndex = 21
+        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
         Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiContrato
@@ -441,6 +447,7 @@ Partial Class BankForm
         CType(Me.RepositoryItemImageComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.vpBank, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl

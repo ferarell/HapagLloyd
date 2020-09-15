@@ -8,6 +8,7 @@ Imports System.Threading
 Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices
+Imports System.ComponentModel.DataAnnotations
 
 Public Class NotificationsWcfForm
     Dim eMailTo As String = ""
@@ -33,6 +34,8 @@ Public Class NotificationsWcfForm
     End Sub
 
     Private Sub NotificationsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CheckForIllegalCrossThreadCalls = False
+        DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(SkinName)
         Me.Icon = My.Application.ApplicationContext.MainForm.Icon
         Dim iWidth As Integer = 400
         SplitContainerControl1.SplitterPosition = Me.Size.Height - 350
@@ -40,7 +43,6 @@ Public Class NotificationsWcfForm
         SplitContainerControl3.SplitterPosition = Me.Size.Width - iWidth
         ImageListBoxControl1.Items.Clear()
         ImageListBoxControl1.MultiColumn = True
-        DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(SkinName)
         bsiCountry.Caption = "Country: " & My.Settings.Country
         bsiUser.Caption = "User: " & My.User.Name
     End Sub
@@ -223,7 +225,7 @@ Public Class NotificationsWcfForm
                 Next
             End If
             mail.BCC = eMailTo
-            If CreateType = "Display" Then               
+            If CreateType = "Display" Then
                 mail.Display()
             End If
             If CreateType = "Send" Then
@@ -279,8 +281,11 @@ Public Class NotificationsWcfForm
 
     Private Sub SeleccionaFilas(caso As Integer)
         Dim i As Integer = 0
-        Do While i < GridView1.RowCount
+        For i = 0 To GridView1.RowCount - 1
             Dim row As DataRow = GridView1.GetDataRow(i)
+            If Not IsValidEmail(row("eMail")) Then
+                Continue For
+            End If
             If caso = 0 Then
                 row("Checked") = True
             End If
@@ -294,8 +299,7 @@ Public Class NotificationsWcfForm
                     row("Checked") = True
                 End If
             End If
-            i += 1
-        Loop
+        Next
     End Sub
 
     Private Sub SeleccionaTodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeleccionaTodosToolStripMenuItem.Click
@@ -310,8 +314,10 @@ Public Class NotificationsWcfForm
         SeleccionaFilas(2)
     End Sub
 
-    Private Sub RepositoryItemCheckEdit1_CheckedChanged(sender As Object, e As EventArgs)
-
+    Private Sub RepositoryItemCheckEdit1_CheckedChanged(sender As Object, e As EventArgs) Handles RepositoryItemCheckEdit1.CheckedChanged
+        If Not IsValidEmail(GridView1.GetFocusedRowCellValue("eMail")) Then
+            GridView1.SetFocusedRowCellValue("Checked", False)
+        End If
     End Sub
 
     Private Sub bbiConfiguration_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiConfiguration.ItemClick
@@ -499,6 +505,18 @@ Public Class NotificationsWcfForm
         GridView1.ActiveFilterString = "(" & sFilter & ")"
     End Sub
 
+    Private Sub GridView1_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView1.RowStyle
+        Dim View As GridView = sender
+        If (e.RowHandle >= 0) Then
+            If Not View.Columns("eMail") Is Nothing Then
+                Dim C1 As String = View.GetRowCellDisplayText(e.RowHandle, View.Columns("eMail"))
+                If Not IsValidEmail(C1) Then
+                    e.Appearance.BackColor = Color.Salmon
+                    e.Appearance.BackColor2 = Color.SeaShell
+                End If
+            End If
+        End If
+    End Sub
     Private Sub GridView2_RowStyle(sender As Object, e As RowStyleEventArgs) Handles GridView2.RowStyle
         Dim View As GridView = sender
         If (e.RowHandle >= 0) Then
@@ -514,6 +532,12 @@ Public Class NotificationsWcfForm
 
     Private Sub beiRegime_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles beiRegime.ItemClick
         Validate()
+    End Sub
+
+    Private Sub gcMainData_EmbeddedNavigator_ButtonClick(sender As Object, e As DevExpress.XtraEditors.NavigatorButtonClickEventArgs) Handles gcMainData.EmbeddedNavigator.ButtonClick
+        If e.Button.Tag = "Excel" Then
+            ExportarExcel(gcMainData)
+        End If
     End Sub
 
     Private Sub bbiSendAllByGroups_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSendAllByGroups.ItemClick

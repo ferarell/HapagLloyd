@@ -58,6 +58,71 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertBlackList", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertBlackListResponse")>  _
         Function InsertBlackListAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentResponse")>  _
+        Function InsertColdTreatment(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentResponse")>  _
+        Function InsertColdTreatmentAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/UpdateColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/UpdateColdTreatmentResponse")>  _
+        Function UpdateColdTreatment(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/UpdateColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/UpdateColdTreatmentResponse")>  _
+        Function UpdateColdTreatmentAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function DeleteColdTreatment(ByVal aSource() As Object) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatment", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentResponse")>  _
+        Function DeleteColdTreatmentAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEvents", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEventsResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function InsertColdTreatmentEvents(ByVal aSource() As Object) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEvents", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentEventsResponse")>  _
+        Function InsertColdTreatmentEventsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEvents", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEventsResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function DeleteColdTreatmentEvents(ByVal aSource() As Object) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEvents", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentEventsResponse")>  _
+        Function DeleteColdTreatmentEventsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadingsResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function InsertColdTreatmentReadings(ByVal aSource() As Object) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadingsResponse")>  _
+        Function InsertColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadingsResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function DeleteColdTreatmentReadings(ByVal aSource() As Object) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadingsResponse")>  _
+        Function DeleteColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyage", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyageResponse")>  _
+        Function InsertScheduleVoyage(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyage", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyageResponse")>  _
+        Function InsertScheduleVoyageAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertReeferDataMaster", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertReeferDataMasterResponse")>  _
+        Function InsertReeferDataMaster(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertReeferDataMaster", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertReeferDataMasterResponse")>  _
+        Function InsertReeferDataMasterAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertPartners", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertPartnersResponse")>  _
+        Function InsertPartners(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertPartners", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertPartnersResponse")>  _
+        Function InsertPartnersAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -137,6 +202,86 @@ Namespace AppService
         
         Public Function InsertBlackListAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertBlackListAsync
             Return MyBase.Channel.InsertBlackListAsync(aSource)
+        End Function
+        
+        Public Function InsertColdTreatment(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertColdTreatment
+            Return MyBase.Channel.InsertColdTreatment(dtSource)
+        End Function
+        
+        Public Function InsertColdTreatmentAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertColdTreatmentAsync
+            Return MyBase.Channel.InsertColdTreatmentAsync(dtSource)
+        End Function
+        
+        Public Function UpdateColdTreatment(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.UpdateColdTreatment
+            Return MyBase.Channel.UpdateColdTreatment(dtSource)
+        End Function
+        
+        Public Function UpdateColdTreatmentAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.UpdateColdTreatmentAsync
+            Return MyBase.Channel.UpdateColdTreatmentAsync(dtSource)
+        End Function
+        
+        Public Function DeleteColdTreatment(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.DeleteColdTreatment
+            Return MyBase.Channel.DeleteColdTreatment(aSource)
+        End Function
+        
+        Public Function DeleteColdTreatmentAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.DeleteColdTreatmentAsync
+            Return MyBase.Channel.DeleteColdTreatmentAsync(aSource)
+        End Function
+        
+        Public Function InsertColdTreatmentEvents(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.InsertColdTreatmentEvents
+            Return MyBase.Channel.InsertColdTreatmentEvents(aSource)
+        End Function
+        
+        Public Function InsertColdTreatmentEventsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertColdTreatmentEventsAsync
+            Return MyBase.Channel.InsertColdTreatmentEventsAsync(aSource)
+        End Function
+        
+        Public Function DeleteColdTreatmentEvents(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.DeleteColdTreatmentEvents
+            Return MyBase.Channel.DeleteColdTreatmentEvents(aSource)
+        End Function
+        
+        Public Function DeleteColdTreatmentEventsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.DeleteColdTreatmentEventsAsync
+            Return MyBase.Channel.DeleteColdTreatmentEventsAsync(aSource)
+        End Function
+        
+        Public Function InsertColdTreatmentReadings(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.InsertColdTreatmentReadings
+            Return MyBase.Channel.InsertColdTreatmentReadings(aSource)
+        End Function
+        
+        Public Function InsertColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertColdTreatmentReadingsAsync
+            Return MyBase.Channel.InsertColdTreatmentReadingsAsync(aSource)
+        End Function
+        
+        Public Function DeleteColdTreatmentReadings(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.DeleteColdTreatmentReadings
+            Return MyBase.Channel.DeleteColdTreatmentReadings(aSource)
+        End Function
+        
+        Public Function DeleteColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.DeleteColdTreatmentReadingsAsync
+            Return MyBase.Channel.DeleteColdTreatmentReadingsAsync(aSource)
+        End Function
+        
+        Public Function InsertScheduleVoyage(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertScheduleVoyage
+            Return MyBase.Channel.InsertScheduleVoyage(dtSource)
+        End Function
+        
+        Public Function InsertScheduleVoyageAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertScheduleVoyageAsync
+            Return MyBase.Channel.InsertScheduleVoyageAsync(dtSource)
+        End Function
+        
+        Public Function InsertReeferDataMaster(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertReeferDataMaster
+            Return MyBase.Channel.InsertReeferDataMaster(dtSource)
+        End Function
+        
+        Public Function InsertReeferDataMasterAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertReeferDataMasterAsync
+            Return MyBase.Channel.InsertReeferDataMasterAsync(dtSource)
+        End Function
+        
+        Public Function InsertPartners(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertPartners
+            Return MyBase.Channel.InsertPartners(dtSource)
+        End Function
+        
+        Public Function InsertPartnersAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertPartnersAsync
+            Return MyBase.Channel.InsertPartnersAsync(dtSource)
         End Function
     End Class
 End Namespace

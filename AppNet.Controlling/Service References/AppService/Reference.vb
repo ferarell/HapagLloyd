@@ -111,6 +111,18 @@ Namespace AppService
         
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyage", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertScheduleVoyageResponse")>  _
         Function InsertScheduleVoyageAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertReeferDataMaster", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertReeferDataMasterResponse")>  _
+        Function InsertReeferDataMaster(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertReeferDataMaster", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertReeferDataMasterResponse")>  _
+        Function InsertReeferDataMasterAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertPartners", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertPartnersResponse")>  _
+        Function InsertPartners(ByVal dtSource As System.Data.DataTable) As Boolean
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertPartners", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertPartnersResponse")>  _
+        Function InsertPartnersAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean)
     End Interface
     
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")>  _
@@ -254,6 +266,22 @@ Namespace AppService
         
         Public Function InsertScheduleVoyageAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertScheduleVoyageAsync
             Return MyBase.Channel.InsertScheduleVoyageAsync(dtSource)
+        End Function
+        
+        Public Function InsertReeferDataMaster(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertReeferDataMaster
+            Return MyBase.Channel.InsertReeferDataMaster(dtSource)
+        End Function
+        
+        Public Function InsertReeferDataMasterAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertReeferDataMasterAsync
+            Return MyBase.Channel.InsertReeferDataMasterAsync(dtSource)
+        End Function
+        
+        Public Function InsertPartners(ByVal dtSource As System.Data.DataTable) As Boolean Implements AppService.IHapagLloydService.InsertPartners
+            Return MyBase.Channel.InsertPartners(dtSource)
+        End Function
+        
+        Public Function InsertPartnersAsync(ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertPartnersAsync
+            Return MyBase.Channel.InsertPartnersAsync(dtSource)
         End Function
     End Class
 End Namespace

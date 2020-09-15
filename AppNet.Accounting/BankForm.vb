@@ -85,19 +85,19 @@ Public Class BankForm
     Friend Function ValidAccount(dtSource As DataTable, FormatBank As String) As Boolean
         Dim bResult As Boolean = True
         If FormatBank = "02.1.0" Then
-            If Not dtSource.Rows(0)(1).ToString.Contains(lueCuenta.GetColumnValue("CuentaBancaria")) Then
+            If Not dtSource.Rows(0)(1).ToString.Contains(lueCuenta.GetColumnValue("AccountBankCode")) Then
                 bResult = False
             End If
         ElseIf FormatBank = "02.2.0" Then
-            If Not dtSource.Rows(1)(0).ToString.Contains(Replace(lueCuenta.GetColumnValue("CuentaBancaria"), "-", "")) Then
+            If Not dtSource.Rows(1)(0).ToString.Contains(Replace(lueCuenta.GetColumnValue("AccountBankCode"), "-", "")) Then
                 bResult = False
             End If
         ElseIf FormatBank = "07.1.0" Then
-            If Not dtSource.Rows(9)(0).ToString.Contains(lueCuenta.GetColumnValue("CuentaBancaria")) Then
+            If Not dtSource.Rows(9)(0).ToString.Contains(lueCuenta.GetColumnValue("AccountBankCode")) Then
                 bResult = False
             End If
         ElseIf FormatBank = "18.1.0" Then
-            'If Not Replace(dtSource.Rows(0)(2).ToString, " ", "").Contains(lueCuenta.GetColumnValue("CuentaBancaria")) Then
+            'If Not Replace(dtSource.Rows(0)(2).ToString, " ", "").Contains(lueCuenta.GetColumnValue("AccountBankCode")) Then
             '    bResult = False
             'End If
         End If
@@ -129,64 +129,72 @@ Public Class BankForm
         dtProcess.Rows(iPos1).Item(10) = "(07) Document Date"
         dtProcess.Rows(iPos1).Item(11) = "(05) Document Type"
         Fecha = GetFieldsByFormat(dtSource.Rows(iPos2), FormatBank)(0)
+
         For i = iPos2 To dtSource.Rows.Count - 1
-            If FormatBank = "07.1.0" And dtSource.Rows(i)(0) <> Replace(lueCuenta.EditValue, "-", "") Then
-                Continue For
-            End If
-            iPos3 += 1
-            aFields = GetFieldsByFormat(dtSource.Rows(i), FormatBank)
-            PosKey1 = "40"
-            PosKey2 = "50"
-            Descri = aFields(1) 'dtSource.Rows(i).Item(2)
-            Glosa = iPos3.ToString & "-EC " & aFields(1) '(i - 3).ToString & "-EC " & dtSource.Rows(i).Item(2)
-            If IsDBNull(aFields(2)) Then
-                Monto = 0
-            Else
-                Monto = aFields(2) 'dtSource.Rows(i).Item(3)
-            End If
+            Try
+                If IsDBNull(dtSource.Rows(i)(0)) Then
+                    Continue For
+                End If
+                If FormatBank = "07.1.0" And dtSource.Rows(i)(0) <> Replace(lueCuenta.EditValue, "-", "") Then
+                    Continue For
+                End If
+                iPos3 += 1
+                aFields = GetFieldsByFormat(dtSource.Rows(i), FormatBank)
+                PosKey1 = "40"
+                PosKey2 = "50"
+                Descri = aFields(1) 'dtSource.Rows(i).Item(2)
+                Glosa = iPos3.ToString & "-EC " & aFields(1) '(i - 3).ToString & "-EC " & dtSource.Rows(i).Item(2)
+                If IsDBNull(aFields(2)) Then
+                    Monto = 0
+                Else
+                    Monto = aFields(2) 'dtSource.Rows(i).Item(3)
+                End If
 
-            Opera = aFields(3) 'dtSource.Rows(i).Item(6)
-            If ExecuteAccessQuery("select * from EstadoCuentaBanco where Sociedad='" & lueSociedad.EditValue & "' and Periodo='" & seEjercicio.Text & Format(sePeriodo.EditValue, "00") & "' and CuentaBancaria='" & lueCuenta.GetColumnValue("CuentaBancaria") & "' and CuentaContable='" & lueCuenta.GetColumnValue("CuentaContable1") & "' and Fecha=" & Format(CDate(aFields(0)), "#MM/dd/yyyy#") & " and Descripcion='" & Descri & "' and Importe=" & Monto.ToString & " and Operacion='" & Opera & "' and Hora='" & aFields(4) & "' and Referencia='" & aFields(5) & "'").Tables(0).Rows.Count > 0 Then
-                Continue For
-            End If
-            If Fecha <> aFields(0) Then
-                InsertSaveText()
-                Fecha = aFields(0)
-            End If
-            If Monto < 0 Then
-                PosKey1 = "50"
-                PosKey2 = "40"
-            End If
-            dtProcess.Rows.Add()
-            iPos1 = dtProcess.Rows.Count - 1
-            dtProcess.Rows(iPos1).Item(0) = lueSociedad.EditValue
-            dtProcess.Rows(iPos1).Item(1) = PosKey1
-            dtProcess.Rows(iPos1).Item(2) = Cuenta1
-            dtProcess.Rows(iPos1).Item(3) = Format(Math.Abs(Math.Round(Monto, 2)), "#0.00")
-            dtProcess.Rows(iPos1).Item(4) = Moneda
-            dtProcess.Rows(iPos1).Item(5) = Glosa
-            dtProcess.Rows(iPos1).Item(6) = Format(sePeriodo.EditValue, "00")
-            dtProcess.Rows(iPos1).Item(7) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(8) = Opera
-            dtProcess.Rows(iPos1).Item(9) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(10) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(11) = "SB"
-            dtProcess.Rows.Add()
-            iPos1 = dtProcess.Rows.Count - 1
-            dtProcess.Rows(iPos1).Item(0) = lueSociedad.EditValue
-            dtProcess.Rows(iPos1).Item(1) = PosKey2
-            dtProcess.Rows(iPos1).Item(2) = Cuenta2
-            dtProcess.Rows(iPos1).Item(3) = Format(Math.Abs(Math.Round(Monto, 2)), "#0.00")
-            dtProcess.Rows(iPos1).Item(4) = Moneda
-            dtProcess.Rows(iPos1).Item(5) = Glosa
-            dtProcess.Rows(iPos1).Item(6) = Format(sePeriodo.EditValue, "00")
-            dtProcess.Rows(iPos1).Item(7) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(8) = Opera
-            dtProcess.Rows(iPos1).Item(9) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(10) = Format(Fecha, "dd.MM.yyyy")
-            dtProcess.Rows(iPos1).Item(11) = "SB"
+                Opera = aFields(3) 'dtSource.Rows(i).Item(6)
+                If ExecuteAccessQuery("select * from EstadoCuentaBanco where Sociedad='" & lueSociedad.EditValue & "' and Periodo='" & seEjercicio.Text & Format(sePeriodo.EditValue, "00") & "' and CuentaBancaria='" & lueCuenta.GetColumnValue("CuentaBancaria") & "' and CuentaContable='" & lueCuenta.GetColumnValue("CuentaContable1") & "' and Fecha=" & Format(CDate(aFields(0)), "#MM/dd/yyyy#") & " and Descripcion='" & Descri & "' and Importe=" & Monto.ToString & " and Operacion='" & Opera & "' and Hora='" & aFields(4) & "' and Referencia='" & aFields(5) & "'").Tables(0).Rows.Count > 0 Then
+                    Continue For
+                End If
+                If Fecha <> aFields(0) Then
+                    InsertSaveText()
+                    Fecha = aFields(0)
+                End If
+                If Monto < 0 Then
+                    PosKey1 = "50"
+                    PosKey2 = "40"
+                End If
+                dtProcess.Rows.Add()
+                iPos1 = dtProcess.Rows.Count - 1
+                dtProcess.Rows(iPos1).Item(0) = lueSociedad.EditValue
+                dtProcess.Rows(iPos1).Item(1) = PosKey1
+                dtProcess.Rows(iPos1).Item(2) = Cuenta1
+                dtProcess.Rows(iPos1).Item(3) = Format(Math.Abs(Math.Round(Monto, 2)), "#0.00")
+                dtProcess.Rows(iPos1).Item(4) = Moneda
+                dtProcess.Rows(iPos1).Item(5) = Glosa
+                dtProcess.Rows(iPos1).Item(6) = Format(sePeriodo.EditValue, "00")
+                dtProcess.Rows(iPos1).Item(7) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(8) = Opera
+                dtProcess.Rows(iPos1).Item(9) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(10) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(11) = "SB"
+                dtProcess.Rows.Add()
+                iPos1 = dtProcess.Rows.Count - 1
+                dtProcess.Rows(iPos1).Item(0) = lueSociedad.EditValue
+                dtProcess.Rows(iPos1).Item(1) = PosKey2
+                dtProcess.Rows(iPos1).Item(2) = Cuenta2
+                dtProcess.Rows(iPos1).Item(3) = Format(Math.Abs(Math.Round(Monto, 2)), "#0.00")
+                dtProcess.Rows(iPos1).Item(4) = Moneda
+                dtProcess.Rows(iPos1).Item(5) = Glosa
+                dtProcess.Rows(iPos1).Item(6) = Format(sePeriodo.EditValue, "00")
+                dtProcess.Rows(iPos1).Item(7) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(8) = Opera
+                dtProcess.Rows(iPos1).Item(9) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(10) = Format(Fecha, "dd.MM.yyyy")
+                dtProcess.Rows(iPos1).Item(11) = "SB"
 
-            dtAccStat.Rows.Add(lueSociedad.EditValue, seEjercicio.Text & Format(sePeriodo.EditValue, "00"), lueCuenta.GetColumnValue("CuentaBancaria"), lueCuenta.GetColumnValue("CuentaContable1"), Fecha, Descri, Monto.ToString, Opera, aFields(4), aFields(5), UserApp, Now)
+                dtAccStat.Rows.Add(lueSociedad.EditValue, seEjercicio.Text & Format(sePeriodo.EditValue, "00"), lueCuenta.GetColumnValue("CuentaBancaria"), lueCuenta.GetColumnValue("CuentaContable1"), Fecha, Descri, Monto.ToString, Opera, aFields(4), aFields(5), UserApp, Now)
+            Catch ex As Exception
+
+            End Try
         Next
         InsertSaveText()
         Return bResult
