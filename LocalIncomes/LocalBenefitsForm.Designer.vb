@@ -25,18 +25,20 @@ Partial Class LocalBenefitsForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LocalBenefitsForm))
-        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiSincronize = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiNew = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiEdit = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiShowAll = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
@@ -54,6 +56,7 @@ Partial Class LocalBenefitsForm
         Me.bbiLetras = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem4 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
@@ -62,16 +65,23 @@ Partial Class LocalBenefitsForm
         Me.RepositoryItemToggleSwitch1 = New DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.teID = New DevExpress.XtraEditors.TextEdit()
         Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit()
         Me.DateEdit2 = New DevExpress.XtraEditors.DateEdit()
+        Me.ComboBoxEdit2 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit()
+        Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit()
         Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.bbiSave = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,17 +95,23 @@ Partial Class LocalBenefitsForm
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.LayoutControl1.SuspendLayout()
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.teID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit2.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ComboBoxEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GridControl1
@@ -113,6 +129,7 @@ Partial Class LocalBenefitsForm
         '
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         '
         'bmActions
@@ -123,8 +140,8 @@ Partial Class LocalBenefitsForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiSincronize, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiShowAll})
-        Me.bmActions.MaxItemId = 30
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiSincronize, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiShowAll, Me.bbiNew, Me.bbiEdit, Me.BarButtonItem2, Me.bbiSave})
+        Me.bmActions.MaxItemId = 34
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1, Me.RepositoryItemToggleSwitch1})
         '
         'bar5
@@ -147,7 +164,7 @@ Partial Class LocalBenefitsForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSincronize, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiShowAll, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSincronize, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiNew, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSave, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiShowAll, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -161,6 +178,21 @@ Partial Class LocalBenefitsForm
         Me.bbiSincronize.ImageOptions.LargeImageIndex = 7
         Me.bbiSincronize.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
         Me.bbiSincronize.Name = "bbiSincronize"
+        Me.bbiSincronize.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'bbiNew
+        '
+        Me.bbiNew.Caption = "New"
+        Me.bbiNew.Id = 30
+        Me.bbiNew.ImageOptions.Image = CType(resources.GetObject("bbiNew.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiNew.Name = "bbiNew"
+        '
+        'bbiEdit
+        '
+        Me.bbiEdit.Caption = "Edit"
+        Me.bbiEdit.Id = 31
+        Me.bbiEdit.ImageOptions.Image = CType(resources.GetObject("bbiEdit.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiEdit.Name = "bbiEdit"
         '
         'bbiShowAll
         '
@@ -285,6 +317,12 @@ Partial Class LocalBenefitsForm
         Me.BarButtonItem4.Id = 26
         Me.BarButtonItem4.Name = "BarButtonItem4"
         '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "BarButtonItem2"
+        Me.BarButtonItem2.Id = 32
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
         'rpiProceso
         '
         Me.rpiProceso.Name = "rpiProceso"
@@ -340,10 +378,13 @@ Partial Class LocalBenefitsForm
         '
         'LayoutControl1
         '
-        Me.LayoutControl1.Controls.Add(Me.TextEdit1)
+        Me.LayoutControl1.Controls.Add(Me.teID)
         Me.LayoutControl1.Controls.Add(Me.DateEdit1)
         Me.LayoutControl1.Controls.Add(Me.DateEdit2)
+        Me.LayoutControl1.Controls.Add(Me.ComboBoxEdit2)
         Me.LayoutControl1.Controls.Add(Me.ComboBoxEdit1)
+        Me.LayoutControl1.Controls.Add(Me.TextEdit2)
+        Me.LayoutControl1.Controls.Add(Me.TextEdit3)
         Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.LayoutControl1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControl1.Name = "LayoutControl1"
@@ -353,19 +394,21 @@ Partial Class LocalBenefitsForm
         Me.LayoutControl1.TabIndex = 0
         Me.LayoutControl1.Text = "LayoutControl1"
         '
-        'TextEdit1
+        'teID
         '
-        Me.TextEdit1.Location = New System.Drawing.Point(101, 12)
-        Me.TextEdit1.MenuManager = Me.bmActions
-        Me.TextEdit1.Name = "TextEdit1"
-        Me.TextEdit1.Size = New System.Drawing.Size(145, 20)
-        Me.TextEdit1.StyleController = Me.LayoutControl1
-        Me.TextEdit1.TabIndex = 4
+        Me.teID.Location = New System.Drawing.Point(101, 12)
+        Me.teID.MenuManager = Me.bmActions
+        Me.teID.Name = "teID"
+        Me.teID.Properties.ReadOnly = True
+        Me.teID.Size = New System.Drawing.Size(145, 20)
+        Me.teID.StyleController = Me.LayoutControl1
+        Me.teID.TabIndex = 4
+        Me.teID.Tag = "ID"
         '
         'DateEdit1
         '
         Me.DateEdit1.EditValue = Nothing
-        Me.DateEdit1.Location = New System.Drawing.Point(339, 76)
+        Me.DateEdit1.Location = New System.Drawing.Point(339, 39)
         Me.DateEdit1.MenuManager = Me.bmActions
         Me.DateEdit1.Name = "DateEdit1"
         Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -373,11 +416,12 @@ Partial Class LocalBenefitsForm
         Me.DateEdit1.Size = New System.Drawing.Size(145, 20)
         Me.DateEdit1.StyleController = Me.LayoutControl1
         Me.DateEdit1.TabIndex = 6
+        Me.DateEdit1.Tag = "Vigencia_Desde"
         '
         'DateEdit2
         '
         Me.DateEdit2.EditValue = Nothing
-        Me.DateEdit2.Location = New System.Drawing.Point(577, 76)
+        Me.DateEdit2.Location = New System.Drawing.Point(577, 39)
         Me.DateEdit2.MenuManager = Me.bmActions
         Me.DateEdit2.Name = "DateEdit2"
         Me.DateEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
@@ -385,6 +429,17 @@ Partial Class LocalBenefitsForm
         Me.DateEdit2.Size = New System.Drawing.Size(145, 20)
         Me.DateEdit2.StyleController = Me.LayoutControl1
         Me.DateEdit2.TabIndex = 7
+        Me.DateEdit2.Tag = "Vigencia_Hasta"
+        '
+        'ComboBoxEdit2
+        '
+        Me.ComboBoxEdit2.Location = New System.Drawing.Point(577, 12)
+        Me.ComboBoxEdit2.Name = "ComboBoxEdit2"
+        Me.ComboBoxEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.ComboBoxEdit2.Properties.Items.AddRange(New Object() {"Importación", "Exportación"})
+        Me.ComboBoxEdit2.Size = New System.Drawing.Size(145, 20)
+        Me.ComboBoxEdit2.StyleController = Me.LayoutControl1
+        Me.ComboBoxEdit2.TabIndex = 8
         '
         'ComboBoxEdit1
         '
@@ -397,37 +452,57 @@ Partial Class LocalBenefitsForm
         Me.ComboBoxEdit1.StyleController = Me.LayoutControl1
         Me.ComboBoxEdit1.TabIndex = 8
         '
+        'TextEdit2
+        '
+        Me.TextEdit2.Location = New System.Drawing.Point(815, 12)
+        Me.TextEdit2.MenuManager = Me.bmActions
+        Me.TextEdit2.Name = "TextEdit2"
+        Me.TextEdit2.Size = New System.Drawing.Size(147, 20)
+        Me.TextEdit2.StyleController = Me.LayoutControl1
+        Me.TextEdit2.TabIndex = 9
+        Me.TextEdit2.Tag = "RazonSocial"
+        '
+        'TextEdit3
+        '
+        Me.TextEdit3.Location = New System.Drawing.Point(101, 39)
+        Me.TextEdit3.MenuManager = Me.bmActions
+        Me.TextEdit3.Name = "TextEdit3"
+        Me.TextEdit3.Size = New System.Drawing.Size(145, 20)
+        Me.TextEdit3.StyleController = Me.LayoutControl1
+        Me.TextEdit3.TabIndex = 10
+        Me.TextEdit3.Tag = "RUC"
+        '
         'Root
         '
         Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
         Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4})
+        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 25.0R
-        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 25.0R
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 25.0R
-        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition4.Width = 25.0R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3, ColumnDefinition4})
-        RowDefinition1.Height = 50.0R
-        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        RowDefinition2.Height = 50.0R
-        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2})
+        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition5.Width = 25.0R
+        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition6.Width = 25.0R
+        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition7.Width = 25.0R
+        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition8.Width = 25.0R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition5, ColumnDefinition6, ColumnDefinition7, ColumnDefinition8})
+        RowDefinition3.Height = 27.0R
+        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition4.Height = 27.0R
+        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition3, RowDefinition4})
         Me.Root.Size = New System.Drawing.Size(974, 149)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem1
         '
-        Me.LayoutControlItem1.Control = Me.TextEdit1
+        Me.LayoutControlItem1.Control = Me.teID
         Me.LayoutControlItem1.CustomizationFormText = "ID"
         Me.LayoutControlItem1.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(238, 64)
+        Me.LayoutControlItem1.Size = New System.Drawing.Size(238, 27)
         Me.LayoutControlItem1.Text = "ID"
         Me.LayoutControlItem1.TextSize = New System.Drawing.Size(86, 13)
         '
@@ -437,36 +512,73 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem2.Location = New System.Drawing.Point(238, 0)
         Me.LayoutControlItem2.Name = "LayoutControlItem2"
         Me.LayoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(238, 64)
+        Me.LayoutControlItem2.Size = New System.Drawing.Size(238, 27)
         Me.LayoutControlItem2.Text = "Tipo de Embarque"
         Me.LayoutControlItem2.TextSize = New System.Drawing.Size(86, 13)
         '
         'LayoutControlItem3
         '
         Me.LayoutControlItem3.Control = Me.DateEdit1
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(238, 64)
+        Me.LayoutControlItem3.Location = New System.Drawing.Point(238, 27)
         Me.LayoutControlItem3.Name = "LayoutControlItem3"
         Me.LayoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem3.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(238, 65)
+        Me.LayoutControlItem3.Size = New System.Drawing.Size(238, 102)
         Me.LayoutControlItem3.Text = "Vigente Desde"
         Me.LayoutControlItem3.TextSize = New System.Drawing.Size(86, 13)
         '
         'LayoutControlItem4
         '
         Me.LayoutControlItem4.Control = Me.DateEdit2
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(476, 64)
+        Me.LayoutControlItem4.Location = New System.Drawing.Point(476, 27)
         Me.LayoutControlItem4.Name = "LayoutControlItem4"
         Me.LayoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem4.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(238, 65)
+        Me.LayoutControlItem4.Size = New System.Drawing.Size(238, 102)
         Me.LayoutControlItem4.Text = "Vigente Hasta"
         Me.LayoutControlItem4.TextSize = New System.Drawing.Size(86, 13)
+        '
+        'LayoutControlItem5
+        '
+        Me.LayoutControlItem5.Control = Me.ComboBoxEdit2
+        Me.LayoutControlItem5.Location = New System.Drawing.Point(476, 0)
+        Me.LayoutControlItem5.Name = "LayoutControlItem5"
+        Me.LayoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 2
+        Me.LayoutControlItem5.Size = New System.Drawing.Size(238, 27)
+        Me.LayoutControlItem5.Text = "Tipo de Baneficio"
+        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(86, 13)
+        '
+        'LayoutControlItem6
+        '
+        Me.LayoutControlItem6.Control = Me.TextEdit2
+        Me.LayoutControlItem6.Location = New System.Drawing.Point(714, 0)
+        Me.LayoutControlItem6.Name = "LayoutControlItem6"
+        Me.LayoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 3
+        Me.LayoutControlItem6.Size = New System.Drawing.Size(240, 27)
+        Me.LayoutControlItem6.Text = "Razón Social"
+        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(86, 13)
+        '
+        'LayoutControlItem7
+        '
+        Me.LayoutControlItem7.Control = Me.TextEdit3
+        Me.LayoutControlItem7.Location = New System.Drawing.Point(0, 27)
+        Me.LayoutControlItem7.Name = "LayoutControlItem7"
+        Me.LayoutControlItem7.OptionsTableLayoutItem.RowIndex = 1
+        Me.LayoutControlItem7.Size = New System.Drawing.Size(238, 102)
+        Me.LayoutControlItem7.Text = "RUC"
+        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(86, 13)
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         Me.OpenFileDialog1.Multiselect = True
+        '
+        'bbiSave
+        '
+        Me.bbiSave.Caption = "Save"
+        Me.bbiSave.Id = 33
+        Me.bbiSave.ImageOptions.Image = CType(resources.GetObject("bbiSave.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSave.Name = "bbiSave"
         '
         'LocalBenefitsForm
         '
@@ -493,17 +605,23 @@ Partial Class LocalBenefitsForm
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.teID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit2.Properties.CalendarTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ComboBoxEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -541,7 +659,7 @@ Partial Class LocalBenefitsForm
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
     Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents teID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
     Friend WithEvents DateEdit2 As DevExpress.XtraEditors.DateEdit
     Friend WithEvents ComboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
@@ -549,4 +667,14 @@ Partial Class LocalBenefitsForm
     Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
     Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents bbiNew As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiEdit As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ComboBoxEdit2 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents TextEdit2 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
+    Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
 End Class

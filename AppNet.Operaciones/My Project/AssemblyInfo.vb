@@ -8,12 +8,12 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("T-CHECK (Cloud)")> 
+<Assembly: AssemblyTitle("T-CHECK")>
 <Assembly: AssemblyDescription("Cold Treatment Check Control")> 
-<Assembly: AssemblyCompany("Hapag Lloyd Perú")> 
-<Assembly: AssemblyProduct("T-CHECK (Cloud)")> 
-<Assembly: AssemblyCopyright("Copyright ©  2020")> 
-<Assembly: AssemblyTrademark("T-CHECK (Cloud)")> 
+<Assembly: AssemblyCompany("Hapag Lloyd Perú")>
+<Assembly: AssemblyProduct("T-CHECK")>
+<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyTrademark("T-CHECK")>
 
 <Assembly: ComVisible(False)>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("2.0.2.8")>
-<Assembly: AssemblyFileVersion("2.0.2.8")>
+<Assembly: AssemblyVersion("2.0.3.1")>
+<Assembly: AssemblyFileVersion("2.0.3.1")>

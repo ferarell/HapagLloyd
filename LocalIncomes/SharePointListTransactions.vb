@@ -101,7 +101,18 @@ Public Class SharePointListTransactions
         For Each Item As ListItem In oItemsList
             dtItems.Rows.Add()
             For c = 0 To dtItems.Columns.Count - 1
-                dtItems.Rows(dtItems.Rows.Count - 1)(c) = Item(FieldsList(c)(0))
+                Try
+                    If Not Item(FieldsList(c)(0)) Is Nothing Then
+                        If Item(FieldsList(c)(0)).ToString.Contains("Lookup") Then
+                            dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue
+                        Else
+                            dtItems.Rows(dtItems.Rows.Count - 1)(c) = Item(FieldsList(c)(0))
+                        End If
+                    End If
+                Catch ex As Exception
+
+                End Try
+
             Next
         Next
         Return dtItems

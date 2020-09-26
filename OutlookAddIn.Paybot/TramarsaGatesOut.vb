@@ -497,7 +497,11 @@ Public Class TramarsaGatesOut
                 Else
                     sFindTxt = "Booking Confirmation"
                 End If
-                oBooking.VersionDocumento = OnlyNumbers(Mid(GetRowCellValueByPosition(dtLines, sFindTxt, 0, 0, ""), InStrRev(GetRowCellValueByPosition(dtLines, sFindTxt, 0, 0, ""), "-"), 6))
+                If GetRowCellValueByPosition(dtLines, sFindTxt, 0, 0, "").Contains("ORIGINAL") Then
+                    oBooking.VersionDocumento = 0
+                Else
+                    oBooking.VersionDocumento = OnlyNumbers(Mid(GetRowCellValueByPosition(dtLines, sFindTxt, 0, 0, ""), InStrRev(GetRowCellValueByPosition(dtLines, sFindTxt, 0, 0, ""), "-"), 6))
+                End If
             End If
         Catch ex As Exception
             _BookingListErr.AppendText(sField & ex.Message & "<br>")
@@ -514,10 +518,10 @@ Public Class TramarsaGatesOut
             SendErrorMessage(oMailItems, "GATE OUT", _BookingListErr.Text, aAttachments)
         End If
 
-        If oBooking.Estado = "0" Then
+        'If oBooking.Estado = "0" Then
 
-            'Contenedor List
-            sListName = "[Container List] (BK:" & oBooking.Numero.ToString & ") "
+        'Contenedor List
+        sListName = "[Container List] (BK:" & oBooking.Numero.ToString & ") "
             Try
                 Dim iContenedorIni, iContenedorFin As Integer
                 sFindTxt = IIf(sIdioma = "ES", IIf(oBooking.CondicionExportacion.Contains("LCL /"), "Su Referencia", "Resumen"), IIf(oBooking.CondicionExportacion.Contains("LCL /"), "Your Reference", "Summary"))
@@ -650,7 +654,7 @@ Public Class TramarsaGatesOut
             Catch ex As Exception
                 _ContainerListErr.AppendText(sField & ex.Message & "<br>")
             End Try
-        End If
+        'End If
         If _ContainerListErr.TextLength > 0 Then
             oLogFileGenerate.TextFileUpdate("GATE OUT", _ContainerListErr.Text)
             SendErrorMessage(oMailItems, "GATE OUT", _ContainerListErr.Text, aAttachments)

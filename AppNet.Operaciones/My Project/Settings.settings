@@ -75,10 +75,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="SharePoint_User" Type="System.String" Scope="User">
-      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
+      <Value Profile="(Default)">paybotperu@hlag.com</Value>
     </Setting>
     <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">hapag20192</Value>
+      <Value Profile="(Default)">hapag2019</Value>
     </Setting>
     <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>

@@ -13,19 +13,49 @@ Public Class LocalBenefitsForm
         oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub LocalBenefitsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
 
     End Sub
 
-    Private Sub VesselScheduleSincronizeForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+    Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Try
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             oSharePointTransactions.SharePointList = "Local Benefits"
             oSharePointTransactions.FieldsList.Clear()
             oSharePointTransactions.FieldsList.Add({"ID"})
             oSharePointTransactions.FieldsList.Add({"TipoEmbarque"})
+            oSharePointTransactions.FieldsList.Add({"TipoBeneficio"})
+            oSharePointTransactions.FieldsList.Add({"RazonSocial"})
+            oSharePointTransactions.FieldsList.Add({"RUC"})
             oSharePointTransactions.FieldsList.Add({"Vigencia_Desde"})
             oSharePointTransactions.FieldsList.Add({"Vigencia_Hasta"})
+            oSharePointTransactions.FieldsList.Add({"SalesCoordinator"})
+            oSharePointTransactions.FieldsList.Add({"SalesExecution"})
+            oSharePointTransactions.FieldsList.Add({"TipoConcesion"})
+            oSharePointTransactions.FieldsList.Add({"CondicionBL"})
+            oSharePointTransactions.FieldsList.Add({"MBL_Rol"})
+            oSharePointTransactions.FieldsList.Add({"MBL_RUC"})
+            oSharePointTransactions.FieldsList.Add({"MBL_RazonSocial"})
+            oSharePointTransactions.FieldsList.Add({"HBL_Rol"})
+            oSharePointTransactions.FieldsList.Add({"HBL_RUC"})
+            oSharePointTransactions.FieldsList.Add({"HBL_RazonSocial"})
+            oSharePointTransactions.FieldsList.Add({"BillOfLading"})
+            oSharePointTransactions.FieldsList.Add({"Booking"})
+            oSharePointTransactions.FieldsList.Add({"Importe_TDE"})
+            oSharePointTransactions.FieldsList.Add({"Importe_TDI"})
+            oSharePointTransactions.FieldsList.Add({"Importe_GDCE"})
+            oSharePointTransactions.FieldsList.Add({"Importe_GDCI"})
+            oSharePointTransactions.FieldsList.Add({"Importe_SACE"})
+            oSharePointTransactions.FieldsList.Add({"Importe_SACI"})
+            oSharePointTransactions.FieldsList.Add({"Importe_SACCE"})
+            oSharePointTransactions.FieldsList.Add({"Importe_SACCI"})
+            oSharePointTransactions.FieldsList.Add({"Importe_GateIn"})
+            oSharePointTransactions.FieldsList.Add({"Importe_GateOut"})
+            oSharePointTransactions.FieldsList.Add({"Rebate_Gates"})
+            oSharePointTransactions.FieldsList.Add({"Rebate_VistoBueno"})
+            oSharePointTransactions.FieldsList.Add({"NumeroConcesion"})
+
             SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits")
             dtList = oSharePointTransactions.GetItems()
             GridControl1.DataSource = dtList
@@ -160,4 +190,24 @@ Public Class LocalBenefitsForm
         Close()
     End Sub
 
+    Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
+        SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
+    End Sub
+
+    Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+        Dim oControls As Control
+        Dim oRow As DataRow = GridView1.GetFocusedDataRow
+        For Each oControls In LayoutControl1.Controls
+            If oControls.Tag Is Nothing Then
+                Continue For
+            End If
+            If oRow.Table.Columns.Contains(oControls.Tag) Then
+                oControls.Text = oRow(oControls.Tag)
+            End If
+        Next
+    End Sub
+
+    Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
+
+    End Sub
 End Class
