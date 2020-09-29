@@ -19,6 +19,7 @@ Partial Class GraphicTrendWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GraphicTrendWcfForm))
         Dim SwiftPlotDiagram1 As DevExpress.XtraCharts.SwiftPlotDiagram = New DevExpress.XtraCharts.SwiftPlotDiagram()
         Dim ConstantLine1 As DevExpress.XtraCharts.ConstantLine = New DevExpress.XtraCharts.ConstantLine()
@@ -37,8 +38,8 @@ Partial Class GraphicTrendWcfForm
         Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.ccTrends = New DevExpress.XtraCharts.ChartControl()
-        Me.VendorReadingsBindingSource = New System.Windows.Forms.BindingSource()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.VendorReadingsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.beiShowSetPoint = New DevExpress.XtraBars.BarEditItem()
         Me.RepositoryItemToggleSwitch1 = New DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch()
@@ -87,32 +88,35 @@ Partial Class GraphicTrendWcfForm
         '
         'SplitContainerControl1
         '
-        Me.SplitContainerControl1.AllowTouchScroll = True
         Me.SplitContainerControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.SplitContainerControl1.CaptionImage = CType(resources.GetObject("SplitContainerControl1.CaptionImage"), System.Drawing.Image)
+        Me.SplitContainerControl1.CaptionImageOptions.Image = CType(resources.GetObject("SplitContainerControl1.CaptionImageOptions.Image"), System.Drawing.Image)
         Me.SplitContainerControl1.Collapsed = True
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.ccTrends)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(853, 442)
-        Me.SplitContainerControl1.SplitterPosition = 932
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(853, 430)
+        Me.SplitContainerControl1.SplitterPosition = 844
         Me.SplitContainerControl1.TabIndex = 0
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
         '
         'ccTrends
         '
         Me.ccTrends.DataSource = Me.VendorReadingsBindingSource
+        SwiftPlotDiagram1.AxisX.CrosshairAxisLabelOptions.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.[False]
+        SwiftPlotDiagram1.AxisX.CrosshairAxisLabelOptions.Visibility = DevExpress.Utils.DefaultBoolean.[True]
+        SwiftPlotDiagram1.AxisX.DateTimeScaleOptions.AutoGrid = False
+        SwiftPlotDiagram1.AxisX.DateTimeScaleOptions.GridAlignment = DevExpress.XtraCharts.DateTimeGridAlignment.Day
         SwiftPlotDiagram1.AxisX.GridLines.MinorVisible = True
         SwiftPlotDiagram1.AxisX.GridLines.Visible = True
-        SwiftPlotDiagram1.AxisX.Range.AlwaysShowZeroLevel = True
-        SwiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = True
-        SwiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = True
+        SwiftPlotDiagram1.AxisX.MinorCount = 1
+        SwiftPlotDiagram1.AxisX.Tickmarks.MinorVisible = False
+        SwiftPlotDiagram1.AxisX.Visibility = DevExpress.Utils.DefaultBoolean.[True]
         SwiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1"
         ConstantLine1.AxisValueSerializable = "1.67"
         ConstantLine1.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -131,15 +135,17 @@ Partial Class GraphicTrendWcfForm
         ConstantLine3.LineStyle.Thickness = 3
         ConstantLine3.Name = "Setpoint"
         SwiftPlotDiagram1.AxisY.ConstantLines.AddRange(New DevExpress.XtraCharts.ConstantLine() {ConstantLine1, ConstantLine2, ConstantLine3})
-        SwiftPlotDiagram1.AxisY.GridSpacing = 0.5R
-        SwiftPlotDiagram1.AxisY.GridSpacingAuto = False
-        SwiftPlotDiagram1.AxisY.Range.AlwaysShowZeroLevel = True
-        SwiftPlotDiagram1.AxisY.Range.Auto = False
-        SwiftPlotDiagram1.AxisY.Range.MaxValueSerializable = "5"
-        SwiftPlotDiagram1.AxisY.Range.MinValueSerializable = "-5"
-        SwiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
-        SwiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = True
+        SwiftPlotDiagram1.AxisY.DateTimeScaleOptions.AutoGrid = False
+        SwiftPlotDiagram1.AxisY.DateTimeScaleOptions.GridSpacing = 0.5R
+        SwiftPlotDiagram1.AxisY.NumericScaleOptions.AutoGrid = False
+        SwiftPlotDiagram1.AxisY.NumericScaleOptions.GridSpacing = 0.5R
         SwiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1"
+        SwiftPlotDiagram1.AxisY.VisualRange.Auto = False
+        SwiftPlotDiagram1.AxisY.VisualRange.MaxValueSerializable = "5"
+        SwiftPlotDiagram1.AxisY.VisualRange.MinValueSerializable = "-5"
+        SwiftPlotDiagram1.AxisY.WholeRange.Auto = False
+        SwiftPlotDiagram1.AxisY.WholeRange.MaxValueSerializable = "5"
+        SwiftPlotDiagram1.AxisY.WholeRange.MinValueSerializable = "-5"
         SwiftPlotDiagram1.DefaultPane.BackColor = System.Drawing.Color.AliceBlue
         SwiftPlotDiagram1.DefaultPane.FillStyle.FillMode = DevExpress.XtraCharts.FillMode.Solid
         SwiftPlotDiagram1.EnableAxisXZooming = True
@@ -147,6 +153,7 @@ Partial Class GraphicTrendWcfForm
         Me.ccTrends.Diagram = SwiftPlotDiagram1
         Me.ccTrends.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ccTrends.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.Center
+        Me.ccTrends.Legend.Name = "Default Legend"
         Me.ccTrends.Location = New System.Drawing.Point(0, 0)
         Me.ccTrends.Margin = New System.Windows.Forms.Padding(2)
         Me.ccTrends.Name = "ccTrends"
@@ -171,7 +178,7 @@ Partial Class GraphicTrendWcfForm
         Me.ccTrends.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1, Series2, Series3}
         SwiftPlotSeriesView4.LineStyle.Thickness = 2
         Me.ccTrends.SeriesTemplate.View = SwiftPlotSeriesView4
-        Me.ccTrends.Size = New System.Drawing.Size(841, 434)
+        Me.ccTrends.Size = New System.Drawing.Size(840, 422)
         Me.ccTrends.TabIndex = 4
         ChartTitle1.Dock = DevExpress.XtraCharts.ChartTitleDockStyle.Bottom
         ChartTitle1.Text = "Date"
@@ -242,20 +249,20 @@ Partial Class GraphicTrendWcfForm
         'bbiExport
         '
         Me.bbiExport.Caption = "&Export"
-        Me.bbiExport.Glyph = CType(resources.GetObject("bbiExport.Glyph"), System.Drawing.Image)
         Me.bbiExport.Id = 21
-        Me.bbiExport.ImageIndex = 29
+        Me.bbiExport.ImageOptions.Image = CType(resources.GetObject("bbiExport.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiExport.ImageOptions.ImageIndex = 29
         Me.bbiExport.Name = "bbiExport"
         Me.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "&Close"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 41
-        Me.bbiClose.ImageIndex = 27
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiClose.ImageOptions.ImageIndex = 27
+        Me.bbiClose.ImageOptions.LargeImageIndex = 0
         Me.bbiClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiClose.LargeImageIndex = 0
         Me.bbiClose.Name = "bbiClose"
         Me.bbiClose.ShortcutKeyDisplayString = "Alt+C"
         '
@@ -264,28 +271,32 @@ Partial Class GraphicTrendWcfForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(853, 41)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(853, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 483)
-        Me.BarDockControl2.Size = New System.Drawing.Size(853, 27)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 477)
+        Me.BarDockControl2.Manager = Me.bmActions
+        Me.BarDockControl2.Size = New System.Drawing.Size(853, 33)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 442)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Manager = Me.bmActions
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 430)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(853, 41)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 442)
+        Me.BarDockControl4.Location = New System.Drawing.Point(853, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 430)
         '
         'BarButtonItem1
         '
@@ -297,7 +308,7 @@ Partial Class GraphicTrendWcfForm
         '
         Me.bsiVistas.Caption = "Vistas"
         Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageIndex = 20
+        Me.bsiVistas.ImageOptions.ImageIndex = 20
         Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
         Me.bsiVistas.Name = "bsiVistas"
         '
@@ -305,14 +316,14 @@ Partial Class GraphicTrendWcfForm
         '
         Me.bbiVistaGrilla.Caption = "Grilla"
         Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageIndex = 23
+        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
         Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
         '
         'bbiTarjeta
         '
         Me.bbiTarjeta.Caption = "Tarjeta"
         Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageIndex = 21
+        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
         Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiContrato
@@ -380,7 +391,7 @@ Partial Class GraphicTrendWcfForm
         Me.RepositoryItemComboBox1.Items.AddRange(New Object() {"Nacionales", "No Domiciliados"})
         Me.RepositoryItemComboBox1.Name = "RepositoryItemComboBox1"
         '
-        'GraphicTrendForm
+        'GraphicTrendWcfForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -393,7 +404,7 @@ Partial Class GraphicTrendWcfForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimizeBox = False
-        Me.Name = "GraphicTrendForm"
+        Me.Name = "GraphicTrendWcfForm"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
@@ -418,6 +429,7 @@ Partial Class GraphicTrendWcfForm
         CType(Me.RepositoryItemRadioGroup1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SplitContainerControl1 As DevExpress.XtraEditors.SplitContainerControl

@@ -55,7 +55,7 @@ Public Class GraphicTrendWcfForm
         constantLine.Title.Visible = True
         constantLine.Title.Text = "GAP " & LineText
         constantLine.Title.TextColor = Color.Red
-        constantLine.Title.Antialiasing = False
+        'constantLine.Title.Antialiasing = False
         constantLine.Title.Font = New Font("Tahoma", 7.5)
         constantLine.Title.ShowBelowLine = True
         constantLine.Title.Alignment = ConstantLineTitleAlignment.Near
