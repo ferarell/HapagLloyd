@@ -685,7 +685,9 @@ Public Class ColdTreatmentWcfForm
         Dim bResult As Boolean = True
         Dim dtProtocol As New DataTable
         bsiRemarks1.Caption = "The maximum temperature in this file is: " & DataMaxTemp.ToString
-        'dtProtocol = oAppService.ExecuteSQL("select * from tck.Protocol where [SERVICE] = '" & Service & "' AND [PORT2] = '" & teTSP.Text & "' AND " & " [PORT4] = '" & tePOD.Text & "'").Tables(0)
+        'If dtProtocolSP.Select("Service = '" & Service & "' AND Port2 = '" & teTSP.Text & "' AND " & " Port4 = '" & tePOD.Text & "'").Length > 0 Then
+
+        'End If
         If dtProtocolSP.Select("Service = '" & Service & "' AND Port2 = '" & teTSP.Text & "' AND " & " Port4 = '" & tePOD.Text & "'").Length > 0 Then
             dtProtocol = dtProtocolSP.Select("Service = '" & Service & "' AND Port2 = '" & teTSP.Text & "' AND " & " Port4 = '" & tePOD.Text & "'").CopyToDataTable
         End If

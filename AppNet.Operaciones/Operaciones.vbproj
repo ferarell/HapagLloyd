@@ -37,7 +37,7 @@
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>2.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -84,13 +84,13 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>t-check_key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>T-CHECK.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C0A353FD39C80E257E466E1B8B963278A0092CAB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6603AF6F32BB4C1AC3146E1D0519D3717B3198F5</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -102,7 +102,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Operaciones_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>HapagLloydCert.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -473,6 +473,9 @@
     <None Include="dsMain.xss">
       <DependentUpon>dsMain.xsd</DependentUpon>
     </None>
+    <EmbeddedResource Include="HapagLloydCert.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -486,9 +489,7 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EmbeddedResource Include="t-check_key.snk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <None Include="T-CHECK.snk" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />

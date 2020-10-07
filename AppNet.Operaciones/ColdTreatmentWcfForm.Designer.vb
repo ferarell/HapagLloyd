@@ -19,6 +19,7 @@ Partial Class ColdTreatmentWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode3 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
@@ -72,14 +73,14 @@ Partial Class ColdTreatmentWcfForm
         Me.CardView5 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.rgPort = New DevExpress.XtraEditors.RadioGroup()
         Me.rgType = New DevExpress.XtraEditors.RadioGroup()
         Me.rgMode = New DevExpress.XtraEditors.RadioGroup()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.bsiRemarks1 = New DevExpress.XtraBars.BarStaticItem()
         Me.bsiRemarks2 = New DevExpress.XtraBars.BarStaticItem()
@@ -93,7 +94,7 @@ Partial Class ColdTreatmentWcfForm
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList()
+        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList(Me.components)
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiVistas = New DevExpress.XtraBars.BarSubItem()
         Me.bbiVistaGrilla = New DevExpress.XtraBars.BarButtonItem()
@@ -128,10 +129,10 @@ Partial Class ColdTreatmentWcfForm
         Me.teContainer = New DevExpress.XtraEditors.TextEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.ccTrends = New DevExpress.XtraCharts.ChartControl()
-        Me.VendorReadingsBindingSource = New System.Windows.Forms.BindingSource()
+        Me.VendorReadingsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainerControl4 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.ccTrends = New DevExpress.XtraCharts.ChartControl()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcVendorReadings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,6 +172,9 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl2.SuspendLayout()
         CType(Me.SplitContainerControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl3.SuspendLayout()
+        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl4.SuspendLayout()
         CType(Me.ccTrends, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -180,15 +184,11 @@ Partial Class ColdTreatmentWcfForm
         CType(Series3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotSeriesView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainerControl4.SuspendLayout()
         Me.SuspendLayout()
         '
         'CardView1
         '
         Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn15, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn33, Me.GridColumn34, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38})
-        Me.CardView1.FocusedCardTopFieldIndex = 0
         Me.CardView1.GridControl = Me.gcVendorReadings
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
@@ -411,7 +411,6 @@ Partial Class ColdTreatmentWcfForm
         '
         'CardView2
         '
-        Me.CardView2.FocusedCardTopFieldIndex = 0
         Me.CardView2.GridControl = Me.gcProtocol
         Me.CardView2.Name = "CardView2"
         Me.CardView2.OptionsBehavior.Editable = False
@@ -432,7 +431,7 @@ Partial Class ColdTreatmentWcfForm
         Me.gcProtocol.Location = New System.Drawing.Point(0, 0)
         Me.gcProtocol.MainView = Me.GridView2
         Me.gcProtocol.Name = "gcProtocol"
-        Me.gcProtocol.Size = New System.Drawing.Size(715, 92)
+        Me.gcProtocol.Size = New System.Drawing.Size(715, 82)
         Me.gcProtocol.TabIndex = 172
         Me.gcProtocol.UseEmbeddedNavigator = True
         Me.gcProtocol.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2, Me.CardView3, Me.CardView2})
@@ -448,7 +447,6 @@ Partial Class ColdTreatmentWcfForm
         '
         'CardView3
         '
-        Me.CardView3.FocusedCardTopFieldIndex = 0
         Me.CardView3.GridControl = Me.gcProtocol
         Me.CardView3.Name = "CardView3"
         Me.CardView3.OptionsBehavior.Editable = False
@@ -456,7 +454,6 @@ Partial Class ColdTreatmentWcfForm
         '
         'CardView4
         '
-        Me.CardView4.FocusedCardTopFieldIndex = 0
         Me.CardView4.GridControl = Me.gcEvents
         Me.CardView4.Name = "CardView4"
         Me.CardView4.OptionsBehavior.Editable = False
@@ -477,7 +474,7 @@ Partial Class ColdTreatmentWcfForm
         Me.gcEvents.Location = New System.Drawing.Point(0, 0)
         Me.gcEvents.MainView = Me.GridView3
         Me.gcEvents.Name = "gcEvents"
-        Me.gcEvents.Size = New System.Drawing.Size(114, 92)
+        Me.gcEvents.Size = New System.Drawing.Size(113, 82)
         Me.gcEvents.TabIndex = 172
         Me.gcEvents.UseEmbeddedNavigator = True
         Me.gcEvents.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.CardView5, Me.CardView4})
@@ -493,7 +490,6 @@ Partial Class ColdTreatmentWcfForm
         '
         'CardView5
         '
-        Me.CardView5.FocusedCardTopFieldIndex = 0
         Me.CardView5.GridControl = Me.gcEvents
         Me.CardView5.Name = "CardView5"
         Me.CardView5.OptionsBehavior.Editable = False
@@ -512,14 +508,14 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.PanelControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(845, 545)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(845, 537)
         Me.SplitContainerControl1.SplitterPosition = 166
         Me.SplitContainerControl1.TabIndex = 4
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -637,14 +633,12 @@ Partial Class ColdTreatmentWcfForm
         Me.bsiRemarks1.Caption = "Remarks1"
         Me.bsiRemarks1.Id = 30
         Me.bsiRemarks1.Name = "bsiRemarks1"
-        Me.bsiRemarks1.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'bsiRemarks2
         '
         Me.bsiRemarks2.Caption = "Remarks2"
         Me.bsiRemarks2.Id = 31
         Me.bsiRemarks2.Name = "bsiRemarks2"
-        Me.bsiRemarks2.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'brBarraAcciones
         '
@@ -661,26 +655,26 @@ Partial Class ColdTreatmentWcfForm
         'bbiProcesss
         '
         Me.bbiProcesss.Caption = "&Process"
-        Me.bbiProcesss.Glyph = CType(resources.GetObject("bbiProcesss.Glyph"), System.Drawing.Image)
         Me.bbiProcesss.Id = 33
-        Me.bbiProcesss.ImageIndex = 26
+        Me.bbiProcesss.ImageOptions.Image = CType(resources.GetObject("bbiProcesss.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiProcesss.ImageOptions.ImageIndex = 26
+        Me.bbiProcesss.ImageOptions.LargeImageIndex = 7
         Me.bbiProcesss.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
-        Me.bbiProcesss.LargeImageIndex = 7
         Me.bbiProcesss.Name = "bbiProcesss"
         '
         'bbiSave
         '
         Me.bbiSave.Caption = "&Save"
-        Me.bbiSave.Glyph = CType(resources.GetObject("bbiSave.Glyph"), System.Drawing.Image)
         Me.bbiSave.Id = 28
+        Me.bbiSave.ImageOptions.Image = CType(resources.GetObject("bbiSave.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiSave.Name = "bbiSave"
         '
         'bbiExport
         '
         Me.bbiExport.Caption = "&Export"
-        Me.bbiExport.Glyph = CType(resources.GetObject("bbiExport.Glyph"), System.Drawing.Image)
         Me.bbiExport.Id = 21
-        Me.bbiExport.ImageIndex = 29
+        Me.bbiExport.ImageOptions.Image = CType(resources.GetObject("bbiExport.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiExport.ImageOptions.ImageIndex = 29
         Me.bbiExport.Name = "bbiExport"
         Me.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
@@ -688,19 +682,19 @@ Partial Class ColdTreatmentWcfForm
         '
         Me.bbiMessage.Caption = "&Message"
         Me.bbiMessage.Enabled = False
-        Me.bbiMessage.Glyph = CType(resources.GetObject("bbiMessage.Glyph"), System.Drawing.Image)
         Me.bbiMessage.Id = 27
-        Me.bbiMessage.ImageIndex = 28
+        Me.bbiMessage.ImageOptions.Image = CType(resources.GetObject("bbiMessage.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiMessage.ImageOptions.ImageIndex = 28
         Me.bbiMessage.Name = "bbiMessage"
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "&Close"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 41
-        Me.bbiClose.ImageIndex = 27
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiClose.ImageOptions.ImageIndex = 27
+        Me.bbiClose.ImageOptions.LargeImageIndex = 0
         Me.bbiClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiClose.LargeImageIndex = 0
         Me.bbiClose.Name = "bbiClose"
         Me.bbiClose.ShortcutKeyDisplayString = "Alt+C"
         '
@@ -709,28 +703,32 @@ Partial Class ColdTreatmentWcfForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(845, 41)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(845, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 586)
-        Me.BarDockControl2.Size = New System.Drawing.Size(845, 27)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 584)
+        Me.BarDockControl2.Manager = Me.bmActions
+        Me.BarDockControl2.Size = New System.Drawing.Size(845, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 545)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Manager = Me.bmActions
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 537)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(845, 41)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 545)
+        Me.BarDockControl4.Location = New System.Drawing.Point(845, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 537)
         '
         'imActionsBar24x24
         '
@@ -777,7 +775,7 @@ Partial Class ColdTreatmentWcfForm
         '
         Me.bsiVistas.Caption = "Vistas"
         Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageIndex = 20
+        Me.bsiVistas.ImageOptions.ImageIndex = 20
         Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
         Me.bsiVistas.Name = "bsiVistas"
         '
@@ -785,14 +783,14 @@ Partial Class ColdTreatmentWcfForm
         '
         Me.bbiVistaGrilla.Caption = "Grilla"
         Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageIndex = 23
+        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
         Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
         '
         'bbiTarjeta
         '
         Me.bbiTarjeta.Caption = "Tarjeta"
         Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageIndex = 21
+        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
         Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiContrato
@@ -1036,7 +1034,7 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl2.Panel1.Text = "Panel1"
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(845, 375)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(845, 366)
         Me.SplitContainerControl2.SplitterPosition = 271
         Me.SplitContainerControl2.TabIndex = 0
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -1059,12 +1057,30 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl3.TabIndex = 0
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
         '
+        'SplitContainerControl4
+        '
+        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl4.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl4.Margin = New System.Windows.Forms.Padding(2)
+        Me.SplitContainerControl4.Name = "SplitContainerControl4"
+        Me.SplitContainerControl4.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.SplitContainerControl4.Panel1.Controls.Add(Me.gcProtocol)
+        Me.SplitContainerControl4.Panel1.Text = "Panel1"
+        Me.SplitContainerControl4.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
+        Me.SplitContainerControl4.Panel2.Text = "Panel2"
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(841, 86)
+        Me.SplitContainerControl4.SplitterPosition = 719
+        Me.SplitContainerControl4.TabIndex = 0
+        Me.SplitContainerControl4.Text = "SplitContainerControl4"
+        '
+        'OpenFileDialog2
+        '
+        Me.OpenFileDialog2.FileName = "OpenFileDialog1"
+        '
         'ccTrends
         '
         Me.ccTrends.DataSource = Me.VendorReadingsBindingSource
-        SwiftPlotDiagram1.AxisX.Range.AlwaysShowZeroLevel = True
-        SwiftPlotDiagram1.AxisX.Range.ScrollingRange.SideMarginsEnabled = True
-        SwiftPlotDiagram1.AxisX.Range.SideMarginsEnabled = True
         SwiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1"
         ConstantLine1.AxisValueSerializable = "1.67"
         ConstantLine1.Color = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -1078,17 +1094,20 @@ Partial Class ColdTreatmentWcfForm
         ConstantLine2.LineStyle.Thickness = 2
         ConstantLine2.Name = "1.11"
         SwiftPlotDiagram1.AxisY.ConstantLines.AddRange(New DevExpress.XtraCharts.ConstantLine() {ConstantLine1, ConstantLine2})
-        SwiftPlotDiagram1.AxisY.GridSpacing = 0.5R
-        SwiftPlotDiagram1.AxisY.GridSpacingAuto = False
-        SwiftPlotDiagram1.AxisY.Range.AlwaysShowZeroLevel = True
-        SwiftPlotDiagram1.AxisY.Range.Auto = False
-        SwiftPlotDiagram1.AxisY.Range.MaxValueSerializable = "5"
-        SwiftPlotDiagram1.AxisY.Range.MinValueSerializable = "-5"
-        SwiftPlotDiagram1.AxisY.Range.ScrollingRange.SideMarginsEnabled = True
-        SwiftPlotDiagram1.AxisY.Range.SideMarginsEnabled = True
+        SwiftPlotDiagram1.AxisY.DateTimeScaleOptions.AutoGrid = False
+        SwiftPlotDiagram1.AxisY.DateTimeScaleOptions.GridSpacing = 0.5R
+        SwiftPlotDiagram1.AxisY.NumericScaleOptions.AutoGrid = False
+        SwiftPlotDiagram1.AxisY.NumericScaleOptions.GridSpacing = 0.5R
         SwiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1"
+        SwiftPlotDiagram1.AxisY.VisualRange.Auto = False
+        SwiftPlotDiagram1.AxisY.VisualRange.MaxValueSerializable = "5"
+        SwiftPlotDiagram1.AxisY.VisualRange.MinValueSerializable = "-5"
+        SwiftPlotDiagram1.AxisY.WholeRange.Auto = False
+        SwiftPlotDiagram1.AxisY.WholeRange.MaxValueSerializable = "5"
+        SwiftPlotDiagram1.AxisY.WholeRange.MinValueSerializable = "-5"
         Me.ccTrends.Diagram = SwiftPlotDiagram1
         Me.ccTrends.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ccTrends.Legend.Name = "Default Legend"
         Me.ccTrends.Location = New System.Drawing.Point(0, 0)
         Me.ccTrends.Margin = New System.Windows.Forms.Padding(2)
         Me.ccTrends.Name = "ccTrends"
@@ -1113,31 +1132,10 @@ Partial Class ColdTreatmentWcfForm
         Me.ccTrends.SeriesSerializable = New DevExpress.XtraCharts.Series() {Series1, Series2, Series3}
         SwiftPlotSeriesView4.LineStyle.Thickness = 2
         Me.ccTrends.SeriesTemplate.View = SwiftPlotSeriesView4
-        Me.ccTrends.Size = New System.Drawing.Size(303, 263)
+        Me.ccTrends.Size = New System.Drawing.Size(302, 263)
         Me.ccTrends.TabIndex = 3
         ChartTitle1.Text = "Trends"
         Me.ccTrends.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle1})
-        '
-        'SplitContainerControl4
-        '
-        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl4.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl4.Margin = New System.Windows.Forms.Padding(2)
-        Me.SplitContainerControl4.Name = "SplitContainerControl4"
-        Me.SplitContainerControl4.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.SplitContainerControl4.Panel1.Controls.Add(Me.gcProtocol)
-        Me.SplitContainerControl4.Panel1.Text = "Panel1"
-        Me.SplitContainerControl4.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
-        Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(841, 96)
-        Me.SplitContainerControl4.SplitterPosition = 719
-        Me.SplitContainerControl4.TabIndex = 0
-        Me.SplitContainerControl4.Text = "SplitContainerControl4"
-        '
-        'OpenFileDialog2
-        '
-        Me.OpenFileDialog2.FileName = "OpenFileDialog1"
         '
         'ColdTreatmentWcfForm
         '
@@ -1193,6 +1191,9 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl2.ResumeLayout(False)
         CType(Me.SplitContainerControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl3.ResumeLayout(False)
+        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl4.ResumeLayout(False)
         CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SwiftPlotSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1202,10 +1203,8 @@ Partial Class ColdTreatmentWcfForm
         CType(Series3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ccTrends, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainerControl4.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
@@ -1306,6 +1305,6 @@ Partial Class ColdTreatmentWcfForm
     Friend WithEvents teClient As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rgType As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents ccTrends As DevExpress.XtraCharts.ChartControl
     Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents ccTrends As DevExpress.XtraCharts.ChartControl
 End Class

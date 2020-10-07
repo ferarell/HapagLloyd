@@ -98,7 +98,7 @@ Public Class CTDataMasterWcfForm
                 Dim drSource As DataRow = dtSourceFile2.Rows(0)
                 drSource(0) = Format(CInt(drSource(0)), "000000")
                 'dtVoyage = ExecuteAccessQuery("select * from ScheduleVoyage where [POL] = '" & drSource(23) & "' and [DPVOYAGE]='" & drSource(0) & "'").Tables(0)
-                dtVoyage = oAppService.ExecuteSQL("select * from tck.ScheduleVoyage where [POL] = '" & drSource(23) & "' and [DPVOYAGE]='" & drSource(0) & "'").Tables(0)
+                dtVoyage = oAppService.ExecuteSQL("select * from tck.ScheduleVoyage where [POL] = '" & drSource("selected POL") & "' and [DPVOYAGE]='" & drSource("DP-Voyage") & "'").Tables(0)
                 'dtVoyageTS = ExecuteAccessQuery("select * from ScheduleVoyage where [POL] = '" & drSource(23) & "' and [DPVOYAGE]='" & drSource("[MC DP-Voyage No.]") & "'").Tables(0)
                 If dtVoyage.Rows.Count = 0 Then
                     SplashScreenManager.CloseForm(False)
@@ -389,12 +389,21 @@ Public Class CTDataMasterWcfForm
             'dtResult = ExecuteAccessQuery("SELECT *,  IIf(REMARKS='CT PASSED',0,IIf(INIDATE Is Not Null,1,IIf(TSCHK2DL='INTERRUPTION',2,3))) AS STATUS, 0 AS GAP, 0 AS BROKE FROM ColdTreatment").Tables(0)
             dtResult = oAppService.ExecuteSQL("EXEC tck.upGetAllColdTreatment").Tables(0)
             gcDataColdTreatment.DataSource = dtResult
+            FormatDataGrid(GridView2)
+            GridView2.BestFitColumns()
             SplashScreenManager.CloseForm(False)
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
         End Try
     End Sub
 
+    Private Sub FormatDataGrid(oGridView As GridView)
+        For c = 0 To oGridView.Columns.Count - 1
+            If oGridView.Columns(c).ReadOnly = False Then
+                oGridView.Columns(c).AppearanceCell.BackColor = Color.LightGray
+            End If
+        Next
+    End Sub
     Private Sub bbiUpdate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiUpdate.ItemClick
         If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to update?", "Confirmation", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
             Return
@@ -499,11 +508,31 @@ Public Class CTDataMasterWcfForm
     End Sub
 
     Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
+        If GridView2.FocusedRowHandle < 0 Then
+            Return
+        End If
         Dim dtQueryEvt, dtQueryRdg As New DataTable
         dtQueryRdg = oAppService.ExecuteSQL("select * from tck.ColdTreatmentReadings where [BOOKING]='" & GridView2.GetFocusedRowCellValue("BOOKING") & "' and [CONTAINER] = '" & GridView2.GetFocusedRowCellValue("CONTAINER") & "'").Tables(0)
         gcVendorReadings.DataSource = dtQueryRdg
         dtQueryEvt = oAppService.ExecuteSQL("select * from tck.ColdTreatmentEvents where [BOOKING]='" & GridView2.GetFocusedRowCellValue("BOOKING") & "' and [CONTAINER] = '" & GridView2.GetFocusedRowCellValue("CONTAINER") & "'").Tables(0)
         gcEvents.DataSource = dtQueryEvt
+
+        Dim dgrItem As DataRow = GridView2.GetDataRow(e.FocusedRowHandle)
+        ucAuditPanel.CreatedBy = Nothing
+        ucAuditPanel.CreatedDate = Nothing
+        ucAuditPanel.UpdatedBy = Nothing
+        ucAuditPanel.UpdatedDate = Nothing
+        If Not dgrItem Is Nothing Then
+            If Not IsDBNull(dgrItem("CreatedBy")) Then
+                ucAuditPanel.CreatedBy = dgrItem("CreatedBy")
+                ucAuditPanel.CreatedDate = dgrItem("CreatedDate")
+            End If
+            If Not IsDBNull(dgrItem("UpdatedBy")) Then
+                ucAuditPanel.UpdatedBy = dgrItem("UpdatedBy")
+                ucAuditPanel.UpdatedDate = dgrItem("UpdatedDate")
+            End If
+            ucAuditPanel.pnlAuditoria.Refresh()
+        End If
     End Sub
 
     Private Sub GridView3_RowCellStyle(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs) Handles GridView3.RowCellStyle
@@ -596,28 +625,10 @@ Public Class CTDataMasterWcfForm
     End Sub
 
     Private Sub rgFilter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles rgFilter.SelectedIndexChanged
+        GridView2.MoveLast()
         GridView2.ActiveFilterString = ""
         If sender.SelectedIndex = 1 Then
             GridView2.ActiveFilterString = My.Settings.CustomDataSourceFilter
-        End If
-    End Sub
-
-    Private Sub GridView2_FocusedRowChanged_1(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
-        Dim dgrItem As DataRow = GridView2.GetDataRow(e.FocusedRowHandle)
-        ucAuditPanel.CreatedBy = Nothing
-        ucAuditPanel.CreatedDate = Nothing
-        ucAuditPanel.UpdatedBy = Nothing
-        ucAuditPanel.UpdatedDate = Nothing
-        If Not dgrItem Is Nothing Then
-            If Not IsDBNull(dgrItem("CreatedBy")) Then
-                ucAuditPanel.CreatedBy = dgrItem("CreatedBy")
-                ucAuditPanel.CreatedDate = dgrItem("CreatedDate")
-            End If
-            If Not IsDBNull(dgrItem("UpdatedBy")) Then
-                ucAuditPanel.UpdatedBy = dgrItem("UpdatedBy")
-                ucAuditPanel.UpdatedDate = dgrItem("UpdatedDate")
-            End If
-            ucAuditPanel.pnlAuditoria.Refresh()
         End If
     End Sub
 

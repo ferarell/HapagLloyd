@@ -438,8 +438,8 @@ Public Class HapagLloydService
                 Command.CommandText = "tck.upColdTreatmentEvents_Delete"
                 With Command.Parameters
                     .Clear()
-                    .Add("@BOOKING", SqlDbType.VarChar, 20).Value = aSource(0)
-                    .Add("@CONTAINER", SqlDbType.VarChar, 20).Value = aSource(1)
+                    .Add("@CONTAINER", SqlDbType.VarChar, 20).Value = aSource(0)
+                    .Add("@BOOKING", SqlDbType.VarChar, 20).Value = aSource(1)
                 End With
                 Command.CommandTimeout = 60000
                 If Command.ExecuteNonQuery() <= 0 Then
@@ -511,8 +511,8 @@ Public Class HapagLloydService
                 Command.CommandText = "tck.upColdTreatmentReadings_Delete"
                 With Command.Parameters
                     .Clear()
-                    .Add("@BOOKING", SqlDbType.VarChar, 20).Value = aSource(0)
-                    .Add("@CONTAINER", SqlDbType.VarChar, 20).Value = aSource(1)
+                    .Add("@CONTAINER", SqlDbType.VarChar, 20).Value = aSource(0)
+                    .Add("@BOOKING", SqlDbType.VarChar, 20).Value = aSource(1)
                 End With
                 Command.CommandTimeout = 60000
                 If Command.ExecuteNonQuery() <= 0 Then

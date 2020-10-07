@@ -7,7 +7,7 @@ Imports System.IO
 Public Class MainForm
 
     Public Sub New()
-        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("es-PE") 'New CultureInfo(CultureInfo.CurrentCulture.Name)
+        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("en-US") 'New CultureInfo(CultureInfo.CurrentCulture.Name)
         currentWithOverriddenNumber.NumberFormat.CurrencyPositivePattern = 0 '; // make sure there is no space between symbol and number
         'currentWithOverriddenNumber.NumberFormat.CurrencySymbol = "" '; // no currency symbol
         currentWithOverriddenNumber.NumberFormat.CurrencyDecimalSeparator = "." '; //decimal separator
@@ -16,7 +16,7 @@ Public Class MainForm
         currentWithOverriddenNumber.NumberFormat.NumberGroupSizes = {3} ';
         currentWithOverriddenNumber.NumberFormat.NumberGroupSeparator = ","
         currentWithOverriddenNumber.NumberFormat.NumberDecimalSeparator = "." '; //decimal separator
-        currentWithOverriddenNumber.DateTimeFormat.FullDateTimePattern = "dd/MM/yyyy hh:mm"
+        currentWithOverriddenNumber.DateTimeFormat.FullDateTimePattern = "dd/MM/yyyy HH:mm"
         currentWithOverriddenNumber.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy"
         Thread.CurrentThread.CurrentCulture = currentWithOverriddenNumber
         InitializeComponent()

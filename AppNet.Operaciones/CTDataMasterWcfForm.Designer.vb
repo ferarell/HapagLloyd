@@ -19,12 +19,17 @@ Partial Class CTDataMasterWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CTDataMasterWcfForm))
         Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
+        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
         Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -82,15 +87,15 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn87 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn88 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.imStatus = New System.Windows.Forms.ImageList()
+        Me.imStatus = New System.Windows.Forms.ImageList(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
@@ -126,7 +131,7 @@ Partial Class CTDataMasterWcfForm
         Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ucAuditPanel = New TCHECK.CLOUD.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -137,7 +142,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcDataColdTreatment = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -271,7 +276,6 @@ Partial Class CTDataMasterWcfForm
         'CardView1
         '
         Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn15, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn33, Me.GridColumn34, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38})
-        Me.CardView1.FocusedCardTopFieldIndex = 0
         Me.CardView1.GridControl = Me.gcContainerList
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
@@ -463,7 +467,6 @@ Partial Class CTDataMasterWcfForm
         '
         'CardView4
         '
-        Me.CardView4.FocusedCardTopFieldIndex = 0
         Me.CardView4.GridControl = Me.gcEvents
         Me.CardView4.Name = "CardView4"
         Me.CardView4.OptionsBehavior.Editable = False
@@ -509,7 +512,6 @@ Partial Class CTDataMasterWcfForm
         '
         'CardView5
         '
-        Me.CardView5.FocusedCardTopFieldIndex = 0
         Me.CardView5.GridControl = Me.gcEvents
         Me.CardView5.Name = "CardView5"
         Me.CardView5.OptionsBehavior.Editable = False
@@ -518,7 +520,6 @@ Partial Class CTDataMasterWcfForm
         'CardView3
         '
         Me.CardView3.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn65, Me.GridColumn66, Me.GridColumn67, Me.GridColumn68, Me.GridColumn69, Me.GridColumn70, Me.GridColumn71, Me.GridColumn72, Me.GridColumn73, Me.GridColumn74, Me.GridColumn75, Me.GridColumn76, Me.GridColumn77, Me.GridColumn78, Me.GridColumn79, Me.GridColumn80, Me.GridColumn81, Me.GridColumn82, Me.GridColumn83})
-        Me.CardView3.FocusedCardTopFieldIndex = 0
         Me.CardView3.GridControl = Me.gcVendorReadings
         Me.CardView3.Name = "CardView3"
         Me.CardView3.OptionsBehavior.Editable = False
@@ -673,7 +674,7 @@ Partial Class CTDataMasterWcfForm
         Me.gcVendorReadings.Location = New System.Drawing.Point(0, 0)
         Me.gcVendorReadings.MainView = Me.GridView3
         Me.gcVendorReadings.Name = "gcVendorReadings"
-        Me.gcVendorReadings.Size = New System.Drawing.Size(432, 260)
+        Me.gcVendorReadings.Size = New System.Drawing.Size(431, 246)
         Me.gcVendorReadings.TabIndex = 171
         Me.gcVendorReadings.UseEmbeddedNavigator = True
         Me.gcVendorReadings.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView4, Me.CardView3})
@@ -692,6 +693,8 @@ Partial Class CTDataMasterWcfForm
         'GridColumn84
         '
         Me.GridColumn84.Caption = "DATE"
+        Me.GridColumn84.DisplayFormat.FormatString = "dd/MM/yyyy"
+        Me.GridColumn84.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn84.FieldName = "CT_DATE"
         Me.GridColumn84.Name = "GridColumn84"
         Me.GridColumn84.Visible = True
@@ -809,28 +812,24 @@ Partial Class CTDataMasterWcfForm
         '
         Me.brsDescripcion.Id = 30
         Me.brsDescripcion.Name = "brsDescripcion"
-        Me.brsDescripcion.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'barStaticItem3
         '
         Me.barStaticItem3.Caption = "0 / 0"
         Me.barStaticItem3.Id = 31
         Me.barStaticItem3.Name = "barStaticItem3"
-        Me.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'barStaticItem4
         '
         Me.barStaticItem4.Caption = "Estado"
         Me.barStaticItem4.Id = 46
         Me.barStaticItem4.Name = "barStaticItem4"
-        Me.barStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'brsEstado
         '
         Me.brsEstado.Caption = "Lectura"
         Me.brsEstado.Id = 47
         Me.brsEstado.Name = "brsEstado"
-        Me.brsEstado.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'beiShowGap
         '
@@ -867,58 +866,58 @@ Partial Class CTDataMasterWcfForm
         'bbiImport
         '
         Me.bbiImport.Caption = "I&mport"
-        Me.bbiImport.Glyph = CType(resources.GetObject("bbiImport.Glyph"), System.Drawing.Image)
         Me.bbiImport.Id = 33
-        Me.bbiImport.ImageIndex = 26
+        Me.bbiImport.ImageOptions.Image = CType(resources.GetObject("bbiImport.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiImport.ImageOptions.ImageIndex = 26
+        Me.bbiImport.ImageOptions.LargeImageIndex = 7
         Me.bbiImport.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
-        Me.bbiImport.LargeImageIndex = 7
         Me.bbiImport.Name = "bbiImport"
         '
         'bbiSearch
         '
         Me.bbiSearch.Caption = "&Search"
-        Me.bbiSearch.Glyph = CType(resources.GetObject("bbiSearch.Glyph"), System.Drawing.Image)
         Me.bbiSearch.Id = 27
+        Me.bbiSearch.ImageOptions.Image = CType(resources.GetObject("bbiSearch.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiSearch.Name = "bbiSearch"
         '
         'bbiInsert
         '
         Me.bbiInsert.Caption = "&Insert"
-        Me.bbiInsert.Glyph = CType(resources.GetObject("bbiInsert.Glyph"), System.Drawing.Image)
         Me.bbiInsert.Id = 31
+        Me.bbiInsert.ImageOptions.Image = CType(resources.GetObject("bbiInsert.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiInsert.Name = "bbiInsert"
         '
         'bbiDelete
         '
         Me.bbiDelete.Caption = "&Delete"
-        Me.bbiDelete.Glyph = CType(resources.GetObject("bbiDelete.Glyph"), System.Drawing.Image)
         Me.bbiDelete.Id = 30
+        Me.bbiDelete.ImageOptions.Image = CType(resources.GetObject("bbiDelete.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiDelete.Name = "bbiDelete"
         '
         'bbiUpdate
         '
         Me.bbiUpdate.Caption = "Update"
-        Me.bbiUpdate.Glyph = CType(resources.GetObject("bbiUpdate.Glyph"), System.Drawing.Image)
         Me.bbiUpdate.Id = 28
+        Me.bbiUpdate.ImageOptions.Image = CType(resources.GetObject("bbiUpdate.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiUpdate.Name = "bbiUpdate"
         '
         'bbiExport
         '
         Me.bbiExport.Caption = "&Export"
-        Me.bbiExport.Glyph = CType(resources.GetObject("bbiExport.Glyph"), System.Drawing.Image)
         Me.bbiExport.Id = 21
-        Me.bbiExport.ImageIndex = 29
+        Me.bbiExport.ImageOptions.Image = CType(resources.GetObject("bbiExport.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiExport.ImageOptions.ImageIndex = 29
         Me.bbiExport.Name = "bbiExport"
         Me.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "&Close"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 41
-        Me.bbiClose.ImageIndex = 27
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiClose.ImageOptions.ImageIndex = 27
+        Me.bbiClose.ImageOptions.LargeImageIndex = 0
         Me.bbiClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiClose.LargeImageIndex = 0
         Me.bbiClose.Name = "bbiClose"
         Me.bbiClose.ShortcutKeyDisplayString = "Alt+C"
         '
@@ -927,28 +926,32 @@ Partial Class CTDataMasterWcfForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(1234, 41)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(1234, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 391)
-        Me.BarDockControl2.Size = New System.Drawing.Size(1234, 27)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 385)
+        Me.BarDockControl2.Manager = Me.bmActions
+        Me.BarDockControl2.Size = New System.Drawing.Size(1234, 33)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 350)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Manager = Me.bmActions
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 338)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1234, 41)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 350)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1234, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 338)
         '
         'BarButtonItem1
         '
@@ -960,7 +963,7 @@ Partial Class CTDataMasterWcfForm
         '
         Me.bsiVistas.Caption = "Vistas"
         Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageIndex = 20
+        Me.bsiVistas.ImageOptions.ImageIndex = 20
         Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
         Me.bsiVistas.Name = "bsiVistas"
         '
@@ -968,14 +971,14 @@ Partial Class CTDataMasterWcfForm
         '
         Me.bbiVistaGrilla.Caption = "Grilla"
         Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageIndex = 23
+        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
         Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
         '
         'bbiTarjeta
         '
         Me.bbiTarjeta.Caption = "Tarjeta"
         Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageIndex = 21
+        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
         Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiContrato
@@ -1056,7 +1059,7 @@ Partial Class CTDataMasterWcfForm
         Me.ucAuditPanel.CreatedBy = Nothing
         Me.ucAuditPanel.CreatedDate = New Date(CType(0, Long))
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 354)
+        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 348)
         Me.ucAuditPanel.Name = "ucAuditPanel"
         Me.ucAuditPanel.Size = New System.Drawing.Size(1234, 37)
         Me.ucAuditPanel.TabIndex = 1
@@ -1068,14 +1071,14 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.PanelControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl3)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1234, 313)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1234, 301)
         Me.SplitContainerControl1.SplitterPosition = 45
         Me.SplitContainerControl1.TabIndex = 181
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -1146,7 +1149,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3.Panel1.Text = "Panel1"
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(1234, 264)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(1234, 251)
         Me.SplitContainerControl3.SplitterPosition = 798
         Me.SplitContainerControl3.TabIndex = 174
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -1165,7 +1168,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl2.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcDataColdTreatment)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(798, 264)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(798, 251)
         Me.SplitContainerControl2.SplitterPosition = 338
         Me.SplitContainerControl2.TabIndex = 173
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -1185,7 +1188,7 @@ Partial Class CTDataMasterWcfForm
         Me.gcDataColdTreatment.MainView = Me.GridView2
         Me.gcDataColdTreatment.Name = "gcDataColdTreatment"
         Me.gcDataColdTreatment.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemComboBox2, Me.RepositoryItemComboBox3, Me.RepositoryItemComboBox4, Me.RepositoryItemComboBox5, Me.RepositoryItemTextEdit2, Me.RepositoryItemHyperLinkEdit1, Me.RepositoryItemImageComboBox2, Me.RepositoryItemComboBox6, Me.RepositoryItemMemoExEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemComboBox7, Me.RepositoryItemTextEdit3, Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit3, Me.RepositoryItemLookUpEdit2})
-        Me.gcDataColdTreatment.Size = New System.Drawing.Size(790, 260)
+        Me.gcDataColdTreatment.Size = New System.Drawing.Size(789, 247)
         Me.gcDataColdTreatment.TabIndex = 174
         Me.gcDataColdTreatment.UseEmbeddedNavigator = True
         Me.gcDataColdTreatment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2, Me.CardView2})
@@ -1288,6 +1291,10 @@ Partial Class CTDataMasterWcfForm
         Me.RepositoryItemDateEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.RepositoryItemDateEdit1.CalendarTimeEditing = DevExpress.Utils.DefaultBoolean.[True]
         Me.RepositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
+        Me.RepositoryItemDateEdit1.CalendarTimeProperties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.RepositoryItemDateEdit1.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm"
         Me.RepositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.RepositoryItemDateEdit1.EditFormat.FormatString = "dd/MM/yyyy HH:mm"
@@ -1621,7 +1628,7 @@ Partial Class CTDataMasterWcfForm
         'RepositoryItemImageComboBox2
         '
         Me.RepositoryItemImageComboBox2.AutoHeight = False
-        Me.RepositoryItemImageComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, DevExpress.XtraEditors.ImageLocation.MiddleCenter, Nothing, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, "", Nothing, Nothing, True)})
+        Me.RepositoryItemImageComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.RepositoryItemImageComboBox2.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.RepositoryItemImageComboBox2.Items.AddRange(New DevExpress.XtraEditors.Controls.ImageComboBoxItem() {New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 0, 0), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 1, 1), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 2, 2), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 3, 3)})
         Me.RepositoryItemImageComboBox2.LargeImages = Me.imStatus
@@ -1655,7 +1662,6 @@ Partial Class CTDataMasterWcfForm
         'CardView2
         '
         Me.CardView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.GridColumn37})
-        Me.CardView2.FocusedCardTopFieldIndex = 0
         Me.CardView2.GridControl = Me.gcDataColdTreatment
         Me.CardView2.Name = "CardView2"
         Me.CardView2.OptionsBehavior.Editable = False
@@ -1810,7 +1816,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(432, 264)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(431, 251)
         Me.SplitContainerControl4.SplitterPosition = 334
         Me.SplitContainerControl4.TabIndex = 2
         Me.SplitContainerControl4.Text = "SplitContainerControl4"
@@ -1885,6 +1891,7 @@ Partial Class CTDataMasterWcfForm
         CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl4.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
