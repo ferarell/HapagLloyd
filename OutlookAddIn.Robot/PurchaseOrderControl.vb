@@ -121,7 +121,8 @@ Public Class PurchaseOrderControl
             oForwardMail.HTMLBody += " para DRAFT " & Liquidation.ToString & " ( " & sVessel & Space(1) & sVoyage & " )"
         End If
         oForwardMail.HTMLBody += ", si tiene alguna observación agradeceremos enviarnos su consulta a los siguientes correos: <br><br>"
-        oForwardMail.HTMLBody += "Perú Port Terminal Ops - PeruPortTerminalOps@hlag.com <br>"
+        'oForwardMail.HTMLBody += "Perú Port Terminal Ops - PeruPortTerminalOps@hlag.com <br>"
+        oForwardMail.HTMLBody += "QSCBOGPTOPE - QSCBOGPTOPE@hlag.com <br>"
         oForwardMail.HTMLBody += "Paipay, Richard - Richard.Paipay@hlag.com <br><br><br>"
         oForwardMail.HTMLBody += drConfig("Firma")
         If sVendorContact <> "" Then

@@ -37,7 +37,7 @@
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>2.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -489,11 +489,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="T-CHECK.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AppIcon.ico" />
-    <None Include="Service References\AppService\HapagLloydService1.disco" />
     <None Include="Service References\AppService\HapagLloydService1.wsdl" />
     <None Include="Service References\AppService\HapagLloydService5.xsd">
       <SubType>Designer</SubType>
@@ -510,6 +505,11 @@
     <None Include="Service References\AppService\HapagLloydService54.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="T-CHECK.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <None Include="Service References\AppService\HapagLloydService1.disco" />
     <None Include="Service References\AppService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>

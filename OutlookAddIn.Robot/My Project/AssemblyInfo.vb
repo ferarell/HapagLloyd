@@ -22,7 +22,7 @@ Imports System.Security
 <Assembly: ComVisible(False)>
 
 'El siguiente GUID sirve como identificador de typelib si este proyecto se expone a COM
-<Assembly: Guid("c90137b1-a358-483e-a73d-e08fbf6f58af")> 
+<Assembly: Guid("c90137b1-a358-483e-a73d-e08fbf6f58af")>
 
 ' La información de versión de un ensamblado consta de los cuatro valores siguientes:
 '
@@ -35,8 +35,8 @@ Imports System.Security
 ' mediante el carácter '*', como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.6.5")> 
-<Assembly: AssemblyFileVersion("1.0.6.5")> 
+<Assembly: AssemblyVersion("1.0.6.6")>
+<Assembly: AssemblyFileVersion("1.0.6.6")>
 
 Friend Module DesignTimeConstants
     Public Const RibbonTypeSerializer As String = "Microsoft.VisualStudio.Tools.Office.Ribbon.Serialization.RibbonTypeCodeDomSerializer, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"

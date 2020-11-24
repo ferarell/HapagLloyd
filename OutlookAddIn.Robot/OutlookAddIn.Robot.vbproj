@@ -44,7 +44,7 @@
     <PublishUrl>C:\DeployApps\ROBOT.HapagLloydPeru\</PublishUrl>
     <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\ROBOT.HapagLloydPeru\</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.6.6</ApplicationVersion>
+    <ApplicationVersion>1.0.6.7</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
