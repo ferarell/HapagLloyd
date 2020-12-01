@@ -197,14 +197,23 @@ Public Class LocalBenefitsForm
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
         Dim oControls As Control
         Dim oRow As DataRow = GridView1.GetFocusedDataRow
-        For Each oControls In LayoutControl1.Controls
-            If oControls.Tag Is Nothing Then
-                Continue For
-            End If
-            If oRow.Table.Columns.Contains(oControls.Tag) Then
-                oControls.Text = oRow(oControls.Tag)
-            End If
-        Next
+        Try
+            For Each oControls In LayoutControl1.Controls
+                If oControls.Tag Is Nothing Then
+                    Continue For
+                End If
+                If oRow.Table.Columns.Contains(oControls.Tag) Then
+                    'If DirectCast(oControls.AccessibilityObject, DevExpress.Accessibility.BaseAccessibleObject).Role = "ComboBox" Then
+                    '    MsgBox("hola")
+                    'End If
+                    DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = oRow(oControls.Tag)
+                End If
+            Next
+
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick

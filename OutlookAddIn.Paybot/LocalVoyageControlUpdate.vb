@@ -111,51 +111,59 @@ Public Class LocalVoyageControlUpdate
                     sCloDateTime = Format(CDate(dtSource.Rows(r)("Close Docu Date") & Space(1) & IIf(dtSource.Rows(r)("Close Docu Time") = "", "00:00", dtSource.Rows(r)("Close Docu Time"))), "M/d/yyyy HH:mm")
                 End If
                 If IdRow = 0 Then
-                    oSharePointTransactions.ValuesList.Clear()
-                    oSharePointTransactions.ValuesList.Add({"SSY", dtSource.Rows(r)("SSY")})
-                    oSharePointTransactions.ValuesList.Add({"Port_Locode", oPol})
-                    oSharePointTransactions.ValuesList.Add({"TerminalCode", dtSource.Rows(r)("Terminal")})
-                    oSharePointTransactions.ValuesList.Add({"DPVoyage", oDPVoyage})
-                    oSharePointTransactions.ValuesList.Add({"VesselName", dtSource.Rows(r)("Vessel")})
-                    oSharePointTransactions.ValuesList.Add({"ScheduleVoyage", dtSource.Rows(r)("Schedule Voyage No#")})
+                    Try
+                        oSharePointTransactions.ValuesList.Clear()
+                        oSharePointTransactions.ValuesList.Add({"SSY", dtSource.Rows(r)("SSY")})
+                        oSharePointTransactions.ValuesList.Add({"Port_Locode", oPol})
+                        oSharePointTransactions.ValuesList.Add({"TerminalCode", dtSource.Rows(r)("Terminal")})
+                        oSharePointTransactions.ValuesList.Add({"DPVoyage", oDPVoyage})
+                        oSharePointTransactions.ValuesList.Add({"VesselName", dtSource.Rows(r)("Vessel")})
+                        oSharePointTransactions.ValuesList.Add({"ScheduleVoyage", dtSource.Rows(r)("Schedule Voyage No#")})
 
-                    If IsDate(sArrDateTime) Then
-                        oSharePointTransactions.ValuesList.Add({"Arrival_Date", sArrDateTime})
-                    End If
-                    If IsDate(sDepDateTime) Then
-                        oSharePointTransactions.ValuesList.Add({"Departure_Date", sDepDateTime})
-                    End If
-                    If IsDate(sCloDateTime) Then
-                        oSharePointTransactions.ValuesList.Add({"Close_Document_Date", sCloDateTime})
-                    End If
-                    If dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'").Length > 0 Then
-                        oSharePointTransactions.ValuesList.Add({"Coordinator_Name", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserName")})
-                        'oSharePointTransactions.ValuesList.Add({"Coordinator_UserAccount", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserAccount")})
-                    End If
-                    'oSharePointTransactions.FieldsList.Add({"Coordinator_x0020_UserName", dtSource.Rows(r)("Coordinator_x0020_UserName")})
-                    'oSharePointTransactions.FieldsList.Add({"Local_Transmition_Date", dtSource.Rows(r)("Local_Transmition_Date")})
-                    oSharePointTransactions.InsertItem()
-                Else
-                    oSharePointTransactions.ValuesList.Clear()
-                    Dim drItem As DataRow = dtList.Select("ID=" & IdRow.ToString)(0)
-                    If IsDate(sArrDateTime) Then
-                        If CDate(sArrDateTime) <> drItem("Arrival_Date") Then
+                        If IsDate(sArrDateTime) Then
                             oSharePointTransactions.ValuesList.Add({"Arrival_Date", sArrDateTime})
                         End If
-                    End If
-                    If IsDate(sDepDateTime) Then
-                        If CDate(sDepDateTime) <> drItem("Departure_Date") Then
+                        If IsDate(sDepDateTime) Then
                             oSharePointTransactions.ValuesList.Add({"Departure_Date", sDepDateTime})
                         End If
-                    End If
-                    If IsDate(sCloDateTime) Then
-                        If CDate(sCloDateTime) <> drItem("Close_Document_Date") Then
+                        If IsDate(sCloDateTime) Then
                             oSharePointTransactions.ValuesList.Add({"Close_Document_Date", sCloDateTime})
                         End If
-                    End If
-                    If oSharePointTransactions.ValuesList.Count > 0 Then
-                        oSharePointTransactions.UpdateItem(IdRow)
-                    End If
+                        If dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'").Length > 0 Then
+                            oSharePointTransactions.ValuesList.Add({"Coordinator_Name", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserName")})
+                            'oSharePointTransactions.ValuesList.Add({"Coordinator_UserAccount", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserAccount")})
+                        End If
+                        'oSharePointTransactions.FieldsList.Add({"Coordinator_x0020_UserName", dtSource.Rows(r)("Coordinator_x0020_UserName")})
+                        'oSharePointTransactions.FieldsList.Add({"Local_Transmition_Date", dtSource.Rows(r)("Local_Transmition_Date")})
+                        oSharePointTransactions.InsertItem()
+                    Catch ex As Exception
+
+                    End Try
+                Else
+                    Try
+                        oSharePointTransactions.ValuesList.Clear()
+                        Dim drItem As DataRow = dtList.Select("ID='" & IdRow.ToString & "'")(0)
+                        If IsDate(sArrDateTime) Then
+                            If CDate(sArrDateTime) <> drItem("Arrival_Date") Then
+                                oSharePointTransactions.ValuesList.Add({"Arrival_Date", sArrDateTime})
+                            End If
+                        End If
+                        If IsDate(sDepDateTime) Then
+                            If CDate(sDepDateTime) <> drItem("Departure_Date") Then
+                                oSharePointTransactions.ValuesList.Add({"Departure_Date", sDepDateTime})
+                            End If
+                        End If
+                        If IsDate(sCloDateTime) Then
+                            If CDate(sCloDateTime) <> drItem("Close_Document_Date") Then
+                                oSharePointTransactions.ValuesList.Add({"Close_Document_Date", sCloDateTime})
+                            End If
+                        End If
+                        If oSharePointTransactions.ValuesList.Count > 0 Then
+                            oSharePointTransactions.UpdateItem(IdRow)
+                        End If
+                    Catch ex As Exception
+
+                    End Try
                 End If
             Next
         Catch ex As Exception

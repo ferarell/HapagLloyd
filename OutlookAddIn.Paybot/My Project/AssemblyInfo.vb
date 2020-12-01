@@ -9,10 +9,10 @@ Imports System.Security
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("HL PERU INFO")> 
+<Assembly: AssemblyTitle("PAYBOT PERÚ")>
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Hapag Lloyd Perú SAC")> 
-<Assembly: AssemblyProduct("Paybot.HapagLloydPeru")> 
+<Assembly: AssemblyCompany("Hapag Lloyd Perú SAC")>
+<Assembly: AssemblyProduct("PAYBOT")>
 <Assembly: AssemblyCopyright("Copyright ©  2016")> 
 <Assembly: AssemblyTrademark("")> 
 
@@ -35,8 +35,8 @@ Imports System.Security
 ' mediante el carácter '*', como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.1.0.1")>
-<Assembly: AssemblyFileVersion("1.1.0.1")>
+<Assembly: AssemblyVersion("1.1.0.2")>
+<Assembly: AssemblyFileVersion("1.1.0.2")>
 
 Friend Module DesignTimeConstants
     Public Const RibbonTypeSerializer As String = "Microsoft.VisualStudio.Tools.Office.Ribbon.Serialization.RibbonTypeCodeDomSerializer, Microsoft.VisualStudio.Tools.Office.Designer, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"

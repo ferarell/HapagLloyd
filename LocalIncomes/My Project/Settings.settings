@@ -3,16 +3,16 @@
   <Profiles />
   <Settings>
     <Setting Name="SharePoint_User" Type="System.String" Scope="User">
-      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
+      <Value Profile="(Default)">paybotperu@hlag.com</Value>
     </Setting>
     <Setting Name="SharePoint_Password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">hapag20192</Value>
+      <Value Profile="(Default)">hapag2019</Value>
     </Setting>
     <Setting Name="SharePoint_Url" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Blue</Value>
+      <Value Profile="(Default)">Office 2010 Black</Value>
     </Setting>
     <Setting Name="DBFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">X:\VSTO\DataProcessingHL.accdb</Value>

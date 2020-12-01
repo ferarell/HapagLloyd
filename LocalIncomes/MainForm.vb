@@ -43,7 +43,7 @@ Public Class MainForm
             End If
         End If
         bbiUserApp.Caption = "User: " & My.User.Name
-        nbcMainMenu.RestoreFromRegistry(Directory.GetCurrentDirectory)
+        'nbcMainMenu.RestoreFromRegistry(Directory.GetCurrentDirectory)
     End Sub
 
     Private Sub NavBarItem12_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem12.LinkClicked
@@ -93,12 +93,23 @@ Public Class MainForm
     End Sub
 
     Private Sub NavBarItem20_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem20.LinkClicked
-        OpenForm(New VesselScheduleSincronizeForm)
+        'OpenForm(New VesselScheduleSincronizeForm)
 
     End Sub
 
     Private Sub NavBarItem21_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem21.LinkClicked
-        OpenForm(New LocalVoyageControlSincronizeForm)
+        'OpenForm(New LocalVoyageControlSincronizeForm)
     End Sub
 
+    Private Sub NavBarItem15_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem15.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/CurrencyList/AllItems.aspx")
+    End Sub
+
+    Private Sub NavBarItem16_ItemChanged(sender As Object, e As EventArgs) Handles NavBarItem16.ItemChanged
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/Container%20Type/AllItems.aspx")
+    End Sub
+
+    Private Sub NavBarItem22_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem22.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/PortList/Allitemsg.aspx")
+    End Sub
 End Class

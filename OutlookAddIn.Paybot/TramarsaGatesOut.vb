@@ -382,7 +382,12 @@ Public Class TramarsaGatesOut
                     oLogFileGenerate.TextFileUpdate("GATE OUT", "(" & "BK:" & oBooking.Numero & ")" & " El booking no tiene puerto peruano asociado, no se transferirá a Tramarsa")
                     Return
                 Else
-                    oBooking.DPvoyage = GetDPVoyage(oBooking.NombreNave, oBooking.NroViaje, sPort)
+                    If GetRowCellValueByPosition(dtLines, "DP Voyage", 0, 0, "").Length > 0 Then
+                        oBooking.DPvoyage = GetRowCellValueByPosition(dtLines, "DP Voyage", 0, 0, "")
+                    Else
+                        oBooking.DPvoyage = GetDPVoyage(oBooking.NombreNave, oBooking.NroViaje, sPort)
+                    End If
+
                 End If
             Catch ex As Exception
                 _BookingListErr.AppendText(sField & ex.Message & "<br>")
