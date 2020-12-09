@@ -125,6 +125,30 @@ Namespace My
                 Me("LogFilePath") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBUserName() As String
+            Get
+                Return CType(Me("DBUserName"),String)
+            End Get
+            Set
+                Me("DBUserName") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property DBPassword() As String
+            Get
+                Return CType(Me("DBPassword"),String)
+            End Get
+            Set
+                Me("DBPassword") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

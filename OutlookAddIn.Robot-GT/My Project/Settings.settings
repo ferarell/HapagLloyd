@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb</Value>
+    </Setting>
+    <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb</Value>
+    </Setting>
+    <Setting Name="DBUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConfigTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Configuration</Value>
+    </Setting>
+    <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\AttachedFiles</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Log</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="SupportMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fernando.arellano@totalit.com.pe</Value>
+    </Setting>
+    <Setting Name="ProcessFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\ProcessFiles</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsRobot" targetNamespace="http://tempuri.org/dsRobot.xsd" xmlns:mstns="http://tempuri.org/dsRobot.xsd" xmlns="http://tempuri.org/dsRobot.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsRobot" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsRobot" msprop:Generator_UserDSName="dsRobot">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtMessagesSummary" msprop:Generator_TableClassName="dtMessagesSummaryDataTable" msprop:Generator_TableVarName="tabledtMessagesSummary" msprop:Generator_TablePropName="dtMessagesSummary" msprop:Generator_RowDeletingName="dtMessagesSummaryRowDeleting" msprop:Generator_RowChangingName="dtMessagesSummaryRowChanging" msprop:Generator_RowEvHandlerName="dtMessagesSummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="dtMessagesSummaryRowDeleted" msprop:Generator_UserTableName="dtMessagesSummary" msprop:Generator_RowChangedName="dtMessagesSummaryRowChanged" msprop:Generator_RowEvArgName="dtMessagesSummaryRowChangeEvent" msprop:Generator_RowClassName="dtMessagesSummaryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ResponseType" msprop:Generator_ColumnVarNameInTable="columnResponseType" msprop:Generator_ColumnPropNameInRow="ResponseType" msprop:Generator_ColumnPropNameInTable="ResponseTypeColumn" msprop:Generator_UserColumnName="ResponseType" type="xs:string" minOccurs="0" />
+              <xs:element name="Identifier" msprop:Generator_ColumnVarNameInTable="columnIdentifier" msprop:Generator_ColumnPropNameInRow="Identifier" msprop:Generator_ColumnPropNameInTable="IdentifierColumn" msprop:Generator_UserColumnName="Identifier" type="xs:string" minOccurs="0" />
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_UserColumnName="Quantity" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

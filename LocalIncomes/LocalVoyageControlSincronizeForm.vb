@@ -175,7 +175,7 @@ Public Class LocalVoyageControlSincronizeForm
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
-
+        ExportarExcel(GridControl1)
     End Sub
 
     Private Sub bbiClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClose.ItemClick

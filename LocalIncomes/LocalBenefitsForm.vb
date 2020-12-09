@@ -1,8 +1,11 @@
-﻿Imports DevExpress.XtraSplashScreen
+﻿Imports DevExpress.XtraGrid.Views.Grid
+Imports DevExpress.XtraSplashScreen
 
 Public Class LocalBenefitsForm
     Dim oSharePointTransactions As New SharePointListTransactions
+    Dim oAppService As New AppService.HapagLloydServiceClient
     Dim dtList As New DataTable
+    Dim oDataAcces As New DataAccess
 
     Public Sub New()
 
@@ -15,19 +18,51 @@ Public Class LocalBenefitsForm
 
     Private Sub LocalBenefitsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
-
+        LoadCountry
     End Sub
 
+    Private Sub LoadCountry()
+        Dim dtQuery As New DataTable
+        dtQuery = oAppService.ExecuteSQL("SELECT * FROM spl.Country").Tables(0)
+        lueCountry.Properties.DataSource = dtQuery
+        lueCountry.Properties.DisplayMember = "CountryName"
+        lueCountry.Properties.ValueMember = "CountryCode"
+        lueOriginCountry.Properties.DataSource = lueCountry.Properties.DataSource
+        lueOriginCountry.Properties.DisplayMember = lueCountry.Properties.DisplayMember
+        lueOriginCountry.Properties.ValueMember = lueCountry.Properties.ValueMember
+        lueLoadCountry.Properties.DataSource = lueCountry.Properties.DataSource
+        lueLoadCountry.Properties.DisplayMember = lueCountry.Properties.DisplayMember
+        lueLoadCountry.Properties.ValueMember = lueCountry.Properties.ValueMember
+        lueDischargeCountry.Properties.DataSource = lueCountry.Properties.DataSource
+        lueDischargeCountry.Properties.DisplayMember = lueCountry.Properties.DisplayMember
+        lueDischargeCountry.Properties.ValueMember = lueCountry.Properties.ValueMember
+        lueFinalCountry.Properties.DataSource = lueCountry.Properties.DataSource
+        lueFinalCountry.Properties.DisplayMember = lueCountry.Properties.DisplayMember
+        lueFinalCountry.Properties.ValueMember = lueCountry.Properties.ValueMember
+    End Sub
+
+    Private Sub LoadPort(luePort As DevExpress.XtraEditors.LookUpEdit, CountryCode As String)
+        If CountryCode Is Nothing Then
+            luePort.Properties.DataSource = Nothing
+            Return
+        End If
+        Dim dtQuery As New DataTable
+        dtQuery = oAppService.ExecuteSQL("SELECT * FROM spl.Port WHERE CountryCode = '" & CountryCode & "'").Tables(0)
+        luePort.Properties.DataSource = dtQuery
+        luePort.Properties.DisplayMember = "PortName"
+        luePort.Properties.ValueMember = "PortCode"
+    End Sub
     Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         Try
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             oSharePointTransactions.SharePointList = "Local Benefits"
             oSharePointTransactions.FieldsList.Clear()
             oSharePointTransactions.FieldsList.Add({"ID"})
+            oSharePointTransactions.FieldsList.Add({"CodigoPais"})
             oSharePointTransactions.FieldsList.Add({"TipoEmbarque"})
             oSharePointTransactions.FieldsList.Add({"TipoBeneficio"})
             oSharePointTransactions.FieldsList.Add({"RazonSocial"})
-            oSharePointTransactions.FieldsList.Add({"RUC"})
+            oSharePointTransactions.FieldsList.Add({"NumeroIdentificacionTributaria"})
             oSharePointTransactions.FieldsList.Add({"Vigencia_Desde"})
             oSharePointTransactions.FieldsList.Add({"Vigencia_Hasta"})
             oSharePointTransactions.FieldsList.Add({"SalesCoordinator"})
@@ -42,28 +77,35 @@ Public Class LocalBenefitsForm
             oSharePointTransactions.FieldsList.Add({"HBL_RazonSocial"})
             oSharePointTransactions.FieldsList.Add({"BillOfLading"})
             oSharePointTransactions.FieldsList.Add({"Booking"})
-            oSharePointTransactions.FieldsList.Add({"Importe_TDE"})
-            oSharePointTransactions.FieldsList.Add({"Importe_TDI"})
-            oSharePointTransactions.FieldsList.Add({"Importe_GDCE"})
-            oSharePointTransactions.FieldsList.Add({"Importe_GDCI"})
-            oSharePointTransactions.FieldsList.Add({"Importe_SACE"})
-            oSharePointTransactions.FieldsList.Add({"Importe_SACI"})
-            oSharePointTransactions.FieldsList.Add({"Importe_SACCE"})
-            oSharePointTransactions.FieldsList.Add({"Importe_SACCI"})
-            oSharePointTransactions.FieldsList.Add({"Importe_GateIn"})
-            oSharePointTransactions.FieldsList.Add({"Importe_GateOut"})
-            oSharePointTransactions.FieldsList.Add({"Rebate_Gates"})
-            oSharePointTransactions.FieldsList.Add({"Rebate_VistoBueno"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_TDE"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_TDI"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_GDCE"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_GDCI"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_SACE"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_SACI"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_SACCE"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_SACCI"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_GateIn"})
+            'oSharePointTransactions.FieldsList.Add({"Importe_GateOut"})
+            'oSharePointTransactions.FieldsList.Add({"Rebate_Gates"})
+            'oSharePointTransactions.FieldsList.Add({"Rebate_VistoBueno"})
             oSharePointTransactions.FieldsList.Add({"NumeroConcesion"})
 
             SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits")
             dtList = oSharePointTransactions.GetItems()
             GridControl1.DataSource = dtList
+            FormatGrid(GridView1)
             SplashScreenManager.CloseForm(False)
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub FormatGrid(oGridView As GridView)
+        For c = 0 To oGridView.Columns.Count - 1
+            oGridView.Columns(c).OptionsColumn.ReadOnly = True
+        Next
     End Sub
 
     'Private Sub Sincronize()
@@ -192,6 +234,8 @@ Public Class LocalBenefitsForm
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
+        Dim iPos As Integer = SplitContainerControl1.Size.Height - LayoutControl1.Size.Height
+        SplitContainerControl1.SplitterPosition = iPos
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
@@ -217,6 +261,38 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+            Return
+        End If
+        Dim drSource As DataRow = GridView1.GetFocusedDataRow
 
+        If teID.Text = "" Then
+            oSharePointTransactions.InsertItem()
+        Else
+            oSharePointTransactions.UpdateItem(teID.Text)
+        End If
+    End Sub
+
+    Private Sub bbiNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiNew.ItemClick
+        GridView1.AddNewRow()
+        SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
+        Dim iPos As Integer = SplitContainerControl1.Size.Height - LayoutControl1.Size.Height
+        SplitContainerControl1.SplitterPosition = iPos
+    End Sub
+
+    Private Sub lueOriginCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueOriginCountry.EditValueChanged
+        LoadPort(lueOriginPort, lueOriginCountry.EditValue)
+    End Sub
+
+    Private Sub lueLoadPort_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadPort.EditValueChanged
+        LoadPort(lueLoadPort, lueLoadCountry.EditValue)
+    End Sub
+
+    Private Sub lueDischargePort_EditValueChanged(sender As Object, e As EventArgs) Handles lueDischargePort.EditValueChanged
+        LoadPort(lueDischargePort, lueDischargeCountry.EditValue)
+    End Sub
+
+    Private Sub lueFinalPort_EditValueChanged(sender As Object, e As EventArgs) Handles lueFinalPort.EditValueChanged
+        LoadPort(lueFinalPort, lueFinalCountry.EditValue)
     End Sub
 End Class

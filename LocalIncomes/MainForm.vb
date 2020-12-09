@@ -43,6 +43,8 @@ Public Class MainForm
             End If
         End If
         bbiUserApp.Caption = "User: " & My.User.Name
+        'My.Settings.DBFileName = IO.Directory.GetCurrentDirectory & "\SharePointList.mdb"
+        'My.Settings.Save()
         'nbcMainMenu.RestoreFromRegistry(Directory.GetCurrentDirectory)
     End Sub
 
@@ -106,10 +108,10 @@ Public Class MainForm
     End Sub
 
     Private Sub NavBarItem16_ItemChanged(sender As Object, e As EventArgs) Handles NavBarItem16.ItemChanged
-        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/Container%20Type/AllItems.aspx")
+        'System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/Container%20Type/AllItems.aspx")
     End Sub
 
     Private Sub NavBarItem22_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem22.LinkClicked
-        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/PortList/Allitemsg.aspx")
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/PortList/AllItems.aspx")
     End Sub
 End Class

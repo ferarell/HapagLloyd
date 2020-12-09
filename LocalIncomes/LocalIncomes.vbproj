@@ -29,7 +29,7 @@
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -155,6 +155,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -175,6 +177,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\AppService\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess.vb" />
     <Compile Include="FletesOnLineForm.Designer.vb">
       <DependentUpon>FletesOnLineForm.vb</DependentUpon>
     </Compile>
@@ -295,10 +303,27 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\AppService\HapagLloydService.wsdl" />
+    <None Include="Connected Services\AppService\HapagLloydService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AppService\HapagLloydService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AppService\HapagLloydService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AppService\HapagLloydService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AppService\HapagLloydService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\System.Data.DataSet.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -320,6 +345,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppIcon.ico" />
+    <None Include="Connected Services\AppService\HapagLloydService.disco" />
+    <None Include="Connected Services\AppService\configuration91.svcinfo" />
+    <None Include="Connected Services\AppService\configuration.svcinfo" />
+    <None Include="Connected Services\AppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <Content Include="SharePointList.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AppService\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

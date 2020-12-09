@@ -1,0 +1,33 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Z:\VSTO\RobotHL.accdb</Value>
+    </Setting>
+    <Setting Name="DBUserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DBPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ConfigTableName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">RobotConfiguration</Value>
+    </Setting>
+    <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Robot\AttachedFiles</Value>
+    </Setting>
+    <Setting Name="LogFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Robot\Log</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Blue</Value>
+    </Setting>
+    <Setting Name="SupportMailAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fernando.arellano@totalit.com.pe</Value>
+    </Setting>
+    <Setting Name="ProcessFilePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Robot\ProcessFiles</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
