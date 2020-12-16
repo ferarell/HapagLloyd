@@ -1,10 +1,11 @@
-﻿Imports DevExpress.XtraGrid.Views.Grid
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraSplashScreen
 
 Public Class LocalBenefitsForm
     Dim oSharePointTransactions As New SharePointListTransactions
     Dim oAppService As New AppService.HapagLloydServiceClient
-    Dim dtList As New DataTable
+    Dim dtList, dtListDetail, dtConcept, dtCurrency, dtUserRole As New DataTable
     Dim oDataAcces As New DataAccess
 
     Public Sub New()
@@ -14,11 +15,19 @@ Public Class LocalBenefitsForm
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
+        GridView2.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
     End Sub
 
     Private Sub LocalBenefitsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
-        LoadCountry
+        SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
+        Try
+            LoadCountry()
+            LoadCurrency()
+        Catch ex As Exception
+            SplashScreenManager.CloseForm(False)
+            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub LoadCountry()
@@ -41,6 +50,113 @@ Public Class LocalBenefitsForm
         lueFinalCountry.Properties.ValueMember = lueCountry.Properties.ValueMember
     End Sub
 
+    Private Sub LoadCurrency()
+        dtCurrency = oAppService.ExecuteSQL("SELECT * FROM spl.Currency").Tables(0)
+        RepositoryItemLookUpEdit3.DataSource = dtCurrency
+        RepositoryItemLookUpEdit3.DisplayMember = "CurrencyName"
+        RepositoryItemLookUpEdit3.ValueMember = "CurrencyCode"
+        RepositoryItemLookUpEdit3.KeyMember = "ID"
+    End Sub
+
+    Private Sub LoadUserRole()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get User Roles")
+        oSharePointTransactions.SharePointList = "UserRoleByProcess"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"ProcessCode"})
+        oSharePointTransactions.FieldsList.Add({"UserAccount"})
+        oSharePointTransactions.FieldsList.Add({"UserName"})
+        oSharePointTransactions.FieldsList.Add({"UserMail"})
+        oSharePointTransactions.FieldsList.Add({"UserType"})
+
+        dtUserRole = oSharePointTransactions.GetItems()
+        If dtUserRole.Select("ProcessCode='LCI'").Length > 0 Then
+            dtUserRole = dtUserRole.Select("ProcessCode='LCI'").CopyToDataTable
+        End If
+        lueSalesExecution.Properties.DataSource = dtUserRole.Select("UserType='Sales Execution'").CopyToDataTable
+        lueSalesExecution.Properties.DisplayMember = "UserName"
+        lueSalesExecution.Properties.ValueMember = "UserName"
+        lueSalesCoordination.Properties.DataSource = dtUserRole.Select("UserType='Sales Coordination'").CopyToDataTable
+        lueSalesCoordination.Properties.DisplayMember = lueSalesExecution.Properties.DisplayMember
+        lueSalesCoordination.Properties.ValueMember = lueSalesExecution.Properties.ValueMember
+        lueUserAuthorization.Properties.DataSource = dtUserRole.Select("UserType LIKE '%Authorization'").CopyToDataTable
+        lueUserAuthorization.Properties.DisplayMember = lueSalesExecution.Properties.DisplayMember
+        lueUserAuthorization.Properties.ValueMember = lueSalesExecution.Properties.ValueMember
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LoadLocalBenefits()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits")
+        oSharePointTransactions.SharePointList = "Local Benefits"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"CodigoPais"})
+        oSharePointTransactions.FieldsList.Add({"TipoEmbarque"})
+        oSharePointTransactions.FieldsList.Add({"TipoBeneficio"})
+        oSharePointTransactions.FieldsList.Add({"RazonSocial"})
+        oSharePointTransactions.FieldsList.Add({"NumeroIdentificacionTributaria"})
+        oSharePointTransactions.FieldsList.Add({"Vigencia_Desde"})
+        oSharePointTransactions.FieldsList.Add({"Vigencia_Hasta"})
+        oSharePointTransactions.FieldsList.Add({"SalesExecution"})
+        oSharePointTransactions.FieldsList.Add({"SalesCoordination"})
+        oSharePointTransactions.FieldsList.Add({"TipoConcesion"})
+        oSharePointTransactions.FieldsList.Add({"TipoConcesionEspecifica"})
+        oSharePointTransactions.FieldsList.Add({"CondicionBL"})
+        oSharePointTransactions.FieldsList.Add({"RateAgreement"})
+        oSharePointTransactions.FieldsList.Add({"MBL_Rol"})
+        oSharePointTransactions.FieldsList.Add({"MBL_RUC"})
+        oSharePointTransactions.FieldsList.Add({"MBL_RazonSocial"})
+        oSharePointTransactions.FieldsList.Add({"HBL_Rol"})
+        oSharePointTransactions.FieldsList.Add({"HBL_RUC"})
+        oSharePointTransactions.FieldsList.Add({"HBL_RazonSocial"})
+        oSharePointTransactions.FieldsList.Add({"BillOfLading"})
+        oSharePointTransactions.FieldsList.Add({"Booking"})
+        oSharePointTransactions.FieldsList.Add({"PaisOrigen"})
+        oSharePointTransactions.FieldsList.Add({"PuertoOrigen"})
+        oSharePointTransactions.FieldsList.Add({"PaisCarga"})
+        oSharePointTransactions.FieldsList.Add({"PuertoCarga"})
+        oSharePointTransactions.FieldsList.Add({"PaisDescarga"})
+        oSharePointTransactions.FieldsList.Add({"PuertoDescarga"})
+        oSharePointTransactions.FieldsList.Add({"PaisFinal"})
+        oSharePointTransactions.FieldsList.Add({"PuertoFinal"})
+        oSharePointTransactions.FieldsList.Add({"PrecintoBASC"})
+        oSharePointTransactions.FieldsList.Add({"Profit"})
+        oSharePointTransactions.FieldsList.Add({"Volumen"})
+        oSharePointTransactions.FieldsList.Add({"UsuarioAutorizador"})
+        oSharePointTransactions.FieldsList.Add({"FechaAutorizacion"})
+        'oSharePointTransactions.FieldsList.Add({"Booking"})
+        'oSharePointTransactions.FieldsList.Add({"Booking"})
+        'oSharePointTransactions.FieldsList.Add({"Booking"})
+        'oSharePointTransactions.FieldsList.Add({"Booking"})
+        'oSharePointTransactions.FieldsList.Add({"Booking"})
+        oSharePointTransactions.FieldsList.Add({"Estado"})
+        oSharePointTransactions.FieldsList.Add({"NumeroConcesion"})
+
+        dtList = oSharePointTransactions.GetItems()
+        GridControl1.DataSource = dtList
+        FormatGrid(GridView1)
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LoadLocalBenefitsDetail()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits Detail")
+        oSharePointTransactions.SharePointList = "LocalBenefitsDetail"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"IdParent"})
+        oSharePointTransactions.FieldsList.Add({"ConceptCode"})
+        oSharePointTransactions.FieldsList.Add({"ConceptValue"})
+        oSharePointTransactions.FieldsList.Add({"ConceptCurrency"})
+
+        dtListDetail = oSharePointTransactions.GetItems()
+        GridControl2.DataSource = dtListDetail
+        GridView2.BestFitColumns()
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
     Private Sub LoadPort(luePort As DevExpress.XtraEditors.LookUpEdit, CountryCode As String)
         If CountryCode Is Nothing Then
             luePort.Properties.DataSource = Nothing
@@ -52,54 +168,29 @@ Public Class LocalBenefitsForm
         luePort.Properties.DisplayMember = "PortName"
         luePort.Properties.ValueMember = "PortCode"
     End Sub
-    Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        Try
-            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-            oSharePointTransactions.SharePointList = "Local Benefits"
-            oSharePointTransactions.FieldsList.Clear()
-            oSharePointTransactions.FieldsList.Add({"ID"})
-            oSharePointTransactions.FieldsList.Add({"CodigoPais"})
-            oSharePointTransactions.FieldsList.Add({"TipoEmbarque"})
-            oSharePointTransactions.FieldsList.Add({"TipoBeneficio"})
-            oSharePointTransactions.FieldsList.Add({"RazonSocial"})
-            oSharePointTransactions.FieldsList.Add({"NumeroIdentificacionTributaria"})
-            oSharePointTransactions.FieldsList.Add({"Vigencia_Desde"})
-            oSharePointTransactions.FieldsList.Add({"Vigencia_Hasta"})
-            oSharePointTransactions.FieldsList.Add({"SalesCoordinator"})
-            oSharePointTransactions.FieldsList.Add({"SalesExecution"})
-            oSharePointTransactions.FieldsList.Add({"TipoConcesion"})
-            oSharePointTransactions.FieldsList.Add({"CondicionBL"})
-            oSharePointTransactions.FieldsList.Add({"MBL_Rol"})
-            oSharePointTransactions.FieldsList.Add({"MBL_RUC"})
-            oSharePointTransactions.FieldsList.Add({"MBL_RazonSocial"})
-            oSharePointTransactions.FieldsList.Add({"HBL_Rol"})
-            oSharePointTransactions.FieldsList.Add({"HBL_RUC"})
-            oSharePointTransactions.FieldsList.Add({"HBL_RazonSocial"})
-            oSharePointTransactions.FieldsList.Add({"BillOfLading"})
-            oSharePointTransactions.FieldsList.Add({"Booking"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_TDE"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_TDI"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_GDCE"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_GDCI"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_SACE"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_SACI"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_SACCE"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_SACCI"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_GateIn"})
-            'oSharePointTransactions.FieldsList.Add({"Importe_GateOut"})
-            'oSharePointTransactions.FieldsList.Add({"Rebate_Gates"})
-            'oSharePointTransactions.FieldsList.Add({"Rebate_VistoBueno"})
-            oSharePointTransactions.FieldsList.Add({"NumeroConcesion"})
 
-            SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits")
-            dtList = oSharePointTransactions.GetItems()
-            GridControl1.DataSource = dtList
-            FormatGrid(GridView1)
-            SplashScreenManager.CloseForm(False)
-        Catch ex As Exception
-            SplashScreenManager.CloseForm(False)
-            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+    Private Sub LoadConcepts()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Concepts By Country")
+        oSharePointTransactions.SharePointList = "ConceptByCountryList"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"CountryCode"})
+        oSharePointTransactions.FieldsList.Add({"ConceptCode"})
+        oSharePointTransactions.FieldsList.Add({"ConceptName"})
+        dtConcept = oSharePointTransactions.GetItems()
+        RepositoryItemLookUpEdit2.DataSource = dtConcept
+        RepositoryItemLookUpEdit2.DisplayMember = "ConceptName"
+        RepositoryItemLookUpEdit2.ValueMember = "ConceptCode"
+        RepositoryItemLookUpEdit2.KeyMember = "ID"
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
+        LoadLocalBenefits()
+        LoadConcepts()
+        LoadLocalBenefitsDetail()
+        LoadUserRole()
     End Sub
 
     Private Sub FormatGrid(oGridView As GridView)
@@ -108,124 +199,25 @@ Public Class LocalBenefitsForm
         Next
     End Sub
 
-    'Private Sub Sincronize()
-    '    Dim dtSource As New DataTable
-    '    Try
-    '        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-    '        dtSource = LoadExcelHDR(beDataSource.Text, "Data_Landscape_color$", "A3:N3000").Tables(0)
-    '        For r = 0 To dtSource.Rows.Count - 1
-    '            Dim sArrDateTime, sDepDateTime, sCloDateTime As String
-    '            If IsDBNull(dtSource.Rows(r)(1)) Then
-    '                Continue For
-    '            End If
-    '            For c = 0 To dtSource.Rows(r).ItemArray.Count - 1
-    '                If IsDBNull(dtSource.Rows(r).Item(c)) Then
-    '                    dtSource.Rows(r).Item(c) = ""
-    '                End If
-    '            Next
-    '            If dtSource.Rows(r)(1) = "" Then
-    '                Continue For
-    '            End If
-    '            If dtSource.Rows(r)("DP Voyage") = 0 Then
-    '                Continue For
-    '            End If
-    '            If dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'").Length = 0 Then
-    '                Continue For
-    '            End If
-    '            Dim oDPVoyage, oPol As String
-    '            oDPVoyage = dtSource.Rows(r)("DP Voyage")
-    '            oPol = dtSource.Rows(r)("Port Locode")
-    '            Dim IdRow As Integer = 0
-    '            If dtList.Select("DPVoyage = '" & oDPVoyage & "' AND Port_Locode = '" & oPol & "'").Length > 0 Then
-    '                IdRow = dtList.Select("DPVoyage = '" & oDPVoyage & "' AND Port_Locode = '" & oPol & "'")(0)("ID")
-    '            End If
-    '            If dtSource.Rows(r)("Arr Date") <> "" Then
-    '                sArrDateTime = Format(CDate(dtSource.Rows(r)("Arr Date") & Space(1) & IIf(dtSource.Rows(r)("Arr Time") = "", "00:00", dtSource.Rows(r)("Arr Time"))), "M/d/yyyy HH:mm")
-    '            End If
-    '            If dtSource.Rows(r)("Dep Date") <> "" Then
-    '                sDepDateTime = Format(CDate(dtSource.Rows(r)("Dep Date") & Space(1) & IIf(dtSource.Rows(r)("Dep Time") = "", "00:00", dtSource.Rows(r)("Dep Time"))), "M/d/yyyy HH:mm")
-    '            End If
-    '            If dtSource.Rows(r)("Close Docu Date") <> "" Then
-    '                sCloDateTime = Format(CDate(dtSource.Rows(r)("Close Docu Date") & Space(1) & IIf(dtSource.Rows(r)("Close Docu Time") = "", "00:00", dtSource.Rows(r)("Close Docu Time"))), "M/d/yyyy HH:mm")
-    '            End If
-    '            If IdRow = 0 Then
-    '                oSharePointTransactions.ValuesList.Clear()
-    '                oSharePointTransactions.ValuesList.Add({"SSY", dtSource.Rows(r)("SSY")})
-    '                oSharePointTransactions.ValuesList.Add({"Port_Locode", oPol})
-    '                oSharePointTransactions.ValuesList.Add({"TerminalCode", dtSource.Rows(r)("Terminal")})
-    '                oSharePointTransactions.ValuesList.Add({"DPVoyage", oDPVoyage})
-    '                oSharePointTransactions.ValuesList.Add({"VesselName", dtSource.Rows(r)("Vessel")})
-    '                oSharePointTransactions.ValuesList.Add({"ScheduleVoyage", dtSource.Rows(r)("Schedule Voyage No#")})
-
-    '                If IsDate(sArrDateTime) Then
-    '                    oSharePointTransactions.ValuesList.Add({"Arrival_Date", sArrDateTime})
-    '                End If
-    '                If IsDate(sDepDateTime) Then
-    '                    oSharePointTransactions.ValuesList.Add({"Departure_Date", sDepDateTime})
-    '                End If
-    '                If IsDate(sCloDateTime) Then
-    '                    oSharePointTransactions.ValuesList.Add({"Close_Document_Date", sCloDateTime})
-    '                End If
-    '                If dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'").Length > 0 Then
-    '                    oSharePointTransactions.ValuesList.Add({"Coordinator_Name", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserName")})
-    '                    'oSharePointTransactions.ValuesList.Add({"Coordinator_UserAccount", dtCoordinator.Select("Coordinator_Service='" & dtSource.Rows(r)("SSY") & "'")(0)("Coordinator_x0020_UserAccount")})
-    '                End If
-    '                'oSharePointTransactions.FieldsList.Add({"Coordinator_x0020_UserName", dtSource.Rows(r)("Coordinator_x0020_UserName")})
-    '                'oSharePointTransactions.FieldsList.Add({"Local_Transmition_Date", dtSource.Rows(r)("Local_Transmition_Date")})
-    '                oSharePointTransactions.InsertItem()
-    '            Else
-    '                oSharePointTransactions.ValuesList.Clear()
-    '                Dim drItem As DataRow = dtList.Select("ID=" & IdRow.ToString)(0)
-    '                If IsDate(sArrDateTime) Then
-    '                    If CDate(sArrDateTime) <> drItem("Arrival_Date") Then
-    '                        oSharePointTransactions.ValuesList.Add({"Arrival_Date", sArrDateTime})
-    '                    End If
-    '                End If
-    '                If IsDate(sDepDateTime) Then
-    '                    If CDate(sDepDateTime) <> drItem("Departure_Date") Then
-    '                        oSharePointTransactions.ValuesList.Add({"Departure_Date", sDepDateTime})
-    '                    End If
-    '                End If
-    '                If IsDate(sCloDateTime) Then
-    '                    If CDate(sCloDateTime) <> drItem("Close_Document_Date") Then
-    '                        oSharePointTransactions.ValuesList.Add({"Close_Document_Date", sCloDateTime})
-    '                    End If
-    '                End If
-    '                If oSharePointTransactions.ValuesList.Count > 0 Then
-    '                    oSharePointTransactions.UpdateItem(IdRow)
-    '                End If
-    '            End If
-    '        Next
-    '        bbiShowAll.PerformClick()
-    '        SplashScreenManager.CloseForm(False)
-    '        DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "The process has been completed successfully", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-    '    Catch ex As Exception
-    '        SplashScreenManager.CloseForm(False)
-    '        DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '    End Try
-    'End Sub
-
-    Private Sub bbiSincronize_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSincronize.ItemClick
-        'Sincronize()
-    End Sub
-
-    Private Sub bbiShowAll_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiShowAll.ItemClick
-        Try
-            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-            GridControl1.DataSource = Nothing
-            dtList.Rows.Clear()
-            dtList = oSharePointTransactions.GetItems()
-            GridControl1.DataSource = dtList
-            SplashScreenManager.CloseForm(False)
-        Catch ex As Exception
-            SplashScreenManager.CloseForm(False)
-            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+    Private Sub bbiRefresh_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiRefresh.ItemClick
+        LoadLocalBenefits()
+        LoadLocalBenefitsDetail()
+        'Try
+        '    SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        '    GridControl1.DataSource = Nothing
+        '    dtList.Rows.Clear()
+        '    dtList = oSharePointTransactions.GetItems()
+        '    GridControl1.DataSource = dtList
+        '    SplashScreenManager.CloseForm(False)
+        'Catch ex As Exception
+        '    SplashScreenManager.CloseForm(False)
+        '    DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
 
     End Sub
 
     Private Sub bbiExport_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiExport.ItemClick
-
+        ExportarExcel(GridControl1)
     End Sub
 
     Private Sub bbiClose_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClose.ItemClick
@@ -239,6 +231,9 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+        If GridView1.FocusedRowHandle < 0 Then
+            Return
+        End If
         Dim oControls As Control
         Dim oRow As DataRow = GridView1.GetFocusedDataRow
         Try
@@ -246,11 +241,14 @@ Public Class LocalBenefitsForm
                 If oControls.Tag Is Nothing Then
                     Continue For
                 End If
+                DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = Nothing
                 If oRow.Table.Columns.Contains(oControls.Tag) Then
                     'If DirectCast(oControls.AccessibilityObject, DevExpress.Accessibility.BaseAccessibleObject).Role = "ComboBox" Then
                     '    MsgBox("hola")
                     'End If
-                    DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = oRow(oControls.Tag)
+                    If Not IsDBNull(oRow(oControls.Tag)) Then
+                        DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = oRow(oControls.Tag)
+                    End If
                 End If
             Next
 
@@ -261,18 +259,167 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
+        Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
             Return
         End If
         Dim drSource As DataRow = GridView1.GetFocusedDataRow
+        Try
+            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+            SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits")
+            oSharePointTransactions.SharePointList = "Local Benefits"
+            oSharePointTransactions.ValuesList.Clear()
+            If drSource("CodigoPais").ToString <> lueCountry.EditValue Then
+                oSharePointTransactions.ValuesList.Add({"CodigoPais", lueCountry.GetColumnValue("ID")})
+            End If
+            If drSource("TipoEmbarque").ToString <> cbeLoadingType.EditValue.ToString Then
+                oSharePointTransactions.ValuesList.Add({"TipoEmbarque", cbeLoadingType.EditValue})
+            End If
+            If drSource("TipoBeneficio").ToString <> cbeBenefitType.Text Then
+                oSharePointTransactions.ValuesList.Add({"TipoBeneficio", cbeBenefitType.EditValue})
+            End If
+            If drSource("RazonSocial").ToString <> teCompanyName.Text Then
+                oSharePointTransactions.ValuesList.Add({"RazonSocial", teCompanyName.Text})
+            End If
+            If drSource("NumeroIdentificacionTributaria").ToString <> teTaxNumber.Text Then
+                oSharePointTransactions.ValuesList.Add({"NumeroIdentificacionTributaria", teTaxNumber.Text})
+            End If
+            If drSource("Vigencia_Desde") <> deValidityFrom.Text Then
+                oSharePointTransactions.ValuesList.Add({"Vigencia_Desde", deValidityFrom.DateTime.ToShortDateString})
+            End If
+            If drSource("Vigencia_Hasta") <> deValidityTo.Text Then
+                oSharePointTransactions.ValuesList.Add({"Vigencia_Hasta", deValidityTo.DateTime.ToShortDateString})
+            End If
+            If drSource("SalesExecution").ToString <> lueSalesExecution.Text Then
+                oSharePointTransactions.ValuesList.Add({"SalesExecution", lueSalesExecution.GetColumnValue("ID")})
+            End If
+            If drSource("SalesCoordination").ToString <> lueSalesCoordination.Text Then
+                oSharePointTransactions.ValuesList.Add({"SalesCoordination", lueSalesCoordination.GetColumnValue("ID")})
+            End If
+            If drSource("TipoConcesion").ToString <> cbeConcessionType.Text Then
+                oSharePointTransactions.ValuesList.Add({"TipoConcesion", cbeConcessionType.EditValue})
+            End If
+            If drSource("CondicionBL").ToString <> cbeBlContition.Text Then
+                oSharePointTransactions.ValuesList.Add({"CondicionBL", cbeBlContition.EditValue})
+            End If
+            If drSource("RateAgreement").ToString <> teRateAgreement.Text Then
+                oSharePointTransactions.ValuesList.Add({"RateAgreement", teRateAgreement.Text})
+            End If
+            If drSource("MBL_Rol").ToString <> cbeMblRol.Text Then
+                oSharePointTransactions.ValuesList.Add({"MBL_Rol", cbeMblRol.EditValue})
+            End If
+            If drSource("MBL_RUC").ToString <> teMblNit.Text Then
+                oSharePointTransactions.ValuesList.Add({"MBL_RUC", teMblNit.Text})
+            End If
+            If drSource("MBL_RazonSocial").ToString <> teMblCompanyName.Text Then
+                oSharePointTransactions.ValuesList.Add({"MBL_RazonSocial", teMblCompanyName.Text})
+            End If
+            If drSource("HBL_Rol").ToString <> cbeHblRol.Text Then
+                oSharePointTransactions.ValuesList.Add({"HBL_Rol", cbeHblRol.EditValue})
+            End If
+            If drSource("HBL_RUC").ToString <> teHblNit.Text Then
+                oSharePointTransactions.ValuesList.Add({"HBL_RUC", teHblNit.Text})
+            End If
+            If drSource("HBL_RazonSocial").ToString <> teHblCompanyName.Text Then
+                oSharePointTransactions.ValuesList.Add({"HBL_RazonSocial", teHblCompanyName.Text})
+            End If
+            If drSource("BillOfLading").ToString <> teBillOfLading.Text Then
+                oSharePointTransactions.ValuesList.Add({"BillOfLading", teBillOfLading.Text})
+            End If
+            If drSource("Booking").ToString <> teBooking.Text Then
+                oSharePointTransactions.ValuesList.Add({"Booking", teBooking.Text})
+            End If
+            If drSource("PaisOrigen").ToString <> lueOriginCountry.Text Then
+                oSharePointTransactions.ValuesList.Add({"PaisOrigen", lueOriginCountry.EditValue})
+            End If
+            If drSource("PuertoOrigen").ToString <> lueOriginPort.Text Then
+                oSharePointTransactions.ValuesList.Add({"PuertoOrigen", lueOriginPort.GetColumnValue("ID")})
+            End If
+            If drSource("PaisCarga").ToString <> lueLoadCountry.Text Then
+                oSharePointTransactions.ValuesList.Add({"PaisCarga", lueLoadCountry.EditValue})
+            End If
+            If drSource("PuertoCarga").ToString <> lueLoadPort.Text Then
+                oSharePointTransactions.ValuesList.Add({"PuertoCarga", lueLoadPort.GetColumnValue("ID")})
+            End If
+            If drSource("PaisDescarga").ToString <> lueDischargeCountry.Text Then
+                oSharePointTransactions.ValuesList.Add({"PaisDescarga", lueDischargeCountry.EditValue})
+            End If
+            If drSource("PuertoDescarga").ToString <> lueDischargePort.Text Then
+                oSharePointTransactions.ValuesList.Add({"PuertoDescarga", lueDischargePort.GetColumnValue("ID")})
+            End If
+            If drSource("PaisFinal").ToString <> lueFinalCountry.Text Then
+                oSharePointTransactions.ValuesList.Add({"PaisFinal", lueFinalCountry.EditValue})
+            End If
+            If drSource("PuertoFinal").ToString <> lueFinalPort.Text Then
+                oSharePointTransactions.ValuesList.Add({"PuertoFinal", lueFinalPort.GetColumnValue("ID")})
+            End If
+            If drSource("PrecintoBASC").ToString <> teSealBasc.Text Then
+                oSharePointTransactions.ValuesList.Add({"PrecintoBASC", teSealBasc.Text})
+            End If
+            If drSource("Profit").ToString <> teProfit.Text Then
+                oSharePointTransactions.ValuesList.Add({"Profit", teProfit.Text})
+            End If
+            If drSource("Volumen").ToString <> teVolumen.Text Then
+                oSharePointTransactions.ValuesList.Add({"Volumen", teVolumen.Text})
+            End If
+            If drSource("UsuarioAutorizador").ToString <> lueUserAuthorization.Text Then
+                'oSharePointTransactions.ValuesList.Add({"UsuarioAutorizador", lueUserAuthorization.GetColumnValue("ID")})
+            End If
+            'If drSource("FechaAutorizacion") <> deAuthorizationDate.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"FechaAutorizacion", deAuthorizationDate.DateTime.ToShortDateString})
+            'End If
+            'If drSource("Estado").ToString <> cbeStatus.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"Estado", cbeStatus.EditValue})
+            'End If
+            If drSource("NumeroConcesion").ToString <> teConcessionNumber.Text Then
+                oSharePointTransactions.ValuesList.Add({"NumeroConcesion", teConcessionNumber.Text})
+            End If
+            If teID.Text = "" Then
+                oSharePointTransactions.InsertItem()
+            Else
+                oSharePointTransactions.UpdateItem(teID.Text)
+            End If
+        Catch ex As Exception
+            SplashScreenManager.CloseForm(False)
+            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
-        If teID.Text = "" Then
-            oSharePointTransactions.InsertItem()
-        Else
-            oSharePointTransactions.UpdateItem(teID.Text)
+        Dim drSourceDetail As DataRow = GridView2.GetFocusedDataRow
+        If drSourceDetail("IdParent") Is Nothing Then
+            Return
         End If
+        Try
+            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+            SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Detail")
+            oSharePointTransactions.SharePointList = "LocalBenefitsDetail"
+            oSharePointTransactions.ValuesList.Clear()
+            oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
+            oSharePointTransactions.ValuesList.Add({"ConceptCode", GetValueByField("Concept", drSourceDetail("ConceptCode"))})
+            oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceDetail("ConceptCurrency"))})
+            oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceDetail("ConceptValue").ToString})
+
+            If IsDBNull(drSourceDetail("ID")) Then
+                oSharePointTransactions.InsertItem()
+            Else
+                oSharePointTransactions.UpdateItem(drSourceDetail("ID").ToString)
+            End If
+        Catch ex As Exception
+            SplashScreenManager.CloseForm(False)
+            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+        SplashScreenManager.CloseForm(False)
     End Sub
 
+    Private Function GetValueByField(FieldName As String, FieldValue As String) As String
+        Dim sResult As String = ""
+        If FieldName = "Concept" Then
+            sResult = dtConcept.Select("ConceptCode='" & FieldValue & "'")(0)("ID")
+        End If
+        If FieldName = "Currency" Then
+            sResult = dtCurrency.Select("CurrencyCode='" & FieldValue & "'")(0)("ID")
+        End If
+        Return sResult
+    End Function
     Private Sub bbiNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiNew.ItemClick
         GridView1.AddNewRow()
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
@@ -284,15 +431,22 @@ Public Class LocalBenefitsForm
         LoadPort(lueOriginPort, lueOriginCountry.EditValue)
     End Sub
 
-    Private Sub lueLoadPort_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadPort.EditValueChanged
+    Private Sub lueLoadCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadCountry.EditValueChanged
         LoadPort(lueLoadPort, lueLoadCountry.EditValue)
     End Sub
 
-    Private Sub lueDischargePort_EditValueChanged(sender As Object, e As EventArgs) Handles lueDischargePort.EditValueChanged
+    Private Sub lueDischargeCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueDischargeCountry.EditValueChanged
         LoadPort(lueDischargePort, lueDischargeCountry.EditValue)
     End Sub
 
-    Private Sub lueFinalPort_EditValueChanged(sender As Object, e As EventArgs) Handles lueFinalPort.EditValueChanged
+    Private Sub lueFinalCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueFinalCountry.EditValueChanged
         LoadPort(lueFinalPort, lueFinalCountry.EditValue)
+    End Sub
+
+    Private Sub BarEditItem1_EditValueChanged(sender As Object, e As EventArgs) Handles BarEditItem1.EditValueChanged
+        SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Panel1
+        If BarEditItem1.EditValue = True Then
+            SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
+        End If
     End Sub
 End Class

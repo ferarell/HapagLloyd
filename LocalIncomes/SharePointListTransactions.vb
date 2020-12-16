@@ -105,6 +105,8 @@ Public Class SharePointListTransactions
                     If Not Item(FieldsList(c)(0)) Is Nothing Then
                         If Item(FieldsList(c)(0)).ToString.Contains("Lookup") Then
                             dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue
+                        ElseIf Item(FieldsList(c)(0)).ToString.Contains("FieldUserValue") Then
+                            dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldUserValue).Email
                         Else
                             dtItems.Rows(dtItems.Rows.Count - 1)(c) = Item(FieldsList(c)(0))
                         End If
