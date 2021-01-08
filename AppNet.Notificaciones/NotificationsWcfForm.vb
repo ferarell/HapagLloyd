@@ -9,6 +9,9 @@ Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices
 Imports System.ComponentModel.DataAnnotations
+Imports DevExpress.Office.Services
+Imports DevExpress.Office.Utils
+Imports DevExpress.XtraRichEdit
 
 Public Class NotificationsWcfForm
     Dim eMailTo As String = ""
@@ -126,7 +129,7 @@ Public Class NotificationsWcfForm
         End If
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
         SplashScreenManager.Default.SetWaitFormDescription("Creating a New Message")
-        CreateSendItem(edtSubject.Text, richEditControl.HtmlText, aFiles, "Display")
+        CreateSendItem(edtSubject.Text, richEditControl, aFiles, "Display")
         SplashScreenManager.CloseForm(False)
     End Sub
 
@@ -210,15 +213,19 @@ Public Class NotificationsWcfForm
         End Try
     End Sub
 
-    Friend Sub CreateSendItem(Subject As String, Body As String, AttachFile As ArrayList, CreateType As String)
+    Friend Sub CreateSendItem(Subject As String, Body As RichEditControl, AttachFile As ArrayList, CreateType As String)
         Dim Application As New Outlook.Application
         Dim mail As Outlook.MailItem = Nothing
         Dim mailRecipients As Outlook.Recipients = Nothing
         Dim mailRecipient As Outlook.Recipient = Nothing
         Try
+            Dim aOpt As New DevExpress.XtraRichEdit.Export.HtmlDocumentExporterOptions
+            aOpt.EmbedImages = True
+            Dim htmlText As String = Body.Document.GetHtmlText(Body.Document.Range, CType(New CustomUriProvider(), IUriProvider), aOpt)
+
             mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
             mail.Subject = Subject
-            mail.HTMLBody = Body
+            mail.HTMLBody = Body.HtmlText
             If AttachFile.Count > 0 Then
                 For f = 0 To AttachFile.Count - 1
                     mail.Attachments.Add(AttachFile(f))
@@ -571,7 +578,7 @@ Public Class NotificationsWcfForm
                     End If
                 End If
                 SplashScreenManager.Default.SetWaitFormDescription("Sending Message " & iCurrentGroup.ToString & " of " & iGroupsQ.ToString)
-                CreateSendItem(edtSubject.Text, richEditControl.HtmlText, aFiles, "Send")
+                CreateSendItem(edtSubject.Text, richEditControl, aFiles, "Send")
                 iCurrentGroup += 1
                 eMailTo = ""
             End If
@@ -594,4 +601,21 @@ Public Class NotificationsWcfForm
         Next
         Return iResult
     End Function
+
+#Region "#customuriprovider"
+    Public Class CustomUriProvider
+        Implements DevExpress.Office.Services.IUriProvider
+#Region "IUriProvider Members"
+        Public Function CreateCssUri(ByVal rootUri As String, ByVal styleText As String, ByVal relativeUri As String) As String _
+        Implements DevExpress.Office.Services.IUriProvider.CreateCssUri
+            Return String.Empty
+        End Function
+
+        Public Function CreateImageUri(ByVal rootUri As String, ByVal image As OfficeImage, ByVal relativeUri As String) As String _
+        Implements DevExpress.Office.Services.IUriProvider.CreateImageUri
+            Return image.Uri
+        End Function
+#End Region
+    End Class
+#End Region ' #customuriprovider
 End Class

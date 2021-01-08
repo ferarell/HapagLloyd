@@ -1439,6 +1439,8 @@ Partial Public Class dsSunat
         
         Private columnC35 As Global.System.Data.DataColumn
         
+        Private columnC36 As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -1755,6 +1757,14 @@ Partial Public Class dsSunat
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property C36Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnC36
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -1814,9 +1824,9 @@ Partial Public Class dsSunat
                     ByVal C20 As Double,  _
                     ByVal C21 As Double,  _
                     ByVal C22 As Double,  _
-                    ByVal C23 As Double,  _
+                    ByVal C23 As String,  _
                     ByVal C24 As Double,  _
-                    ByVal C25 As String,  _
+                    ByVal C25 As Double,  _
                     ByVal C26 As String,  _
                     ByVal C27 As String,  _
                     ByVal C28 As String,  _
@@ -1826,9 +1836,10 @@ Partial Public Class dsSunat
                     ByVal C32 As String,  _
                     ByVal C33 As String,  _
                     ByVal C34 As String,  _
-                    ByVal C35 As String) As RegistroVentasRow
+                    ByVal C35 As String,  _
+                    ByVal C36 As String) As RegistroVentasRow
             Dim rowRegistroVentasRow As RegistroVentasRow = CType(Me.NewRow,RegistroVentasRow)
-            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35}
+            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36}
             rowRegistroVentasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRegistroVentasRow)
             Return rowRegistroVentasRow
@@ -1886,6 +1897,7 @@ Partial Public Class dsSunat
             Me.columnC33 = MyBase.Columns("C33")
             Me.columnC34 = MyBase.Columns("C34")
             Me.columnC35 = MyBase.Columns("C35")
+            Me.columnC36 = MyBase.Columns("C36")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1935,11 +1947,11 @@ Partial Public Class dsSunat
             MyBase.Columns.Add(Me.columnC21)
             Me.columnC22 = New Global.System.Data.DataColumn("C22", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC22)
-            Me.columnC23 = New Global.System.Data.DataColumn("C23", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnC23 = New Global.System.Data.DataColumn("C23", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC23)
             Me.columnC24 = New Global.System.Data.DataColumn("C24", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC24)
-            Me.columnC25 = New Global.System.Data.DataColumn("C25", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnC25 = New Global.System.Data.DataColumn("C25", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC25)
             Me.columnC26 = New Global.System.Data.DataColumn("C26", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC26)
@@ -1961,6 +1973,8 @@ Partial Public Class dsSunat
             MyBase.Columns.Add(Me.columnC34)
             Me.columnC35 = New Global.System.Data.DataColumn("C35", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC35)
+            Me.columnC36 = New Global.System.Data.DataColumn("C36", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnC36)
             Me.columnC1.Caption = "Periodo"
             Me.columnC1.MaxLength = 8
             Me.columnC2.Caption = "Asiento Contable"
@@ -2006,39 +2020,41 @@ Partial Public Class dsSunat
             Me.columnC21.DefaultValue = CType(0R,Double)
             Me.columnC22.Caption = "Impuesto a las Ventas del Arroz Pilado "
             Me.columnC22.DefaultValue = CType(0R,Double)
-            Me.columnC23.Caption = "Otros conceptos, tributos y cargos que no forman parte de la base imponible"
-            Me.columnC23.DefaultValue = CType(0R,Double)
-            Me.columnC24.Caption = "Importe total del comprobante de pago"
+            Me.columnC23.Caption = "Impuesto al Consumo de las Bolsas de Plástico."
+            Me.columnC23.DefaultValue = CType("0.00",String)
+            Me.columnC24.Caption = "Otros conceptos, tributos y cargos que no forman parte de la base imponible"
             Me.columnC24.DefaultValue = CType(0R,Double)
-            Me.columnC25.Caption = "Código  de la Moneda (Tabla 4)"
-            Me.columnC25.MaxLength = 3
-            Me.columnC26.Caption = "Tipo de cambio (5)"
-            Me.columnC26.MaxLength = 5
-            Me.columnC27.Caption = "Fecha de emisión del comprobante de pago o documento original que se modifica (6)"& _ 
+            Me.columnC25.Caption = "Importe total del comprobante de pago"
+            Me.columnC25.DefaultValue = CType(0R,Double)
+            Me.columnC26.Caption = "Código  de la Moneda (Tabla 4)"
+            Me.columnC26.MaxLength = 3
+            Me.columnC27.Caption = "Tipo de cambio (5)"
+            Me.columnC27.MaxLength = 5
+            Me.columnC28.Caption = "Fecha de emisión del comprobante de pago o documento original que se modifica (6)"& _ 
                 " o documento referencial al documento que sustenta el crédito fiscal"
-            Me.columnC27.MaxLength = 10
-            Me.columnC28.Caption = "Tipo del comprobante de pago que se modifica (6)"
-            Me.columnC28.MaxLength = 2
-            Me.columnC29.Caption = "Número de serie del comprobante de pago que se modifica (6) o Código de la Depend"& _ 
+            Me.columnC28.MaxLength = 10
+            Me.columnC29.Caption = "Tipo del comprobante de pago que se modifica (6)"
+            Me.columnC29.MaxLength = 2
+            Me.columnC30.Caption = "Número de serie del comprobante de pago que se modifica (6) o Código de la Depend"& _ 
                 "encia Aduanera"
-            Me.columnC29.MaxLength = 20
-            Me.columnC30.Caption = "Número del comprobante de pago que se modifica (6) o Número de la DUA, de corresp"& _ 
-                "onder"
             Me.columnC30.MaxLength = 20
-            Me.columnC31.Caption = "Identificación del Contrato o del proyecto en el caso de los Operadores de las so"& _ 
+            Me.columnC31.Caption = "Número del comprobante de pago que se modifica (6) o Número de la DUA, de corresp"& _ 
+                "onder"
+            Me.columnC31.MaxLength = 20
+            Me.columnC32.Caption = "Identificación del Contrato o del proyecto en el caso de los Operadores de las so"& _ 
                 "ciedades irregulares, consorcios, joint ventures u otras formas de contratos de "& _ 
                 "colaboración empresarial, que no lleven contabilidad independiente."
-            Me.columnC31.MaxLength = 12
-            Me.columnC32.Caption = "Error tipo 1: inconsistencia en el tipo de cambio"
-            Me.columnC32.MaxLength = 1
-            Me.columnC33.Caption = "Indicador de Comprobantes de pago cancelados con medios de pago"
+            Me.columnC32.MaxLength = 12
+            Me.columnC33.Caption = "Error tipo 1: inconsistencia en el tipo de cambio"
             Me.columnC33.MaxLength = 1
-            Me.columnC34.Caption = "Estado que identifica la oportunidad de la anotación o indicación si ésta corresp"& _ 
+            Me.columnC34.Caption = "Indicador de Comprobantes de pago cancelados con medios de pago"
+            Me.columnC34.MaxLength = 1
+            Me.columnC35.Caption = "Estado que identifica la oportunidad de la anotación o indicación si ésta corresp"& _ 
                 "onde a alguna de las situaciones previstas en el inciso e) del artículo 8° de la"& _ 
                 " Resolución de Superintendencia N.° 286-2009/SUNAT"
-            Me.columnC34.MaxLength = 1
-            Me.columnC35.Caption = "Errores"
             Me.columnC35.MaxLength = 1
+            Me.columnC36.Caption = "Errores"
+            Me.columnC36.MaxLength = 1
             Me.Locale = New Global.System.Globalization.CultureInfo("es-PE")
         End Sub
         
@@ -2264,6 +2280,8 @@ Partial Public Class dsSunat
         Private columnC43 As Global.System.Data.DataColumn
         
         Private columnC44 As Global.System.Data.DataColumn
+        
+        Private columnC45 As Global.System.Data.DataColumn
         
         Private columnERR As Global.System.Data.DataColumn
         
@@ -2656,6 +2674,14 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property C45Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnC45
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property ERRColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnERR
@@ -2721,9 +2747,9 @@ Partial Public Class dsSunat
                     ByVal C19 As Double,  _
                     ByVal C20 As Double,  _
                     ByVal C21 As Double,  _
-                    ByVal C22 As Double,  _
+                    ByVal C22 As String,  _
                     ByVal C23 As Double,  _
-                    ByVal C24 As String,  _
+                    ByVal C24 As Double,  _
                     ByVal C25 As String,  _
                     ByVal C26 As String,  _
                     ByVal C27 As String,  _
@@ -2742,11 +2768,12 @@ Partial Public Class dsSunat
                     ByVal C40 As String,  _
                     ByVal C41 As String,  _
                     ByVal C42 As String,  _
-                    ByVal C43 As Boolean,  _
+                    ByVal C43 As String,  _
                     ByVal C44 As Boolean,  _
+                    ByVal C45 As Boolean,  _
                     ByVal ERR As String) As RegistroCompras1Row
             Dim rowRegistroCompras1Row As RegistroCompras1Row = CType(Me.NewRow,RegistroCompras1Row)
-            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43, C44, ERR}
+            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, C38, C39, C40, C41, C42, C43, C44, C45, ERR}
             rowRegistroCompras1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowRegistroCompras1Row)
             Return rowRegistroCompras1Row
@@ -2813,6 +2840,7 @@ Partial Public Class dsSunat
             Me.columnC42 = MyBase.Columns("C42")
             Me.columnC43 = MyBase.Columns("C43")
             Me.columnC44 = MyBase.Columns("C44")
+            Me.columnC45 = MyBase.Columns("C45")
             Me.columnERR = MyBase.Columns("ERR")
         End Sub
         
@@ -2861,11 +2889,11 @@ Partial Public Class dsSunat
             MyBase.Columns.Add(Me.columnC20)
             Me.columnC21 = New Global.System.Data.DataColumn("C21", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC21)
-            Me.columnC22 = New Global.System.Data.DataColumn("C22", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnC22 = New Global.System.Data.DataColumn("C22", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC22)
             Me.columnC23 = New Global.System.Data.DataColumn("C23", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC23)
-            Me.columnC24 = New Global.System.Data.DataColumn("C24", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnC24 = New Global.System.Data.DataColumn("C24", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC24)
             Me.columnC25 = New Global.System.Data.DataColumn("C25", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC25)
@@ -2903,10 +2931,12 @@ Partial Public Class dsSunat
             MyBase.Columns.Add(Me.columnC41)
             Me.columnC42 = New Global.System.Data.DataColumn("C42", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC42)
-            Me.columnC43 = New Global.System.Data.DataColumn("C43", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnC43 = New Global.System.Data.DataColumn("C43", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC43)
             Me.columnC44 = New Global.System.Data.DataColumn("C44", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC44)
+            Me.columnC45 = New Global.System.Data.DataColumn("C45", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnC45)
             Me.columnERR = New Global.System.Data.DataColumn("ERR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnERR)
             Me.columnC1.Caption = "Periodo"
@@ -2979,57 +3009,59 @@ Partial Public Class dsSunat
             Me.columnC21.Caption = "Monto del Impuesto Selectivo al Consumo en los casos en que el sujeto pueda utili"& _ 
                 "zarlo como deducción."
             Me.columnC21.DefaultValue = CType(0R,Double)
-            Me.columnC22.Caption = "Otros conceptos, tributos y cargos que no formen parte de la base imponible."
-            Me.columnC22.DefaultValue = CType(0R,Double)
-            Me.columnC23.Caption = "Importe total de las adquisiciones registradas según comprobante de pago."
+            Me.columnC22.Caption = "Impuesto al Consumo de las Bolsas de Plástico."
+            Me.columnC22.DefaultValue = CType("0.00",String)
+            Me.columnC23.Caption = "Otros conceptos, tributos y cargos que no formen parte de la base imponible."
             Me.columnC23.DefaultValue = CType(0R,Double)
-            Me.columnC24.Caption = "Código  de la Moneda (Tabla 4)"
-            Me.columnC24.MaxLength = 3
-            Me.columnC25.Caption = "Tipo de cambio (3)."
-            Me.columnC25.MaxLength = 5
-            Me.columnC26.Caption = "Fecha de emisión del comprobante de pago que se modifica (4)."
-            Me.columnC26.MaxLength = 10
-            Me.columnC27.Caption = "Tipo de comprobante de pago que se modifica (4)."
-            Me.columnC27.MaxLength = 2
-            Me.columnC28.Caption = "Número de serie del comprobante de pago que se modifica (4)."
-            Me.columnC28.MaxLength = 20
-            Me.columnC29.Caption = "Código de la dependencia Aduanera de la Declaración Única de Aduanas (DUA) o de l"& _ 
+            Me.columnC24.Caption = "Importe total de las adquisiciones registradas según comprobante de pago."
+            Me.columnC24.DefaultValue = CType(0R,Double)
+            Me.columnC25.Caption = "Código  de la Moneda (Tabla 4)"
+            Me.columnC25.MaxLength = 3
+            Me.columnC26.Caption = "Tipo de cambio (3)."
+            Me.columnC26.MaxLength = 5
+            Me.columnC27.Caption = "Fecha de emisión del comprobante de pago que se modifica (4)."
+            Me.columnC27.MaxLength = 10
+            Me.columnC28.Caption = "Tipo de comprobante de pago que se modifica (4)."
+            Me.columnC28.MaxLength = 2
+            Me.columnC29.Caption = "Número de serie del comprobante de pago que se modifica (4)."
+            Me.columnC29.MaxLength = 20
+            Me.columnC30.Caption = "Código de la dependencia Aduanera de la Declaración Única de Aduanas (DUA) o de l"& _ 
                 "a Declaración Simplificada de Importación (DSI) ."
-            Me.columnC29.MaxLength = 3
-            Me.columnC30.Caption = "Número del comprobante de pago que se modifica (4)."
-            Me.columnC30.MaxLength = 20
-            Me.columnC31.Caption = "Fecha de emisión de la Constancia de Depósito de Detracción (6)"
-            Me.columnC31.MaxLength = 10
-            Me.columnC32.Caption = "Número de la Constancia de Depósito de Detracción (6)"
-            Me.columnC32.MaxLength = 24
-            Me.columnC33.Caption = "Marca del comprobante de pago sujeto a retención"
-            Me.columnC33.MaxLength = 1
-            Me.columnC34.Caption = """Clasificación de los bienes y servicios adquiridos (Tabla 30) "&Global.Microsoft.VisualBasic.ChrW(10)&"Aplicable solo a "& _ 
+            Me.columnC30.MaxLength = 3
+            Me.columnC31.Caption = "Número del comprobante de pago que se modifica (4)."
+            Me.columnC31.MaxLength = 20
+            Me.columnC32.Caption = "Fecha de emisión de la Constancia de Depósito de Detracción (6)"
+            Me.columnC32.MaxLength = 10
+            Me.columnC33.Caption = "Número de la Constancia de Depósito de Detracción (6)"
+            Me.columnC33.MaxLength = 24
+            Me.columnC34.Caption = "Marca del comprobante de pago sujeto a retención"
+            Me.columnC34.MaxLength = 1
+            Me.columnC35.Caption = """Clasificación de los bienes y servicios adquiridos (Tabla 30) "&Global.Microsoft.VisualBasic.ChrW(10)&"Aplicable solo a "& _ 
                 "los contribuyentes que hayan obtenido ingresos mayores a 1,500 UIT en el ejercic"& _ 
                 "io anterior"""
-            Me.columnC34.MaxLength = 1
-            Me.columnC35.Caption = "Identificación del Contrato o del proyecto en el caso de los Operadores de las so"& _ 
+            Me.columnC35.MaxLength = 1
+            Me.columnC36.Caption = "Identificación del Contrato o del proyecto en el caso de los Operadores de las so"& _ 
                 "ciedades irregulares, consorcios, joint ventures u otras formas de contratos de "& _ 
                 "colaboración empresarial, que no lleven contabilidad independiente."
-            Me.columnC35.MaxLength = 12
-            Me.columnC36.Caption = "Error tipo 1: inconsistencia en el tipo de cambio"
-            Me.columnC36.MaxLength = 1
-            Me.columnC37.Caption = "Error tipo 2: inconsistencia por proveedores no habidos"
+            Me.columnC36.MaxLength = 12
+            Me.columnC37.Caption = "Error tipo 1: inconsistencia en el tipo de cambio"
             Me.columnC37.MaxLength = 1
-            Me.columnC38.Caption = "Error tipo 3: inconsistencia por proveedores que renunciaron a la exoneración del"& _ 
-                " Apéndice I del IGV"
+            Me.columnC38.Caption = "Error tipo 2: inconsistencia por proveedores no habidos"
             Me.columnC38.MaxLength = 1
-            Me.columnC39.Caption = "Error tipo 4: inconsistencia por DNIs que fueron utilizados en las Liquidaciones "& _ 
-                "de Compra y que ya cuentan con RUC"
+            Me.columnC39.Caption = "Error tipo 3: inconsistencia por proveedores que renunciaron a la exoneración del"& _ 
+                " Apéndice I del IGV"
             Me.columnC39.MaxLength = 1
-            Me.columnC40.Caption = "Indicador de Comprobantes de pago cancelados con medios de pago"
+            Me.columnC40.Caption = "Error tipo 4: inconsistencia por DNIs que fueron utilizados en las Liquidaciones "& _ 
+                "de Compra y que ya cuentan con RUC"
             Me.columnC40.MaxLength = 1
-            Me.columnC41.Caption = "Estado que identifica la oportunidad de la anotación o indicación si ésta corresp"& _ 
-                "onde a un ajuste."
+            Me.columnC41.Caption = "Indicador de Comprobantes de pago cancelados con medios de pago"
             Me.columnC41.MaxLength = 1
-            Me.columnC42.Caption = "Errores"
-            Me.columnC43.Caption = "Elimina Duplicado"
-            Me.columnC44.Caption = "Ajuste o Rectificación"
+            Me.columnC42.Caption = "Estado que identifica la oportunidad de la anotación o indicación si ésta corresp"& _ 
+                "onde a un ajuste."
+            Me.columnC42.MaxLength = 1
+            Me.columnC43.Caption = "Errores"
+            Me.columnC44.Caption = "Elimina Duplicado"
+            Me.columnC45.Caption = "Ajuste o Rectificación"
             Me.Locale = New Global.System.Globalization.CultureInfo("es-PE")
         End Sub
         
@@ -17201,10 +17233,10 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property C23() As Double
+        Public Property C23() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableRegistroVentas.C23Column),Double)
+                    Return CType(Me(Me.tableRegistroVentas.C23Column),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C23' de la tabla 'RegistroVentas' es DBNull.", e)
                 End Try
@@ -17231,10 +17263,10 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property C25() As String
+        Public Property C25() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRegistroVentas.C25Column),String)
+                    Return CType(Me(Me.tableRegistroVentas.C25Column),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C25' de la tabla 'RegistroVentas' es DBNull.", e)
                 End Try
@@ -17383,14 +17415,29 @@ Partial Public Class dsSunat
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property C35() As String
             Get
-                If Me.IsC35Null Then
-                    Return String.Empty
-                Else
+                Try 
                     Return CType(Me(Me.tableRegistroVentas.C35Column),String)
-                End If
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C35' de la tabla 'RegistroVentas' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableRegistroVentas.C35Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property C36() As String
+            Get
+                If Me.IsC36Null Then
+                    Return String.Empty
+                Else
+                    Return CType(Me(Me.tableRegistroVentas.C36Column),String)
+                End If
+            End Get
+            Set
+                Me(Me.tableRegistroVentas.C36Column) = value
             End Set
         End Property
         
@@ -17813,6 +17860,18 @@ Partial Public Class dsSunat
         Public Sub SetC35Null()
             Me(Me.tableRegistroVentas.C35Column) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsC36Null() As Boolean
+            Return Me.IsNull(Me.tableRegistroVentas.C36Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetC36Null()
+            Me(Me.tableRegistroVentas.C36Column) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -18147,10 +18206,10 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property C22() As Double
+        Public Property C22() As String
             Get
                 Try 
-                    Return CType(Me(Me.tableRegistroCompras1.C22Column),Double)
+                    Return CType(Me(Me.tableRegistroCompras1.C22Column),String)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C22' de la tabla 'RegistroCompras1' es DBNull.", e)
                 End Try
@@ -18177,10 +18236,10 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property C24() As String
+        Public Property C24() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableRegistroCompras1.C24Column),String)
+                    Return CType(Me(Me.tableRegistroCompras1.C24Column),Double)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C24' de la tabla 'RegistroCompras1' es DBNull.", e)
                 End Try
@@ -18449,11 +18508,11 @@ Partial Public Class dsSunat
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property C42() As String
             Get
-                If Me.IsC42Null Then
-                    Return String.Empty
-                Else
+                Try 
                     Return CType(Me(Me.tableRegistroCompras1.C42Column),String)
-                End If
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C42' de la tabla 'RegistroCompras1' es DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableRegistroCompras1.C42Column) = value
@@ -18462,13 +18521,13 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property C43() As Boolean
+        Public Property C43() As String
             Get
-                Try 
-                    Return CType(Me(Me.tableRegistroCompras1.C43Column),Boolean)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C43' de la tabla 'RegistroCompras1' es DBNull.", e)
-                End Try
+                If Me.IsC43Null Then
+                    Return String.Empty
+                Else
+                    Return CType(Me(Me.tableRegistroCompras1.C43Column),String)
+                End If
             End Get
             Set
                 Me(Me.tableRegistroCompras1.C43Column) = value
@@ -18487,6 +18546,21 @@ Partial Public Class dsSunat
             End Get
             Set
                 Me(Me.tableRegistroCompras1.C44Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property C45() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableRegistroCompras1.C45Column),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C45' de la tabla 'RegistroCompras1' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRegistroCompras1.C45Column) = value
             End Set
         End Property
         
@@ -19031,6 +19105,18 @@ Partial Public Class dsSunat
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetC44Null()
             Me(Me.tableRegistroCompras1.C44Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsC45Null() As Boolean
+            Return Me.IsNull(Me.tableRegistroCompras1.C45Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetC45Null()
+            Me(Me.tableRegistroCompras1.C45Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

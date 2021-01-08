@@ -229,13 +229,14 @@ Public Class RegistroComprasForm
                 dtResult1.Rows(iPosition).Item("C20") = Format(row(6), "###########0.00")
             End If
             dtResult1.Rows(iPosition).Item("C21") = "0"
-            dtResult1.Rows(iPosition).Item("C22") = "0"
-            dtResult1.Rows(iPosition).Item("C23") = Format(dtResult1.Rows(iPosition).Item("C14") + dtResult1.Rows(iPosition).Item("C15") + dtResult1.Rows(iPosition).Item("C20"), "###########0.00")
-            dtResult1.Rows(iPosition).Item("C24") = RTrim(row(13))
+            dtResult1.Rows(iPosition).Item("C22") = "0.00"
+            dtResult1.Rows(iPosition).Item("C23") = "0"
+            dtResult1.Rows(iPosition).Item("C24") = Format(dtResult1.Rows(iPosition).Item("C14") + dtResult1.Rows(iPosition).Item("C15") + dtResult1.Rows(iPosition).Item("C20"), "###########0.00")
+            dtResult1.Rows(iPosition).Item("C25") = RTrim(row(13))
             If row(13).trim = "PEN" Then
-                dtResult1.Rows(iPosition).Item("C25") = "1.000"
+                dtResult1.Rows(iPosition).Item("C26") = "1.000"
             Else
-                dtResult1.Rows(iPosition).Item("C25") = Format(CDbl(row(14)), "0.000")
+                dtResult1.Rows(iPosition).Item("C26") = Format(CDbl(row(14)), "0.000")
             End If
             If sTipDoc <> "" Then
                 If dtResult1.Rows(iPosition).Item("C6").ToString.Contains({"07", "08", "87", "88"}) Then
@@ -249,43 +250,43 @@ Public Class RegistroComprasForm
                     dtRow = InsertaDatosAsociados(aDatos)
                     If Not dtRow Is Nothing Then
                         If dtRow.ItemArray.Count > 4 And dtRow(4).ToString.Trim <> "" Then
-                            dtResult1.Rows(iPosition).Item("C26") = Format(dtRow(7), "dd/MM/yyyy")
-                            dtResult1.Rows(iPosition).Item("C27") = dtRow(4)
-                            dtResult1.Rows(iPosition).Item("C28") = dtRow(5)
-                            dtResult1.Rows(iPosition).Item("C30") = dtRow(6)
+                            dtResult1.Rows(iPosition).Item("C27") = Format(dtRow(7), "dd/MM/yyyy")
+                            dtResult1.Rows(iPosition).Item("C28") = dtRow(4)
+                            dtResult1.Rows(iPosition).Item("C29") = dtRow(5)
+                            dtResult1.Rows(iPosition).Item("C31") = dtRow(6)
                         End If
                     End If
                     If Not IsDBNull(row(19)) And Not IsDBNull(row(20)) And Not IsDBNull(row(21)) And Not IsDBNull(row(22)) Then
-                        dtResult1.Rows(iPosition).Item("C26") = Format(CDate(row(19)), "dd/MM/yyyy")
-                        dtResult1.Rows(iPosition).Item("C27") = DataValidation("TipDoc", Strings.Left(row(20).ToString.Trim, 2))
-                        dtResult1.Rows(iPosition).Item("C28") = GetTextFormatValue(dtResult1.Rows(iPosition).Item("C27"), "NroSer", row(21).ToString.Trim)
-                        dtResult1.Rows(iPosition).Item("C30") = GetTextFormatValue(dtResult1.Rows(iPosition).Item("C27"), "NroDoc", row(22).ToString.Trim)
+                        dtResult1.Rows(iPosition).Item("C27") = Format(CDate(row(19)), "dd/MM/yyyy")
+                        dtResult1.Rows(iPosition).Item("C28") = DataValidation("TipDoc", Strings.Left(row(20).ToString.Trim, 2))
+                        dtResult1.Rows(iPosition).Item("C29") = GetTextFormatValue(dtResult1.Rows(iPosition).Item("C27"), "NroSer", row(21).ToString.Trim)
+                        dtResult1.Rows(iPosition).Item("C31") = GetTextFormatValue(dtResult1.Rows(iPosition).Item("C27"), "NroDoc", row(22).ToString.Trim)
                     End If
                 End If
             End If
             If sTipDoc <> "" Then
-                dtResult1.Rows(iPosition).Item("C29") = IIf(dtResult1.Rows(iPosition).Item("C6") = "50", "244", "")
+                dtResult1.Rows(iPosition).Item("C30") = IIf(dtResult1.Rows(iPosition).Item("C6") = "50", "244", "")
                 If dtResult1.Rows(iPosition).Item("C6") = "01" Or dtResult1.Rows(iPosition).Item("C6") = "07" Then
                     dtDetracciones = ExecuteAccessQuery("select [Fecha Pago], [Numero Constancia] from ConstanciasDetracciones where [RUC Proveedor] = '" & row(3).ToString.Trim & "' and [Serie de Comprobante] = '" & dtResult1.Rows(iPosition).Item("C7") & "' and [Numero de Comprobante] = '" & dtResult1.Rows(iPosition).Item("C9") & "'").Tables(0)
                     If dtDetracciones.Rows.Count > 0 Then
-                        dtResult1.Rows(iPosition).Item("C31") = Format(dtDetracciones.Rows(0).Item(0), "dd/MM/yyyy")
-                        dtResult1.Rows(iPosition).Item("C32") = dtDetracciones.Rows(0).Item(1)
+                        dtResult1.Rows(iPosition).Item("C32") = Format(dtDetracciones.Rows(0).Item(0), "dd/MM/yyyy")
+                        dtResult1.Rows(iPosition).Item("C33") = dtDetracciones.Rows(0).Item(1)
                     End If
                 End If
             End If
-            dtResult1.Rows(iPosition).Item("C33") = "" 'Sujeto a retención = 1
-            dtResult1.Rows(iPosition).Item("C34") = "" 'Clasificación de los bienes y servicios adquiridos (Tabla 30) 
-            dtResult1.Rows(iPosition).Item("C35") = ""
+            dtResult1.Rows(iPosition).Item("C34") = "" 'Sujeto a retención = 1
+            dtResult1.Rows(iPosition).Item("C35") = "" 'Clasificación de los bienes y servicios adquiridos (Tabla 30) 
             dtResult1.Rows(iPosition).Item("C36") = ""
             dtResult1.Rows(iPosition).Item("C37") = ""
             dtResult1.Rows(iPosition).Item("C38") = ""
             dtResult1.Rows(iPosition).Item("C39") = ""
             dtResult1.Rows(iPosition).Item("C40") = ""
+            dtResult1.Rows(iPosition).Item("C41") = ""
             'If IsDBNull(dtResult1.Rows(iPosition).Item("C41")) Then
-            dtResult1.Rows(iPosition).Item("C41") = GetStatus("01/" & Format(sePeriodo.EditValue, "00/") & seEjercicio.Text, row(1).ToString, dtSource.Compute("SUM([LC tax amount])", "[Document Number]='" & row(0).ToString & "'").ToString, IIf(row(18).ToString = "", False, True))
+            dtResult1.Rows(iPosition).Item("C42") = GetStatus("01/" & Format(sePeriodo.EditValue, "00/") & seEjercicio.Text, row(1).ToString, dtSource.Compute("SUM([LC tax amount])", "[Document Number]='" & row(0).ToString & "'").ToString, IIf(row(18).ToString = "", False, True))
             'End If
             If dtResult1.Rows(iPosition).Item("C6").ToString.Contains({"07", "08", "87", "88"}) Then
-                If IsDBNull(dtResult1.Rows(iPosition).Item("C26")) Or IsDBNull(dtResult1.Rows(iPosition).Item("C28")) Or IsDBNull(dtResult1.Rows(iPosition).Item("C30")) Then
+                If IsDBNull(dtResult1.Rows(iPosition).Item("C27")) Or IsDBNull(dtResult1.Rows(iPosition).Item("C29")) Or IsDBNull(dtResult1.Rows(iPosition).Item("C31")) Then
                     bFlatFileGenerate = False
                     dtResult1.Rows(iPosition).Item("ERR") = "El documento de referencia es obligatorio. "
                 End If

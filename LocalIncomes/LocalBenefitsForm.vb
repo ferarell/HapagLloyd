@@ -28,6 +28,7 @@ Public Class LocalBenefitsForm
             SplashScreenManager.CloseForm(False)
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+        XtraTabControl1.SelectedTabPageIndex = 0
     End Sub
 
     Private Sub LoadCountry()
@@ -102,8 +103,8 @@ Public Class LocalBenefitsForm
         oSharePointTransactions.FieldsList.Add({"SalesExecution"})
         oSharePointTransactions.FieldsList.Add({"SalesCoordination"})
         oSharePointTransactions.FieldsList.Add({"TipoConcesion"})
-        oSharePointTransactions.FieldsList.Add({"TipoConcesionEspecifica"})
         oSharePointTransactions.FieldsList.Add({"CondicionBL"})
+        oSharePointTransactions.FieldsList.Add({"TipoBL"})
         oSharePointTransactions.FieldsList.Add({"RateAgreement"})
         oSharePointTransactions.FieldsList.Add({"MBL_Rol"})
         oSharePointTransactions.FieldsList.Add({"MBL_RUC"})
@@ -154,6 +155,7 @@ Public Class LocalBenefitsForm
         dtListDetail = oSharePointTransactions.GetItems()
         GridControl2.DataSource = dtListDetail
         GridView2.BestFitColumns()
+        ShowDetailSelected()
         SplashScreenManager.CloseForm(False)
     End Sub
 
@@ -187,10 +189,10 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
-        LoadLocalBenefits()
         LoadConcepts()
-        LoadLocalBenefitsDetail()
         LoadUserRole()
+        LoadLocalBenefits()
+        LoadLocalBenefitsDetail()
     End Sub
 
     Private Sub FormatGrid(oGridView As GridView)
@@ -226,18 +228,23 @@ Public Class LocalBenefitsForm
 
     Private Sub bbiEdit_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEdit.ItemClick
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
-        Dim iPos As Integer = SplitContainerControl1.Size.Height - LayoutControl1.Size.Height
+        Dim iPos As Integer = SplitContainerControl1.Size.Height - lcConcessionDetail.Size.Height
         SplitContainerControl1.SplitterPosition = iPos
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
-        If GridView1.FocusedRowHandle < 0 Then
-            Return
-        End If
+        ShowDetailSelected()
+    End Sub
+
+    Private Sub ShowDetailSelected()
+        'If GridView1.FocusedRowHandle < 0 Then
+        '    Return
+        'End If
         Dim oControls As Control
         Dim oRow As DataRow = GridView1.GetFocusedDataRow
         Try
-            For Each oControls In LayoutControl1.Controls
+            'General Information
+            For Each oControls In lcGeneralInfo.Controls
                 If oControls.Tag Is Nothing Then
                     Continue For
                 End If
@@ -251,13 +258,36 @@ Public Class LocalBenefitsForm
                     End If
                 End If
             Next
-
+            'Concession Detail
+            For Each oControls In lcConcessionDetail.Controls
+                If oControls.Tag Is Nothing Then
+                    Continue For
+                End If
+                DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = Nothing
+                If oRow.Table.Columns.Contains(oControls.Tag) Then
+                    'If DirectCast(oControls.AccessibilityObject, DevExpress.Accessibility.BaseAccessibleObject).Role = "ComboBox" Then
+                    '    MsgBox("hola")
+                    'End If
+                    If Not IsDBNull(oRow(oControls.Tag)) Then
+                        DirectCast(oControls, DevExpress.XtraEditors.BaseEdit).EditValue = oRow(oControls.Tag)
+                    End If
+                End If
+            Next
+            If teID.Text = "" Then
+                cbeStatus.EditValue = "Ingresado"
+            End If
+            Dim dtDetailTemp As New DataTable
+            dtDetailTemp = dtListDetail.Clone
+            If dtListDetail.Rows.Count > 0 Then
+                If dtListDetail.Select("IdParent='" & GridView1.GetFocusedRowCellValue("ID") & "'").Length > 0 Then
+                    dtDetailTemp = dtListDetail.Select("IdParent='" & GridView1.GetFocusedRowCellValue("ID") & "'").CopyToDataTable
+                End If
+            End If
+            GridControl2.DataSource = dtDetailTemp
         Catch ex As Exception
 
         End Try
-
     End Sub
-
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
         Validate()
         If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
@@ -275,19 +305,19 @@ Public Class LocalBenefitsForm
             If drSource("TipoEmbarque").ToString <> cbeLoadingType.EditValue.ToString Then
                 oSharePointTransactions.ValuesList.Add({"TipoEmbarque", cbeLoadingType.EditValue})
             End If
-            If drSource("TipoBeneficio").ToString <> cbeBenefitType.Text Then
-                oSharePointTransactions.ValuesList.Add({"TipoBeneficio", cbeBenefitType.EditValue})
-            End If
+            'If drSource("TipoBeneficio").ToString <> cbeBenefitType.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"TipoBeneficio", cbeBenefitType.EditValue})
+            'End If
             If drSource("RazonSocial").ToString <> teCompanyName.Text Then
                 oSharePointTransactions.ValuesList.Add({"RazonSocial", teCompanyName.Text})
             End If
             If drSource("NumeroIdentificacionTributaria").ToString <> teTaxNumber.Text Then
                 oSharePointTransactions.ValuesList.Add({"NumeroIdentificacionTributaria", teTaxNumber.Text})
             End If
-            If drSource("Vigencia_Desde") <> deValidityFrom.Text Then
+            If drSource("Vigencia_Desde").ToString <> deValidityFrom.Text Then
                 oSharePointTransactions.ValuesList.Add({"Vigencia_Desde", deValidityFrom.DateTime.ToShortDateString})
             End If
-            If drSource("Vigencia_Hasta") <> deValidityTo.Text Then
+            If drSource("Vigencia_Hasta").ToString <> deValidityTo.Text Then
                 oSharePointTransactions.ValuesList.Add({"Vigencia_Hasta", deValidityTo.DateTime.ToShortDateString})
             End If
             If drSource("SalesExecution").ToString <> lueSalesExecution.Text Then
@@ -298,6 +328,9 @@ Public Class LocalBenefitsForm
             End If
             If drSource("TipoConcesion").ToString <> cbeConcessionType.Text Then
                 oSharePointTransactions.ValuesList.Add({"TipoConcesion", cbeConcessionType.EditValue})
+            End If
+            If drSource("TipoBL").ToString <> cbeBlType.Text Then
+                oSharePointTransactions.ValuesList.Add({"TipoBL", cbeBlType.EditValue})
             End If
             If drSource("CondicionBL").ToString <> cbeBlContition.Text Then
                 oSharePointTransactions.ValuesList.Add({"CondicionBL", cbeBlContition.EditValue})
@@ -353,9 +386,9 @@ Public Class LocalBenefitsForm
             If drSource("PuertoFinal").ToString <> lueFinalPort.Text Then
                 oSharePointTransactions.ValuesList.Add({"PuertoFinal", lueFinalPort.GetColumnValue("ID")})
             End If
-            If drSource("PrecintoBASC").ToString <> teSealBasc.Text Then
-                oSharePointTransactions.ValuesList.Add({"PrecintoBASC", teSealBasc.Text})
-            End If
+            'If drSource("PrecintoBASC").ToString <> teSealBasc.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"PrecintoBASC", teSealBasc.Text})
+            'End If
             If drSource("Profit").ToString <> teProfit.Text Then
                 oSharePointTransactions.ValuesList.Add({"Profit", teProfit.Text})
             End If
@@ -363,51 +396,61 @@ Public Class LocalBenefitsForm
                 oSharePointTransactions.ValuesList.Add({"Volumen", teVolumen.Text})
             End If
             If drSource("UsuarioAutorizador").ToString <> lueUserAuthorization.Text Then
-                'oSharePointTransactions.ValuesList.Add({"UsuarioAutorizador", lueUserAuthorization.GetColumnValue("ID")})
+                oSharePointTransactions.ValuesList.Add({"UsuarioAutorizador", lueUserAuthorization.GetColumnValue("ID")})
             End If
             'If drSource("FechaAutorizacion") <> deAuthorizationDate.Text Then
             '    oSharePointTransactions.ValuesList.Add({"FechaAutorizacion", deAuthorizationDate.DateTime.ToShortDateString})
             'End If
-            'If drSource("Estado").ToString <> cbeStatus.Text Then
-            '    oSharePointTransactions.ValuesList.Add({"Estado", cbeStatus.EditValue})
-            'End If
+            If drSource("Estado").ToString <> cbeStatus.Text Then
+                oSharePointTransactions.ValuesList.Add({"Estado", cbeStatus.EditValue})
+            End If
             If drSource("NumeroConcesion").ToString <> teConcessionNumber.Text Then
                 oSharePointTransactions.ValuesList.Add({"NumeroConcesion", teConcessionNumber.Text})
             End If
             If teID.Text = "" Then
                 oSharePointTransactions.InsertItem()
+                LoadLocalBenefits()
+                GridView1.MoveLast()
             Else
                 oSharePointTransactions.UpdateItem(teID.Text)
             End If
+
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
-        Dim drSourceDetail As DataRow = GridView2.GetFocusedDataRow
-        If drSourceDetail("IdParent") Is Nothing Then
-            Return
-        End If
-        Try
-            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-            SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Detail")
-            oSharePointTransactions.SharePointList = "LocalBenefitsDetail"
-            oSharePointTransactions.ValuesList.Clear()
-            oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
-            oSharePointTransactions.ValuesList.Add({"ConceptCode", GetValueByField("Concept", drSourceDetail("ConceptCode"))})
-            oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceDetail("ConceptCurrency"))})
-            oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceDetail("ConceptValue").ToString})
+        For r = 0 To GridView2.RowCount - 1
+            Dim drSourceDetail As DataRow = GridView2.GetDataRow(r)
+            'If drSourceDetail("IdParent") Is Nothing Then
+            '    Return
+            'End If
+            Try
+                SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+                SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Detail")
+                oSharePointTransactions.SharePointList = "LocalBenefitsDetail"
+                oSharePointTransactions.ValuesList.Clear()
+                oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
+                oSharePointTransactions.ValuesList.Add({"ConceptCode", GetValueByField("Concept", drSourceDetail("ConceptCode"))})
+                oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceDetail("ConceptCurrency"))})
+                oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceDetail("ConceptValue").ToString})
 
-            If IsDBNull(drSourceDetail("ID")) Then
-                oSharePointTransactions.InsertItem()
-            Else
-                oSharePointTransactions.UpdateItem(drSourceDetail("ID").ToString)
-            End If
-        Catch ex As Exception
-            SplashScreenManager.CloseForm(False)
-            DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+                If IsDBNull(drSourceDetail("ID")) Then
+                    oSharePointTransactions.InsertItem()
+                Else
+                    oSharePointTransactions.UpdateItem(drSourceDetail("ID").ToString)
+                End If
+                'If oSharePointTransactions.ValuesList.Count > 0 Then
+                '    LoadLocalBenefitsDetail()
+                '    GridView2.MoveLast()
+                'End If
+            Catch ex As Exception
+                SplashScreenManager.CloseForm(False)
+                DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Next
         SplashScreenManager.CloseForm(False)
+        bbiRefresh.PerformClick()
     End Sub
 
     Private Function GetValueByField(FieldName As String, FieldValue As String) As String
@@ -423,12 +466,24 @@ Public Class LocalBenefitsForm
     Private Sub bbiNew_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiNew.ItemClick
         GridView1.AddNewRow()
         SplitContainerControl1.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
-        Dim iPos As Integer = SplitContainerControl1.Size.Height - LayoutControl1.Size.Height
+        Dim iPos As Integer = SplitContainerControl1.Size.Height - lcConcessionDetail.Size.Height
         SplitContainerControl1.SplitterPosition = iPos
     End Sub
 
     Private Sub lueOriginCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueOriginCountry.EditValueChanged
         LoadPort(lueOriginPort, lueOriginCountry.EditValue)
+    End Sub
+
+    Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
+        GridView2.SetFocusedRowCellValue("IdParent", GridView1.GetFocusedRowCellValue("ID"))
+    End Sub
+
+    Private Sub GridView1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
+
+    End Sub
+
+    Private Sub bbiClone_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClone.ItemClick
+
     End Sub
 
     Private Sub lueLoadCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadCountry.EditValueChanged

@@ -197,7 +197,7 @@ Public Class RegistroVentasForm
                 End If
                 dtResult.Rows(iPosition).Item("C9") = ""
             Else
-                dtResult.Rows(iPosition).Item("C35") = "El tipo de documento es incorrecto, verifique la estructura del número de documento de origen (" & row(3) & ")."
+                dtResult.Rows(iPosition).Item("C36") = "El tipo de documento es incorrecto, verifique la estructura del número de documento de origen (" & row(3) & ")."
             End If
             If Not row(5).ToString.Contains("ANULAD") Then
                 dtResult.Rows(iPosition).Item("C10") = IIf(row(4).ToString.Trim.Length = 11, "6", IIf(row(4).ToString.Trim.Length = 8, "1", "0"))
@@ -221,13 +221,14 @@ Public Class RegistroVentasForm
             dtResult.Rows(iPosition).Item("C20") = "0"
             dtResult.Rows(iPosition).Item("C21") = "0"
             dtResult.Rows(iPosition).Item("C22") = "0"
-            dtResult.Rows(iPosition).Item("C23") = "0"
-            dtResult.Rows(iPosition).Item("C24") = Format(row(9) * -1, "###########0.00")
-            dtResult.Rows(iPosition).Item("C25") = row(14).ToString.Trim
+            dtResult.Rows(iPosition).Item("C23") = "0.00"
+            dtResult.Rows(iPosition).Item("C24") = "0"
+            dtResult.Rows(iPosition).Item("C25") = Format(row(9) * -1, "###########0.00")
+            dtResult.Rows(iPosition).Item("C26") = row(14).ToString.Trim
             If row(14).ToString.Trim = "PEN" Then
-                dtResult.Rows(iPosition).Item("C26") = "1.000"
+                dtResult.Rows(iPosition).Item("C27") = "1.000"
             Else
-                dtResult.Rows(iPosition).Item("C26") = Format(CDbl(row(12)), "0.000")
+                dtResult.Rows(iPosition).Item("C27") = Format(CDbl(row(12)), "0.000")
             End If
             If dtResult.Rows(iPosition).Item("C6") = "07" And Not row(5).ToString.Contains("ANULAD") Then
                 Dim aDatos As New ArrayList
@@ -241,23 +242,23 @@ Public Class RegistroVentasForm
                 If Not dtRow Is Nothing Then
                     dtRow(4) = IIf(IsDBNull(dtRow(4)), "", dtRow(4))
                     If dtRow.ItemArray.Count > 4 And dtRow(4).ToString.Trim <> "" Then
-                        dtResult.Rows(iPosition).Item("C27") = Format(dtRow(7), "dd/MM/yyyy")
-                        dtResult.Rows(iPosition).Item("C28") = dtRow(4)
-                        dtResult.Rows(iPosition).Item("C29") = dtRow(5)
-                        dtResult.Rows(iPosition).Item("C30") = dtRow(6)
+                        dtResult.Rows(iPosition).Item("C28") = Format(dtRow(7), "dd/MM/yyyy")
+                        dtResult.Rows(iPosition).Item("C29") = dtRow(4)
+                        dtResult.Rows(iPosition).Item("C30") = dtRow(5)
+                        dtResult.Rows(iPosition).Item("C31") = dtRow(6)
                     End If
                 End If
                 If Not IsDBNull(row(15)) And Not IsDBNull(row(16)) And Not IsDBNull(row(17)) And Not IsDBNull(row(18)) Then
-                    dtResult.Rows(iPosition).Item("C27") = Format(CDate(row(15)), "dd/MM/yyyy")
-                    dtResult.Rows(iPosition).Item("C28") = DataValidation("TipDoc", Strings.Left(row(16).ToString.Trim, 2))
-                    dtResult.Rows(iPosition).Item("C29") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroSer", row(17).ToString.Trim)
-                    dtResult.Rows(iPosition).Item("C30") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroDoc", row(18).ToString.Trim)
+                    dtResult.Rows(iPosition).Item("C28") = Format(CDate(row(15)), "dd/MM/yyyy")
+                    dtResult.Rows(iPosition).Item("C29") = DataValidation("TipDoc", Strings.Left(row(16).ToString.Trim, 2))
+                    dtResult.Rows(iPosition).Item("C30") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroSer", row(17).ToString.Trim)
+                    dtResult.Rows(iPosition).Item("C31") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroDoc", row(18).ToString.Trim)
                 End If
             End If
-            dtResult.Rows(iPosition).Item("C31") = ""
             dtResult.Rows(iPosition).Item("C32") = ""
-            dtResult.Rows(iPosition).Item("C33") = "1"
-            dtResult.Rows(iPosition).Item("C34") = GetStatus("01/" & Format(sePeriodo.Value, "00/") & seEjercicio.Value, row(1), row(8), IIf(row(5).ToString.Contains("ANULAD"), True, False))
+            dtResult.Rows(iPosition).Item("C33") = ""
+            dtResult.Rows(iPosition).Item("C34") = "1"
+            dtResult.Rows(iPosition).Item("C35") = GetStatus("01/" & Format(sePeriodo.Value, "00/") & seEjercicio.Value, row(1), row(8), IIf(row(5).ToString.Contains("ANULAD"), True, False))
         Catch ex As Exception
             If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Fila " & iPosition.ToString & ". " & ex.Message & ". Desea cancelar el proceso?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = Windows.Forms.DialogResult.Yes Then
                 bProcess = False

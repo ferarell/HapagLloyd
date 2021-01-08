@@ -9,7 +9,7 @@
       <Value Profile="(Default)">dbNotifications.accdb</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Blue</Value>
+      <Value Profile="(Default)">VS2010</Value>
     </Setting>
     <Setting Name="PaintStyle" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
