@@ -19,9 +19,10 @@ Partial Class RegistroVentasForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Me.components = New System.ComponentModel.Container()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistroVentasForm))
-        Dim PivotGridGroup2 As DevExpress.XtraPivotGrid.PivotGridGroup = New DevExpress.XtraPivotGrid.PivotGridGroup()
+        Dim PivotGridGroup1 As DevExpress.XtraPivotGrid.PivotGridGroup = New DevExpress.XtraPivotGrid.PivotGridGroup()
         Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -45,7 +46,7 @@ Partial Class RegistroVentasForm
         Me.gcLibroSunat = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.fieldC11 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.vpLedger = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.vpLedger = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.lueSociedad = New DevExpress.XtraEditors.LookUpEdit()
         Me.beArchivoOrigen = New DevExpress.XtraEditors.ButtonEdit()
@@ -57,7 +58,7 @@ Partial Class RegistroVentasForm
         Me.beArchivoSalida = New DevExpress.XtraEditors.ButtonEdit()
         Me.sePeriodo = New DevExpress.XtraEditors.SpinEdit()
         Me.seEjercicio = New DevExpress.XtraEditors.SpinEdit()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
@@ -67,13 +68,15 @@ Partial Class RegistroVentasForm
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiProcesar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiGuardar = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExportar = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiSunatPle = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiCerrar = New DevExpress.XtraBars.BarButtonItem()
         Me.BarDockControl1 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList()
+        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList(Me.components)
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.bsiVistas = New DevExpress.XtraBars.BarSubItem()
         Me.bbiVistaGrilla = New DevExpress.XtraBars.BarButtonItem()
@@ -95,14 +98,12 @@ Partial Class RegistroVentasForm
         Me.fieldC16 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.fieldC19 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.fieldC13 = New DevExpress.XtraPivotGrid.PivotGridField()
-        Me.fieldC24 = New DevExpress.XtraPivotGrid.PivotGridField()
+        Me.fieldC25 = New DevExpress.XtraPivotGrid.PivotGridField()
         Me.SplitterControl2 = New DevExpress.XtraEditors.SplitterControl()
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiGuardar = New DevExpress.XtraBars.BarButtonItem()
-        Me.bbiSunatPle = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcLibroSunat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -130,7 +131,6 @@ Partial Class RegistroVentasForm
         'CardView1
         '
         Me.CardView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn15, Me.GridColumn20, Me.GridColumn21, Me.GridColumn22, Me.GridColumn23, Me.GridColumn24, Me.GridColumn25, Me.GridColumn26, Me.GridColumn27, Me.GridColumn28, Me.GridColumn29, Me.GridColumn30, Me.GridColumn31, Me.GridColumn32, Me.GridColumn33, Me.GridColumn34, Me.GridColumn35, Me.GridColumn36, Me.GridColumn38})
-        Me.CardView1.FocusedCardTopFieldIndex = 0
         Me.CardView1.GridControl = Me.gcLibroSunat
         Me.CardView1.Name = "CardView1"
         Me.CardView1.OptionsBehavior.Editable = False
@@ -282,13 +282,13 @@ Partial Class RegistroVentasForm
         Me.gcLibroSunat.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcLibroSunat.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcLibroSunat.EmbeddedNavigator.Buttons.Remove.Visible = False
-        GridLevelNode2.LevelTemplate = Me.CardView1
-        GridLevelNode2.RelationName = "Level1"
-        Me.gcLibroSunat.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
+        GridLevelNode1.LevelTemplate = Me.CardView1
+        GridLevelNode1.RelationName = "Level1"
+        Me.gcLibroSunat.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.gcLibroSunat.Location = New System.Drawing.Point(2, 2)
         Me.gcLibroSunat.MainView = Me.GridView1
         Me.gcLibroSunat.Name = "gcLibroSunat"
-        Me.gcLibroSunat.Size = New System.Drawing.Size(852, 148)
+        Me.gcLibroSunat.Size = New System.Drawing.Size(852, 158)
         Me.gcLibroSunat.TabIndex = 169
         Me.gcLibroSunat.UseEmbeddedNavigator = True
         Me.gcLibroSunat.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1, Me.CardView1})
@@ -299,6 +299,7 @@ Partial Class RegistroVentasForm
         Me.GridView1.GroupSummary.AddRange(New DevExpress.XtraGrid.GridSummaryItem() {New DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ImporteTotal", Nothing, "", New Decimal(New Integer() {0, 0, 0, 131072}))})
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsView.ColumnAutoWidth = False
         Me.GridView1.OptionsView.ShowAutoFilterRow = True
         Me.GridView1.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways
         Me.GridView1.OptionsView.ShowFooter = True
@@ -328,7 +329,7 @@ Partial Class RegistroVentasForm
         Me.PanelControl1.Controls.Add(Me.sePeriodo)
         Me.PanelControl1.Controls.Add(Me.seEjercicio)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 47)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 41)
         Me.PanelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(856, 142)
@@ -340,7 +341,7 @@ Partial Class RegistroVentasForm
         Me.lueSociedad.Margin = New System.Windows.Forms.Padding(2)
         Me.lueSociedad.Name = "lueSociedad"
         Me.lueSociedad.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueSociedad.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyDescription", 60, "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTaxCode", "RUC"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyAddress", "Dirección", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default])})
+        Me.lueSociedad.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyDescription", "Descripción", 60, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyTaxCode", "RUC"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CompanyAddress", "Dirección", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueSociedad.Properties.NullText = ""
         Me.lueSociedad.Size = New System.Drawing.Size(394, 20)
         Me.lueSociedad.TabIndex = 0
@@ -471,36 +472,32 @@ Partial Class RegistroVentasForm
         '
         Me.brsDescripcion.Id = 30
         Me.brsDescripcion.Name = "brsDescripcion"
-        Me.brsDescripcion.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'barStaticItem3
         '
         Me.barStaticItem3.Caption = "0 / 0"
         Me.barStaticItem3.Id = 31
         Me.barStaticItem3.Name = "barStaticItem3"
-        Me.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'barStaticItem4
         '
         Me.barStaticItem4.Caption = "Estado"
         Me.barStaticItem4.Id = 46
         Me.barStaticItem4.Name = "barStaticItem4"
-        Me.barStaticItem4.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'brsEstado
         '
         Me.brsEstado.Caption = "Lectura"
         Me.brsEstado.Id = 47
         Me.brsEstado.Name = "brsEstado"
-        Me.brsEstado.TextAlignment = System.Drawing.StringAlignment.Near
         '
         'beiProceso
         '
         Me.beiProceso.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
         Me.beiProceso.Edit = Me.rpiProceso
+        Me.beiProceso.EditWidth = 150
         Me.beiProceso.Id = 0
         Me.beiProceso.Name = "beiProceso"
-        Me.beiProceso.Width = 150
         '
         'rpiProceso
         '
@@ -522,29 +519,43 @@ Partial Class RegistroVentasForm
         'bbiProcesar
         '
         Me.bbiProcesar.Caption = "&Procesar"
-        Me.bbiProcesar.Glyph = CType(resources.GetObject("bbiProcesar.Glyph"), System.Drawing.Image)
         Me.bbiProcesar.Id = 33
-        Me.bbiProcesar.ImageIndex = 26
+        Me.bbiProcesar.ImageOptions.Image = CType(resources.GetObject("bbiProcesar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiProcesar.ImageOptions.ImageIndex = 26
+        Me.bbiProcesar.ImageOptions.LargeImageIndex = 7
         Me.bbiProcesar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
-        Me.bbiProcesar.LargeImageIndex = 7
         Me.bbiProcesar.Name = "bbiProcesar"
+        '
+        'bbiGuardar
+        '
+        Me.bbiGuardar.Caption = "&Guardar"
+        Me.bbiGuardar.Id = 27
+        Me.bbiGuardar.ImageOptions.Image = CType(resources.GetObject("bbiGuardar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiGuardar.Name = "bbiGuardar"
         '
         'bbiExportar
         '
         Me.bbiExportar.Caption = "&Exportar"
         Me.bbiExportar.Id = 21
-        Me.bbiExportar.ImageIndex = 19
+        Me.bbiExportar.ImageOptions.ImageIndex = 19
         Me.bbiExportar.Name = "bbiExportar"
         Me.bbiExportar.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        '
+        'bbiSunatPle
+        '
+        Me.bbiSunatPle.Caption = "Generar &PLE"
+        Me.bbiSunatPle.Id = 28
+        Me.bbiSunatPle.ImageOptions.Image = CType(resources.GetObject("bbiSunatPle.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSunatPle.Name = "bbiSunatPle"
         '
         'bbiCerrar
         '
         Me.bbiCerrar.Caption = "&Cerrar"
-        Me.bbiCerrar.Glyph = CType(resources.GetObject("bbiCerrar.Glyph"), System.Drawing.Image)
         Me.bbiCerrar.Id = 41
-        Me.bbiCerrar.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.Image = CType(resources.GetObject("bbiCerrar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiCerrar.ImageOptions.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.LargeImageIndex = 0
         Me.bbiCerrar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiCerrar.LargeImageIndex = 0
         Me.bbiCerrar.Name = "bbiCerrar"
         Me.bbiCerrar.ShortcutKeyDisplayString = "Alt+C"
         '
@@ -553,28 +564,32 @@ Partial Class RegistroVentasForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(856, 47)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(856, 41)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 413)
-        Me.BarDockControl2.Size = New System.Drawing.Size(856, 29)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 415)
+        Me.BarDockControl2.Manager = Me.bmActions
+        Me.BarDockControl2.Size = New System.Drawing.Size(856, 27)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 366)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
+        Me.BarDockControl3.Manager = Me.bmActions
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 374)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(856, 47)
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 366)
+        Me.BarDockControl4.Location = New System.Drawing.Point(856, 41)
+        Me.BarDockControl4.Manager = Me.bmActions
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 374)
         '
         'imActionsBar24x24
         '
@@ -620,7 +635,7 @@ Partial Class RegistroVentasForm
         '
         Me.bsiVistas.Caption = "Vistas"
         Me.bsiVistas.Id = 6
-        Me.bsiVistas.ImageIndex = 20
+        Me.bsiVistas.ImageOptions.ImageIndex = 20
         Me.bsiVistas.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.bbiVistaGrilla), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiTarjeta)})
         Me.bsiVistas.Name = "bsiVistas"
         '
@@ -628,14 +643,14 @@ Partial Class RegistroVentasForm
         '
         Me.bbiVistaGrilla.Caption = "Grilla"
         Me.bbiVistaGrilla.Id = 7
-        Me.bbiVistaGrilla.ImageIndex = 23
+        Me.bbiVistaGrilla.ImageOptions.ImageIndex = 23
         Me.bbiVistaGrilla.Name = "bbiVistaGrilla"
         '
         'bbiTarjeta
         '
         Me.bbiTarjeta.Caption = "Tarjeta"
         Me.bbiTarjeta.Id = 8
-        Me.bbiTarjeta.ImageIndex = 21
+        Me.bbiTarjeta.ImageOptions.ImageIndex = 21
         Me.bbiTarjeta.Name = "bbiTarjeta"
         '
         'bbiContrato
@@ -702,10 +717,10 @@ Partial Class RegistroVentasForm
         '
         Me.SplitterControl1.Cursor = System.Windows.Forms.Cursors.HSplit
         Me.SplitterControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.SplitterControl1.Location = New System.Drawing.Point(0, 189)
+        Me.SplitterControl1.Location = New System.Drawing.Point(0, 183)
         Me.SplitterControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(856, 5)
+        Me.SplitterControl1.Size = New System.Drawing.Size(856, 4)
         Me.SplitterControl1.TabIndex = 6
         Me.SplitterControl1.TabStop = False
         '
@@ -713,7 +728,7 @@ Partial Class RegistroVentasForm
         '
         Me.PanelControl3.Controls.Add(Me.PivotGridControl1)
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl3.Location = New System.Drawing.Point(0, 351)
+        Me.PanelControl3.Location = New System.Drawing.Point(0, 353)
         Me.PanelControl3.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl3.Name = "PanelControl3"
         Me.PanelControl3.Size = New System.Drawing.Size(856, 62)
@@ -722,11 +737,9 @@ Partial Class RegistroVentasForm
         'PivotGridControl1
         '
         Me.PivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldC11, Me.fieldC14, Me.fieldC16, Me.fieldC19, Me.fieldC13, Me.fieldC24})
-        PivotGridGroup2.Fields.Add(Me.fieldC11)
-        PivotGridGroup2.Hierarchy = Nothing
-        PivotGridGroup2.ShowNewValues = True
-        Me.PivotGridControl1.Groups.AddRange(New DevExpress.XtraPivotGrid.PivotGridGroup() {PivotGridGroup2})
+        Me.PivotGridControl1.Fields.AddRange(New DevExpress.XtraPivotGrid.PivotGridField() {Me.fieldC11, Me.fieldC14, Me.fieldC16, Me.fieldC19, Me.fieldC13, Me.fieldC25})
+        PivotGridGroup1.Fields.Add(Me.fieldC11)
+        Me.PivotGridControl1.Groups.AddRange(New DevExpress.XtraPivotGrid.PivotGridGroup() {PivotGridGroup1})
         Me.PivotGridControl1.Location = New System.Drawing.Point(2, 2)
         Me.PivotGridControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.PivotGridControl1.Name = "PivotGridControl1"
@@ -789,26 +802,26 @@ Partial Class RegistroVentasForm
         Me.fieldC13.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.fieldC13.Width = 175
         '
-        'fieldC24
+        'fieldC25
         '
-        Me.fieldC24.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
-        Me.fieldC24.AreaIndex = 4
-        Me.fieldC24.Caption = "Importe Total"
-        Me.fieldC24.CellFormat.FormatString = "###,###,##0.00"
-        Me.fieldC24.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.fieldC24.FieldName = "C24"
-        Me.fieldC24.Name = "fieldC24"
-        Me.fieldC24.ValueFormat.FormatString = "###,###,##0.00"
-        Me.fieldC24.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-        Me.fieldC24.Width = 175
+        Me.fieldC25.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea
+        Me.fieldC25.AreaIndex = 4
+        Me.fieldC25.Caption = "Importe Total"
+        Me.fieldC25.CellFormat.FormatString = "###,###,##0.00"
+        Me.fieldC25.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.fieldC25.FieldName = "C25"
+        Me.fieldC25.Name = "fieldC25"
+        Me.fieldC25.ValueFormat.FormatString = "###,###,##0.00"
+        Me.fieldC25.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.fieldC25.Width = 175
         '
         'SplitterControl2
         '
         Me.SplitterControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.SplitterControl2.Location = New System.Drawing.Point(0, 346)
+        Me.SplitterControl2.Location = New System.Drawing.Point(0, 349)
         Me.SplitterControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitterControl2.Name = "SplitterControl2"
-        Me.SplitterControl2.Size = New System.Drawing.Size(856, 5)
+        Me.SplitterControl2.Size = New System.Drawing.Size(856, 4)
         Me.SplitterControl2.TabIndex = 13
         Me.SplitterControl2.TabStop = False
         '
@@ -816,10 +829,10 @@ Partial Class RegistroVentasForm
         '
         Me.PanelControl2.Controls.Add(Me.gcLibroSunat)
         Me.PanelControl2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PanelControl2.Location = New System.Drawing.Point(0, 194)
+        Me.PanelControl2.Location = New System.Drawing.Point(0, 187)
         Me.PanelControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(856, 152)
+        Me.PanelControl2.Size = New System.Drawing.Size(856, 162)
         Me.PanelControl2.TabIndex = 14
         '
         'OpenFileDialog1
@@ -830,25 +843,11 @@ Partial Class RegistroVentasForm
         '
         Me.BarButtonItem2.Caption = "&Cerrar"
         Me.BarButtonItem2.Id = 41
-        Me.BarButtonItem2.ImageIndex = 27
+        Me.BarButtonItem2.ImageOptions.ImageIndex = 27
+        Me.BarButtonItem2.ImageOptions.LargeImageIndex = 0
         Me.BarButtonItem2.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.BarButtonItem2.LargeImageIndex = 0
         Me.BarButtonItem2.Name = "BarButtonItem2"
         Me.BarButtonItem2.ShortcutKeyDisplayString = "Ctrl+C"
-        '
-        'bbiGuardar
-        '
-        Me.bbiGuardar.Caption = "&Guardar"
-        Me.bbiGuardar.Glyph = CType(resources.GetObject("bbiGuardar.Glyph"), System.Drawing.Image)
-        Me.bbiGuardar.Id = 27
-        Me.bbiGuardar.Name = "bbiGuardar"
-        '
-        'bbiSunatPle
-        '
-        Me.bbiSunatPle.Caption = "Generar &PLE"
-        Me.bbiSunatPle.Glyph = CType(resources.GetObject("bbiSunatPle.Glyph"), System.Drawing.Image)
-        Me.bbiSunatPle.Id = 28
-        Me.bbiSunatPle.Name = "bbiSunatPle"
         '
         'RegistroVentasForm
         '
@@ -891,6 +890,7 @@ Partial Class RegistroVentasForm
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents vpLedger As DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider
@@ -969,7 +969,7 @@ Partial Class RegistroVentasForm
     Friend WithEvents fieldC14 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents fieldC16 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents fieldC19 As DevExpress.XtraPivotGrid.PivotGridField
-    Friend WithEvents fieldC24 As DevExpress.XtraPivotGrid.PivotGridField
+    Friend WithEvents fieldC25 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents fieldC13 As DevExpress.XtraPivotGrid.PivotGridField
     Friend WithEvents lueSociedad As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents bbiGuardar As DevExpress.XtraBars.BarButtonItem

@@ -538,18 +538,9 @@ Public Class RegistroComprasForm
                         bFlatFileGenerate = False
                     End If
                 End If
-                If e.Column.FieldName = "C26" Then
-                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "07" Or View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "08" Then
-                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C26")) = "" Then 'Fecha Comprobante de Pago que se modifica (NC)
-                            e.Appearance.BackColor = Color.Salmon
-                            e.Appearance.BackColor2 = Color.SeaShell
-                            bFlatFileGenerate = False
-                        End If
-                    End If
-                End If
                 If e.Column.FieldName = "C27" Then
                     If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "07" Or View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "08" Then
-                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C27")) = "" Then 'Tipo Comprobante de Pago que se modifica (NC)
+                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C27")) = "" Then 'Fecha Comprobante de Pago que se modifica (NC)
                             e.Appearance.BackColor = Color.Salmon
                             e.Appearance.BackColor2 = Color.SeaShell
                             bFlatFileGenerate = False
@@ -558,25 +549,34 @@ Public Class RegistroComprasForm
                 End If
                 If e.Column.FieldName = "C28" Then
                     If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "07" Or View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "08" Then
-                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C28")) = "" Then 'Serie Comprobante de Pago que se modifica (NC)
+                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C28")) = "" Then 'Tipo Comprobante de Pago que se modifica (NC)
                             e.Appearance.BackColor = Color.Salmon
                             e.Appearance.BackColor2 = Color.SeaShell
                             bFlatFileGenerate = False
                         End If
                     End If
                 End If
-                If e.Column.FieldName = "C30" Then
+                If e.Column.FieldName = "C29" Then
                     If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "07" Or View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "08" Then
-                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C30")) = "" Then 'Número Comprobante de Pago que se modifica (NC)
+                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C29")) = "" Then 'Serie Comprobante de Pago que se modifica (NC)
                             e.Appearance.BackColor = Color.Salmon
                             e.Appearance.BackColor2 = Color.SeaShell
                             bFlatFileGenerate = False
                         End If
                     End If
                 End If
-                If e.Column.FieldName = "C27" Then
-                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C27")) = "50" Then 'Tipo Comprobante de Pago que se modifica (NC)
-                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C29")) = "" Then
+                If e.Column.FieldName = "C31" Then
+                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "07" Or View.GetRowCellDisplayText(e.RowHandle, View.Columns("C6")) = "08" Then
+                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C31")) = "" Then 'Número Comprobante de Pago que se modifica (NC)
+                            e.Appearance.BackColor = Color.Salmon
+                            e.Appearance.BackColor2 = Color.SeaShell
+                            bFlatFileGenerate = False
+                        End If
+                    End If
+                End If
+                If e.Column.FieldName = "C28" Then
+                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C28")) = "50" Then 'Tipo Comprobante de Pago que se modifica (NC)
+                        If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C30")) = "" Then
                             e.Appearance.BackColor = Color.Salmon
                             e.Appearance.BackColor2 = Color.SeaShell
                             bFlatFileGenerate = False
@@ -584,8 +584,8 @@ Public Class RegistroComprasForm
                     End If
                 End If
 
-                If e.Column.FieldName = "C41" Then 'Estado
-                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C41")) = "" Then
+                If e.Column.FieldName = "C42" Then 'Estado
+                    If View.GetRowCellDisplayText(e.RowHandle, View.Columns("C42")) = "" Then
                         e.Appearance.BackColor = Color.Peru
                         e.Appearance.BackColor2 = Color.LightYellow
                         bFlatFileGenerate = False
