@@ -1,11 +1,12 @@
 ﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.DXErrorProvider
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraSplashScreen
 
 Public Class LocalBenefitsForm
     Dim oSharePointTransactions As New SharePointListTransactions
     Dim oAppService As New AppService.HapagLloydServiceClient
-    Dim dtList, dtListDetail, dtConcept, dtCurrency, dtUserRole As New DataTable
+    Dim dtList, dtListDetail, dtConcept, dtCurrency, dtCommodity, dtContainerType, dtUserRole As New DataTable
     Dim oDataAcces As New DataAccess
 
     Public Sub New()
@@ -16,6 +17,7 @@ Public Class LocalBenefitsForm
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
         GridView2.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
+        GridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
     End Sub
 
     Private Sub LocalBenefitsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,6 +26,7 @@ Public Class LocalBenefitsForm
         Try
             LoadCountry()
             LoadCurrency()
+            LoadCommodity()
         Catch ex As Exception
             SplashScreenManager.CloseForm(False)
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -59,6 +62,14 @@ Public Class LocalBenefitsForm
         RepositoryItemLookUpEdit3.KeyMember = "ID"
     End Sub
 
+    Private Sub LoadCommodity()
+        dtCommodity = oAppService.ExecuteSQL("SELECT * FROM spl.Commodity").Tables(0)
+        RepositoryItemLookUpEdit10.DataSource = dtCommodity
+        RepositoryItemLookUpEdit10.DisplayMember = "CommodityName"
+        RepositoryItemLookUpEdit10.ValueMember = "CommodityCode"
+        RepositoryItemLookUpEdit10.KeyMember = "ID"
+    End Sub
+
     Private Sub LoadUserRole()
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
         SplashScreenManager.Default.SetWaitFormDescription("Get User Roles")
@@ -84,6 +95,36 @@ Public Class LocalBenefitsForm
         lueUserAuthorization.Properties.DataSource = dtUserRole.Select("UserType LIKE '%Authorization'").CopyToDataTable
         lueUserAuthorization.Properties.DisplayMember = lueSalesExecution.Properties.DisplayMember
         lueUserAuthorization.Properties.ValueMember = lueSalesExecution.Properties.ValueMember
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LoadDepots()
+        Dim dtDepot As New DataTable
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Depots")
+        oSharePointTransactions.SharePointList = "DepotList"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"PortCode"})
+        oSharePointTransactions.FieldsList.Add({"PortCode_x003a_PortName"})
+        oSharePointTransactions.FieldsList.Add({"DepotName"})
+        dtDepot = oSharePointTransactions.GetItems()
+        gcDepots.DataSource = dtDepot
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LoadContainerTypes()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Equipment Types")
+        oSharePointTransactions.SharePointList = "ContainerTypeList"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"ContainerCode"})
+        oSharePointTransactions.FieldsList.Add({"ContainerDescription"})
+        oSharePointTransactions.FieldsList.Add({"ContainerSize"})
+        dtContainerType = oSharePointTransactions.GetItems()
+        dtContainerType.Columns.Add("Checked", GetType(Boolean))
+        gcEquipmentTypes.DataSource = dtContainerType
         SplashScreenManager.CloseForm(False)
     End Sub
 
@@ -122,7 +163,6 @@ Public Class LocalBenefitsForm
         oSharePointTransactions.FieldsList.Add({"PuertoDescarga"})
         oSharePointTransactions.FieldsList.Add({"PaisFinal"})
         oSharePointTransactions.FieldsList.Add({"PuertoFinal"})
-        oSharePointTransactions.FieldsList.Add({"PrecintoBASC"})
         oSharePointTransactions.FieldsList.Add({"Profit"})
         oSharePointTransactions.FieldsList.Add({"Volumen"})
         oSharePointTransactions.FieldsList.Add({"UsuarioAutorizador"})
@@ -134,6 +174,7 @@ Public Class LocalBenefitsForm
         'oSharePointTransactions.FieldsList.Add({"Booking"})
         oSharePointTransactions.FieldsList.Add({"Estado"})
         oSharePointTransactions.FieldsList.Add({"NumeroConcesion"})
+        oSharePointTransactions.FieldsList.Add({"WarningLog"})
 
         dtList = oSharePointTransactions.GetItems()
         GridControl1.DataSource = dtList
@@ -153,7 +194,7 @@ Public Class LocalBenefitsForm
         oSharePointTransactions.FieldsList.Add({"ConceptCurrency"})
 
         dtListDetail = oSharePointTransactions.GetItems()
-        GridControl2.DataSource = dtListDetail
+        gcConcepts.DataSource = dtListDetail
         GridView2.BestFitColumns()
         ShowDetailSelected()
         SplashScreenManager.CloseForm(False)
@@ -188,11 +229,50 @@ Public Class LocalBenefitsForm
         SplashScreenManager.CloseForm(False)
     End Sub
 
+    Private Sub LoadLocalBenefitsCommodity()
+        Dim dtLocBenCommodities As New DataTable
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits Commodities")
+        oSharePointTransactions.SharePointList = "LocalBenefitsCommodity"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"IdParent"})
+        oSharePointTransactions.FieldsList.Add({"CommodityCode"})
+        oSharePointTransactions.FieldsList.Add({"CommodityName"})
+        dtLocBenCommodities = oSharePointTransactions.GetItems()
+        gcCommodities.DataSource = dtLocBenCommodities
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
+    Private Sub LoadLocalBenefitsContainer()
+        Dim dtLocBenContainer As New DataTable
+        LoadContainerTypes()
+        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits Container Types")
+        oSharePointTransactions.SharePointList = "LocalBenefitsContainer"
+        oSharePointTransactions.FieldsList.Clear()
+        oSharePointTransactions.FieldsList.Add({"ID"})
+        oSharePointTransactions.FieldsList.Add({"ContainerCode"})
+        oSharePointTransactions.FieldsList.Add({"ContainerDescription"})
+        oSharePointTransactions.FieldsList.Add({"ContainerSize"})
+        dtLocBenContainer = oSharePointTransactions.GetItems()
+        For r = 0 To dtContainerType.Rows.Count - 1
+            Dim oRow As DataRow = dtContainerType.Rows(r)
+            If dtLocBenContainer.Select("ContainerCode='" & oRow("ContainerCode") & "'").Length > 0 Then
+                oRow("Checked") = True
+            End If
+        Next
+        SplashScreenManager.CloseForm(False)
+    End Sub
+
     Private Sub LocalBenefitsForm_Shown(sender As Object, e As EventArgs) Handles Me.Shown
         LoadConcepts()
         LoadUserRole()
         LoadLocalBenefits()
         LoadLocalBenefitsDetail()
+        LoadDepots()
+        LoadLocalBenefitsCommodity()
+        LoadLocalBenefitsContainer()
     End Sub
 
     Private Sub FormatGrid(oGridView As GridView)
@@ -233,6 +313,10 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub GridView1_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView1.FocusedRowChanged
+        If GridView1.FocusedRowHandle < 0 Then
+            Return
+        End If
+        EnableButtons(GridView1)
         ShowDetailSelected()
     End Sub
 
@@ -273,9 +357,10 @@ Public Class LocalBenefitsForm
                     End If
                 End If
             Next
-            If teID.Text = "" Then
-                cbeStatus.EditValue = "Ingresado"
-            End If
+            'If teID.Text = "" Then
+            '    cbeStatus.EditValue = "Borrador"
+            'End If
+            'Concepts
             Dim dtDetailTemp As New DataTable
             dtDetailTemp = dtListDetail.Clone
             If dtListDetail.Rows.Count > 0 Then
@@ -283,15 +368,26 @@ Public Class LocalBenefitsForm
                     dtDetailTemp = dtListDetail.Select("IdParent='" & GridView1.GetFocusedRowCellValue("ID") & "'").CopyToDataTable
                 End If
             End If
-            GridControl2.DataSource = dtDetailTemp
+            gcConcepts.DataSource = dtDetailTemp
+            'Depots
+            'Commodities
+            'Equipment Types
+
         Catch ex As Exception
 
         End Try
     End Sub
     Private Sub bbiSave_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSave.ItemClick
-        Validate()
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-            Return
+        LoadInputValidations()
+        If Not vpInputs.Validate Then
+            cbeStatus.EditValue = "Borrador"
+            If DevExpress.XtraEditors.XtraMessageBox.Show("Some bugs were identified, you want to save it as a draft?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                Return
+            End If
+        Else
+            If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                Return
+            End If
         End If
         Dim drSource As DataRow = GridView1.GetFocusedDataRow
         Try
@@ -478,12 +574,30 @@ Public Class LocalBenefitsForm
         GridView2.SetFocusedRowCellValue("IdParent", GridView1.GetFocusedRowCellValue("ID"))
     End Sub
 
-    Private Sub GridView1_SelectionChanged(sender As Object, e As DevExpress.Data.SelectionChangedEventArgs) Handles GridView1.SelectionChanged
-
+    Private Sub EnableButtons(oGridview As GridView)
+        bbiClone.Enabled = False
+        If oGridview.GetFocusedRowCellValue("Estado") <> "Borrador" Then
+            bbiClone.Enabled = True
+        End If
+    End Sub
+    Private Sub GridView4_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView4.FocusedRowChanged
+        GridView4.SetFocusedRowCellValue("IdParent", GridView1.GetFocusedRowCellValue("ID"))
     End Sub
 
     Private Sub bbiClone_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClone.ItemClick
-
+        If GridView1.FocusedRowHandle < 0 Then
+            Return
+        End If
+        bbiClone.Enabled = False
+        Dim iPos As Integer = GridView1.FocusedRowHandle
+        GridView1.AddNewRow()
+        For c = 0 To GridView1.Columns.Count - 1
+            GridView1.SetFocusedRowCellValue(GridView1.Columns(c).FieldName, GridView1.GetRowCellValue(iPos, GridView1.Columns(c)))
+        Next
+        GridView1.SetFocusedRowCellValue("ID", "")
+        GridView1.SetFocusedRowCellValue("Estado", "Borrador")
+        GridView1.OptionsNavigation.EndUpdate()
+        Validate()
     End Sub
 
     Private Sub lueLoadCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadCountry.EditValueChanged
@@ -504,4 +618,74 @@ Public Class LocalBenefitsForm
             SplitContainerControl2.PanelVisibility = DevExpress.XtraEditors.SplitPanelVisibility.Both
         End If
     End Sub
+
+    Friend Function RowSelectedCount(oGridView As GridView) As Integer
+        Dim iChecked As Integer = 0
+        For i = 0 To oGridView.RowCount - 1
+            If IsDBNull(oGridView.GetRowCellValue(i, "Checked")) Then
+                Continue For
+            End If
+            If oGridView.GetRowCellValue(i, "Checked") Then
+                iChecked += 1
+            End If
+        Next
+        Return iChecked
+    End Function
+
+    Private Sub SelectRowsByType(oGridView As GridView, SelectType As Integer)
+        For i = 0 To oGridView.RowCount - 1
+            Dim row As DataRow = oGridView.GetDataRow(i)
+            If IsDBNull(row("Checked")) Then
+                row("Checked") = False
+            End If
+            If SelectType = 0 Then
+                row("Checked") = True
+            Else
+                row("Checked") = True
+            End If
+            If SelectType = 1 Then
+                row("Checked") = False
+            End If
+            If SelectType = 2 Then
+                If row("Checked") Then
+                    row("Checked") = False
+                Else
+                    row("Checked") = True
+                End If
+            End If
+            Validate()
+        Next
+    End Sub
+
+    Private Sub SeleccionaTodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SeleccionaTodosToolStripMenuItem.Click
+        SelectRowsByType(GridView5, 0)
+    End Sub
+
+    Private Sub DeseleccionaTodosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeseleccionaTodosToolStripMenuItem.Click
+        SelectRowsByType(GridView5, 1)
+    End Sub
+
+    Private Sub InvertirSelecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvertirSelecciónToolStripMenuItem.Click
+        SelectRowsByType(GridView5, 2)
+    End Sub
+
+    Private Sub LoadInputValidations()
+        Validate()
+        Dim containsValidationRule As New DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule()
+
+        containsValidationRule.ConditionOperator = ConditionOperator.IsNotBlank
+        containsValidationRule.ErrorText = "Assign value."
+        containsValidationRule.ErrorType = ErrorType.Critical
+
+        Dim customValidationRule As New CustomValidationRule()
+        customValidationRule.ErrorText = "Required value."
+        customValidationRule.ErrorType = ErrorType.Critical
+
+        vpInputs.SetValidationRule(Me.teRateAgreement, Nothing)
+        If cbeConcessionType.Text = "Por RA" Then
+            vpInputs.SetValidationRule(Me.teRateAgreement, customValidationRule)
+        End If
+
+    End Sub
+
 End Class

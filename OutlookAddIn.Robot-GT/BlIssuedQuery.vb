@@ -5,7 +5,7 @@ Public Class BlIssuedQuery
     Dim oDataAccess As New DataAccess
     Dim oCreateMailItem As New CreateMailItem
     Friend oMailItem As Outlook.MailItem
-    Friend drConfiguration As DataRow
+    Friend dtConfiguration As New DataTable
 
     Friend Sub StartProcess()
         Dim bIssued As Boolean
@@ -29,6 +29,7 @@ Public Class BlIssuedQuery
                 End If
             End If
         Next
+        Dim drConfiguration As DataRow = dtConfiguration.Select("ResponseType<>0")(0)
         dtCnfgLayout = oDataAccess.ExecuteAccessQuery("SELECT Label, Result1, Result2 FROM ConfigurationLayout WHERE IdConfiguration=" & drConfiguration("IdConfiguration") & " and ColumnType='R'").Tables(0)
         sQuery = drConfiguration("QuerySQL")
         If drConfiguration("Identifier").Contains("BL") Or drConfiguration("Identifier").Contains("SWB") Then
@@ -42,12 +43,13 @@ Public Class BlIssuedQuery
                         sFecha = dtDataQry.Rows(0)(2)
                         dtQuery.Rows.Add(BlList(i), dtCnfgLayout.Rows(0)("Result1"), sFecha)
                     Else
+                        drConfiguration = dtConfiguration.Select("ResponseType=0")(0)
                         dtQuery.Rows.Add(BlList(i), dtCnfgLayout.Rows(0)("Result2"))
                     End If
                 End If
             Next
         End If
-        oMailItem.HTMLBody = oCreateMailItem.GetMessageBody(drConfiguration, oMailItem.SenderName, True, dtQuery) + oMailItem.HTMLBody
+        oMailItem.HTMLBody = oCreateMailItem.GetMessageBody(drConfiguration, oMailItem.SenderName, True, dtQuery) '+ oMailItem.HTMLBody
         oCreateMailItem.MessageResponse(oMailItem, oMailItem.Subject, oMailItem.HTMLBody)
     End Sub
 

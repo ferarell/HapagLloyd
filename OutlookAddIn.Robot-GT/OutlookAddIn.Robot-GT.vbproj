@@ -41,10 +41,10 @@
     </SccProvider>
     <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\DeployApps\ROBOT.HapagLloydColombia\</PublishUrl>
-    <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\ROBOT.HapagLloydColombia\</InstallUrl>
+    <PublishUrl>C:\DeployApps\ROBOT.HapagLloydGuatemala\</PublishUrl>
+    <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\ROBOT.HapagLloydGuatemala\</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.2.5</ApplicationVersion>
+    <ApplicationVersion>1.0.2.6</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>
@@ -318,6 +318,8 @@
     </Compile>
     <Compile Include="LogFileGenerate.vb" />
     <Compile Include="LogProcessUpdate.vb" />
+    <Compile Include="ManifestQuery.vb" />
+    <Compile Include="ManifestUpdate.vb" />
     <Compile Include="ProcessIdentifier.vb" />
     <Compile Include="BasicResponse.vb" />
     <Compile Include="SettingsForm.Designer.vb">
@@ -370,6 +372,9 @@
     <None Include="dsRobot.xss">
       <DependentUpon>dsRobot.xsd</DependentUpon>
     </None>
+    <Content Include="Layout\Respuesta a Proceso.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="OutlookAddIn.Robot_TemporaryKey.pfx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>

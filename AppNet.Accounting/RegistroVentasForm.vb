@@ -251,8 +251,8 @@ Public Class RegistroVentasForm
                 If Not IsDBNull(row(15)) And Not IsDBNull(row(16)) And Not IsDBNull(row(17)) And Not IsDBNull(row(18)) Then
                     dtResult.Rows(iPosition).Item("C28") = Format(CDate(row(15)), "dd/MM/yyyy")
                     dtResult.Rows(iPosition).Item("C29") = DataValidation("TipDoc", Strings.Left(row(16).ToString.Trim, 2))
-                    dtResult.Rows(iPosition).Item("C30") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroSer", row(17).ToString.Trim)
-                    dtResult.Rows(iPosition).Item("C31") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C28"), "NroDoc", row(18).ToString.Trim)
+                    dtResult.Rows(iPosition).Item("C30") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C29"), "NroSer", row(17).ToString.Trim)
+                    dtResult.Rows(iPosition).Item("C31") = GetTextFormatValue(dtResult.Rows(iPosition).Item("C29"), "NroDoc", row(18).ToString.Trim)
                 End If
             End If
             dtResult.Rows(iPosition).Item("C32") = ""

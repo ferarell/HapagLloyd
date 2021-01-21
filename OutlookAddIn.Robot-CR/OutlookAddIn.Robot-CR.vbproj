@@ -41,10 +41,10 @@
     </SccProvider>
     <TargetFrameworkProfile />
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <PublishUrl>C:\DeployApps\ROBOT.HapagLloydColombia\</PublishUrl>
-    <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\ROBOT.HapagLloydColombia\</InstallUrl>
+    <PublishUrl>C:\DeployApps\ROBOT.HapagLloydCostaRica\</PublishUrl>
+    <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\ROBOT.HapagLloydCostaRica\</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.0.2.5</ApplicationVersion>
+    <ApplicationVersion>1.0.2.6</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>

@@ -317,6 +317,8 @@
     </Compile>
     <Compile Include="LogFileGenerate.vb" />
     <Compile Include="LogProcessUpdate.vb" />
+    <Compile Include="ManifestQuery.vb" />
+    <Compile Include="ManifestUpdate.vb" />
     <Compile Include="ProcessIdentifier.vb" />
     <Compile Include="BasicResponse.vb" />
     <Compile Include="SettingsForm.Designer.vb">
@@ -369,6 +371,9 @@
     <None Include="dsRobot.xss">
       <DependentUpon>dsRobot.xsd</DependentUpon>
     </None>
+    <Content Include="Layout\Respuesta a Proceso.docx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="OutlookAddIn.Robot_TemporaryKey.pfx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>

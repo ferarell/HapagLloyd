@@ -21,6 +21,7 @@ Module SharedModule
     Friend oIdentifier, oHtmlFile As String
     'Friend drConfig As DataRow
     Dim oDirectory As String = Path.GetDirectoryName(My.Settings.DBFileName)
+    Friend AppPath As String = Path.GetDirectoryName(New Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath)
 
     Friend Function LoadExcel(ByVal FileName As String, ByRef Hoja As String) As DataSet
         Dim dsResult As New DataSet

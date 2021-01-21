@@ -1,4 +1,5 @@
-﻿Imports DevExpress.XtraSplashScreen
+﻿Imports DevExpress.XtraRichEdit
+Imports DevExpress.XtraSplashScreen
 Imports Microsoft.Office.Interop
 Imports System.Collections
 Imports System.Data
@@ -6,6 +7,8 @@ Imports System.IO
 Imports System.Runtime.InteropServices
 Imports System.Text
 Imports System.Windows.Forms
+Imports DevExpress.Office.Services
+Imports DevExpress.Office.Utils
 
 Public Class CreateMailItem
     'Dim AppOutlook As New Outlook.Application
@@ -80,6 +83,37 @@ Public Class CreateMailItem
             NewMessage.BodyFormat = Outlook.OlBodyFormat.olFormatHTML
             NewMessage.Subject = ResponseMailSubject
             NewMessage.HTMLBody = ResponseMailBody
+            NewMessage.Send()
+        Catch ex As Exception
+            bResult = False
+            SplashScreenManager.CloseForm(False)
+            System.Windows.Forms.MessageBox.Show(ex.Message,
+                "An exception is occured in the code of add-in.")
+        Finally
+            'If Not IsNothing(mailRecipient) Then Marshal.ReleaseComObject(mailRecipient)
+            If Not IsNothing(Recipents) Then Marshal.ReleaseComObject(Recipents)
+            If Not IsNothing(NewMessage) Then Marshal.ReleaseComObject(NewMessage)
+        End Try
+        Return bResult
+    End Function
+
+    Friend Function ProcessMessageResponse(oMailItem As Outlook.MailItem, ResponseMailSubject As String, Body As RichEditControl) As Boolean
+        Dim bResult As Boolean = True
+        Dim NewMessage As Outlook.MailItem
+        Dim AppOutlook As Microsoft.Office.Interop.Outlook.Application = CType(Activator.CreateInstance(Type.GetTypeFromCLSID(New Guid("0006F03A-0000-0000-C000-000000000046"))), Microsoft.Office.Interop.Outlook.Application)
+        NewMessage = AppOutlook.CreateItem(Outlook.OlItemType.olMailItem)
+        Dim Recipents As Outlook.Recipients = NewMessage.Recipients
+        Recipents.Add(oMailItem.SenderEmailAddress)
+
+        Try
+            Dim aOpt As New DevExpress.XtraRichEdit.Export.HtmlDocumentExporterOptions
+            aOpt.EmbedImages = True
+            Dim htmlText As String = Body.Document.GetHtmlText(Body.Document.Range, CType(New CustomUriProvider(), IUriProvider), aOpt)
+
+
+            NewMessage.BodyFormat = Outlook.OlBodyFormat.olFormatHTML
+            NewMessage.Subject = ResponseMailSubject
+            NewMessage.HTMLBody = Body.HtmlText
             NewMessage.Send()
         Catch ex As Exception
             bResult = False
@@ -301,5 +335,22 @@ Public Class CreateMailItem
         oHtmlBody.AppendText("</html></body>")
         Return Replace(oHtmlBody.Text, "[Sender]", SenderName)
     End Function
+
+#Region "#customuriprovider"
+    Public Class CustomUriProvider
+        Implements DevExpress.Office.Services.IUriProvider
+#Region "IUriProvider Members"
+        Public Function CreateCssUri(ByVal rootUri As String, ByVal styleText As String, ByVal relativeUri As String) As String _
+        Implements DevExpress.Office.Services.IUriProvider.CreateCssUri
+            Return String.Empty
+        End Function
+
+        Public Function CreateImageUri(ByVal rootUri As String, ByVal image As OfficeImage, ByVal relativeUri As String) As String _
+        Implements DevExpress.Office.Services.IUriProvider.CreateImageUri
+            Return image.Uri
+        End Function
+#End Region
+    End Class
+#End Region ' #customuriprovider
 
 End Class

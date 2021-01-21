@@ -16,10 +16,10 @@ Public Class ThisAddIn
     Private Sub ThisAddIn_Startup() Handles Me.Startup
         Try
             If Not My.Settings.GetPreviousVersion("DBFileName") Is Nothing Then
-                'If My.Computer.Name <> "FARELLANO" Then
-                My.Settings.Upgrade()
+                If My.Computer.Name <> "FARELLANO" Then
+                    My.Settings.Upgrade()
+                End If
             End If
-            'End If
             If Not IO.File.Exists(My.Settings.DBFileName) Then
                 DevExpress.XtraEditors.XtraMessageBox.Show("Cannot find the database, please assign it from the configuration option. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return

@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="DBFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\ecuadorinfo\Documents\Robot\Database\RobotHL.accdb</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Robot\Database\RobotHL.accdb</Value>
     </Setting>
     <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\ecuadorinfo\Documents\Robot\Database\RobotHL.accdb</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Robot\Database\RobotHL.accdb</Value>
     </Setting>
     <Setting Name="DBUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -18,10 +18,10 @@
       <Value Profile="(Default)">Configuration</Value>
     </Setting>
     <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\AttachedFiles</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Robot\AttachedFiles</Value>
     </Setting>
     <Setting Name="LogFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Log</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Robot\Log</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
       <Value Profile="(Default)">Blue</Value>
@@ -30,7 +30,7 @@
       <Value Profile="(Default)">fernando.arellano@totalit.com.pe</Value>
     </Setting>
     <Setting Name="ProcessFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\ProcessFiles</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Robot\ProcessFiles</Value>
     </Setting>
   </Settings>
 </SettingsFile>

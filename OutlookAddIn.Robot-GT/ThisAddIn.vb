@@ -105,7 +105,7 @@ Public Class ThisAddIn
 
         Sem.WaitOne()
         Dim oProcess As New ProcessIdentifier
-        oProcess.MessageAnalizer(item, dtConfig.Rows(0))
+        oProcess.MessageAnalizer(item, dtConfig)
         'only 3 or 4 threads at time can do task
         Sem.Release()
     End Sub

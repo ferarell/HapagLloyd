@@ -24,9 +24,9 @@ Public Class SettingsForm
             lbcEstilos.Items.Add(cnt.SkinName)
         Next
         lbcEstilos.SelectedValue = DevExpress.LookAndFeel.UserLookAndFeel.Default.ActiveLookAndFeel.ActiveSkinName
-        If Not My.Settings.GetPreviousVersion("DBFileName") Is Nothing Then
-            My.Settings.Upgrade()
-        End If
+        'If Not My.Settings.GetPreviousVersion("DBFileName") Is Nothing Then
+        '    My.Settings.Upgrade()
+        'End If
         beAttachedFilePath.EditValue = My.Settings.AttachedFilePath
         beLogFilePath.EditValue = My.Settings.LogFilePath
         beProcessFilePath.EditValue = My.Settings.ProcessFilePath

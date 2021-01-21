@@ -124,9 +124,9 @@ Public Class DataAccess
                 For Each row As DataRow In dtSchema.Rows
                     If drValues.Table.Columns.Contains(row.ItemArray(0)) Then
                         If Not IsDBNull(drValues.Item(dtSchema.Rows.IndexOf(row))) Then
-                            sColumns = sColumns + IIf(dtSchema.Rows.IndexOf(row) = 0, "", ", ") & "[" & row.ItemArray(0) & "]"
+                            sColumns = sColumns + IIf(dtSchema.Rows.IndexOf(row) = 0 Or sColumns = "", "", ", ") & "[" & row.ItemArray(0) & "]"
                             If Not drValues.Table.Columns(dtSchema.Rows.IndexOf(row)).DataType = GetType(Boolean) Then
-                                sValues = sValues + IIf(dtSchema.Rows.IndexOf(row) = 0, "'", ", '") & drValues.Item(dtSchema.Rows.IndexOf(row)) & "'"
+                                sValues = sValues + IIf(dtSchema.Rows.IndexOf(row) = 0 Or sValues = "", "'", ", '") & drValues.Item(dtSchema.Rows.IndexOf(row)) & "'"
                             Else
                                 sValues = sValues & ", " & drValues.Item(dtSchema.Rows.IndexOf(row))
                             End If

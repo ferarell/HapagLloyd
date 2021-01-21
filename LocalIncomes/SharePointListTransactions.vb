@@ -95,7 +95,19 @@ Public Class SharePointListTransactions
 
         Dim dtItems As New DataTable
         For c = 0 To FieldsList.Count - 1
-            dtItems.Columns.Add(FieldsList(c)(0))
+            Try
+                If oItemsList(0).FieldValues(FieldsList(c)(0)) Is Nothing Then
+                    dtItems.Columns.Add(FieldsList(c)(0))
+                    Continue For
+                End If
+                If oItemsList(0).FieldValues(FieldsList(c)(0)).ToString.Contains("FieldLookupValue[]") Then
+                    dtItems.Columns.Add(FieldsList(c)(0), GetType(Object))
+                Else
+                    dtItems.Columns.Add(FieldsList(c)(0))
+                End If
+            Catch ex As Exception
+
+            End Try
         Next
 
         For Each Item As ListItem In oItemsList
@@ -103,7 +115,9 @@ Public Class SharePointListTransactions
             For c = 0 To dtItems.Columns.Count - 1
                 Try
                     If Not Item(FieldsList(c)(0)) Is Nothing Then
-                        If Item(FieldsList(c)(0)).ToString.Contains("Lookup") Then
+                        'If Item(FieldsList(c)(0)).ToString.Contains("FieldLookupValue[]") Then
+                        '    dtItems.Rows(dtItems.Rows.Count - 1)(c)() = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue()
+                        If Item(FieldsList(c)(0)).ToString.Contains("FieldLookupValue") Then
                             dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue
                         ElseIf Item(FieldsList(c)(0)).ToString.Contains("FieldUserValue") Then
                             dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldUserValue).Email

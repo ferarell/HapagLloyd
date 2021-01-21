@@ -10,6 +10,7 @@ Public Class ProcessIdentifier
         Dim drConfiguration As DataRow = dtConfiguration.Select("ResponseType<>0")(0)
 
         Try
+            'Basic Response
             If drConfiguration("ResponseType") = 1 Then
                 Dim oBasicResponse As New BasicResponse
                 oBasicResponse.oMailItem = oMailItem
@@ -17,8 +18,10 @@ Public Class ProcessIdentifier
                 oBasicResponse.StartProcess()
             End If
             'oMailItem.SenderEmailType = OlAddressEntryUserType.olSmtpAddressEntry
+
+            'Update
             Dim _MailAddress As String = oMailItem.Sender.Address.ToString.ToUpper
-            If drConfiguration("ResponseType") = 3 And _MailAddress.ToUpper.Contains({"HAPAG-LLOYD", "HLAG.COM"}) Then
+            If drConfiguration("ResponseType") = 3 Then 'And _MailAddress.ToUpper.Contains({"HAPAG-LLOYD", "HLAG.COM"}) Then
                 If drConfiguration("Identifier") = "OBL RELEASE" Then
                     Dim oBlIssuedUpdate As New BlIssuedUpdate
                     oBlIssuedUpdate.oMailItem = oMailItem
@@ -31,7 +34,15 @@ Public Class ProcessIdentifier
                     oFcnIssuedUpdate.drConfiguration = drConfiguration
                     oFcnIssuedUpdate.StartProcess()
                 End If
+                If drConfiguration("Identifier") = "MRN" Then
+                    Dim oManifestUpdate As New ManifestUpdate
+                    oManifestUpdate.oMailItem = oMailItem
+                    oManifestUpdate.drConfiguration = drConfiguration
+                    oManifestUpdate.StartProcess()
+                End If
             End If
+
+            'Query
             If drConfiguration("ResponseType") = 2 Then
                 If drConfiguration("Identifier") = "OBLI" Then
                     Dim oBlIssuedQuery As New BlIssuedQuery
@@ -44,6 +55,12 @@ Public Class ProcessIdentifier
                     oFcnIssuedQuery.oMailItem = oMailItem
                     oFcnIssuedQuery.drConfiguration = drConfiguration
                     oFcnIssuedQuery.StartProcess()
+                End If
+                If drConfiguration("Identifier") = "MANIFIESTO" Then
+                    Dim oManifestQuery As New ManifestQuery
+                    oManifestQuery.oMailItem = oMailItem
+                    oManifestQuery.drConfiguration = drConfiguration
+                    oManifestQuery.StartProcess()
                 End If
             End If
         Catch ex As Exception

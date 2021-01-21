@@ -19,6 +19,7 @@ Partial Class CTDataMasterWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CTDataMasterWcfForm))
@@ -86,15 +87,15 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn87 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn88 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.imStatus = New System.Windows.Forms.ImageList()
+        Me.imStatus = New System.Windows.Forms.ImageList(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
@@ -130,7 +131,7 @@ Partial Class CTDataMasterWcfForm
         Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ucAuditPanel = New TCHECK.CLOUD.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -141,7 +142,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcDataColdTreatment = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -673,7 +674,7 @@ Partial Class CTDataMasterWcfForm
         Me.gcVendorReadings.Location = New System.Drawing.Point(0, 0)
         Me.gcVendorReadings.MainView = Me.GridView3
         Me.gcVendorReadings.Name = "gcVendorReadings"
-        Me.gcVendorReadings.Size = New System.Drawing.Size(436, 260)
+        Me.gcVendorReadings.Size = New System.Drawing.Size(440, 260)
         Me.gcVendorReadings.TabIndex = 171
         Me.gcVendorReadings.UseEmbeddedNavigator = True
         Me.gcVendorReadings.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView4, Me.CardView3})
@@ -926,7 +927,7 @@ Partial Class CTDataMasterWcfForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(1238, 41)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1242, 41)
         '
         'BarDockControl2
         '
@@ -934,7 +935,7 @@ Partial Class CTDataMasterWcfForm
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 391)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(1238, 27)
+        Me.BarDockControl2.Size = New System.Drawing.Size(1242, 27)
         '
         'BarDockControl3
         '
@@ -948,7 +949,7 @@ Partial Class CTDataMasterWcfForm
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1238, 41)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1242, 41)
         Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 350)
         '
@@ -1060,7 +1061,7 @@ Partial Class CTDataMasterWcfForm
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ucAuditPanel.Location = New System.Drawing.Point(0, 354)
         Me.ucAuditPanel.Name = "ucAuditPanel"
-        Me.ucAuditPanel.Size = New System.Drawing.Size(1238, 37)
+        Me.ucAuditPanel.Size = New System.Drawing.Size(1242, 37)
         Me.ucAuditPanel.TabIndex = 1
         Me.ucAuditPanel.UpdatedBy = Nothing
         Me.ucAuditPanel.UpdatedDate = New Date(CType(0, Long))
@@ -1077,7 +1078,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl3)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1238, 313)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1242, 313)
         Me.SplitContainerControl1.SplitterPosition = 45
         Me.SplitContainerControl1.TabIndex = 181
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -1092,7 +1093,7 @@ Partial Class CTDataMasterWcfForm
         Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1238, 45)
+        Me.PanelControl1.Size = New System.Drawing.Size(1242, 45)
         Me.PanelControl1.TabIndex = 0
         '
         'rgFilter
@@ -1148,7 +1149,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3.Panel1.Text = "Panel1"
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(1238, 264)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(1242, 264)
         Me.SplitContainerControl3.SplitterPosition = 798
         Me.SplitContainerControl3.TabIndex = 174
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -1815,7 +1816,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(436, 264)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(440, 264)
         Me.SplitContainerControl4.SplitterPosition = 334
         Me.SplitContainerControl4.TabIndex = 2
         Me.SplitContainerControl4.Text = "SplitContainerControl4"
@@ -1824,7 +1825,7 @@ Partial Class CTDataMasterWcfForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1238, 418)
+        Me.ClientSize = New System.Drawing.Size(1242, 418)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.ucAuditPanel)
         Me.Controls.Add(Me.BarDockControl3)
