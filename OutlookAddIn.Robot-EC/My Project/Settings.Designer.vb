@@ -55,7 +55,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ferar\Documents\Robot\Database\RobotHL.accdb")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\EcuadorInfo\Documents\Robot\Database\RobotHL.accdb")>  _
     Public Property DBFileName() As String
         Get
             Return CType(Me("DBFileName"),String)
@@ -115,7 +115,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ferar\Documents\Robot\AttachedFiles")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\EcuadorInfo\Documents\Robot\AttachedFiles")>  _
     Public Property AttachedFilePath() As String
         Get
             Return CType(Me("AttachedFilePath"),String)
@@ -127,7 +127,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ferar\Documents\Robot\Log")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\EcuadorInfo\Documents\Robot\Log")>  _
     Public Property LogFilePath() As String
         Get
             Return CType(Me("LogFilePath"),String)
@@ -163,13 +163,25 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\ferar\Documents\Robot\ProcessFiles")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\EcuadorInfo\Documents\Robot\ProcessFiles")>  _
     Public Property ProcessFilePath() As String
         Get
             Return CType(Me("ProcessFilePath"),String)
         End Get
         Set
             Me("ProcessFilePath") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("EC")>  _
+    Public Property SourceCountry() As String
+        Get
+            Return CType(Me("SourceCountry"),String)
+        End Get
+        Set
+            Me("SourceCountry") = value
         End Set
     End Property
 End Class

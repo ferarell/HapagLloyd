@@ -54,8 +54,18 @@ Public Class SharePointListTransactions
         clienContext.ExecuteQuery()
     End Sub
 
-    Friend Sub DeleteItem(IdRows As Integer)
+    Friend Sub DeleteItem(IdRow As Integer)
+        Dim clienContext As New ClientContext(SharePointUrl)
+        clienContext.Credentials = New SharePointOnlineCredentials(My.Settings.SharePoint_User, Password)
+        Dim oList As List = clienContext.Web.Lists.GetByTitle(SharePointList)
+        Dim oListItem As ListItem = oList.GetItemById(IdRow)
 
+        For c = 0 To ValuesList.Count - 1
+            oListItem(ValuesList(c)(0)) = ValuesList(c)(1)
+        Next
+
+        oListItem.DeleteObject()
+        clienContext.ExecuteQuery()
     End Sub
 
     Friend Sub SelectItem(dtItems As DataTable)

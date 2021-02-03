@@ -15,7 +15,7 @@
       <Value Profile="(Default)">Office 2010 Black</Value>
     </Setting>
     <Setting Name="DBFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">X:\VSTO\DataProcessingHL.accdb</Value>
+      <Value Profile="(Default)">.\SharePointList.accdb</Value>
     </Setting>
     <Setting Name="LogFilePath" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Temp\Log</Value>
@@ -25,6 +25,9 @@
     </Setting>
     <Setting Name="DBPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SourceCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PE</Value>
     </Setting>
   </Settings>
 </SettingsFile>

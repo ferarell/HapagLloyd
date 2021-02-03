@@ -399,6 +399,9 @@ Public Class CTDataMasterWcfForm
 
     Private Sub FormatDataGrid(oGridView As GridView)
         For c = 0 To oGridView.Columns.Count - 1
+            If My.User.Name.ToUpper.Contains({"WW\ALBORPA", "FARELLANO"}) Then
+                oGridView.Columns(c).OptionsColumn.ReadOnly = False
+            End If
             If oGridView.Columns(c).ReadOnly = False Then
                 oGridView.Columns(c).AppearanceCell.BackColor = Color.LightGray
             End If
@@ -422,7 +425,8 @@ Public Class CTDataMasterWcfForm
                 sFields = ""
                 sConditions = "CONTAINER='" & GridView2.GetRowCellValue(r, "CONTAINER") & "' AND BOOKING='" & GridView2.GetRowCellValue(r, "BOOKING") & "'"
                 For c = 0 To GridView2.Columns.Count - 1
-                    If Not GridView2.Columns(c).OptionsColumn.ReadOnly Then
+                    'If Not GridView2.Columns(c).OptionsColumn.ReadOnly Or GridView2.Columns(c).Tag = 1 Then
+                    If GridView2.Columns(c).Tag = 1 Then
                         If IsDBNull(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)) Then
                             sValues = sValues & IIf(sValues = "", "", ", ") & GridView2.Columns(c).FieldName & "=NULL"
                         Else
@@ -442,7 +446,7 @@ Public Class CTDataMasterWcfForm
             End If
             If dtResult.Rows(r).RowState = DataRowState.Added Then
                 For c = 0 To GridView2.Columns.Count - 1
-                    If Not GridView2.Columns(c).OptionsColumn.ReadOnly Then
+                    If Not GridView2.Columns(c).OptionsColumn.ReadOnly Or GridView2.Columns(c).Tag > 0 Then
                         If IsDBNull(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)) Then
                             sFields = sFields & IIf(sFields = "", "", ", ") & GridView2.Columns(c).FieldName
                             sValues = sValues & IIf(sValues = "", "", ", ") & "NULL"

@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="DBFileName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb</Value>
+      <Value Profile="(Default)">C:\Users\guatemalainfo\Documents\Robot\Database\RobotHL.accdb</Value>
     </Setting>
     <Setting Name="DBFileNameBak" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb</Value>
+      <Value Profile="(Default)">C:\Users\guatemalainfo\Documents\Robot\Database\RobotHL.accdb</Value>
     </Setting>
     <Setting Name="DBUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -18,19 +18,22 @@
       <Value Profile="(Default)">Configuration</Value>
     </Setting>
     <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\AttachedFiles</Value>
+      <Value Profile="(Default)">C:\Users\guatemalainfo\Documents\Robot\AttachedFiles</Value>
     </Setting>
     <Setting Name="LogFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\Log</Value>
+      <Value Profile="(Default)">C:\Users\guatemalainfo\Documents\Robot\Log</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
       <Value Profile="(Default)">Blue</Value>
     </Setting>
     <Setting Name="SupportMailAddress" Type="System.String" Scope="User">
-      <Value Profile="(Default)">fernando.arellano@totalit.com.pe</Value>
+      <Value Profile="(Default)">arellano.fernando@ext.hlag.com</Value>
     </Setting>
     <Setting Name="ProcessFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\colombiainfo\Documents\Robot\ProcessFiles</Value>
+      <Value Profile="(Default)">C:\Users\guatemalainfo\Documents\Robot\ProcessFiles</Value>
+    </Setting>
+    <Setting Name="SourceCountry" Type="System.String" Scope="User">
+      <Value Profile="(Default)">GT</Value>
     </Setting>
   </Settings>
 </SettingsFile>

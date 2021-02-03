@@ -35,10 +35,10 @@ Public Class ManifestUpdate
             dtResult = oDataAccess.ExecuteAccessQuery("SELECT * FROM ManifestControl WHERE BillOfLading='#'").Tables(0)
             Dim iPos As Integer = 0
             Dim _FilasImportadas, _FilasExcluidas, _TotalFilas As Integer
+            _TotalFilas = dtSource.Rows.Count
             For r = 0 To dtSource.Rows.Count - 1
-                _TotalFilas = dtSource.Rows.Count
                 Dim oRow As DataRow = dtSource.Rows(r)
-                If IsDBNull((0)) Then
+                If IsDBNull(oRow(0)) Then
                     Continue For
                 End If
                 If oDataAccess.ExecuteAccessQuery("SELECT BillOfLading FROM ManifestControl WHERE BillOfLading = '" & oRow("CODIGO BL") & "'").Tables(0).Rows.Count > 0 Then
@@ -46,20 +46,21 @@ Public Class ManifestUpdate
                     Continue For
                 End If
                 dtResult.Rows.Add()
-                dtResult.Rows(r)("SourceCountry") = "EC"
-                dtResult.Rows(r)("VesselName") = Mid(oRow("NOMBRE ITINERARIO"), 1, InStrRev(oRow("NOMBRE ITINERARIO"), 1) - 3)
-                dtResult.Rows(r)("ScheduleVoyage") = Mid(oRow("NOMBRE ITINERARIO"), InStrRev(oRow("NOMBRE ITINERARIO"), 1) - 1, Len(oRow("NOMBRE ITINERARIO")))
-                dtResult.Rows(r)("Port_Locode") = oRow("PUERTO ARRIBO")
-                dtResult.Rows(r)("OriginPort") = oRow("PUERTO ORIGEN")
-                'dtResult.Rows(r)("DischargePort") = oRow("PUERTO DESTINO")
-                dtResult.Rows(r)("FinalPort") = oRow("PUERTO DESTINO")
-                dtResult.Rows(r)("ArrivalDate") = oRow("fec_arribo")
-                dtResult.Rows(r)("ManifestNumber") = oRow("MRN")
-                dtResult.Rows(r)("SecuencialNumber") = oRow("SECUENCIA BL")
-                dtResult.Rows(r)("BillOfLading") = oRow("CODIGO BL")
-                dtResult.Rows(r)("TerminalName") = oRow("NOMBRE TERMINAL")
-                dtResult.Rows(r)("ConsigneeName") = oRow("NOMBRE CONSIGNATARIO")
-                If oDataAccess.InsertIntoAccess("ManifestControl", dtResult.Rows(r)) Then
+                iPos = dtResult.Rows.Count - 1
+                dtResult.Rows(iPos)("SourceCountry") = My.Settings.SourceCountry
+                dtResult.Rows(iPos)("VesselName") = Mid(oRow("NOMBRE ITINERARIO"), 1, InStrRev(oRow("NOMBRE ITINERARIO"), " ")).Trim
+                dtResult.Rows(iPos)("ScheduleVoyage") = Mid(oRow("NOMBRE ITINERARIO"), InStrRev(oRow("NOMBRE ITINERARIO"), " "), Len(oRow("NOMBRE ITINERARIO"))).Trim
+                dtResult.Rows(iPos)("Port_Locode") = oRow("PUERTO ARRIBO")
+                dtResult.Rows(iPos)("OriginPort") = oRow("PUERTO ORIGEN")
+                'dtResult.Rows(iPos)("DischargePort") = oRow("PUERTO DESTINO")
+                dtResult.Rows(iPos)("FinalPort") = oRow("PUERTO DESTINO")
+                dtResult.Rows(iPos)("ArrivalDate") = oRow("fec_arribo")
+                dtResult.Rows(iPos)("ManifestNumber") = oRow("MRN")
+                dtResult.Rows(iPos)("SecuencialNumber") = oRow("SECUENCIA BL")
+                dtResult.Rows(iPos)("BillOfLading") = oRow("CODIGO BL")
+                dtResult.Rows(iPos)("TerminalName") = oRow("NOMBRE TERMINAL")
+                dtResult.Rows(iPos)("ConsigneeName") = oRow("NOMBRE CONSIGNATARIO")
+                If oDataAccess.InsertIntoAccess("ManifestControl", dtResult.Rows(iPos)) Then
                     _FilasImportadas += 1
                 End If
             Next

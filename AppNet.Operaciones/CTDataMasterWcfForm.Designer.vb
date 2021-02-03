@@ -19,7 +19,6 @@ Partial Class CTDataMasterWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CTDataMasterWcfForm))
@@ -87,15 +86,15 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn87 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn88 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.imStatus = New System.Windows.Forms.ImageList(Me.components)
+        Me.imStatus = New System.Windows.Forms.ImageList()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
-        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
+        Me.bmActions = New DevExpress.XtraBars.BarManager()
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
@@ -131,7 +130,7 @@ Partial Class CTDataMasterWcfForm
         Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer1 = New System.Windows.Forms.Timer()
         Me.ucAuditPanel = New TCHECK.CLOUD.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -142,7 +141,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcDataColdTreatment = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -674,7 +673,7 @@ Partial Class CTDataMasterWcfForm
         Me.gcVendorReadings.Location = New System.Drawing.Point(0, 0)
         Me.gcVendorReadings.MainView = Me.GridView3
         Me.gcVendorReadings.Name = "gcVendorReadings"
-        Me.gcVendorReadings.Size = New System.Drawing.Size(440, 260)
+        Me.gcVendorReadings.Size = New System.Drawing.Size(439, 246)
         Me.gcVendorReadings.TabIndex = 171
         Me.gcVendorReadings.UseEmbeddedNavigator = True
         Me.gcVendorReadings.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3, Me.GridView4, Me.CardView3})
@@ -927,31 +926,31 @@ Partial Class CTDataMasterWcfForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(1242, 41)
+        Me.BarDockControl1.Size = New System.Drawing.Size(1242, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 391)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 385)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(1242, 27)
+        Me.BarDockControl2.Size = New System.Drawing.Size(1242, 33)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 350)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 338)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(1242, 41)
+        Me.BarDockControl4.Location = New System.Drawing.Point(1242, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 350)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 338)
         '
         'BarButtonItem1
         '
@@ -1059,7 +1058,7 @@ Partial Class CTDataMasterWcfForm
         Me.ucAuditPanel.CreatedBy = Nothing
         Me.ucAuditPanel.CreatedDate = New Date(CType(0, Long))
         Me.ucAuditPanel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 354)
+        Me.ucAuditPanel.Location = New System.Drawing.Point(0, 348)
         Me.ucAuditPanel.Name = "ucAuditPanel"
         Me.ucAuditPanel.Size = New System.Drawing.Size(1242, 37)
         Me.ucAuditPanel.TabIndex = 1
@@ -1071,14 +1070,14 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SplitContainerControl1.Horizontal = False
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.PanelControl1)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.SplitContainerControl3)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(1242, 313)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(1242, 301)
         Me.SplitContainerControl1.SplitterPosition = 45
         Me.SplitContainerControl1.TabIndex = 181
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -1149,7 +1148,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3.Panel1.Text = "Panel1"
         Me.SplitContainerControl3.Panel2.Controls.Add(Me.SplitContainerControl4)
         Me.SplitContainerControl3.Panel2.Text = "Panel2"
-        Me.SplitContainerControl3.Size = New System.Drawing.Size(1242, 264)
+        Me.SplitContainerControl3.Size = New System.Drawing.Size(1242, 251)
         Me.SplitContainerControl3.SplitterPosition = 798
         Me.SplitContainerControl3.TabIndex = 174
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
@@ -1168,7 +1167,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl2.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl2.Panel2.Controls.Add(Me.gcDataColdTreatment)
         Me.SplitContainerControl2.Panel2.Text = "Panel2"
-        Me.SplitContainerControl2.Size = New System.Drawing.Size(798, 264)
+        Me.SplitContainerControl2.Size = New System.Drawing.Size(798, 251)
         Me.SplitContainerControl2.SplitterPosition = 338
         Me.SplitContainerControl2.TabIndex = 173
         Me.SplitContainerControl2.Text = "SplitContainerControl2"
@@ -1188,7 +1187,7 @@ Partial Class CTDataMasterWcfForm
         Me.gcDataColdTreatment.MainView = Me.GridView2
         Me.gcDataColdTreatment.Name = "gcDataColdTreatment"
         Me.gcDataColdTreatment.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1, Me.RepositoryItemTextEdit1, Me.RepositoryItemComboBox2, Me.RepositoryItemComboBox3, Me.RepositoryItemComboBox4, Me.RepositoryItemComboBox5, Me.RepositoryItemTextEdit2, Me.RepositoryItemHyperLinkEdit1, Me.RepositoryItemImageComboBox2, Me.RepositoryItemComboBox6, Me.RepositoryItemMemoExEdit1, Me.RepositoryItemDateEdit1, Me.RepositoryItemComboBox7, Me.RepositoryItemTextEdit3, Me.RepositoryItemCheckEdit2, Me.RepositoryItemCheckEdit3, Me.RepositoryItemLookUpEdit2})
-        Me.gcDataColdTreatment.Size = New System.Drawing.Size(790, 260)
+        Me.gcDataColdTreatment.Size = New System.Drawing.Size(789, 247)
         Me.gcDataColdTreatment.TabIndex = 174
         Me.gcDataColdTreatment.UseEmbeddedNavigator = True
         Me.gcDataColdTreatment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2, Me.CardView2})
@@ -1219,6 +1218,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn41.FieldName = "CONTAINER"
         Me.GridColumn41.Name = "GridColumn41"
         Me.GridColumn41.OptionsColumn.ReadOnly = True
+        Me.GridColumn41.Tag = 2
         Me.GridColumn41.Visible = True
         Me.GridColumn41.VisibleIndex = 0
         '
@@ -1228,6 +1228,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn42.FieldName = "BOOKING"
         Me.GridColumn42.Name = "GridColumn42"
         Me.GridColumn42.OptionsColumn.ReadOnly = True
+        Me.GridColumn42.Tag = 2
         Me.GridColumn42.Visible = True
         Me.GridColumn42.VisibleIndex = 1
         '
@@ -1237,6 +1238,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn91.FieldName = "CGODESC"
         Me.GridColumn91.Name = "GridColumn91"
         Me.GridColumn91.OptionsColumn.ReadOnly = True
+        Me.GridColumn91.Tag = 1
         Me.GridColumn91.Visible = True
         Me.GridColumn91.VisibleIndex = 2
         '
@@ -1246,6 +1248,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn92.FieldName = "TEMPERATURE"
         Me.GridColumn92.Name = "GridColumn92"
         Me.GridColumn92.OptionsColumn.ReadOnly = True
+        Me.GridColumn92.Tag = 1
         Me.GridColumn92.Visible = True
         Me.GridColumn92.VisibleIndex = 3
         '
@@ -1255,6 +1258,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn43.FieldName = "POL"
         Me.GridColumn43.Name = "GridColumn43"
         Me.GridColumn43.OptionsColumn.ReadOnly = True
+        Me.GridColumn43.Tag = 1
         Me.GridColumn43.Visible = True
         Me.GridColumn43.VisibleIndex = 4
         '
@@ -1264,6 +1268,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn44.ColumnEdit = Me.RepositoryItemComboBox2
         Me.GridColumn44.FieldName = "CHKDL"
         Me.GridColumn44.Name = "GridColumn44"
+        Me.GridColumn44.Tag = 1
         Me.GridColumn44.Visible = True
         Me.GridColumn44.VisibleIndex = 5
         '
@@ -1282,6 +1287,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn46.FieldName = "INIDATE"
         Me.GridColumn46.Name = "GridColumn46"
+        Me.GridColumn46.Tag = 1
         Me.GridColumn46.Visible = True
         Me.GridColumn46.VisibleIndex = 6
         '
@@ -1308,6 +1314,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn47.Caption = "POD"
         Me.GridColumn47.FieldName = "POD"
         Me.GridColumn47.Name = "GridColumn47"
+        Me.GridColumn47.Tag = 1
         Me.GridColumn47.Visible = True
         Me.GridColumn47.VisibleIndex = 7
         '
@@ -1317,6 +1324,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn48.FieldName = "FDP"
         Me.GridColumn48.Name = "GridColumn48"
         Me.GridColumn48.OptionsColumn.ReadOnly = True
+        Me.GridColumn48.Tag = 1
         Me.GridColumn48.Visible = True
         Me.GridColumn48.VisibleIndex = 8
         '
@@ -1326,6 +1334,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn49.FieldName = "EXPORT_PARTY"
         Me.GridColumn49.Name = "GridColumn49"
         Me.GridColumn49.OptionsColumn.ReadOnly = True
+        Me.GridColumn49.Tag = 1
         Me.GridColumn49.Visible = True
         Me.GridColumn49.VisibleIndex = 9
         '
@@ -1335,6 +1344,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn93.FieldName = "ROUTING_PARTY"
         Me.GridColumn93.Name = "GridColumn93"
         Me.GridColumn93.OptionsColumn.ReadOnly = True
+        Me.GridColumn93.Tag = 1
         Me.GridColumn93.Visible = True
         Me.GridColumn93.VisibleIndex = 10
         '
@@ -1344,6 +1354,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn50.FieldName = "DEPOT"
         Me.GridColumn50.Name = "GridColumn50"
         Me.GridColumn50.OptionsColumn.ReadOnly = True
+        Me.GridColumn50.Tag = 1
         Me.GridColumn50.Visible = True
         Me.GridColumn50.VisibleIndex = 11
         '
@@ -1353,6 +1364,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn51.FieldName = "VESSEL"
         Me.GridColumn51.Name = "GridColumn51"
         Me.GridColumn51.OptionsColumn.ReadOnly = True
+        Me.GridColumn51.Tag = 1
         Me.GridColumn51.Visible = True
         Me.GridColumn51.VisibleIndex = 12
         '
@@ -1362,6 +1374,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn52.FieldName = "SERVICE"
         Me.GridColumn52.Name = "GridColumn52"
         Me.GridColumn52.OptionsColumn.ReadOnly = True
+        Me.GridColumn52.Tag = 1
         Me.GridColumn52.Visible = True
         Me.GridColumn52.VisibleIndex = 13
         '
@@ -1371,6 +1384,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn53.FieldName = "ETA1"
         Me.GridColumn53.Name = "GridColumn53"
         Me.GridColumn53.OptionsColumn.ReadOnly = True
+        Me.GridColumn53.Tag = 1
         Me.GridColumn53.Visible = True
         Me.GridColumn53.VisibleIndex = 14
         '
@@ -1380,6 +1394,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn54.FieldName = "TSP"
         Me.GridColumn54.Name = "GridColumn54"
         Me.GridColumn54.OptionsColumn.ReadOnly = True
+        Me.GridColumn54.Tag = 1
         Me.GridColumn54.Visible = True
         Me.GridColumn54.VisibleIndex = 15
         '
@@ -1391,6 +1406,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn55.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn55.FieldName = "ETA2"
         Me.GridColumn55.Name = "GridColumn55"
+        Me.GridColumn55.Tag = 1
         Me.GridColumn55.Visible = True
         Me.GridColumn55.VisibleIndex = 16
         '
@@ -1402,6 +1418,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn56.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn56.FieldName = "ETD2"
         Me.GridColumn56.Name = "GridColumn56"
+        Me.GridColumn56.Tag = 1
         Me.GridColumn56.Visible = True
         Me.GridColumn56.VisibleIndex = 17
         '
@@ -1418,6 +1435,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn57.ColumnEdit = Me.RepositoryItemComboBox5
         Me.GridColumn57.FieldName = "TSCHKDL"
         Me.GridColumn57.Name = "GridColumn57"
+        Me.GridColumn57.Tag = 1
         Me.GridColumn57.Visible = True
         Me.GridColumn57.VisibleIndex = 18
         '
@@ -1436,6 +1454,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn58.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
         Me.GridColumn58.FieldName = "FINDATE"
         Me.GridColumn58.Name = "GridColumn58"
+        Me.GridColumn58.Tag = 1
         Me.GridColumn58.Visible = True
         Me.GridColumn58.VisibleIndex = 19
         '
@@ -1444,6 +1463,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn59.Caption = "CT Days"
         Me.GridColumn59.FieldName = "CTDAYS"
         Me.GridColumn59.Name = "GridColumn59"
+        Me.GridColumn59.Tag = 1
         Me.GridColumn59.Visible = True
         Me.GridColumn59.VisibleIndex = 20
         '
@@ -1453,6 +1473,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn60.ColumnEdit = Me.RepositoryItemComboBox6
         Me.GridColumn60.FieldName = "REMARKS"
         Me.GridColumn60.Name = "GridColumn60"
+        Me.GridColumn60.Tag = 1
         Me.GridColumn60.Visible = True
         Me.GridColumn60.VisibleIndex = 21
         '
@@ -1470,6 +1491,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn61.ColumnEdit = Me.RepositoryItemTextEdit2
         Me.GridColumn61.FieldName = "SENASA"
         Me.GridColumn61.Name = "GridColumn61"
+        Me.GridColumn61.Tag = 1
         Me.GridColumn61.Visible = True
         Me.GridColumn61.VisibleIndex = 22
         '
@@ -1485,6 +1507,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn62.ColumnEdit = Me.RepositoryItemCheckEdit1
         Me.GridColumn62.FieldName = "SHARED"
         Me.GridColumn62.Name = "GridColumn62"
+        Me.GridColumn62.Tag = 1
         '
         'RepositoryItemCheckEdit1
         '
@@ -1500,6 +1523,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn94.FieldName = "GAP"
         Me.GridColumn94.Name = "GridColumn94"
         Me.GridColumn94.OptionsColumn.ReadOnly = True
+        Me.GridColumn94.Tag = 0
         Me.GridColumn94.Visible = True
         Me.GridColumn94.VisibleIndex = 23
         '
@@ -1509,6 +1533,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn95.FieldName = "BROKE"
         Me.GridColumn95.Name = "GridColumn95"
         Me.GridColumn95.OptionsColumn.ReadOnly = True
+        Me.GridColumn95.Tag = 0
         Me.GridColumn95.Visible = True
         Me.GridColumn95.VisibleIndex = 24
         '
@@ -1518,6 +1543,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn63.ColumnEdit = Me.RepositoryItemHyperLinkEdit1
         Me.GridColumn63.Name = "GridColumn63"
         Me.GridColumn63.OptionsColumn.ReadOnly = True
+        Me.GridColumn63.Tag = 0
         Me.GridColumn63.Visible = True
         Me.GridColumn63.VisibleIndex = 25
         '
@@ -1537,6 +1563,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn64.FieldName = "STATUS"
         Me.GridColumn64.Name = "GridColumn64"
         Me.GridColumn64.OptionsColumn.ReadOnly = True
+        Me.GridColumn64.Tag = 0
         Me.GridColumn64.Visible = True
         Me.GridColumn64.VisibleIndex = 26
         '
@@ -1546,6 +1573,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn45.ColumnEdit = Me.RepositoryItemLookUpEdit2
         Me.GridColumn45.FieldName = "OPS_CODE"
         Me.GridColumn45.Name = "GridColumn45"
+        Me.GridColumn45.Tag = 1
         Me.GridColumn45.Visible = True
         Me.GridColumn45.VisibleIndex = 27
         '
@@ -1565,6 +1593,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn100.FieldName = "OPS_DESCRIPTION"
         Me.GridColumn100.Name = "GridColumn100"
         Me.GridColumn100.OptionsColumn.ReadOnly = True
+        Me.GridColumn100.Tag = 0
         Me.GridColumn100.Visible = True
         Me.GridColumn100.VisibleIndex = 28
         '
@@ -1574,6 +1603,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn90.ColumnEdit = Me.RepositoryItemComboBox7
         Me.GridColumn90.FieldName = "COMMENTS"
         Me.GridColumn90.Name = "GridColumn90"
+        Me.GridColumn90.Tag = 1
         Me.GridColumn90.Visible = True
         Me.GridColumn90.VisibleIndex = 29
         '
@@ -1590,6 +1620,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn96.FieldName = "CreatedBy"
         Me.GridColumn96.Name = "GridColumn96"
         Me.GridColumn96.OptionsColumn.ReadOnly = True
+        Me.GridColumn96.Tag = 2
         '
         'GridColumn97
         '
@@ -1597,6 +1628,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn97.FieldName = "CreatedDate"
         Me.GridColumn97.Name = "GridColumn97"
         Me.GridColumn97.OptionsColumn.ReadOnly = True
+        Me.GridColumn97.Tag = 2
         '
         'GridColumn98
         '
@@ -1604,6 +1636,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn98.FieldName = "UpdatedBy"
         Me.GridColumn98.Name = "GridColumn98"
         Me.GridColumn98.OptionsColumn.ReadOnly = True
+        Me.GridColumn98.Tag = 0
         '
         'GridColumn99
         '
@@ -1611,6 +1644,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn99.FieldName = "UpdatedDate"
         Me.GridColumn99.Name = "GridColumn99"
         Me.GridColumn99.OptionsColumn.ReadOnly = True
+        Me.GridColumn99.Tag = 0
         '
         'RepositoryItemTextEdit1
         '
@@ -1816,7 +1850,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl4.Panel1.Text = "Panel1"
         Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
         Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(440, 264)
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(439, 251)
         Me.SplitContainerControl4.SplitterPosition = 334
         Me.SplitContainerControl4.TabIndex = 2
         Me.SplitContainerControl4.Text = "SplitContainerControl4"

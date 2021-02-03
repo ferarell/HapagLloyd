@@ -16,6 +16,7 @@ Public Class CustomValidationRule
         End If
         Return res
     End Function
+
 End Class
 
 

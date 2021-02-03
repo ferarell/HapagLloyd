@@ -123,12 +123,24 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter("select * from [" & Table & "]", connection)
                 drColumns = Command.SelectCommand.ExecuteReader()
                 dtSchema = drColumns.GetSchemaTable
+                'For Each row As DataRow In dtSchema.Rows
+                '    If drValues.Table.Columns.Contains(row.ItemArray(0)) Then
+                '        If Not IsDBNull(drValues.Item(dtSchema.Rows.IndexOf(row))) Then
+                '            sColumns = sColumns + IIf(dtSchema.Rows.IndexOf(row) = 0, "", ", ") & "[" & row.ItemArray(0) & "]"
+                '            If Not drValues.Table.Columns(dtSchema.Rows.IndexOf(row)).DataType = GetType(Boolean) Then
+                '                sValues = sValues + IIf(dtSchema.Rows.IndexOf(row) = 0, "'", ", '") & drValues.Item(dtSchema.Rows.IndexOf(row)) & "'"
+                '            Else
+                '                sValues = sValues & ", " & drValues.Item(dtSchema.Rows.IndexOf(row))
+                '            End If
+                '        End If
+                '    End If
+                'Next
                 For Each row As DataRow In dtSchema.Rows
                     If drValues.Table.Columns.Contains(row.ItemArray(0)) Then
                         If Not IsDBNull(drValues.Item(dtSchema.Rows.IndexOf(row))) Then
-                            sColumns = sColumns + IIf(dtSchema.Rows.IndexOf(row) = 0, "", ", ") & "[" & row.ItemArray(0) & "]"
+                            sColumns = sColumns + IIf(dtSchema.Rows.IndexOf(row) = 0 Or sColumns = "", "", ", ") & "[" & row.ItemArray(0) & "]"
                             If Not drValues.Table.Columns(dtSchema.Rows.IndexOf(row)).DataType = GetType(Boolean) Then
-                                sValues = sValues + IIf(dtSchema.Rows.IndexOf(row) = 0, "'", ", '") & drValues.Item(dtSchema.Rows.IndexOf(row)) & "'"
+                                sValues = sValues + IIf(dtSchema.Rows.IndexOf(row) = 0 Or sValues = "", "'", ", '") & drValues.Item(dtSchema.Rows.IndexOf(row)) & "'"
                             Else
                                 sValues = sValues & ", " & drValues.Item(dtSchema.Rows.IndexOf(row))
                             End If
@@ -140,7 +152,28 @@ Public Class DataAccess
                 Command2.SelectCommand.ExecuteNonQuery()
             Catch ex As Exception
                 'MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
+                oLogFileUpdate.TextFileUpdate("LocalBenefits", ex.Message)
+                bResult = False
+            Finally
+                connection.Close()
+            End Try
+            Return bResult
+        End Using
+    End Function
+
+    Friend Function InsertAccess(Table As String, FieldsName As String, Values As String) As Boolean
+        Dim bResult As Boolean = True
+        Dim sQuery As String = ""
+        Dim AccessConnectionString As String = "provider=Microsoft.ACE.OLEDB.12.0; Data Source='" & My.Settings.DBFileName & "';"
+        Using connection As New System.Data.OleDb.OleDbConnection(AccessConnectionString)
+            Try
+                connection.Open()
+                sQuery = "INSERT INTO [" & Table & "] (" & FieldsName & ") VALUES (" & Values & ")"
+                Dim Command As New System.Data.OleDb.OleDbDataAdapter(sQuery, connection)
+                Command.SelectCommand.ExecuteNonQuery()
+            Catch ex As Exception
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("LocalBenefits", ex.Message)
                 bResult = False
             Finally
                 connection.Close()
@@ -161,7 +194,28 @@ Public Class DataAccess
                 Command.SelectCommand.ExecuteNonQuery()
             Catch ex As Exception
                 'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
+                oLogFileUpdate.TextFileUpdate("LocalBenefits", ex.Message)
+                bResult = False
+            Finally
+                connection.Close()
+            End Try
+            Return bResult
+        End Using
+    End Function
+
+    Friend Function DeleteAccess(Table As String, Condition As String) As Boolean
+        Dim bResult As Boolean = True
+        Dim sQuery As String = ""
+        Dim AccessConnectionString As String = "provider=Microsoft.ACE.OLEDB.12.0; Data Source='" & My.Settings.DBFileName & "';"
+        Using connection As New System.Data.OleDb.OleDbConnection(AccessConnectionString)
+            Try
+                connection.Open()
+                sQuery = "DELETE FROM [" & Table & "] WHERE " & Condition
+                Dim Command As New System.Data.OleDb.OleDbDataAdapter(sQuery, connection)
+                Command.SelectCommand.ExecuteNonQuery()
+            Catch ex As Exception
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("LocalBenefits", ex.Message)
                 bResult = False
             Finally
                 connection.Close()

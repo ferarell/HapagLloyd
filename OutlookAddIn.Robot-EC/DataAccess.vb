@@ -4,7 +4,8 @@ Imports System.Windows.Forms
 Imports Microsoft.Office.Interop
 
 Public Class DataAccess
-
+    Dim oLogFileUpdate As New LogFileGenerate
+    Dim oCreateMailItem As New CreateMailItem
     Friend Function LoadExcel(ByVal FileName As String, ByRef Hoja As String) As DataSet
         Dim dsResult As New DataSet
         Dim ExcelConnectionString As String = "provider=Microsoft.ACE.OLEDB.12.0; Data Source='" & FileName & "'; Extended Properties=Excel 8.0;"
@@ -22,7 +23,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter("select * from [" & Hoja & "]", connection)
                 Command.Fill(dsResult)
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
             Finally
                 connection.Close()
             End Try
@@ -47,7 +49,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter("select * from [" & Hoja & "] " & IIf(Condition <> "", " WHERE " & Condition, ""), connection)
                 Command.Fill(dsResult)
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
             Finally
                 connection.Close()
             End Try
@@ -64,7 +67,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter(Query, connection)
                 Command.Fill(dsResult)
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
             Finally
                 connection.Close()
             End Try
@@ -81,7 +85,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter(QueryString, connection)
                 Command.Fill(dsResult)
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
             Finally
                 connection.Close()
             End Try
@@ -98,7 +103,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter(QueryString, connection)
                 Command.SelectCommand.ExecuteNonQuery()
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
             Finally
                 connection.Close()
             End Try
@@ -137,7 +143,7 @@ Public Class DataAccess
                 Dim Command2 As New System.Data.OleDb.OleDbDataAdapter(sQuery, connection)
                 Command2.SelectCommand.ExecuteNonQuery()
             Catch ex As Exception
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
                 bResult = False
             Finally
                 connection.Close()
@@ -157,7 +163,8 @@ Public Class DataAccess
                 Dim Command As New System.Data.OleDb.OleDbDataAdapter(sQuery, connection)
                 Command.SelectCommand.ExecuteNonQuery()
             Catch ex As Exception
-                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                'DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                oLogFileUpdate.TextFileUpdate("ROBOT", ex.Message)
                 bResult = False
             Finally
                 connection.Close()

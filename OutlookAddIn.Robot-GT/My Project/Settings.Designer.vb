@@ -14,7 +14,7 @@ Option Explicit On
 
 
 <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
- Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
+ Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0"),  _
  Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
 Partial Friend NotInheritable Class MySettings
     Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -55,7 +55,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\guatemalainfo\Documents\Robot\Database\RobotHL.accdb")>  _
     Public Property DBFileName() As String
         Get
             Return CType(Me("DBFileName"),String)
@@ -67,7 +67,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\colombiainfo\Documents\Robot\Database\RobotHL.accdb")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\guatemalainfo\Documents\Robot\Database\RobotHL.accdb")>  _
     Public Property DBFileNameBak() As String
         Get
             Return CType(Me("DBFileNameBak"),String)
@@ -115,7 +115,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\colombiainfo\Documents\Robot\AttachedFiles")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\guatemalainfo\Documents\Robot\AttachedFiles")>  _
     Public Property AttachedFilePath() As String
         Get
             Return CType(Me("AttachedFilePath"),String)
@@ -127,7 +127,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\colombiainfo\Documents\Robot\Log")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\guatemalainfo\Documents\Robot\Log")>  _
     Public Property LogFilePath() As String
         Get
             Return CType(Me("LogFilePath"),String)
@@ -151,7 +151,7 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("fernando.arellano@totalit.com.pe")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("arellano.fernando@ext.hlag.com")>  _
     Public Property SupportMailAddress() As String
         Get
             Return CType(Me("SupportMailAddress"),String)
@@ -163,13 +163,25 @@ Partial Friend NotInheritable Class MySettings
     
     <Global.System.Configuration.UserScopedSettingAttribute(),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\colombiainfo\Documents\Robot\ProcessFiles")>  _
+     Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\guatemalainfo\Documents\Robot\ProcessFiles")>  _
     Public Property ProcessFilePath() As String
         Get
             Return CType(Me("ProcessFilePath"),String)
         End Get
         Set
             Me("ProcessFilePath") = value
+        End Set
+    End Property
+    
+    <Global.System.Configuration.UserScopedSettingAttribute(),  _
+     Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.Configuration.DefaultSettingValueAttribute("GT")>  _
+    Public Property SourceCountry() As String
+        Get
+            Return CType(Me("SourceCountry"),String)
+        End Get
+        Set
+            Me("SourceCountry") = value
         End Set
     End Property
 End Class
