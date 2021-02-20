@@ -21,7 +21,7 @@ Public Class ProcessIdentifier
 
             'Update
             Dim _MailAddress As String = oMailItem.Sender.Address.ToString.ToUpper
-            If drConfiguration("ResponseType") = 3 Then 'And _MailAddress.ToUpper.Contains({"HAPAG-LLOYD", "HLAG.COM"}) Then
+            If drConfiguration("ResponseType") = 3 And _MailAddress.ToUpper.Contains({"HAPAG-LLOYD", "HLAG.COM"}) Then
                 If drConfiguration("Identifier") = "OBL RELEASE" Then
                     Dim oBlIssuedUpdate As New BlIssuedUpdate
                     oBlIssuedUpdate.oMailItem = oMailItem

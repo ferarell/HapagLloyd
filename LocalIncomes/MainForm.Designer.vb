@@ -22,12 +22,15 @@ Partial Class MainForm
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.nbcMainMenu = New DevExpress.XtraNavBar.NavBarControl()
+        Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
+        Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarGroup3 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem20 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem21 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem14 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
-        Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem16 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem15 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem22 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarGroup5 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem13 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem12 = New DevExpress.XtraNavBar.NavBarItem()
@@ -54,9 +57,8 @@ Partial Class MainForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
-        Me.NavBarItem15 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.NavBarItem16 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.NavBarItem22 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem23 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem24 = New DevExpress.XtraNavBar.NavBarItem()
         CType(Me.nbcMainMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,7 +70,7 @@ Partial Class MainForm
         Me.nbcMainMenu.ActiveGroup = Me.NavBarGroup2
         Me.nbcMainMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.nbcMainMenu.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup2, Me.NavBarGroup3, Me.NavBarGroup5})
-        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19, Me.NavBarItem20, Me.NavBarItem21, Me.NavBarItem1, Me.NavBarItem14, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem22})
+        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19, Me.NavBarItem20, Me.NavBarItem21, Me.NavBarItem1, Me.NavBarItem14, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem22, Me.NavBarItem23, Me.NavBarItem24})
         Me.nbcMainMenu.Location = New System.Drawing.Point(0, 0)
         Me.nbcMainMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.nbcMainMenu.Name = "nbcMainMenu"
@@ -77,29 +79,6 @@ Partial Class MainForm
         Me.nbcMainMenu.StoreDefaultPaintStyleName = True
         Me.nbcMainMenu.TabIndex = 3
         Me.nbcMainMenu.Text = "NavBarControl1"
-        '
-        'NavBarGroup3
-        '
-        Me.NavBarGroup3.Caption = "Master Tables"
-        Me.NavBarGroup3.Expanded = True
-        Me.NavBarGroup3.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem20), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem21), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem14), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem16), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem22)})
-        Me.NavBarGroup3.Name = "NavBarGroup3"
-        '
-        'NavBarItem20
-        '
-        Me.NavBarItem20.Caption = "Mail Distribution"
-        Me.NavBarItem20.Name = "NavBarItem20"
-        '
-        'NavBarItem21
-        '
-        Me.NavBarItem21.Caption = "Authorizing User"
-        Me.NavBarItem21.Name = "NavBarItem21"
-        '
-        'NavBarItem14
-        '
-        Me.NavBarItem14.Caption = "Users by Area"
-        Me.NavBarItem14.Name = "NavBarItem14"
-        Me.NavBarItem14.Visible = False
         '
         'NavBarGroup2
         '
@@ -112,6 +91,45 @@ Partial Class MainForm
         '
         Me.NavBarItem1.Caption = "Local Benefits"
         Me.NavBarItem1.Name = "NavBarItem1"
+        '
+        'NavBarGroup3
+        '
+        Me.NavBarGroup3.Caption = "Master Tables"
+        Me.NavBarGroup3.Expanded = True
+        Me.NavBarGroup3.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem23), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem24), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem20), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem21), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem14), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem16), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem22)})
+        Me.NavBarGroup3.Name = "NavBarGroup3"
+        '
+        'NavBarItem20
+        '
+        Me.NavBarItem20.Caption = "Mail Distribution"
+        Me.NavBarItem20.Name = "NavBarItem20"
+        Me.NavBarItem20.Visible = False
+        '
+        'NavBarItem21
+        '
+        Me.NavBarItem21.Caption = "Authorizing Users"
+        Me.NavBarItem21.Name = "NavBarItem21"
+        Me.NavBarItem21.Visible = False
+        '
+        'NavBarItem14
+        '
+        Me.NavBarItem14.Caption = "Users Roles"
+        Me.NavBarItem14.Name = "NavBarItem14"
+        '
+        'NavBarItem16
+        '
+        Me.NavBarItem16.Caption = "Containers Type"
+        Me.NavBarItem16.Name = "NavBarItem16"
+        '
+        'NavBarItem15
+        '
+        Me.NavBarItem15.Caption = "Currencies"
+        Me.NavBarItem15.Name = "NavBarItem15"
+        '
+        'NavBarItem22
+        '
+        Me.NavBarItem22.Caption = "Ports"
+        Me.NavBarItem22.Name = "NavBarItem22"
         '
         'NavBarGroup5
         '
@@ -286,20 +304,15 @@ Partial Class MainForm
         '
         Me.RepositoryItemPictureEdit1.Name = "RepositoryItemPictureEdit1"
         '
-        'NavBarItem15
+        'NavBarItem23
         '
-        Me.NavBarItem15.Caption = "Currency"
-        Me.NavBarItem15.Name = "NavBarItem15"
+        Me.NavBarItem23.Caption = "Concepts By Country"
+        Me.NavBarItem23.Name = "NavBarItem23"
         '
-        'NavBarItem16
+        'NavBarItem24
         '
-        Me.NavBarItem16.Caption = "Container Type"
-        Me.NavBarItem16.Name = "NavBarItem16"
-        '
-        'NavBarItem22
-        '
-        Me.NavBarItem22.Caption = "Port"
-        Me.NavBarItem22.Name = "NavBarItem22"
+        Me.NavBarItem24.Caption = "Commodities"
+        Me.NavBarItem24.Name = "NavBarItem24"
         '
         'MainForm
         '
@@ -362,4 +375,6 @@ Partial Class MainForm
     Friend WithEvents NavBarItem15 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem16 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem22 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem23 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem24 As DevExpress.XtraNavBar.NavBarItem
 End Class

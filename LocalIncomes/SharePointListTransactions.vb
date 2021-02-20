@@ -40,20 +40,6 @@ Public Class SharePointListTransactions
 
     End Sub
 
-    Friend Sub UpdateItem(IdRow As Integer)
-        Dim clienContext As New ClientContext(SharePointUrl)
-        clienContext.Credentials = New SharePointOnlineCredentials(My.Settings.SharePoint_User, Password)
-        Dim oList As List = clienContext.Web.Lists.GetByTitle(SharePointList)
-        Dim oListItem As ListItem = oList.GetItemById(IdRow)
-
-        For c = 0 To ValuesList.Count - 1
-            oListItem(ValuesList(c)(0)) = ValuesList(c)(1)
-        Next
-
-        oListItem.Update()
-        clienContext.ExecuteQuery()
-    End Sub
-
     Friend Sub DeleteItem(IdRow As Integer)
         Dim clienContext As New ClientContext(SharePointUrl)
         clienContext.Credentials = New SharePointOnlineCredentials(My.Settings.SharePoint_User, Password)
@@ -88,6 +74,42 @@ Public Class SharePointListTransactions
             Next
         Next
 
+    End Sub
+
+    Friend Sub UpdateItem(IdRow As Integer)
+        Dim clienContext As New ClientContext(SharePointUrl)
+        clienContext.Credentials = New SharePointOnlineCredentials(My.Settings.SharePoint_User, Password)
+        Dim oList As List = clienContext.Web.Lists.GetByTitle(SharePointList)
+        Dim oListItem As ListItem = oList.GetItemById(IdRow)
+
+        For c = 0 To ValuesList.Count - 1
+            oListItem(ValuesList(c)(0)) = ValuesList(c)(1)
+        Next
+
+        'For Each Item As ListItem In oListItem
+        '    oListItem.Rows.Add()
+        '    For c = 0 To dtItems.Columns.Count - 1
+        '        Try
+        '            If Not Item(FieldsList(c)(0)) Is Nothing Then
+        '                'If Item(FieldsList(c)(0)).ToString.Contains("FieldLookupValue[]") Then
+        '                '    dtItems.Rows(dtItems.Rows.Count - 1)(c)() = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue()
+        '                If Item(FieldsList(c)(0)).ToString.Contains("FieldLookupValue") Then
+        '                    dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldLookupValue).LookupValue
+        '                ElseIf Item(FieldsList(c)(0)).ToString.Contains("FieldUserValue") Then
+        '                    dtItems.Rows(dtItems.Rows.Count - 1)(c) = DirectCast(Item(FieldsList(c)(0)), Microsoft.SharePoint.Client.FieldUserValue).Email
+        '                Else
+        '                    dtItems.Rows(dtItems.Rows.Count - 1)(c) = Item(FieldsList(c)(0))
+        '                End If
+        '            End If
+        '        Catch ex As Exception
+
+        '        End Try
+
+        '    Next
+        'Next
+
+        oListItem.Update()
+        clienContext.ExecuteQuery()
     End Sub
 
     Friend Function GetItems() As DataTable

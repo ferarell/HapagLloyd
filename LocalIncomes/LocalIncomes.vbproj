@@ -29,7 +29,7 @@
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>1.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -72,10 +72,11 @@
     <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C4ABAE01C5F7763906C97E3BA53D0F4537D794CA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>0405C0DFF597987A72D9E8B48CD5ABD83E12B871</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>AppNet.DataProcessing_ClaveTemporal.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -86,11 +87,11 @@
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>HapagLloyd.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="BigStick.Http">
-      <HintPath>..\..\Tramarsa\BigStick.Http.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.BonusSkins.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -195,12 +196,6 @@
     </Compile>
     <Compile Include="CustomValidationRule.vb" />
     <Compile Include="DataAccess.vb" />
-    <Compile Include="FletesOnLineForm.Designer.vb">
-      <DependentUpon>FletesOnLineForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FletesOnLineForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="LocalBenefitsForm.Designer.vb">
       <DependentUpon>LocalBenefitsForm.vb</DependentUpon>
     </Compile>
@@ -276,9 +271,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FletesOnLineForm.resx">
-      <DependentUpon>FletesOnLineForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LocalBenefitsForm.resx">
       <DependentUpon>LocalBenefitsForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +323,7 @@
     <None Include="Connected Services\AppService\HapagLloydService4.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="HapagLloyd.snk" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

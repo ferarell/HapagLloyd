@@ -1,4 +1,5 @@
-﻿Imports DevExpress.XtraEditors.DXErrorProvider
+﻿Imports DevExpress.XtraEditors
+Imports DevExpress.XtraEditors.DXErrorProvider
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports DevExpress.XtraRichEdit
@@ -256,7 +257,7 @@ Public Class LocalBenefitsForm
             Return
         End If
         dtLocBenConcept = oDataAcces.ExecuteAccessQuery("SELECT * FROM LocalBenefitsConcept WHERE IdParent=" & IdParent.ToString).Tables(0)
-            gcConcepts.DataSource = dtLocBenConcept
+        gcConcepts.DataSource = dtLocBenConcept
         GridView2.BestFitColumns()
         'ShowDetailSelected()
         SplashScreenManager.CloseForm(False)
@@ -321,7 +322,7 @@ Public Class LocalBenefitsForm
         'LoadConceptList()
         LoadLocalBenefits()
         'LoadLocalBenefitsDetail()
-
+        GridView1.BestFitColumns()
     End Sub
 
     Private Sub FormatGrid(oGridView As GridView)
@@ -377,9 +378,9 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub SetItems(IdParent As Integer)
-        'If GridView1.FocusedRowHandle < 0 Then
-        '    Return
-        'End If
+        If GridView1.FocusedRowHandle < 0 Then
+            Return
+        End If
         'RepositoryItemMemoEdit1
         Dim oControls As Control
         Dim oRow As DataRow = GridView1.GetFocusedDataRow
@@ -458,16 +459,16 @@ Public Class LocalBenefitsForm
         cbeStatus.EditValue = "Ingresada"
         LoadInputValidations("Save")
         Dim drSource As DataRow = GridView1.GetFocusedDataRow
-        Dim WarningText As New List(Of String)
+        Dim WarningText As New MemoEdit
         Dim bError As Boolean = False
         If GridView2.RowCount = 0 Then
             bError = True
-            WarningText.Add("Debe asignar al menos un concepto.")
+            WarningText.EditValue = "Debe asignar al menos un concepto." & vbNewLine
         End If
         If Not vpInputs.Validate Then
             bError = True
             For i = 0 To vpInputs.GetInvalidControls.Count - 1
-                WarningText.Add(vpInputs.GetInvalidControls(i).Tag)
+                WarningText.EditValue += vpInputs.GetInvalidControls(i).Tag & vbNewLine
             Next
         End If
         If bError Then
@@ -504,10 +505,10 @@ Public Class LocalBenefitsForm
                 oSharePointTransactions.ValuesList.Add({"NumeroIdentificacionTributaria", teTaxNumber.Text})
             End If
             If teID.Text = "" Or drSource("Vigencia Desde").ToString <> deValidityFrom.DateTime.ToString Then
-                oSharePointTransactions.ValuesList.Add({"Vigencia_Desde", deValidityFrom.DateTime.ToShortDateString})
+                oSharePointTransactions.ValuesList.Add({"Vigencia_Desde", Format(DateAdd(DateInterval.Day, 1, deValidityFrom.DateTime), "yyyy-MM-dd 00:00")})
             End If
             If teID.Text = "" Or drSource("Vigencia Hasta").ToString <> deValidityTo.DateTime.ToString Then
-                oSharePointTransactions.ValuesList.Add({"Vigencia_Hasta", deValidityTo.DateTime.ToShortDateString})
+                oSharePointTransactions.ValuesList.Add({"Vigencia_Hasta", Format(DateAdd(DateInterval.Day, 1, deValidityTo.DateTime), "yyyy-MM-dd 00:00")})
             End If
             If Not lueSalesExecution.GetColumnValue("ID") Is Nothing Then
                 If teID.Text = "" Or drSource("SalesExecution").ToString <> lueSalesExecution.GetColumnValue("ID").ToString Then
@@ -559,8 +560,11 @@ Public Class LocalBenefitsForm
             If teID.Text = "" Or drSource("HBL - Razón Social").ToString <> teHblCompanyName.Text Then
                 oSharePointTransactions.ValuesList.Add({"HBL_RazonSocial", teHblCompanyName.Text})
             End If
-            If teID.Text = "" Or drSource("BillOfLading").ToString <> teBillOfLading.Text Then
-                oSharePointTransactions.ValuesList.Add({"BillOfLading", teBillOfLading.Text})
+            If teID.Text = "" Or drSource("BillOfLading").ToString <> meMasterBillOfLading.Text Then
+                oSharePointTransactions.ValuesList.Add({"BillOfLading", meMasterBillOfLading.Text})
+            End If
+            If teID.Text = "" Or drSource("HouseBillOfLading").ToString <> meHouseBillOfLading.Text Then
+                oSharePointTransactions.ValuesList.Add({"HouseBillOfLading", meHouseBillOfLading.Text})
             End If
             If teID.Text = "" Or drSource("Booking").ToString <> teBooking.Text Then
                 oSharePointTransactions.ValuesList.Add({"Booking", teBooking.Text})
@@ -621,9 +625,10 @@ Public Class LocalBenefitsForm
             If teID.Text = "" Or Not IsDBNull(GridView1.GetFocusedRowCellValue("CloneFrom")) Then
                 oSharePointTransactions.ValuesList.Add({"CloneFrom", GridView1.GetFocusedRowCellValue("CloneFrom")})
             End If
-            If WarningText.Count > 0 Then
-                'oSharePointTransactions.ValuesList.Add({"WarningLog", WarningText.ToArray})
-            End If
+            'oSharePointTransactions.ValuesList.Add({"Observaciones", MemoEdit1.EditValue})
+            'If WarningText.EditValue IsNot Nothing Then
+            oSharePointTransactions.ValuesList.Add({"WarningLog", WarningText.Text})
+            'End If
             'Save Local Benefits (Header)
             If oSharePointTransactions.ValuesList.Count > 0 Then
                 If teID.Text = "" Then

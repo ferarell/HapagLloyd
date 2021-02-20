@@ -7,7 +7,8 @@ Imports System.IO
 Public Class MainForm
 
     Public Sub New()
-        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
+        'Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
+        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("es-PE")
         currentWithOverriddenNumber.NumberFormat.CurrencyPositivePattern = 0 '; // make sure there is no space between symbol and number
         'currentWithOverriddenNumber.NumberFormat.CurrencySymbol = "" '; // no currency symbol
         currentWithOverriddenNumber.NumberFormat.CurrencyDecimalSeparator = "." '; //decimal separator
@@ -107,11 +108,23 @@ Public Class MainForm
         System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/CurrencyList/AllItems.aspx")
     End Sub
 
-    Private Sub NavBarItem16_ItemChanged(sender As Object, e As EventArgs) Handles NavBarItem16.ItemChanged
-        'System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/Container%20Type/AllItems.aspx")
-    End Sub
-
     Private Sub NavBarItem22_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem22.LinkClicked
         System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/PortList/AllItems.aspx")
+    End Sub
+
+    Private Sub NavBarItem23_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem23.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/ConceptByCountryList/AllItems.aspx")
+    End Sub
+
+    Private Sub NavBarItem24_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem24.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/CommodityList/Allitems.aspx")
+    End Sub
+
+    Private Sub NavBarItem16_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem16.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/Container%20Type/AllItems.aspx")
+    End Sub
+
+    Private Sub NavBarItem14_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem14.LinkClicked
+        System.Diagnostics.Process.Start("https://hlag.sharepoint.com/sites/ITCPer/Lists/UserRoleByProcess/AllItems.aspx")
     End Sub
 End Class
