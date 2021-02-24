@@ -10,6 +10,7 @@ Public Class LocalBenefitsForm
     Dim oAppService As New AppService.HapagLloydServiceClient
     Dim dtLocBenHeader, dtLocBenConcept, dtLocBenCommodity, dtLocBenEqpType, dtConceptList, dtCurrencyList, dtCommodityList, dtContainerTypeList, dtUserRoleList As New DataTable
     Dim oDataAcces As New DataAccess
+    Dim IsSaveByCloning As Boolean = False
 
     Public Sub New()
 
@@ -236,14 +237,14 @@ Public Class LocalBenefitsForm
         RepositoryItemLookUpEdit2.DataSource = dtConceptList
         RepositoryItemLookUpEdit2.DisplayMember = "ConceptName"
         RepositoryItemLookUpEdit2.ValueMember = "ConceptCode"
-        RepositoryItemLookUpEdit2.KeyMember = "ID"
+        'RepositoryItemLookUpEdit2.KeyMember = "ID"
         SplashScreenManager.CloseForm(False)
     End Sub
 
     Private Sub LoadLocalBenefitsConcept(IdParent As Integer)
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
         SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits Concept")
-        LoadConceptList(IdParent, cbeLoadingType.EditValue)
+        LoadConceptList(IdParent, GridView1.GetFocusedRowCellValue("Tipo de Embarque"))
         'oSharePointTransactions.SharePointList = "LocalBenefitsConcept"
         'oSharePointTransactions.FieldsList.Clear()
         'oSharePointTransactions.FieldsList.Add({"ID"})
@@ -336,7 +337,11 @@ Public Class LocalBenefitsForm
         Dim GridRowInfo As GridRowInfo = info.GetGridRowInfo(GridView1.FocusedRowHandle)
         LoadInputValidations("Refresh")
         LoadLocalBenefits()
-        GridView1.MoveBy(GridRowInfo.RowHandle)
+        Try
+            GridView1.MoveBy(GridRowInfo.RowHandle)
+        Catch ex As Exception
+            GridView1.MoveLastVisible()
+        End Try
         ShowPageDataTable()
 
         'LoadLocalBenefitsDetail()
@@ -471,19 +476,23 @@ Public Class LocalBenefitsForm
                 WarningText.EditValue += vpInputs.GetInvalidControls(i).Tag & vbNewLine
             Next
         End If
-        If bError Then
-            cbeStatus.EditValue = "Borrador"
-            If DevExpress.XtraEditors.XtraMessageBox.Show("Some bugs were identified, you want to save it as a draft?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.No Then
-                Return
+        If Not IsSaveByCloning Then
+            If bError Then
+                cbeStatus.EditValue = "Borrador"
+                If DevExpress.XtraEditors.XtraMessageBox.Show("Some bugs were identified, you want to save it as a draft?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = Windows.Forms.DialogResult.No Then
+                    Return
+                End If
+            Else
+                If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                    Return
+                End If
             End If
         Else
-            If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to save this record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
-                Return
-            End If
-        End If
-        If Not IsDBNull(GridView1.GetFocusedRowCellValue("CloneFrom")) Then
             cbeStatus.EditValue = "Borrador"
         End If
+        'If Not IsDBNull(GridView1.GetFocusedRowCellValue("CloneFrom")) Then
+        '    cbeStatus.EditValue = "Borrador"
+        'End If
         Try
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits")
@@ -632,7 +641,8 @@ Public Class LocalBenefitsForm
             'Save Local Benefits (Header)
             If oSharePointTransactions.ValuesList.Count > 0 Then
                 If teID.Text = "" Then
-                    oSharePointTransactions.InsertItem()
+                    teID.Text = oSharePointTransactions.NewInsertItem()
+                    GridView1.SetFocusedRowCellValue("ID", teID.Text)
                 Else
                     oSharePointTransactions.UpdateItem(teID.Text)
                     Dim sValues As String = ""
@@ -666,7 +676,7 @@ Public Class LocalBenefitsForm
                     oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceConcept("ConceptCurrency:Código Moneda"))})
                     oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceConcept("ConceptValue").ToString})
 
-                    If dtLocBenConcept.Rows(r).RowState = DataRowState.Added Then 'IsDBNull(drSourceConcept("ID")) Then
+                    If dtLocBenConcept.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
                         oSharePointTransactions.InsertItem()
                         'oDataAcces.InsertIntoAccess("LocalBenefitsConcept", drSourceConcept)
                     ElseIf Not dtLocBenConcept.Rows(r).RowState = DataRowState.Unchanged Then
@@ -703,12 +713,13 @@ Public Class LocalBenefitsForm
                 oSharePointTransactions.ValuesList.Clear()
                 Dim drSourceCommodity As DataRow = GridView4.GetDataRow(r)
                 Try
+                    'drSourceCommodity("IdParent") = drSource("ID")
                     oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
                     oSharePointTransactions.ValuesList.Add({"CommodityCode", drSourceCommodity("CommodityCode")})
                     oSharePointTransactions.ValuesList.Add({"CommodityName", drSourceCommodity("CommodityName")})
-                    If dtLocBenCommodity.Rows(r).RowState = DataRowState.Added Then 'IsDBNull(drSourceConcept("ID")) Then
-                        'oSharePointTransactions.InsertItem()
-                        oDataAcces.InsertIntoAccess("LocalBenefitsCommodity", drSourceCommodity)
+                    If dtLocBenCommodity.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
+                        oSharePointTransactions.InsertItem()
+                        'oDataAcces.InsertIntoAccess("LocalBenefitsCommodity", drSourceCommodity)
                     ElseIf Not dtLocBenCommodity.Rows(r).RowState = DataRowState.Unchanged Then
                         'oSharePointTransactions.UpdateItem(drSourceCommodity("ID").ToString)
                         Dim sValues As String = ""
@@ -751,6 +762,9 @@ Public Class LocalBenefitsForm
                         '        sValues += IIf(v = 0, "[", ",[") & oSharePointTransactions.ValuesList(v)(0) & "]='" & oSharePointTransactions.ValuesList(v)(1) & "'"
                         '    Next
                         '    oDataAcces.UpdateAccess("LocalBenefitsContainer", "ID=" & drSourceEqpType("ID").ToString, sValues)
+                        If IsDBNull(drSourceEqpType("Checked")) Then
+                            drSourceEqpType("Checked") = False
+                        End If
                         If drSourceEqpType("Checked") Then
                             If oDataAcces.ExecuteAccessQuery("SELECT * FROM LocalBenefitsContainer WHERE IdParent=" & drSource("ID").ToString & " AND [ContainerCode]='" & drSourceEqpType("ContainerCode") & "'").Tables(0).Rows.Count = 0 Then
                                 Dim sFields As String = Nothing
@@ -773,6 +787,7 @@ Public Class LocalBenefitsForm
                 End Try
             Next
         End If
+        IsSaveByCloning = False
         SplashScreenManager.CloseForm(False)
         bbiRefresh.PerformClick()
     End Sub
@@ -821,7 +836,11 @@ Public Class LocalBenefitsForm
         If GridView1.FocusedRowHandle < 0 Then
             Return
         End If
+        If DevExpress.XtraEditors.XtraMessageBox.Show("A copy of this record will be created, do you want to save it as a draft?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+            Return
+        End If
         bbiClone.Enabled = False
+        IsSaveByCloning = True
         Dim iPos As Integer = GridView1.FocusedRowHandle
         Dim CloneFrom As Integer = GridView1.GetFocusedRowCellValue("ID")
         GridView1.AddNewRow()
@@ -834,7 +853,10 @@ Public Class LocalBenefitsForm
         GridView1.OptionsNavigation.EndUpdate()
         teID.EditValue = ""
         cbeStatus.EditValue = "Borrador"
-        Validate()
+        LoadLocalBenefitsConcept(CloneFrom)
+        LoadLocalBenefitsCommodity(CloneFrom)
+        LoadLocalBenefitsContainer(CloneFrom)
+        bbiSave.PerformClick()
     End Sub
 
     Private Sub lueLoadCountry_EditValueChanged(sender As Object, e As EventArgs) Handles lueLoadCountry.EditValueChanged
@@ -870,32 +892,42 @@ Public Class LocalBenefitsForm
 
     Private Sub ShowPageDataTable()
         Dim IdParent As Integer = 0
-        XtraTabControl1.TabPages(2).PageEnabled = True
-        XtraTabControl1.TabPages(4).PageEnabled = True
-        XtraTabControl1.TabPages(5).PageEnabled = True
-        If IsDBNull(GridView1.GetFocusedRowCellValue("ID")) Then
-            XtraTabControl1.TabPages(2).PageEnabled = False
-            XtraTabControl1.TabPages(4).PageEnabled = False
-            XtraTabControl1.TabPages(5).PageEnabled = False
+        If GridView1.GetFocusedRowCellValue("ID") Is Nothing Then
             Return
         End If
-        IdParent = GridView1.GetFocusedRowCellValue("ID")
-        If XtraTabControl1.SelectedTabPage.Name.Contains({"General", "Detail"}) Then
-            SetItems(IdParent)
-            LoadLocalBenefitsConcept(IdParent)
-        End If
-        If XtraTabControl1.SelectedTabPage.Name = "Concept" Then
-            LoadLocalBenefitsConcept(IdParent)
-        End If
-        If XtraTabControl1.SelectedTabPage.Name = "Depot" Then
-            'LoadDepotList(IdParent)
-        End If
-        If XtraTabControl1.SelectedTabPage.Name = "Commodity" Then
-            LoadLocalBenefitsCommodity(IdParent)
-        End If
-        If XtraTabControl1.SelectedTabPage.Name = "EquipmentType" Then
-            LoadLocalBenefitsContainer(IdParent)
-        End If
+        Try
+            'XtraTabControl1.TabPages(2).PageEnabled = True
+            'XtraTabControl1.TabPages(4).PageEnabled = True
+            'XtraTabControl1.TabPages(5).PageEnabled = True
+            If IsDBNull(GridView1.GetFocusedRowCellValue("ID")) Then
+                'XtraTabControl1.TabPages(2).PageEnabled = False
+                'XtraTabControl1.TabPages(4).PageEnabled = False
+                'XtraTabControl1.TabPages(5).PageEnabled = False
+                Return
+            End If
+            If GridView1.GetFocusedDataRow.RowState = DataRowState.Added Then
+                Return
+            End If
+            IdParent = GridView1.GetFocusedRowCellValue("ID")
+            If XtraTabControl1.SelectedTabPage.Name.Contains({"General", "Detail"}) Then
+                SetItems(IdParent)
+                'LoadLocalBenefitsConcept(IdParent)
+            End If
+            If XtraTabControl1.SelectedTabPage.Name = "Concept" Then
+                LoadLocalBenefitsConcept(IdParent)
+            End If
+            If XtraTabControl1.SelectedTabPage.Name = "Depot" Then
+                'LoadDepotList(IdParent)
+            End If
+            If XtraTabControl1.SelectedTabPage.Name = "Commodity" Then
+                LoadLocalBenefitsCommodity(IdParent)
+            End If
+            If XtraTabControl1.SelectedTabPage.Name = "EquipmentType" Then
+                LoadLocalBenefitsContainer(IdParent)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
     Friend Function RowSelectedCount(oGridView As GridView) As Integer
         Dim iChecked As Integer = 0
