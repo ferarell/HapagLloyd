@@ -10,7 +10,7 @@ Imports System.Collections
 Imports Microsoft.Office.Interop
 Imports System.Runtime.InteropServices
 
-Public Class ColdTreatmentWcfForm
+Public Class ColdTreatmentWcfFormBAK
     Dim beDataSource As New DevExpress.XtraEditors.ButtonEdit
     Dim dsVendorData As New dsMain
     Dim dtBreak, dtResult, dtEvents, dtProtocolSP As New DataTable
@@ -690,7 +690,6 @@ Public Class ColdTreatmentWcfForm
             lueVoyage.ItemIndex = 0
             lueVoyage.EditValue = dtVoyage.Rows(0).Item("VESSEL")
             Service = lueVoyage.GetColumnValue("SERVICE")
-            teBooking.Text = lueVoyage.GetColumnValue("BOOKING")
         End If
         LoadPorts()
     End Sub
@@ -700,8 +699,7 @@ Public Class ColdTreatmentWcfForm
             tePOL.EditValue = lueVoyage.GetColumnValue("POL")
             teTSP.EditValue = lueVoyage.GetColumnValue("TSP")
             tePOD.EditValue = lueVoyage.GetColumnValue("FDP")
-            'teClient.EditValue = lueVoyage.GetColumnValue("EXPORT_PARTY")
-            teClient.EditValue = lueVoyage.GetColumnValue("ROUTING_PARTY")
+            teClient.EditValue = lueVoyage.GetColumnValue("EXPORT_PARTY")
         End If
     End Sub
 

@@ -34,6 +34,7 @@ Public Class CTDataMasterWcfForm
         SplitContainerControl3.Collapsed = True
         dtResult = oAppService.ExecuteSQL("SELECT TOP 0 * FROM tck.ColdTreatment").Tables(0)
         gcDataColdTreatment.DataSource = dtResult
+        EnableButtons(GridView2)
         'Timer1.Start()
     End Sub
 
@@ -446,14 +447,17 @@ Public Class CTDataMasterWcfForm
             End If
             If dtResult.Rows(r).RowState = DataRowState.Added Then
                 For c = 0 To GridView2.Columns.Count - 1
-                    If Not GridView2.Columns(c).OptionsColumn.ReadOnly Or GridView2.Columns(c).Tag > 0 Then
+                    If GridView2.Columns(c).Tag = 0 Then
+                        Continue For
+                    End If
+                    If Not GridView2.Columns(c).OptionsColumn.ReadOnly Then
                         If IsDBNull(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)) Then
                             sFields = sFields & IIf(sFields = "", "", ", ") & GridView2.Columns(c).FieldName
                             sValues = sValues & IIf(sValues = "", "", ", ") & "NULL"
                         Else
                             If IsDate(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)) Then
                                 sFields = sFields & IIf(sFields = "", "", ", ") & GridView2.Columns(c).FieldName
-                                sValues = sValues & IIf(sValues = "", "", ", ") & "'" & Format(CDate(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)), "yyyyMMdd") & "'"
+                                sValues = sValues & IIf(sValues = "", "", ", ") & "'" & Format(CDate(GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName)), "yyyyMMdd HH:mm") & "'"
                             Else
                                 sFields = sFields & IIf(sFields = "", "", ", ") & GridView2.Columns(c).FieldName
                                 sValues = sValues & IIf(sValues = "", "", ", ") & "'" & GridView2.GetRowCellValue(r, GridView2.Columns(c).FieldName) & "'"
@@ -512,9 +516,11 @@ Public Class CTDataMasterWcfForm
     End Sub
 
     Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
+        EnableButtons(GridView2)
         If GridView2.FocusedRowHandle < 0 Then
             Return
         End If
+        'bbiClone.Enabled = True
         Dim dtQueryEvt, dtQueryRdg As New DataTable
         dtQueryRdg = oAppService.ExecuteSQL("select * from tck.ColdTreatmentReadings where [BOOKING]='" & GridView2.GetFocusedRowCellValue("BOOKING") & "' and [CONTAINER] = '" & GridView2.GetFocusedRowCellValue("CONTAINER") & "'").Tables(0)
         gcVendorReadings.DataSource = dtQueryRdg
@@ -618,6 +624,21 @@ Public Class CTDataMasterWcfForm
         SeleccionaFilas(1)
     End Sub
 
+    Private Sub bbiClone_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiClone.ItemClick
+        If GridView2.FocusedRowHandle < 0 Then
+            Return
+        End If
+        If DevExpress.XtraEditors.XtraMessageBox.Show("A copy of this record will be created, do you want continue?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+            Return
+        End If
+        Dim iPos As Integer = GridView2.FocusedRowHandle
+        GridView2.AddNewRow()
+        For c = 0 To GridView2.Columns.Count - 1
+            GridView2.SetFocusedRowCellValue(GridView2.Columns(c).FieldName, GridView2.GetRowCellValue(iPos, GridView2.Columns(c)))
+        Next
+        GridView2.OptionsNavigation.EndUpdate()
+    End Sub
+
     Private Sub InvertirSelecciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvertirSelecciónToolStripMenuItem.Click
         SeleccionaFilas(2)
     End Sub
@@ -645,6 +666,9 @@ Public Class CTDataMasterWcfForm
     End Sub
 
     Private Sub bbiDelete_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiDelete.ItemClick
+        If GridView2.FocusedRowHandle < 0 Then
+            Return
+        End If
         If XtraMessageBox.Show("Está seguro de eliminar el registro seleccionado?", "Confirmación", MessageBoxButtons.YesNo) <> DialogResult.Yes Then Return
         oAppService.ExecuteSQLNonQuery("DELETE FROM tck.ColdTreatment WHERE [CONTAINER]='" & GridView2.GetFocusedRowCellValue("CONTAINER") & "' AND [BOOKING]='" & GridView2.GetFocusedRowCellValue("BOOKING") & "' AND [VESSEL]='" & GridView2.GetFocusedRowCellValue("VESSEL") & "'")
         bbiSearch.PerformClick()
@@ -678,4 +702,16 @@ Public Class CTDataMasterWcfForm
     Private Sub bbiInsert_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiInsert.ItemClick
         GridView2.AddNewRow()
     End Sub
+
+    Private Sub EnableButtons(oGridview As GridView)
+
+        If My.User.Name.ToUpper.Contains({"WW\ALBORPA", "FARELLANO"}) Then
+
+        End If
+        bbiClone.Enabled = True
+        If oGridview.FocusedRowHandle < 0 Then
+            bbiClone.Enabled = False
+        End If
+    End Sub
+
 End Class

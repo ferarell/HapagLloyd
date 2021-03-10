@@ -41,6 +41,9 @@ Public Interface IHapagLloydService
     Function InsertColdTreatmentReadings(ByVal aSource As ArrayList) As Boolean
 
     <OperationContract()>
+    Function CustomStoredProcedureExecution(ByVal StoreProcedure As String, ByVal ValueList As ArrayList, ByVal dtSource As DataTable) As ArrayList
+
+    <OperationContract()>
     Function DeleteColdTreatmentReadings(ByVal aSource As ArrayList) As Boolean
 
     <OperationContract()>

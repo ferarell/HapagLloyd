@@ -102,6 +102,48 @@ Public Class HapagLloydService
         Return aResult
     End Function
 
+    Public Function CustomStoredProcedureExecution(ByVal StoreProcedure As String, ByVal ValueList As ArrayList, ByVal dtSource As DataTable) As ArrayList Implements IHapagLloydService.CustomStoredProcedureExecution
+        Dim aResult As New ArrayList
+        Dim sNroVoucher As String = ""
+        aResult.AddRange({1, ""})
+        Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+            connection.Open()
+            Dim Command As New SqlCommand
+            Dim transaction As SqlTransaction
+            transaction = connection.BeginTransaction("UpdatingUsingTableAsParameter")
+            Command.Connection = connection
+            Command.Transaction = transaction
+            Try
+                Command.CommandType = CommandType.StoredProcedure
+                Command.CommandText = StoreProcedure
+                With Command.Parameters
+                    .Clear()
+                    .AddWithValue("@TableVar", dtSource)
+                    If ValueList.Count > 0 Then
+                        For p = 0 To ValueList.Count - 1
+                            .AddWithValue(ValueList.Item(p)(0), ValueList.Item(p)(1))
+                        Next
+                    End If
+                End With
+                Command.CommandTimeout = 60000
+                If Command.ExecuteNonQuery() <= 0 Then
+                    transaction.Commit()
+                    aResult(0) = 1
+                Else
+                    transaction.Rollback()
+                End If
+            Catch ex As Exception
+                aResult(0) = 0
+                aResult(1) = ex.Message
+                transaction.Rollback()
+            Finally
+                connection.Close()
+            End Try
+            Return aResult
+        End Using
+        Return aResult
+    End Function
+
 #Region "Notificador"
 
     Public Function InsertContacts(ByVal aSource As ArrayList) As Boolean Implements IHapagLloydService.InsertContacts
@@ -496,6 +538,45 @@ Public Class HapagLloydService
             Return bResult
         End Using
     End Function
+
+    'Public Function InsertColdTreatmentReadingsByTable(ByVal dtSource As DataTable) As Boolean Implements IHapagLloydService.InsertColdTreatmentReadingsByTable
+    '    Dim bResult As Boolean = True
+    '    Using connection As New SqlConnection(ConfigurationManager.AppSettings("dbSolution"))
+    '        connection.Open()
+    '        Dim Command As New SqlCommand
+    '        Dim transaction As SqlTransaction
+    '        transaction = connection.BeginTransaction
+    '        Command.Connection = connection
+    '        Command.Transaction = transaction
+    '        Try
+    '            Command.CommandType = CommandType.StoredProcedure
+    '            Command.CommandText = "tck.upColdTreatmentReadings_Insert"
+    '            With Command.Parameters
+    '                .Clear()
+    '                .Add("@BOOKING", SqlDbType.VarChar, 20).Value = aSource(0)
+    '                .Add("@CONTAINER", SqlDbType.VarChar, 20).Value = aSource(1)
+    '                .Add("@CT_DATE", SqlDbType.DateTime).Value = aSource(2)
+    '                .Add("@CT_TIME", SqlDbType.VarChar, 10).Value = aSource(3)
+    '                .Add("@CT_USDA1", SqlDbType.Float).Value = aSource(4)
+    '                .Add("@CT_USDA2", SqlDbType.Float).Value = aSource(5)
+    '                .Add("@CT_USDA3", SqlDbType.Float).Value = aSource(6)
+    '            End With
+    '            Command.CommandTimeout = 60000
+    '            If Command.ExecuteNonQuery() <= 0 Then
+    '                transaction.Commit()
+    '            Else
+    '                bResult = False
+    '                transaction.Rollback()
+    '            End If
+    '        Catch ex As Exception
+    '            bResult = False
+    '            transaction.Rollback()
+    '        Finally
+    '            Command.Connection.Close()
+    '        End Try
+    '        Return bResult
+    '    End Using
+    'End Function
 
     Public Function DeleteColdTreatmentReadings(ByVal aSource As ArrayList) As Boolean Implements IHapagLloydService.DeleteColdTreatmentReadings
         Dim bResult As Boolean = True

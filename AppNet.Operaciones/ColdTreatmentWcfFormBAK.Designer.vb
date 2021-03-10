@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ColdTreatmentWcfForm
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class ColdTreatmentWcfFormBAK
     Inherits DevExpress.XtraEditors.XtraForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,20 +17,12 @@ Partial Class ColdTreatmentWcfForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode3 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
-        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition5 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ColdTreatmentWcfForm))
         Dim SwiftPlotDiagram1 As DevExpress.XtraCharts.SwiftPlotDiagram = New DevExpress.XtraCharts.SwiftPlotDiagram()
         Dim ConstantLine1 As DevExpress.XtraCharts.ConstantLine = New DevExpress.XtraCharts.ConstantLine()
@@ -84,8 +76,6 @@ Partial Class ColdTreatmentWcfForm
         Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.LayoutControl1 = New DevExpress.XtraLayout.LayoutControl()
-        Me.Root = New DevExpress.XtraLayout.LayoutControlGroup()
         Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
         Me.rgPort = New DevExpress.XtraEditors.RadioGroup()
         Me.rgType = New DevExpress.XtraEditors.RadioGroup()
@@ -123,6 +113,13 @@ Partial Class ColdTreatmentWcfForm
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.beVendorData = New DevExpress.XtraEditors.ButtonEdit()
         Me.lueVoyage = New DevExpress.XtraEditors.LookUpEdit()
         Me.tePOL = New DevExpress.XtraEditors.TextEdit()
@@ -132,20 +129,10 @@ Partial Class ColdTreatmentWcfForm
         Me.teContainer = New DevExpress.XtraEditors.TextEdit()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
-        Me.ccTrends = New DevExpress.XtraCharts.ChartControl()
         Me.VendorReadingsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainerControl4 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.LayoutControlItem1 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem2 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem3 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.teBooking = New DevExpress.XtraEditors.TextEdit()
-        Me.LayoutControlItem4 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem5 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem6 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem7 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.LayoutControlItem8 = New DevExpress.XtraLayout.LayoutControlItem()
+        Me.ccTrends = New DevExpress.XtraCharts.ChartControl()
         CType(Me.CardView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gcVendorReadings, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -163,9 +150,6 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl1.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.LayoutControl1.SuspendLayout()
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl1.SuspendLayout()
         CType(Me.rgPort.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,6 +172,9 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl2.SuspendLayout()
         CType(Me.SplitContainerControl3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainerControl3.SuspendLayout()
+        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainerControl4.SuspendLayout()
         CType(Me.ccTrends, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -197,19 +184,6 @@ Partial Class ColdTreatmentWcfForm
         CType(Series3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotSeriesView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainerControl4.SuspendLayout()
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.teBooking.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CardView1
@@ -548,61 +522,27 @@ Partial Class ColdTreatmentWcfForm
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.LayoutControl1)
+        Me.PanelControl1.Controls.Add(Me.GroupControl1)
+        Me.PanelControl1.Controls.Add(Me.Label11)
+        Me.PanelControl1.Controls.Add(Me.Label7)
+        Me.PanelControl1.Controls.Add(Me.Label4)
+        Me.PanelControl1.Controls.Add(Me.Label2)
+        Me.PanelControl1.Controls.Add(Me.Label3)
+        Me.PanelControl1.Controls.Add(Me.Label6)
+        Me.PanelControl1.Controls.Add(Me.Label1)
+        Me.PanelControl1.Controls.Add(Me.beVendorData)
+        Me.PanelControl1.Controls.Add(Me.lueVoyage)
+        Me.PanelControl1.Controls.Add(Me.tePOL)
+        Me.PanelControl1.Controls.Add(Me.teTSP)
+        Me.PanelControl1.Controls.Add(Me.teClient)
+        Me.PanelControl1.Controls.Add(Me.tePOD)
+        Me.PanelControl1.Controls.Add(Me.teContainer)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.PanelControl1.Name = "PanelControl1"
         Me.PanelControl1.Size = New System.Drawing.Size(845, 166)
         Me.PanelControl1.TabIndex = 0
-        '
-        'LayoutControl1
-        '
-        Me.LayoutControl1.Controls.Add(Me.GroupControl1)
-        Me.LayoutControl1.Controls.Add(Me.beVendorData)
-        Me.LayoutControl1.Controls.Add(Me.teContainer)
-        Me.LayoutControl1.Controls.Add(Me.teBooking)
-        Me.LayoutControl1.Controls.Add(Me.teClient)
-        Me.LayoutControl1.Controls.Add(Me.teTSP)
-        Me.LayoutControl1.Controls.Add(Me.tePOD)
-        Me.LayoutControl1.Controls.Add(Me.tePOL)
-        Me.LayoutControl1.Controls.Add(Me.lueVoyage)
-        Me.LayoutControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.LayoutControl1.Location = New System.Drawing.Point(2, 2)
-        Me.LayoutControl1.Name = "LayoutControl1"
-        Me.LayoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = New System.Drawing.Rectangle(513, 406, 650, 284)
-        Me.LayoutControl1.Root = Me.Root
-        Me.LayoutControl1.Size = New System.Drawing.Size(841, 162)
-        Me.LayoutControl1.TabIndex = 30
-        Me.LayoutControl1.Text = "LayoutControl1"
-        '
-        'Root
-        '
-        Me.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.[True]
-        Me.Root.GroupBordersVisible = False
-        Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem1, Me.LayoutControlItem2, Me.LayoutControlItem3, Me.LayoutControlItem4, Me.LayoutControlItem5, Me.LayoutControlItem6, Me.LayoutControlItem7, Me.LayoutControlItem9, Me.LayoutControlItem8})
-        Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
-        Me.Root.Name = "Root"
-        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition1.Width = 33.333333333333336R
-        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition2.Width = 33.333333333333336R
-        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition3.Width = 33.333333333333336R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
-        RowDefinition1.Height = 20.0R
-        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
-        RowDefinition2.Height = 20.0R
-        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
-        RowDefinition3.Height = 20.0R
-        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
-        RowDefinition4.Height = 20.0R
-        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
-        RowDefinition5.Height = 20.0R
-        RowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3, RowDefinition4, RowDefinition5})
-        Me.Root.Size = New System.Drawing.Size(841, 162)
-        Me.Root.TextVisible = False
         '
         'GroupControl1
         '
@@ -612,10 +552,10 @@ Partial Class ColdTreatmentWcfForm
         Me.GroupControl1.Controls.Add(Me.Label12)
         Me.GroupControl1.Controls.Add(Me.Label9)
         Me.GroupControl1.Controls.Add(Me.Label8)
-        Me.GroupControl1.Location = New System.Drawing.Point(563, 14)
+        Me.GroupControl1.Location = New System.Drawing.Point(471, 33)
         Me.GroupControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(262, 134)
+        Me.GroupControl1.Size = New System.Drawing.Size(279, 125)
         Me.GroupControl1.TabIndex = 29
         Me.GroupControl1.Text = "Options"
         '
@@ -948,73 +888,136 @@ Partial Class ColdTreatmentWcfForm
         Me.Label8.TabIndex = 24
         Me.Label8.Text = "Mode"
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(73, 143)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(34, 13)
+        Me.Label11.TabIndex = 28
+        Me.Label11.Text = "Client"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(78, 121)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(28, 13)
+        Me.Label7.TabIndex = 28
+        Me.Label7.Text = "POD"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(81, 99)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(25, 13)
+        Me.Label4.TabIndex = 28
+        Me.Label4.Text = "TSP"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(80, 77)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(26, 13)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "POL"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(54, 33)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(54, 13)
+        Me.Label3.TabIndex = 28
+        Me.Label3.Text = "Container"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(46, 11)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(60, 13)
+        Me.Label6.TabIndex = 25
+        Me.Label6.Text = "Vendor File"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(70, 55)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 13)
+        Me.Label1.TabIndex = 24
+        Me.Label1.Text = "Vessel"
+        '
         'beVendorData
         '
-        Me.beVendorData.Location = New System.Drawing.Point(72, 14)
+        Me.beVendorData.Location = New System.Drawing.Point(109, 9)
         Me.beVendorData.Margin = New System.Windows.Forms.Padding(2)
         Me.beVendorData.Name = "beVendorData"
         Me.beVendorData.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton()})
-        Me.beVendorData.Size = New System.Drawing.Size(479, 20)
-        Me.beVendorData.StyleController = Me.LayoutControl1
+        Me.beVendorData.Size = New System.Drawing.Size(641, 20)
         Me.beVendorData.TabIndex = 1
         '
         'lueVoyage
         '
-        Me.lueVoyage.Location = New System.Drawing.Point(72, 70)
+        Me.lueVoyage.Location = New System.Drawing.Point(109, 53)
         Me.lueVoyage.Margin = New System.Windows.Forms.Padding(2)
         Me.lueVoyage.Name = "lueVoyage"
         Me.lueVoyage.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         Me.lueVoyage.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueVoyage.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("VESSEL", "Vessel"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("BOOKING", "Booking"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("POL", "POL"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TSP", "TSP"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("FDP", "FDP"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("SERVICE", "Service")})
         Me.lueVoyage.Properties.NullText = ""
-        Me.lueVoyage.Size = New System.Drawing.Size(479, 20)
-        Me.lueVoyage.StyleController = Me.LayoutControl1
+        Me.lueVoyage.Size = New System.Drawing.Size(289, 20)
         Me.lueVoyage.TabIndex = 3
         '
         'tePOL
         '
-        Me.tePOL.Location = New System.Drawing.Point(72, 98)
+        Me.tePOL.Location = New System.Drawing.Point(109, 75)
         Me.tePOL.Margin = New System.Windows.Forms.Padding(2)
         Me.tePOL.Name = "tePOL"
-        Me.tePOL.Size = New System.Drawing.Size(205, 20)
-        Me.tePOL.StyleController = Me.LayoutControl1
+        Me.tePOL.Size = New System.Drawing.Size(87, 20)
         Me.tePOL.TabIndex = 4
         '
         'teTSP
         '
-        Me.teTSP.Location = New System.Drawing.Point(345, 98)
+        Me.teTSP.Location = New System.Drawing.Point(109, 97)
         Me.teTSP.Margin = New System.Windows.Forms.Padding(2)
         Me.teTSP.Name = "teTSP"
-        Me.teTSP.Size = New System.Drawing.Size(206, 20)
-        Me.teTSP.StyleController = Me.LayoutControl1
+        Me.teTSP.Size = New System.Drawing.Size(87, 20)
         Me.teTSP.TabIndex = 5
         '
         'teClient
         '
-        Me.teClient.Location = New System.Drawing.Point(345, 126)
+        Me.teClient.Location = New System.Drawing.Point(109, 141)
         Me.teClient.Margin = New System.Windows.Forms.Padding(2)
         Me.teClient.Name = "teClient"
-        Me.teClient.Size = New System.Drawing.Size(206, 20)
-        Me.teClient.StyleController = Me.LayoutControl1
+        Me.teClient.Size = New System.Drawing.Size(131, 20)
         Me.teClient.TabIndex = 7
         '
         'tePOD
         '
-        Me.tePOD.Location = New System.Drawing.Point(72, 126)
+        Me.tePOD.Location = New System.Drawing.Point(109, 119)
         Me.tePOD.Margin = New System.Windows.Forms.Padding(2)
         Me.tePOD.Name = "tePOD"
-        Me.tePOD.Size = New System.Drawing.Size(205, 20)
-        Me.tePOD.StyleController = Me.LayoutControl1
+        Me.tePOD.Size = New System.Drawing.Size(87, 20)
         Me.tePOD.TabIndex = 6
         '
         'teContainer
         '
-        Me.teContainer.Location = New System.Drawing.Point(72, 42)
+        Me.teContainer.Location = New System.Drawing.Point(109, 31)
         Me.teContainer.Margin = New System.Windows.Forms.Padding(2)
         Me.teContainer.Name = "teContainer"
         Me.teContainer.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.teContainer.Size = New System.Drawing.Size(205, 20)
-        Me.teContainer.StyleController = Me.LayoutControl1
+        Me.teContainer.Size = New System.Drawing.Size(131, 20)
         Me.teContainer.TabIndex = 2
         '
         'SplitContainerControl2
@@ -1053,6 +1056,27 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl3.SplitterPosition = 526
         Me.SplitContainerControl3.TabIndex = 0
         Me.SplitContainerControl3.Text = "SplitContainerControl3"
+        '
+        'SplitContainerControl4
+        '
+        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainerControl4.Location = New System.Drawing.Point(0, 0)
+        Me.SplitContainerControl4.Margin = New System.Windows.Forms.Padding(2)
+        Me.SplitContainerControl4.Name = "SplitContainerControl4"
+        Me.SplitContainerControl4.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.SplitContainerControl4.Panel1.Controls.Add(Me.gcProtocol)
+        Me.SplitContainerControl4.Panel1.Text = "Panel1"
+        Me.SplitContainerControl4.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
+        Me.SplitContainerControl4.Panel2.Text = "Panel2"
+        Me.SplitContainerControl4.Size = New System.Drawing.Size(841, 86)
+        Me.SplitContainerControl4.SplitterPosition = 719
+        Me.SplitContainerControl4.TabIndex = 0
+        Me.SplitContainerControl4.Text = "SplitContainerControl4"
+        '
+        'OpenFileDialog2
+        '
+        Me.OpenFileDialog2.FileName = "OpenFileDialog1"
         '
         'ccTrends
         '
@@ -1113,140 +1137,6 @@ Partial Class ColdTreatmentWcfForm
         ChartTitle1.Text = "Trends"
         Me.ccTrends.Titles.AddRange(New DevExpress.XtraCharts.ChartTitle() {ChartTitle1})
         '
-        'SplitContainerControl4
-        '
-        Me.SplitContainerControl4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl4.Location = New System.Drawing.Point(0, 0)
-        Me.SplitContainerControl4.Margin = New System.Windows.Forms.Padding(2)
-        Me.SplitContainerControl4.Name = "SplitContainerControl4"
-        Me.SplitContainerControl4.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.SplitContainerControl4.Panel1.Controls.Add(Me.gcProtocol)
-        Me.SplitContainerControl4.Panel1.Text = "Panel1"
-        Me.SplitContainerControl4.Panel2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.SplitContainerControl4.Panel2.Controls.Add(Me.gcEvents)
-        Me.SplitContainerControl4.Panel2.Text = "Panel2"
-        Me.SplitContainerControl4.Size = New System.Drawing.Size(841, 86)
-        Me.SplitContainerControl4.SplitterPosition = 719
-        Me.SplitContainerControl4.TabIndex = 0
-        Me.SplitContainerControl4.Text = "SplitContainerControl4"
-        '
-        'OpenFileDialog2
-        '
-        Me.OpenFileDialog2.FileName = "OpenFileDialog1"
-        '
-        'LayoutControlItem1
-        '
-        Me.LayoutControlItem1.Control = Me.GroupControl1
-        Me.LayoutControlItem1.Location = New System.Drawing.Point(547, 0)
-        Me.LayoutControlItem1.Name = "LayoutControlItem1"
-        Me.LayoutControlItem1.OptionsTableLayoutItem.ColumnIndex = 2
-        Me.LayoutControlItem1.OptionsTableLayoutItem.RowSpan = 5
-        Me.LayoutControlItem1.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem1.Size = New System.Drawing.Size(274, 142)
-        Me.LayoutControlItem1.TextSize = New System.Drawing.Size(0, 0)
-        Me.LayoutControlItem1.TextVisible = False
-        '
-        'LayoutControlItem2
-        '
-        Me.LayoutControlItem2.Control = Me.beVendorData
-        Me.LayoutControlItem2.Location = New System.Drawing.Point(0, 0)
-        Me.LayoutControlItem2.Name = "LayoutControlItem2"
-        Me.LayoutControlItem2.OptionsTableLayoutItem.ColumnSpan = 2
-        Me.LayoutControlItem2.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem2.Size = New System.Drawing.Size(547, 28)
-        Me.LayoutControlItem2.Text = "Vendor File"
-        Me.LayoutControlItem2.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem3
-        '
-        Me.LayoutControlItem3.Control = Me.teContainer
-        Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 28)
-        Me.LayoutControlItem3.Name = "LayoutControlItem3"
-        Me.LayoutControlItem3.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem3.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem3.Size = New System.Drawing.Size(273, 28)
-        Me.LayoutControlItem3.Text = "Container"
-        Me.LayoutControlItem3.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'teBooking
-        '
-        Me.teBooking.Location = New System.Drawing.Point(345, 42)
-        Me.teBooking.Margin = New System.Windows.Forms.Padding(2)
-        Me.teBooking.Name = "teBooking"
-        Me.teBooking.Size = New System.Drawing.Size(206, 20)
-        Me.teBooking.StyleController = Me.LayoutControl1
-        Me.teBooking.TabIndex = 7
-        '
-        'LayoutControlItem4
-        '
-        Me.LayoutControlItem4.Control = Me.teBooking
-        Me.LayoutControlItem4.Location = New System.Drawing.Point(273, 28)
-        Me.LayoutControlItem4.Name = "LayoutControlItem4"
-        Me.LayoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1
-        Me.LayoutControlItem4.OptionsTableLayoutItem.RowIndex = 1
-        Me.LayoutControlItem4.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem4.Size = New System.Drawing.Size(274, 28)
-        Me.LayoutControlItem4.Text = "Booking"
-        Me.LayoutControlItem4.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem5
-        '
-        Me.LayoutControlItem5.Control = Me.lueVoyage
-        Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 56)
-        Me.LayoutControlItem5.Name = "LayoutControlItem5"
-        Me.LayoutControlItem5.OptionsTableLayoutItem.ColumnSpan = 2
-        Me.LayoutControlItem5.OptionsTableLayoutItem.RowIndex = 2
-        Me.LayoutControlItem5.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem5.Size = New System.Drawing.Size(547, 28)
-        Me.LayoutControlItem5.Text = "Voyage"
-        Me.LayoutControlItem5.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem6
-        '
-        Me.LayoutControlItem6.Control = Me.tePOL
-        Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 84)
-        Me.LayoutControlItem6.Name = "LayoutControlItem6"
-        Me.LayoutControlItem6.OptionsTableLayoutItem.RowIndex = 3
-        Me.LayoutControlItem6.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem6.Size = New System.Drawing.Size(273, 28)
-        Me.LayoutControlItem6.Text = "POL"
-        Me.LayoutControlItem6.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem7
-        '
-        Me.LayoutControlItem7.Control = Me.teTSP
-        Me.LayoutControlItem7.Location = New System.Drawing.Point(273, 84)
-        Me.LayoutControlItem7.Name = "LayoutControlItem7"
-        Me.LayoutControlItem7.OptionsTableLayoutItem.ColumnIndex = 1
-        Me.LayoutControlItem7.OptionsTableLayoutItem.RowIndex = 3
-        Me.LayoutControlItem7.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem7.Size = New System.Drawing.Size(274, 28)
-        Me.LayoutControlItem7.Text = "TSP"
-        Me.LayoutControlItem7.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem9
-        '
-        Me.LayoutControlItem9.Control = Me.teClient
-        Me.LayoutControlItem9.Location = New System.Drawing.Point(273, 112)
-        Me.LayoutControlItem9.Name = "LayoutControlItem9"
-        Me.LayoutControlItem9.OptionsTableLayoutItem.ColumnIndex = 1
-        Me.LayoutControlItem9.OptionsTableLayoutItem.RowIndex = 4
-        Me.LayoutControlItem9.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem9.Size = New System.Drawing.Size(274, 30)
-        Me.LayoutControlItem9.Text = "Client"
-        Me.LayoutControlItem9.TextSize = New System.Drawing.Size(53, 13)
-        '
-        'LayoutControlItem8
-        '
-        Me.LayoutControlItem8.Control = Me.tePOD
-        Me.LayoutControlItem8.Location = New System.Drawing.Point(0, 112)
-        Me.LayoutControlItem8.Name = "LayoutControlItem8"
-        Me.LayoutControlItem8.OptionsTableLayoutItem.RowIndex = 4
-        Me.LayoutControlItem8.Padding = New DevExpress.XtraLayout.Utils.Padding(6, 6, 4, 4)
-        Me.LayoutControlItem8.Size = New System.Drawing.Size(273, 30)
-        Me.LayoutControlItem8.Text = "POD"
-        Me.LayoutControlItem8.TextSize = New System.Drawing.Size(53, 13)
-        '
         'ColdTreatmentWcfForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1277,9 +1167,7 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl1.ResumeLayout(False)
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
-        CType(Me.LayoutControl1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.LayoutControl1.ResumeLayout(False)
-        CType(Me.Root, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.PerformLayout()
         CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl1.ResumeLayout(False)
         Me.GroupControl1.PerformLayout()
@@ -1303,6 +1191,9 @@ Partial Class ColdTreatmentWcfForm
         Me.SplitContainerControl2.ResumeLayout(False)
         CType(Me.SplitContainerControl3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainerControl3.ResumeLayout(False)
+        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainerControl4.ResumeLayout(False)
         CType(SwiftPlotDiagram1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SwiftPlotSeriesView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Series1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1312,19 +1203,6 @@ Partial Class ColdTreatmentWcfForm
         CType(Series3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(SwiftPlotSeriesView4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ccTrends, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VendorReadingsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SplitContainerControl4, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainerControl4.ResumeLayout(False)
-        CType(Me.LayoutControlItem1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.teBooking.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayoutControlItem8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1385,6 +1263,12 @@ Partial Class ColdTreatmentWcfForm
     Friend WithEvents GridColumn38 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents beVendorData As DevExpress.XtraEditors.ButtonEdit
     Friend WithEvents lueVoyage As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents DsMain As dsMain
@@ -1417,21 +1301,10 @@ Partial Class ColdTreatmentWcfForm
     Friend WithEvents GridColumn4 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridColumn5 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GridView4 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents teClient As DevExpress.XtraEditors.TextEdit
     Friend WithEvents rgType As DevExpress.XtraEditors.RadioGroup
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents bbiSave As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ccTrends As DevExpress.XtraCharts.ChartControl
-    Friend WithEvents LayoutControl1 As DevExpress.XtraLayout.LayoutControl
-    Friend WithEvents Root As DevExpress.XtraLayout.LayoutControlGroup
-    Friend WithEvents teBooking As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents LayoutControlItem1 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem2 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem3 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem4 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem5 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem6 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem7 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem9 As DevExpress.XtraLayout.LayoutControlItem
-    Friend WithEvents LayoutControlItem8 As DevExpress.XtraLayout.LayoutControlItem
 End Class

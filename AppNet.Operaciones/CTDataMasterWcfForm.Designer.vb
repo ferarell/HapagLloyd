@@ -19,16 +19,17 @@ Partial Class CTDataMasterWcfForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Me.components = New System.ComponentModel.Container()
         Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
+        Dim GridLevelNode3 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CTDataMasterWcfForm))
         Dim SuperToolTip1 As DevExpress.Utils.SuperToolTip = New DevExpress.Utils.SuperToolTip()
         Dim ToolTipItem1 As DevExpress.Utils.ToolTipItem = New DevExpress.Utils.ToolTipItem()
-        Dim EditorButtonImageOptions1 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
-        Dim SerializableAppearanceObject1 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject2 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject3 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
-        Dim SerializableAppearanceObject4 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim EditorButtonImageOptions3 As DevExpress.XtraEditors.Controls.EditorButtonImageOptions = New DevExpress.XtraEditors.Controls.EditorButtonImageOptions()
+        Dim SerializableAppearanceObject9 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject10 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject11 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
+        Dim SerializableAppearanceObject12 As DevExpress.Utils.SerializableAppearanceObject = New DevExpress.Utils.SerializableAppearanceObject()
         Me.CardView1 = New DevExpress.XtraGrid.Views.Card.CardView()
         Me.GridColumn15 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn20 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -86,15 +87,15 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn87 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn88 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridView4 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SeleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeseleccionaTodosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InvertirSelecciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.imStatus = New System.Windows.Forms.ImageList()
+        Me.imStatus = New System.Windows.Forms.ImageList(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
-        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider()
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brsDescripcion = New DevExpress.XtraBars.BarStaticItem()
         Me.barStaticItem3 = New DevExpress.XtraBars.BarStaticItem()
@@ -107,6 +108,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiSearch = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiInsert = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiDelete = New DevExpress.XtraBars.BarButtonItem()
+        Me.bbiClone = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiUpdate = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiExport = New DevExpress.XtraBars.BarButtonItem()
         Me.bbiClose = New DevExpress.XtraBars.BarButtonItem()
@@ -130,7 +132,7 @@ Partial Class CTDataMasterWcfForm
         Me.RepositoryItemRadioGroup1 = New DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup()
         Me.RepositoryItemComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.Timer1 = New System.Windows.Forms.Timer()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ucAuditPanel = New TCHECK.CLOUD.ucAuditPanel()
         Me.SplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
@@ -141,7 +143,7 @@ Partial Class CTDataMasterWcfForm
         Me.SplitContainerControl3 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.SplitContainerControl2 = New DevExpress.XtraEditors.SplitContainerControl()
         Me.gcDataColdTreatment = New DevExpress.XtraGrid.GridControl()
-        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection()
+        Me.ImageCollection1 = New DevExpress.Utils.ImageCollection(Me.components)
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn41 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridColumn42 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -426,9 +428,9 @@ Partial Class CTDataMasterWcfForm
         Me.gcContainerList.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcContainerList.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcContainerList.EmbeddedNavigator.Buttons.Remove.Visible = False
-        GridLevelNode1.LevelTemplate = Me.CardView1
-        GridLevelNode1.RelationName = "Level1"
-        Me.gcContainerList.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode2.LevelTemplate = Me.CardView1
+        GridLevelNode2.RelationName = "Level1"
+        Me.gcContainerList.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.gcContainerList.Location = New System.Drawing.Point(0, 0)
         Me.gcContainerList.MainView = Me.GridView1
         Me.gcContainerList.Name = "gcContainerList"
@@ -480,9 +482,9 @@ Partial Class CTDataMasterWcfForm
         Me.gcEvents.EmbeddedNavigator.Buttons.Edit.Visible = False
         Me.gcEvents.EmbeddedNavigator.Buttons.EndEdit.Visible = False
         Me.gcEvents.EmbeddedNavigator.Buttons.Remove.Visible = False
-        GridLevelNode2.LevelTemplate = Me.CardView4
-        GridLevelNode2.RelationName = "Level1"
-        Me.gcEvents.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
+        GridLevelNode3.LevelTemplate = Me.CardView4
+        GridLevelNode3.RelationName = "Level1"
+        Me.gcEvents.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode3})
         Me.gcEvents.Location = New System.Drawing.Point(0, 0)
         Me.gcEvents.MainView = Me.GridView5
         Me.gcEvents.Name = "gcEvents"
@@ -789,8 +791,8 @@ Partial Class CTDataMasterWcfForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.barStaticItem4, Me.brsEstado, Me.bbiImport, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiSearch, Me.bbiUpdate, Me.beiShowGap, Me.bbiDelete, Me.bbiInsert})
-        Me.bmActions.MaxItemId = 32
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.brsDescripcion, Me.barStaticItem3, Me.barStaticItem4, Me.brsEstado, Me.bbiImport, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiSearch, Me.bbiUpdate, Me.beiShowGap, Me.bbiDelete, Me.bbiInsert, Me.bbiClone})
+        Me.bmActions.MaxItemId = 33
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1, Me.RepositoryItemToggleSwitch1})
         '
         'bar5
@@ -857,7 +859,7 @@ Partial Class CTDataMasterWcfForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiImport, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiInsert, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiDelete, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiUpdate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiImport, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSearch, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiInsert, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiDelete, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClone, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiUpdate, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -871,6 +873,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiImport.ImageOptions.LargeImageIndex = 7
         Me.bbiImport.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
         Me.bbiImport.Name = "bbiImport"
+        Me.bbiImport.Tag = "0"
         '
         'bbiSearch
         '
@@ -878,6 +881,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiSearch.Id = 27
         Me.bbiSearch.ImageOptions.Image = CType(resources.GetObject("bbiSearch.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiSearch.Name = "bbiSearch"
+        Me.bbiSearch.Tag = "0"
         '
         'bbiInsert
         '
@@ -885,6 +889,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiInsert.Id = 31
         Me.bbiInsert.ImageOptions.Image = CType(resources.GetObject("bbiInsert.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiInsert.Name = "bbiInsert"
+        Me.bbiInsert.Tag = "1"
         '
         'bbiDelete
         '
@@ -893,12 +898,20 @@ Partial Class CTDataMasterWcfForm
         Me.bbiDelete.ImageOptions.Image = CType(resources.GetObject("bbiDelete.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiDelete.Name = "bbiDelete"
         '
+        'bbiClone
+        '
+        Me.bbiClone.Caption = "&Clone"
+        Me.bbiClone.Id = 32
+        Me.bbiClone.ImageOptions.Image = CType(resources.GetObject("bbiClone.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiClone.Name = "bbiClone"
+        '
         'bbiUpdate
         '
         Me.bbiUpdate.Caption = "Update"
         Me.bbiUpdate.Id = 28
         Me.bbiUpdate.ImageOptions.Image = CType(resources.GetObject("bbiUpdate.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiUpdate.Name = "bbiUpdate"
+        Me.bbiUpdate.Tag = "0"
         '
         'bbiExport
         '
@@ -908,6 +921,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiExport.ImageOptions.ImageIndex = 29
         Me.bbiExport.Name = "bbiExport"
         Me.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
+        Me.bbiExport.Tag = "0"
         '
         'bbiClose
         '
@@ -919,6 +933,7 @@ Partial Class CTDataMasterWcfForm
         Me.bbiClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
         Me.bbiClose.Name = "bbiClose"
         Me.bbiClose.ShortcutKeyDisplayString = "Alt+C"
+        Me.bbiClose.Tag = "0"
         '
         'BarDockControl1
         '
@@ -1620,7 +1635,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn96.FieldName = "CreatedBy"
         Me.GridColumn96.Name = "GridColumn96"
         Me.GridColumn96.OptionsColumn.ReadOnly = True
-        Me.GridColumn96.Tag = 2
+        Me.GridColumn96.Tag = 0
         '
         'GridColumn97
         '
@@ -1628,7 +1643,7 @@ Partial Class CTDataMasterWcfForm
         Me.GridColumn97.FieldName = "CreatedDate"
         Me.GridColumn97.Name = "GridColumn97"
         Me.GridColumn97.OptionsColumn.ReadOnly = True
-        Me.GridColumn97.Tag = 2
+        Me.GridColumn97.Tag = 0
         '
         'GridColumn98
         '
@@ -1662,7 +1677,7 @@ Partial Class CTDataMasterWcfForm
         'RepositoryItemImageComboBox2
         '
         Me.RepositoryItemImageComboBox2.AutoHeight = False
-        Me.RepositoryItemImageComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, EditorButtonImageOptions1, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject1, SerializableAppearanceObject2, SerializableAppearanceObject3, SerializableAppearanceObject4, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
+        Me.RepositoryItemImageComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, True, False, False, EditorButtonImageOptions3, New DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), SerializableAppearanceObject9, SerializableAppearanceObject10, SerializableAppearanceObject11, SerializableAppearanceObject12, "", Nothing, Nothing, DevExpress.Utils.ToolTipAnchor.[Default])})
         Me.RepositoryItemImageComboBox2.GlyphAlignment = DevExpress.Utils.HorzAlignment.Center
         Me.RepositoryItemImageComboBox2.Items.AddRange(New DevExpress.XtraEditors.Controls.ImageComboBoxItem() {New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 0, 0), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 1, 1), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 2, 2), New DevExpress.XtraEditors.Controls.ImageComboBoxItem("", 3, 3)})
         Me.RepositoryItemImageComboBox2.LargeImages = Me.imStatus
@@ -2115,4 +2130,5 @@ Partial Class CTDataMasterWcfForm
     Friend WithEvents bbiDelete As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents ImageCollection1 As DevExpress.Utils.ImageCollection
     Friend WithEvents bbiInsert As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents bbiClone As DevExpress.XtraBars.BarButtonItem
 End Class
