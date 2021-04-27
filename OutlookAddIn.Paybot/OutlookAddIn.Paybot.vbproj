@@ -44,7 +44,7 @@
     <PublishUrl>C:\DeployApps\Paybot\</PublishUrl>
     <InstallUrl>\\ww.hl.lan\LM2\Public\Personalizaciones\Paybot\</InstallUrl>
     <TargetCulture>es</TargetCulture>
-    <ApplicationVersion>1.1.0.3</ApplicationVersion>
+    <ApplicationVersion>1.1.0.5</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>0</UpdateInterval>

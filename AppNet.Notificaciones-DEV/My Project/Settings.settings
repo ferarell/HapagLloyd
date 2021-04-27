@@ -1,0 +1,39 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="MDBDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\ferar\Google Drive\Proyectos\HLAG\Notificaciones</Value>
+    </Setting>
+    <Setting Name="MDBFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dbNotifications.accdb</Value>
+    </Setting>
+    <Setting Name="LookAndFeel" Type="System.String" Scope="User">
+      <Value Profile="(Default)">VS2010</Value>
+    </Setting>
+    <Setting Name="PaintStyle" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Country" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="EmailQuantityBySend" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">500</Value>
+    </Setting>
+    <Setting Name="TimeBetweenMails" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="SendMailBehalf" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="MailFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">chile@service.hlag.com</Value>
+    </Setting>
+    <Setting Name="DaysBeforeArrival" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd-MM-yyyy</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

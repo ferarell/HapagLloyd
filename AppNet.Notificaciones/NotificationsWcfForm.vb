@@ -16,7 +16,7 @@ Imports DevExpress.XtraRichEdit
 Public Class NotificationsWcfForm
     Dim eMailTo As String = ""
     Dim sRegime As String = ""
-    Dim dtContacts, dtBookings, dtBlackList As New DataTable
+    Dim dtContacts, dtBookings, dtBlackList, dtReportSource As New DataTable
     Dim oAppService As New AppService.HapagLloydServiceClient
 
     Public Sub New()
@@ -134,11 +134,13 @@ Public Class NotificationsWcfForm
     End Sub
 
     Private Sub bbiSendMessage_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiSendByDocument.ItemClick
-        If GridView2.RowCount = 0 Then
+        Validate()
+        If gcBookingFilter.MainView.RowCount = 0 Then
             DevExpress.XtraEditors.XtraMessageBox.Show("You must load bookings list.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
-        Dim dtBookingByMatchCode As New DataTable
+        Dim dtDocumentByMatchCode As New DataTable
+        'Dim dtBookingByMatchCode As New DataTable
         Dim eMail As String = ""
         Dim oMatchCode1 As String = ""
         Dim oMatchCode2 As String = ""
@@ -148,18 +150,20 @@ Public Class NotificationsWcfForm
         For r = 0 To GridView1.RowCount - 1
             Try
                 Dim oRow As DataRow = GridView1.GetDataRow(r)
-                oMatchCode1 = oRow("MatchCode")
                 If IsDBNull(oRow("Checked")) Then
-                    Continue For
+                    oRow("Checked") = False
                 End If
                 If Not oRow("Checked") Then
                     Continue For
                 End If
+                oMatchCode1 = oRow("MatchCode")
                 eMail = ""
                 oMatchCode2 = GridView1.GetDataRow(r)("MatchCode")
                 While oMatchCode1 = oMatchCode2
-                    If Not eMail.Contains(GridView1.GetDataRow(r)("eMail")) Then
-                        eMail += GridView1.GetDataRow(r)("eMail") & ";"
+                    If Not IsDBNull(GridView1.GetDataRow(r)("Checked")) Then
+                        If Not eMail.Contains(GridView1.GetDataRow(r)("eMail")) Then
+                            eMail += GridView1.GetDataRow(r)("eMail") & ";"
+                        End If
                     End If
                     r += 1
                     If r >= GridView1.RowCount Then
@@ -170,8 +174,13 @@ Public Class NotificationsWcfForm
                 End While
                 r -= 1
                 'oRow = GridView1.GetDataRow(r)
-                dtBookingByMatchCode = dtBookings.Select("F2='" & oMatchCode1 & "'").CopyToDataTable
-                SendBookingsByMail(dtBookingByMatchCode, eMail)
+                If gcBookingFilter.MainView.Name = "GridView2" Then
+                    dtDocumentByMatchCode = dtBookings.Select("F2='" & oMatchCode1 & "'").CopyToDataTable
+                    SendBookingsByMail(dtDocumentByMatchCode, eMail)
+                Else
+                    dtDocumentByMatchCode = dtReportSource.Select("Consignee='" & oMatchCode1 & "'").CopyToDataTable
+                    SendMessageByMail(dtDocumentByMatchCode, eMail)
+                End If
             Catch ex As Exception
 
             End Try
@@ -180,28 +189,35 @@ Public Class NotificationsWcfForm
     End Sub
 
     Private Sub SendBookingsByMail(dtSource As DataTable, eMail As String)
+        Validate()
         Dim Application As New Outlook.Application
         Dim mail As Outlook.MailItem = Nothing
         Dim mailRecipients As Outlook.Recipients = Nothing
         Dim mailRecipient As Outlook.Recipient = Nothing
-        Dim BookingsList As New RichTextBox
+        Dim BookingsList, DocumentList As New RichTextBox
         Dim sMatchCode As String = ""
+        'Dim iVersion As Integer = IIf(gcBookingFilter.MainView.Name = "GridView2", 0, 1)
         Try
+            mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
+            If My.Settings.SendMailBehalf = True Then
+                mail.SentOnBehalfOfName = My.Settings.MailFrom
+            End If
+            mail.Subject = edtSubject.Text
+            mail.HTMLBody = richEditControl.HtmlText
+            mail.To = eMail & ";" & edtTO.Text
+            mail.CC = edtCC.Text
+            mail.BCC = edtBCC.Text
+            For i = 0 To ImageListBoxControl1.Items.Count - 1
+                mail.Attachments.Add(ImageListBoxControl1.Items(i).Value)
+            Next
             For r = 0 To dtSource.Rows.Count - 1
                 BookingsList.AppendText(dtSource.Rows(r)("F1") & "<br>")
                 sMatchCode = dtSource.Rows(r)("F2")
             Next
-            mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
-            mail.Subject = edtSubject.Text
+            ''*** Etiquetas
             mail.HTMLBody = Replace(richEditControl.HtmlText, "[BookingsList]", BookingsList.Text)
             mail.HTMLBody = Replace(mail.HTMLBody, "[MatchCode]", sMatchCode)
-            'mail.HTMLBody += "<br><br> " & eMail
-            For i = 0 To ImageListBoxControl1.Items.Count - 1
-                mail.Attachments.Add(ImageListBoxControl1.Items(i).Value)
-            Next
-            mail.To = eMail & ";" & edtTO.Text
-            mail.CC = edtCC.Text
-            mail.BCC = edtBCC.Text
+            ''***
             mail.Send()
         Catch ex As Exception
             System.Windows.Forms.MessageBox.Show(ex.Message,
@@ -211,6 +227,56 @@ Public Class NotificationsWcfForm
             If Not IsNothing(mailRecipients) Then Marshal.ReleaseComObject(mailRecipients)
             If Not IsNothing(mail) Then Marshal.ReleaseComObject(mail)
         End Try
+    End Sub
+
+    Private Sub SendMessageByMail(dtSource As DataTable, eMail As String)
+        Dim Application As New Outlook.Application
+        Dim mail As Outlook.MailItem = Nothing
+        Dim mailRecipients As Outlook.Recipients = Nothing
+        Dim mailRecipient As Outlook.Recipient = Nothing
+        Dim BookingsList, DocumentList As New RichTextBox
+        Dim sMatchCode As String = ""
+        'Dim iVersion As Integer = IIf(gcBookingFilter.MainView.Name = "GridView2", 0, 1)
+        For r = 0 To dtSource.Rows.Count - 1
+            Try
+                mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
+                If My.Settings.SendMailBehalf = True Then
+                    mail.SentOnBehalfOfName = My.Settings.MailFrom
+                End If
+                mail.Subject = edtSubject.Text
+                mail.HTMLBody = richEditControl.HtmlText
+                mail.To = eMail & ";" & edtTO.Text
+                mail.CC = edtCC.Text
+                mail.BCC = edtBCC.Text
+                For i = 0 To ImageListBoxControl1.Items.Count - 1
+                    mail.Attachments.Add(ImageListBoxControl1.Items(i).Value)
+                Next
+                ''*** Etiquetas
+                ''Subject
+                mail.Subject = Replace(mail.Subject, "[SHIPMENT]", dtSource.Rows(r)("Shipment ID No."))
+                mail.Subject = Replace(mail.Subject, "[POD]", dtSource.Rows(r)("Start Location"))
+                mail.Subject = Replace(mail.Subject, "[POF]", dtSource.Rows(r)("Final Dest.: Locode"))
+                mail.Subject = Replace(mail.Subject, "[CONSIGNEE]", dtSource.Rows(r)("Consignee Name"))
+                mail.Subject = Replace(mail.Subject, "[VESSEL]", dtSource.Rows(r)("Last Vessel Name"))
+                mail.Subject = Replace(mail.Subject, "[VOYAGE]", dtSource.Rows(r)("Last Schedule Voyage"))
+                mail.Subject = Replace(mail.Subject, "[ETA]", Format(CDate(dtSource.Rows(r)("Last Voy. ETA Date")), My.Settings.DateFormat))
+                ''Body
+                mail.HTMLBody = Replace(mail.HTMLBody, "[SHIPMENT]", dtSource.Rows(r)("Shipment ID No."))
+                mail.HTMLBody = Replace(mail.HTMLBody, "[BLNO]", dtSource.Rows(r)("Document No."))
+                mail.HTMLBody = Replace(mail.HTMLBody, "[POD]", dtSource.Rows(r)("Start Location"))
+                mail.HTMLBody = Replace(mail.HTMLBody, "[POF]", dtSource.Rows(r)("Final Dest.: Locode"))
+                mail.HTMLBody = Replace(mail.HTMLBody, "[DEADLINE]", Format(DateAdd(DateInterval.Day, My.Settings.DaysBeforeArrival * -1, CDate(dtSource.Rows(r)("Last Voy. ETA Date"))), My.Settings.DateFormat))
+                ''***
+                mail.Send()
+            Catch ex As Exception
+                System.Windows.Forms.MessageBox.Show(ex.Message,
+                    "An exception is occured in the code of add-in.")
+            Finally
+                If Not IsNothing(mailRecipient) Then Marshal.ReleaseComObject(mailRecipient)
+                If Not IsNothing(mailRecipients) Then Marshal.ReleaseComObject(mailRecipients)
+                If Not IsNothing(mail) Then Marshal.ReleaseComObject(mail)
+            End Try
+        Next
     End Sub
 
     Friend Sub CreateSendItem(Subject As String, Body As RichEditControl, AttachFile As ArrayList, CreateType As String)
@@ -224,6 +290,9 @@ Public Class NotificationsWcfForm
             Dim htmlText As String = Body.Document.GetHtmlText(Body.Document.Range, CType(New CustomUriProvider(), IUriProvider), aOpt)
 
             mail = Application.CreateItem(Outlook.OlItemType.olMailItem)
+            If My.Settings.SendMailBehalf = True Then
+                mail.SentOnBehalfOfName = My.Settings.MailFrom
+            End If
             mail.Subject = Subject
             mail.HTMLBody = Body.HtmlText
             If AttachFile.Count > 0 Then
@@ -359,7 +428,7 @@ Public Class NotificationsWcfForm
         If dtSource.Rows.Count = 0 Then
             Return
         End If
-        'Dim dtResult As New DataTable
+        Dim dtResult As New DataTable
         Dim sMatchCode As String = ""
         'dtResult.Columns.Add("Regime", GetType(String)).DefaultValue = ""
         'dtResult.Columns.Add("MatchCode", GetType(String)).DefaultValue = ""
@@ -367,22 +436,27 @@ Public Class NotificationsWcfForm
         'dtResult.Columns.Add("Status", GetType(String)).DefaultValue = "A"
         'dtResult.Columns.Add("CreatedBy", GetType(String)).DefaultValue = ""
         'dtResult.Columns.Add("CreatedDate", GetType(Date)).DefaultValue = Now
+        dtResult = oAppService.ExecuteSQL("SELECT TOP 0 * FROM ntf.Contacts").Tables(0)
         SplashScreenManager.Default.SetWaitFormDescription("Delete Current Contacts")
         oAppService.ExecuteSQLNonQuery("delete from ntf.Contacts where CountryCode = '" & My.Settings.Country & "' and Regime='" & sRegime & "'")
+        SplashScreenManager.Default.SetWaitFormDescription("Insert eMail Contacts")
+
         For r = 0 To dtSource.Rows.Count - 1
             Dim oRow As DataRow = dtSource.Rows(r)
             sMatchCode = oRow("F1").ToString.Trim & Space(1) & CInt(oRow("F2")).ToString
             oRow("F11") = Replace(oRow("F11"), "'", "").Trim
-            'dtResult.Rows.Add(sRegime, sMatchCode, oRow("F11"), "A", My.User.Name, Now)
-            Dim aSource As New ArrayList
-            aSource.AddRange({My.Settings.Country, sRegime, sMatchCode, oRow("F11"), "A", My.User.Name, Now})
-            SplashScreenManager.Default.SetWaitFormDescription("Insert eMail Contacts (" & (r + 1).ToString & " of " & dtSource.Rows.Count.ToString & ")")
-            'InsertIntoAccess("Contacts", dtResult.Rows(r))
-            oAppService.InsertContacts(aSource.ToArray)
+            dtResult.Rows.Add(My.Settings.Country, sRegime, sMatchCode, oRow("F11"), "A", My.User.Name, Now, Nothing, Nothing)
+            'Dim aSource As New ArrayList
+            'aSource.AddRange({My.Settings.Country, sRegime, sMatchCode, oRow("F11"), "A", My.User.Name, Now})
+            'SplashScreenManager.Default.SetWaitFormDescription("Insert eMail Contacts (" & (r + 1).ToString & " of " & dtSource.Rows.Count.ToString & ")")
+            ''InsertIntoAccess("Contacts", dtResult.Rows(r))
+            'oAppService.InsertContacts(aSource.ToArray)
 
         Next
+
+        oAppService.UpdatingUsingTableAsParameter("ntf.upContactsByTable_Insert", Nothing, Nothing, dtResult)
         SplashScreenManager.CloseForm(False)
-        'bbiLoadContacts.PerformClick()
+        bbiLoadContacts.PerformClick()
     End Sub
 
     Private Sub gcBookingFilter_EmbeddedNavigator_ButtonClick(sender As Object, e As DevExpress.XtraEditors.NavigatorButtonClickEventArgs) Handles gcBookingFilter.EmbeddedNavigator.ButtonClick
@@ -406,6 +480,30 @@ Public Class NotificationsWcfForm
             dtBookings = UpdateDataTable(SelectDistinct(dtBookings, "", "F1", "F2"))
             gcBookingFilter.DataSource = dtBookings
             FilterContactsByBookings(SelectDistinct(dtBookings, "", "F2"))
+        End If
+        If e.Button.Tag = "LoadExcelV1" Then
+            If GridView1.RowCount = 0 Then
+                bbiLoadContacts.PerformClick()
+            End If
+            OpenFileDialog3.Filter = "Import File (*.xls*)|*.xls*"
+            If Not OpenFileDialog3.ShowDialog = Windows.Forms.DialogResult.OK Then
+                Return
+            End If
+            SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
+            SplashScreenManager.Default.SetWaitFormDescription("Load Excel Data File")
+            dtReportSource.Rows.Clear()
+            dtReportSource = LoadExcelWCH(OpenFileDialog3.FileName, "{0}", 1, "")
+            SplashScreenManager.CloseForm(False)
+            If dtReportSource.Rows.Count = 0 Then
+                Return
+            End If
+
+            'dtReportSource = UpdateDataTable(SelectDistinct(dtReportSource, "", "F1", "F2"))
+            GridView4.PopulateColumns()
+            gcBookingFilter.MainView = GridView4
+            GridView4.BestFitColumns()
+            gcBookingFilter.DataSource = dtReportSource
+            GroupingContactsByField(SelectDistinct(dtReportSource, "", "Consignee"), "Consignee")
         End If
     End Sub
 
@@ -507,6 +605,20 @@ Public Class NotificationsWcfForm
         For r = 0 To dtBookings.Rows.Count - 1
             Dim oRow As DataRow = dtBookings.Rows(r)
             sFilter += IIf(r > 0, " OR ", "") & "[MatchCode] = '" & oRow("F2") & "'"
+        Next
+        GridView1.ActiveFilterCriteria = DevExpress.Data.Filtering.CriteriaOperator.Or
+        GridView1.ActiveFilterString = "(" & sFilter & ")"
+    End Sub
+
+    Private Sub GroupingContactsByField(dtSource As DataTable, ColumnName As String)
+        If GridView1.RowCount = 0 Then
+            bbiLoadContacts.PerformClick()
+        End If
+        Dim sFilter As String = ""
+        GridView1.ActiveFilterString = ""
+        For r = 0 To dtSource.Rows.Count - 1
+            Dim oRow As DataRow = dtSource.Rows(r)
+            sFilter += IIf(r > 0, " OR ", "") & "[MatchCode] = '" & oRow(ColumnName) & "'"
         Next
         GridView1.ActiveFilterCriteria = DevExpress.Data.Filtering.CriteriaOperator.Or
         GridView1.ActiveFilterString = "(" & sFilter & ")"

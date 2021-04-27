@@ -23,6 +23,7 @@ Public Class SendMessage
             Next
         End If
         oNewMessage.Send()
+        'oNewMessage.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
     End Sub
 
     Friend Function GetMessageBody(SenderName As String) As String

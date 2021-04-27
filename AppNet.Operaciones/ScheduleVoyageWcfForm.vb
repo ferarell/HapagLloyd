@@ -195,9 +195,9 @@ Public Class ScheduleVoyageWcfForm
         Try
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             If rgOriginPort.EditValue = "L" Then
-                dtQuery = oAppService.ExecuteSQL("SELECT * FROM tck.ScheduleVoyage WHERE LEFT(POL,2)='PE'").Tables(0)
+                dtQuery = oAppService.ExecuteSQL("SELECT * FROM tck.ScheduleVoyage WHERE LEFT(POL,2) IN ('PE','CO') ").Tables(0)
             ElseIf rgOriginPort.EditValue = "T" Then
-                dtQuery = oAppService.ExecuteSQL("SELECT * FROM tck.ScheduleVoyage WHERE LEFT(POL,2)<>'PE'").Tables(0)
+                dtQuery = oAppService.ExecuteSQL("SELECT * FROM tck.ScheduleVoyage WHERE LEFT(POL,2) NOT IN ('PE','CO') ").Tables(0)
             Else
                 dtQuery = oAppService.ExecuteSQL("SELECT * FROM tck.ScheduleVoyage").Tables(0)
             End If

@@ -5,7 +5,8 @@ Imports System.Globalization
 Imports System.IO
 
 Public Class MainForm
-
+    Dim oDataAcces As New DataAccess
+    Dim dtUserMappingList As New DataTable
     Public Sub New()
         'Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
         Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("es-PE")
@@ -23,9 +24,12 @@ Public Class MainForm
         InitializeComponent()
         DevExpress.Skins.SkinManager.EnableFormSkins()
         DevExpress.UserSkins.BonusSkins.Register()
-
         SkinName = My.Settings.LookAndFeel
-
+        LoadUserMappingList()
+        If dtUserMappingList.Rows.Count = 0 Then
+            XtraMessageBox.Show("El usuario no se encuentra registrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End
+        End If
     End Sub
 
     Private Sub MainForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -43,10 +47,15 @@ Public Class MainForm
                 My.Settings.Upgrade()
             End If
         End If
-        bbiUserApp.Caption = "User: " & My.User.Name
+        AppUser = dtUserMappingList.Rows(0)("ID")
+        bbiUserApp.Caption = "User: " & dtUserMappingList.Rows(0)("UserName") & " (" & dtUserMappingList.Rows(0)("UserMail") & ")"
         'My.Settings.DBFileName = IO.Directory.GetCurrentDirectory & "\SharePointList.mdb"
         'My.Settings.Save()
         'nbcMainMenu.RestoreFromRegistry(Directory.GetCurrentDirectory)
+    End Sub
+
+    Private Sub LoadUserMappingList()
+        dtUserMappingList = oDataAcces.ExecuteAccessQuery("SELECT * FROM UserMappingList WHERE DomainUser='" & My.User.Name & "'").Tables(0)
     End Sub
 
     Private Sub NavBarItem12_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem12.LinkClicked

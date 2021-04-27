@@ -165,36 +165,39 @@ Public Class RegistroVentasForm
                 End If
             End If
         Next
+        If row(0) = 0 Or row(0) = "" Then
+            Return
+        End If
         Try
             dtResult.Rows.Add()
             iPosition = dtResult.Rows.Count - 1
-            dtResult.Rows(iPosition).Item("C1") = Format(row(1), "yyyyMM00")
+            dtResult.Rows(iPosition).Item("C1") = Format(CDate(Replace(row(1), ".", "/")), "yyyyMM00") 'Format(row(1), "yyyyMM00")
             dtResult.Rows(iPosition).Item("C2") = row(0)
             dtResult.Rows(iPosition).Item("C3") = "M" & IIf(row(0).ToString.Length > 9, Strings.Right(row(0).ToString, 9), row(0).ToString)
-            dtResult.Rows(iPosition).Item("C4") = Format(CDate(row(1)), "dd/MM/yyyy")
+            dtResult.Rows(iPosition).Item("C4") = Format(CDate(Replace(row(1), ".", "/")), "dd/MM/yyyy")
             dtResult.Rows(iPosition).Item("C5") = "" 'Format(DateAdd(DateInterval.Day, GetDueDays(row(2)), row.Item(1)), "dd/MM/yyyy")
-            If lueSociedad.EditValue = "0098" Then
-                If seEjercicio.Text & Format(sePeriodo.EditValue, "00") < "201706" Then
-                    sTipDoc = GetDocType(row(5), row(6) + row(7), row(3).ToString.Trim)
-                Else
-                    sTipDoc = IIf(Mid(row(3).ToString.Trim, 1, 1) = "B", "03", IIf(Mid(row(3).ToString.Trim, 1, 2) = "FC", "07", "01"))
-                End If
-            Else
-                sTipDoc = DataValidation("TipDoc", GetDocType(row(5), row(6), row(3).ToString.Trim))
-            End If
+            'If lueSociedad.EditValue = "0098" Then
+            'If seEjercicio.Text & Format(sePeriodo.EditValue, "00") < "201706" Then
+            'sTipDoc = GetDocType(row(5), row(6) + row(7), row(3).ToString.Trim)
+            'Else
+            'sTipDoc = IIf(Mid(row(3).ToString.Trim, 1, 1) = "B", "03", IIf(Mid(row(3).ToString.Trim, 1, 2) = "FC", "07", "01"))
+            'End If
+            'Else
+            sTipDoc = DataValidation("TipDoc", GetDocType(row(5), row(6), row(3).ToString.Trim))
+            'End If
             If sTipDoc <> "" Then
                 dtResult.Rows(iPosition).Item("C6") = sTipDoc
-                If lueSociedad.EditValue = "0098" Then
-                    If seEjercicio.Text & Format(sePeriodo.EditValue, "00") < "201706" Then
-                        dtResult.Rows(iPosition).Item("C7") = "00" & Mid(row(3), 1, 2)
-                    Else
-                        dtResult.Rows(iPosition).Item("C7") = Mid(row(3), 1, 4)
-                    End If
-                    dtResult.Rows(iPosition).Item("C8") = Strings.Right(row(3), 8)
-                Else
-                    dtResult.Rows(iPosition).Item("C7") = GetTextFormatValue(sTipDoc, "NroSer", Mid(row(3), 4, Len(row(3)) - 3)) 'GetNroSer(row(3))
+                'If lueSociedad.EditValue = "0098" Then
+                '    If seEjercicio.Text & Format(sePeriodo.EditValue, "00") < "201706" Then
+                '        dtResult.Rows(iPosition).Item("C7") = "00" & Mid(row(3), 1, 2)
+                '    Else
+                '        dtResult.Rows(iPosition).Item("C7") = Mid(row(3), 1, 4)
+                '    End If
+                '    dtResult.Rows(iPosition).Item("C8") = Strings.Right(row(3), 8)
+                'Else
+                dtResult.Rows(iPosition).Item("C7") = GetTextFormatValue(sTipDoc, "NroSer", Mid(row(3), 4, Len(row(3)) - 3)) 'GetNroSer(row(3))
                     dtResult.Rows(iPosition).Item("C8") = GetTextFormatValue(sTipDoc, "NroDoc", Mid(row(3), 4, Len(row(3)) - 3)) 'Strings.Right(row(3).ToString.Trim, 7)
-                End If
+                'End If
                 dtResult.Rows(iPosition).Item("C9") = ""
             Else
                 dtResult.Rows(iPosition).Item("C36") = "El tipo de documento es incorrecto, verifique la estructura del número de documento de origen (" & row(3) & ")."
@@ -211,13 +214,13 @@ Public Class RegistroVentasForm
                 dtResult.Rows(iPosition).Item("C11") = RUC
             End If
             dtResult.Rows(iPosition).Item("C12") = row(5)
-            dtResult.Rows(iPosition).Item("C13") = IIf(lueSociedad.EditValue = "0098", 0, Format(row(7) * -1, "###########0.00"))
+            dtResult.Rows(iPosition).Item("C13") = Format(row(7) * -1, "###########0.00") 'IIf(lueSociedad.EditValue = "0098", 0, Format(row(7) * -1, "###########0.00"))
             dtResult.Rows(iPosition).Item("C14") = Format(row(6) * -1, "###########0.00")
             dtResult.Rows(iPosition).Item("C15") = "0"
             dtResult.Rows(iPosition).Item("C16") = Format(row(8) * -1, "###########0.00")
             dtResult.Rows(iPosition).Item("C17") = "0"
             dtResult.Rows(iPosition).Item("C18") = "0"
-            dtResult.Rows(iPosition).Item("C19") = IIf(lueSociedad.EditValue = "0098", Format(row(7) * -1, "###########0.00"), 0)
+            dtResult.Rows(iPosition).Item("C19") = 0 'IIf(lueSociedad.EditValue = "0098", Format(row(7) * -1, "###########0.00"), 0)
             dtResult.Rows(iPosition).Item("C20") = "0"
             dtResult.Rows(iPosition).Item("C21") = "0"
             dtResult.Rows(iPosition).Item("C22") = "0"
@@ -375,10 +378,15 @@ Public Class RegistroVentasForm
                 End If
             End If
             If e.Column.FieldName = "C4" Then 'Fecha Comprobante de Pago
-                If Format(CDate(View.GetRowCellDisplayText(e.RowHandle, View.Columns("C4"))), "yyyyMM") > seEjercicio.EditValue & Format(sePeriodo.EditValue, "00") Then
+                If IsDate(View.GetRowCellDisplayText(e.RowHandle, View.Columns("C4"))) Then
+                    If Format(CDate(View.GetRowCellDisplayText(e.RowHandle, View.Columns("C4"))), "yyyyMM") > seEjercicio.EditValue & Format(sePeriodo.EditValue, "00") Then
+                        e.Appearance.BackColor = Color.Salmon
+                        e.Appearance.BackColor2 = Color.SeaShell
+                        bFlatFileGenerate = False
+                    End If
+                Else
                     e.Appearance.BackColor = Color.Salmon
                     e.Appearance.BackColor2 = Color.SeaShell
-                    bFlatFileGenerate = False
                 End If
             End If
             If e.Column.FieldName = "C6" Then 'Tipo Comprobante de Pago

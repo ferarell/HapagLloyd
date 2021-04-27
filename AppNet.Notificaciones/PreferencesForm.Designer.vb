@@ -19,8 +19,9 @@ Partial Class PreferencesForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PreferencesForm))
-        Me.bmActions = New DevExpress.XtraBars.BarManager()
+        Me.bmActions = New DevExpress.XtraBars.BarManager(Me.components)
         Me.bar5 = New DevExpress.XtraBars.Bar()
         Me.brBarraAcciones = New DevExpress.XtraBars.Bar()
         Me.bbiGuardar = New DevExpress.XtraBars.BarButtonItem()
@@ -30,7 +31,7 @@ Partial Class PreferencesForm
         Me.BarDockControl2 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl3 = New DevExpress.XtraBars.BarDockControl()
         Me.BarDockControl4 = New DevExpress.XtraBars.BarDockControl()
-        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList()
+        Me.imActionsBar24x24 = New System.Windows.Forms.ImageList(Me.components)
         Me.rpiProceso = New DevExpress.XtraEditors.Repository.RepositoryItemProgressBar()
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.RepositoryItemImageComboBox1 = New DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox()
@@ -47,6 +48,17 @@ Partial Class PreferencesForm
         Me.gcEstilos = New DevExpress.XtraEditors.GroupControl()
         Me.lbcEstilos = New DevExpress.XtraEditors.ListBoxControl()
         Me.rgPaintStyle = New DevExpress.XtraEditors.RadioGroup()
+        Me.GroupControl3 = New DevExpress.XtraEditors.GroupControl()
+        Me.teDateFormat = New DevExpress.XtraEditors.TextEdit()
+        Me.seDaysBeforeArrival = New DevExpress.XtraEditors.SpinEdit()
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl()
+        Me.GroupControl1 = New DevExpress.XtraEditors.GroupControl()
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl()
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl()
+        Me.teMailFrom = New DevExpress.XtraEditors.TextEdit()
+        Me.tsSendMailBehalf = New DevExpress.XtraEditors.ToggleSwitch()
         CType(Me.bmActions, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +74,14 @@ Partial Class PreferencesForm
         Me.gcEstilos.SuspendLayout()
         CType(Me.lbcEstilos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rgPaintStyle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl3.SuspendLayout()
+        CType(Me.teDateFormat.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.seDaysBeforeArrival.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupControl1.SuspendLayout()
+        CType(Me.teMailFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tsSendMailBehalf.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'bmActions
@@ -105,28 +125,28 @@ Partial Class PreferencesForm
         'bbiGuardar
         '
         Me.bbiGuardar.Caption = "&Save"
-        Me.bbiGuardar.Glyph = CType(resources.GetObject("bbiGuardar.Glyph"), System.Drawing.Image)
         Me.bbiGuardar.Id = 33
-        Me.bbiGuardar.ImageIndex = 28
+        Me.bbiGuardar.ImageOptions.Image = CType(resources.GetObject("bbiGuardar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiGuardar.ImageOptions.ImageIndex = 28
+        Me.bbiGuardar.ImageOptions.LargeImageIndex = 7
         Me.bbiGuardar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.G))
-        Me.bbiGuardar.LargeImageIndex = 7
         Me.bbiGuardar.Name = "bbiGuardar"
         '
         'bbiReset
         '
         Me.bbiReset.Caption = "Reset"
-        Me.bbiReset.Glyph = CType(resources.GetObject("bbiReset.Glyph"), System.Drawing.Image)
         Me.bbiReset.Id = 20
+        Me.bbiReset.ImageOptions.Image = CType(resources.GetObject("bbiReset.ImageOptions.Image"), System.Drawing.Image)
         Me.bbiReset.Name = "bbiReset"
         '
         'bbiCerrar
         '
         Me.bbiCerrar.Caption = "&Close"
-        Me.bbiCerrar.Glyph = CType(resources.GetObject("bbiCerrar.Glyph"), System.Drawing.Image)
         Me.bbiCerrar.Id = 41
-        Me.bbiCerrar.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.Image = CType(resources.GetObject("bbiCerrar.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiCerrar.ImageOptions.ImageIndex = 27
+        Me.bbiCerrar.ImageOptions.LargeImageIndex = 0
         Me.bbiCerrar.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiCerrar.LargeImageIndex = 0
         Me.bbiCerrar.Name = "bbiCerrar"
         Me.bbiCerrar.ShortcutKeyDisplayString = "Ctrl+C"
         '
@@ -135,27 +155,31 @@ Partial Class PreferencesForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
-        Me.BarDockControl1.Size = New System.Drawing.Size(901, 41)
+        Me.BarDockControl1.Manager = Me.bmActions
+        Me.BarDockControl1.Size = New System.Drawing.Size(905, 41)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 479)
-        Me.BarDockControl2.Size = New System.Drawing.Size(901, 23)
+        Me.BarDockControl2.Manager = Me.bmActions
+        Me.BarDockControl2.Size = New System.Drawing.Size(905, 23)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
+        Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 438)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(901, 41)
+        Me.BarDockControl4.Location = New System.Drawing.Point(905, 41)
+        Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 438)
         '
         'imActionsBar24x24
@@ -222,7 +246,7 @@ Partial Class PreferencesForm
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(622, 131)
+        Me.GroupControl2.Size = New System.Drawing.Size(626, 131)
         Me.GroupControl2.TabIndex = 0
         Me.GroupControl2.Text = "General"
         '
@@ -247,7 +271,7 @@ Partial Class PreferencesForm
         '
         'LabelControl4
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(218, 95)
+        Me.LabelControl4.Location = New System.Drawing.Point(218, 97)
         Me.LabelControl4.Name = "LabelControl4"
         Me.LabelControl4.Size = New System.Drawing.Size(40, 13)
         Me.LabelControl4.TabIndex = 22
@@ -255,7 +279,7 @@ Partial Class PreferencesForm
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(63, 95)
+        Me.LabelControl3.Location = New System.Drawing.Point(63, 97)
         Me.LabelControl3.Name = "LabelControl3"
         Me.LabelControl3.Size = New System.Drawing.Size(93, 13)
         Me.LabelControl3.TabIndex = 22
@@ -263,7 +287,7 @@ Partial Class PreferencesForm
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(45, 69)
+        Me.LabelControl2.Location = New System.Drawing.Point(45, 71)
         Me.LabelControl2.Name = "LabelControl2"
         Me.LabelControl2.Size = New System.Drawing.Size(111, 13)
         Me.LabelControl2.TabIndex = 22
@@ -276,14 +300,14 @@ Partial Class PreferencesForm
         Me.lueCountry.MenuManager = Me.bmActions
         Me.lueCountry.Name = "lueCountry"
         Me.lueCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.lueCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Code", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryDescription", "Description")})
+        Me.lueCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Code", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryDescription", "Description")})
         Me.lueCountry.Properties.NullText = ""
         Me.lueCountry.Size = New System.Drawing.Size(126, 20)
         Me.lueCountry.TabIndex = 0
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(117, 42)
+        Me.LabelControl1.Location = New System.Drawing.Point(117, 44)
         Me.LabelControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(39, 13)
@@ -299,9 +323,11 @@ Partial Class PreferencesForm
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.gcEstilos)
         Me.SplitContainerControl1.Panel1.Text = "Panel1"
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl3)
+        Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl1)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(901, 438)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(905, 438)
         Me.SplitContainerControl1.SplitterPosition = 275
         Me.SplitContainerControl1.TabIndex = 5
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -321,17 +347,17 @@ Partial Class PreferencesForm
         '
         Me.lbcEstilos.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.lbcEstilos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbcEstilos.Location = New System.Drawing.Point(2, 57)
+        Me.lbcEstilos.Location = New System.Drawing.Point(2, 58)
         Me.lbcEstilos.Name = "lbcEstilos"
         Me.lbcEstilos.Padding = New System.Windows.Forms.Padding(1)
-        Me.lbcEstilos.Size = New System.Drawing.Size(264, 375)
+        Me.lbcEstilos.Size = New System.Drawing.Size(264, 374)
         Me.lbcEstilos.TabIndex = 2
         '
         'rgPaintStyle
         '
         Me.rgPaintStyle.Dock = System.Windows.Forms.DockStyle.Top
         Me.rgPaintStyle.EditValue = "ExplorerBar"
-        Me.rgPaintStyle.Location = New System.Drawing.Point(2, 21)
+        Me.rgPaintStyle.Location = New System.Drawing.Point(2, 22)
         Me.rgPaintStyle.Margin = New System.Windows.Forms.Padding(2)
         Me.rgPaintStyle.Name = "rgPaintStyle"
         Me.rgPaintStyle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
@@ -340,11 +366,113 @@ Partial Class PreferencesForm
         Me.rgPaintStyle.Size = New System.Drawing.Size(264, 36)
         Me.rgPaintStyle.TabIndex = 1
         '
+        'GroupControl3
+        '
+        Me.GroupControl3.Controls.Add(Me.teDateFormat)
+        Me.GroupControl3.Controls.Add(Me.seDaysBeforeArrival)
+        Me.GroupControl3.Controls.Add(Me.LabelControl9)
+        Me.GroupControl3.Controls.Add(Me.LabelControl8)
+        Me.GroupControl3.Controls.Add(Me.LabelControl7)
+        Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl3.Location = New System.Drawing.Point(0, 231)
+        Me.GroupControl3.Name = "GroupControl3"
+        Me.GroupControl3.Size = New System.Drawing.Size(626, 98)
+        Me.GroupControl3.TabIndex = 2
+        Me.GroupControl3.Text = "Message"
+        '
+        'teDateFormat
+        '
+        Me.teDateFormat.Location = New System.Drawing.Point(163, 63)
+        Me.teDateFormat.MenuManager = Me.bmActions
+        Me.teDateFormat.Name = "teDateFormat"
+        Me.teDateFormat.Size = New System.Drawing.Size(100, 20)
+        Me.teDateFormat.TabIndex = 23
+        '
+        'seDaysBeforeArrival
+        '
+        Me.seDaysBeforeArrival.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.seDaysBeforeArrival.Location = New System.Drawing.Point(162, 36)
+        Me.seDaysBeforeArrival.Name = "seDaysBeforeArrival"
+        Me.seDaysBeforeArrival.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.seDaysBeforeArrival.Size = New System.Drawing.Size(50, 20)
+        Me.seDaysBeforeArrival.TabIndex = 2
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Location = New System.Drawing.Point(269, 68)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(68, 13)
+        Me.LabelControl9.TabIndex = 22
+        Me.LabelControl9.Text = "(dd-MM-yyyy)"
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Location = New System.Drawing.Point(96, 68)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(60, 13)
+        Me.LabelControl8.TabIndex = 22
+        Me.LabelControl8.Text = "Date Format"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Location = New System.Drawing.Point(63, 41)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(93, 13)
+        Me.LabelControl7.TabIndex = 22
+        Me.LabelControl7.Text = "Days Before Arrival"
+        '
+        'GroupControl1
+        '
+        Me.GroupControl1.Controls.Add(Me.LabelControl6)
+        Me.GroupControl1.Controls.Add(Me.LabelControl5)
+        Me.GroupControl1.Controls.Add(Me.teMailFrom)
+        Me.GroupControl1.Controls.Add(Me.tsSendMailBehalf)
+        Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupControl1.Location = New System.Drawing.Point(0, 131)
+        Me.GroupControl1.Name = "GroupControl1"
+        Me.GroupControl1.Size = New System.Drawing.Size(626, 100)
+        Me.GroupControl1.TabIndex = 1
+        Me.GroupControl1.Text = "Mailbox"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Location = New System.Drawing.Point(111, 66)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(45, 13)
+        Me.LabelControl6.TabIndex = 2
+        Me.LabelControl6.Text = "Mail From"
+        '
+        'LabelControl5
+        '
+        Me.LabelControl5.Location = New System.Drawing.Point(62, 37)
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.LabelControl5.Size = New System.Drawing.Size(94, 13)
+        Me.LabelControl5.TabIndex = 2
+        Me.LabelControl5.Text = "Send Mail on Behalf"
+        '
+        'teMailFrom
+        '
+        Me.teMailFrom.Location = New System.Drawing.Point(162, 61)
+        Me.teMailFrom.MenuManager = Me.bmActions
+        Me.teMailFrom.Name = "teMailFrom"
+        Me.teMailFrom.Size = New System.Drawing.Size(366, 20)
+        Me.teMailFrom.TabIndex = 1
+        '
+        'tsSendMailBehalf
+        '
+        Me.tsSendMailBehalf.Location = New System.Drawing.Point(162, 30)
+        Me.tsSendMailBehalf.MenuManager = Me.bmActions
+        Me.tsSendMailBehalf.Name = "tsSendMailBehalf"
+        Me.tsSendMailBehalf.Properties.OffText = "Off"
+        Me.tsSendMailBehalf.Properties.OnText = "On"
+        Me.tsSendMailBehalf.Size = New System.Drawing.Size(95, 24)
+        Me.tsSendMailBehalf.TabIndex = 0
+        '
         'PreferencesForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(901, 502)
+        Me.ClientSize = New System.Drawing.Size(905, 502)
         Me.Controls.Add(Me.SplitContainerControl1)
         Me.Controls.Add(Me.BarDockControl3)
         Me.Controls.Add(Me.BarDockControl4)
@@ -370,7 +498,18 @@ Partial Class PreferencesForm
         Me.gcEstilos.ResumeLayout(False)
         CType(Me.lbcEstilos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rgPaintStyle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl3.ResumeLayout(False)
+        Me.GroupControl3.PerformLayout()
+        CType(Me.teDateFormat.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.seDaysBeforeArrival.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GroupControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupControl1.ResumeLayout(False)
+        Me.GroupControl1.PerformLayout()
+        CType(Me.teMailFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tsSendMailBehalf.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Private WithEvents bmActions As DevExpress.XtraBars.BarManager
@@ -400,4 +539,15 @@ Partial Class PreferencesForm
     Friend WithEvents seWaitTime As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents seEQuantity As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupControl1 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents teMailFrom As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents tsSendMailBehalf As DevExpress.XtraEditors.ToggleSwitch
+    Friend WithEvents GroupControl3 As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents seDaysBeforeArrival As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents teDateFormat As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
 End Class

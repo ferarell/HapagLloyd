@@ -1131,9 +1131,10 @@ Public Class ColdTreatmentWcfForm
         If IsDBNull(dtQuery.Rows(0)("TSCHKDL")) Then
             dtQuery.Rows(0)("TSCHKDL") = ""
         End If
-        If (dtQuery.Rows(0)("TSCHKDL") = "OK" Or SetValues.Contains("[TSCHKDL]='OK'")) And iCTDaysInterval >= 15 And iBrokes = 0 Then 'And Not SetValues.Contains("INTERRUPTION") Then
+        'If (dtQuery.Rows(0)("TSCHKDL") = "OK" Or SetValues.Contains("[TSCHKDL]='OK'")) And iCTDaysInterval >= 15 And iBrokes = 0 Then 'And Not SetValues.Contains("INTERRUPTION") Then
+        If iCTDaysInterval >= iDays Then
             SetValues = SetValues & ", [REMARKS]='CT PASSED'"
-        ElseIf iCTDaysInterval < 15 Then
+        ElseIf iCTDaysInterval < iDays Then
             SetValues = SetValues & ", [REMARKS]='INCOMPLETE'"
         ElseIf bProcessError Then
             Dim sErrors As New RichTextBox

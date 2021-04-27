@@ -313,7 +313,7 @@ Module SharedModule
             End If
         End If
         NewMessage.Send()
-        oMailItem.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
+        'NewMessage.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
         Return bResult
     End Function
 
@@ -350,7 +350,7 @@ Module SharedModule
             NewMessage.HTMLBody += Msg
         End If
         NewMessage.Send()
-        oMailItem.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
+        'NewMessage.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
         Return bResult
     End Function
 
@@ -607,6 +607,7 @@ Module SharedModule
             NewMessage.Attachments.Add(sFileName)
         End If
         NewMessage.Send()
+        'NewMessage.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
         Return bResult
     End Function
 
@@ -627,6 +628,7 @@ Module SharedModule
             NewMessage.Attachments.Add(sFileName)
         End If
         NewMessage.Send()
+        'NewMessage.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
         Return bResult
     End Function
 

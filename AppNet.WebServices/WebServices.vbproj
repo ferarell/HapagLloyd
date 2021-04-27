@@ -88,14 +88,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HapagLloydService.svc" />
+    <Content Include="HapagLloydServiceTest.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessTest.vb" />
     <Compile Include="DataAccess.vb" />
     <Compile Include="HapagLloydService.svc.vb">
       <DependentUpon>HapagLloydService.svc</DependentUpon>
     </Compile>
+    <Compile Include="HapagLloydServiceTest.svc.vb" />
     <Compile Include="IHapagLloydService.vb" />
+    <Compile Include="IHapagLloydServiceTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -126,6 +130,7 @@
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
     <None Include="My Project\PublishProfiles\ASPELIM01.pubxml" />
+    <None Include="My Project\PublishProfiles\HapagLloydServiceTest.pubxml" />
     <None Include="My Project\PublishProfiles\HapagLloydWebService.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

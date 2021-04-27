@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="AppNet.WebServices.HapagLloydServiceTest" CodeBehind="HapagLloydServiceTest.svc.vb" %>

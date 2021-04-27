@@ -103,7 +103,6 @@ Partial Class ScheduleVoyageWcfForm
         'CardView2
         '
         Me.CardView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.GridColumn5, Me.GridColumn6, Me.GridColumn7, Me.GridColumn8, Me.GridColumn9, Me.GridColumn10, Me.GridColumn11, Me.GridColumn12, Me.GridColumn13, Me.GridColumn14, Me.GridColumn16, Me.GridColumn17, Me.GridColumn18, Me.GridColumn19, Me.GridColumn37})
-        Me.CardView2.FocusedCardTopFieldIndex = 0
         Me.CardView2.GridControl = Me.gcMasterData
         Me.CardView2.Name = "CardView2"
         Me.CardView2.OptionsBehavior.Editable = False
@@ -402,20 +401,20 @@ Partial Class ScheduleVoyageWcfForm
         'bbiExport
         '
         Me.bbiExport.Caption = "&Export"
-        Me.bbiExport.Glyph = CType(resources.GetObject("bbiExport.Glyph"), System.Drawing.Image)
         Me.bbiExport.Id = 21
-        Me.bbiExport.ImageIndex = 29
+        Me.bbiExport.ImageOptions.Image = CType(resources.GetObject("bbiExport.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiExport.ImageOptions.ImageIndex = 29
         Me.bbiExport.Name = "bbiExport"
         Me.bbiExport.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph
         '
         'bbiClose
         '
         Me.bbiClose.Caption = "&Close"
-        Me.bbiClose.Glyph = CType(resources.GetObject("bbiClose.Glyph"), System.Drawing.Image)
         Me.bbiClose.Id = 41
-        Me.bbiClose.ImageIndex = 27
+        Me.bbiClose.ImageOptions.Image = CType(resources.GetObject("bbiClose.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiClose.ImageOptions.ImageIndex = 27
+        Me.bbiClose.ImageOptions.LargeImageIndex = 0
         Me.bbiClose.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.C))
-        Me.bbiClose.LargeImageIndex = 0
         Me.bbiClose.Name = "bbiClose"
         Me.bbiClose.ShortcutKeyDisplayString = "Alt+C"
         '
@@ -424,6 +423,7 @@ Partial Class ScheduleVoyageWcfForm
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
         Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
+        Me.BarDockControl3.Manager = Me.bmActions
         Me.BarDockControl3.Size = New System.Drawing.Size(0, 329)
         '
         'BarDockControl4
@@ -431,6 +431,7 @@ Partial Class ScheduleVoyageWcfForm
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
         Me.BarDockControl4.Location = New System.Drawing.Point(838, 47)
+        Me.BarDockControl4.Manager = Me.bmActions
         Me.BarDockControl4.Size = New System.Drawing.Size(0, 329)
         '
         'BarDockControl2
@@ -438,6 +439,7 @@ Partial Class ScheduleVoyageWcfForm
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.BarDockControl2.Location = New System.Drawing.Point(0, 376)
+        Me.BarDockControl2.Manager = Me.bmActions
         Me.BarDockControl2.Size = New System.Drawing.Size(838, 29)
         '
         'BarDockControl1
@@ -445,6 +447,7 @@ Partial Class ScheduleVoyageWcfForm
         Me.BarDockControl1.CausesValidation = False
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
+        Me.BarDockControl1.Manager = Me.bmActions
         Me.BarDockControl1.Size = New System.Drawing.Size(838, 47)
         '
         'imActionsBar24x24
@@ -497,19 +500,19 @@ Partial Class ScheduleVoyageWcfForm
         'bbiProcesss
         '
         Me.bbiProcesss.Caption = "&Import"
-        Me.bbiProcesss.Glyph = CType(resources.GetObject("bbiProcesss.Glyph"), System.Drawing.Image)
         Me.bbiProcesss.Id = 33
-        Me.bbiProcesss.ImageIndex = 26
+        Me.bbiProcesss.ImageOptions.Image = CType(resources.GetObject("bbiProcesss.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiProcesss.ImageOptions.ImageIndex = 26
+        Me.bbiProcesss.ImageOptions.LargeImageIndex = 7
         Me.bbiProcesss.ItemShortcut = New DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.P))
-        Me.bbiProcesss.LargeImageIndex = 7
         Me.bbiProcesss.Name = "bbiProcesss"
         '
         'bbiSearch
         '
         Me.bbiSearch.Caption = "Search"
-        Me.bbiSearch.Glyph = CType(resources.GetObject("bbiSearch.Glyph"), System.Drawing.Image)
         Me.bbiSearch.Id = 30
-        Me.bbiSearch.ImageIndex = 6
+        Me.bbiSearch.ImageOptions.Image = CType(resources.GetObject("bbiSearch.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiSearch.ImageOptions.ImageIndex = 6
         Me.bbiSearch.Name = "bbiSearch"
         '
         'barEditItem1
@@ -588,8 +591,8 @@ Partial Class ScheduleVoyageWcfForm
         Me.rgOriginPort.Properties.Appearance.Options.UseBackColor = True
         Me.rgOriginPort.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.rgOriginPort.Properties.Columns = 3
-        Me.rgOriginPort.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem("A", "All"), New DevExpress.XtraEditors.Controls.RadioGroupItem("L", "Local Ports"), New DevExpress.XtraEditors.Controls.RadioGroupItem("T", "Transhipment Ports")})
-        Me.rgOriginPort.Size = New System.Drawing.Size(268, 22)
+        Me.rgOriginPort.Properties.Items.AddRange(New DevExpress.XtraEditors.Controls.RadioGroupItem() {New DevExpress.XtraEditors.Controls.RadioGroupItem("A", "All Ports"), New DevExpress.XtraEditors.Controls.RadioGroupItem("L", "Loading Ports"), New DevExpress.XtraEditors.Controls.RadioGroupItem("T", "Transhipment Ports")})
+        Me.rgOriginPort.Size = New System.Drawing.Size(352, 22)
         Me.rgOriginPort.TabIndex = 32
         '
         'bmActions
@@ -665,6 +668,7 @@ Partial Class ScheduleVoyageWcfForm
         CType(Me.rpiProceso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.beSourceFile.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Private WithEvents bar5 As DevExpress.XtraBars.Bar

@@ -554,11 +554,13 @@ Public Class BookingCancellation
 
     Private Sub ForwardMessage(sVendorTaxCode As String, sBookNo As String, sPort As String)
         'Reenviar Correo al Depot
-        sVendorContact = GetVendorContactByTaxCode(ProcessCode, sVendorTaxCode)
-        Dim oInspector As Outlook.Inspector
-        Dim oForwardMail As Outlook.MailItem = oMailItems
-        oInspector = oMailItems.GetInspector
-        oForwardMail = oInspector.CurrentItem.Forward
+        If sVendorTaxCode <> "" Then
+            sVendorContact = GetVendorContactByTaxCode(ProcessCode, sVendorTaxCode)
+        End If
+        'Dim oInspector As Outlook.Inspector
+        Dim oForwardMail As Outlook.MailItem = oMailItems.Forward
+        'oInspector = oMailItems.GetInspector
+        'oForwardMail = oForwardMail.Forward
         oForwardMail.Subject = "CANCELACIÓN DE BOOKING - " & sBookNo
         oForwardMail.HTMLBody = "<p><span style=""font-size:13px;""><span style=""font-family:arial,helvetica,sans-serif;"">Buen d&iacute;a,"
         oForwardMail.HTMLBody += "<p>Favor notar que el siguiente&nbsp;<strong>Booking " & sBookNo & "</strong>&nbsp;se encuentra&nbsp;<span style=""color: #ff0000;""><strong>CANCELADO</strong></span>&nbsp;y por tal motivo agradecemos NO entregar contenedor(es), si tiene alguna observaci&oacute;n agradeceremos enviarnos su consulta al siguiente correo:</p>"
@@ -585,6 +587,7 @@ Public Class BookingCancellation
         End If
         'oForwardMail.Display()
         oForwardMail.Send()
+        'oForwardMail.Close(Microsoft.Office.Interop.Outlook.OlInspectorClose.olDiscard)
     End Sub
 
     Function GetVendorContactByPort(ProcessCode, sPort) As String

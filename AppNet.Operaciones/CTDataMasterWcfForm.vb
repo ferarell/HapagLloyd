@@ -704,11 +704,14 @@ Public Class CTDataMasterWcfForm
     End Sub
 
     Private Sub EnableButtons(oGridview As GridView)
-
+        bbiInsert.Enabled = False
+        bbiDelete.Enabled = False
+        bbiClone.Enabled = False
         If My.User.Name.ToUpper.Contains({"WW\ALBORPA", "FARELLANO"}) Then
-
+            bbiInsert.Enabled = True
+            bbiDelete.Enabled = True
+            bbiClone.Enabled = True
         End If
-        bbiClone.Enabled = True
         If oGridview.FocusedRowHandle < 0 Then
             bbiClone.Enabled = False
         End If

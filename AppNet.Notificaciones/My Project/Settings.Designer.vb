@@ -80,7 +80,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("VS2010")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Visual Studio 2013 Blue")>  _
         Public Property LookAndFeel() As String
             Get
                 Return CType(Me("LookAndFeel"),String)
@@ -135,6 +135,54 @@ Namespace My
             End Get
             Set
                 Me("TimeBetweenMails") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("chile@service.hlag.com")>  _
+        Public Property MailFrom() As String
+            Get
+                Return CType(Me("MailFrom"),String)
+            End Get
+            Set
+                Me("MailFrom") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("3")>  _
+        Public Property DaysBeforeArrival() As Integer
+            Get
+                Return CType(Me("DaysBeforeArrival"),Integer)
+            End Get
+            Set
+                Me("DaysBeforeArrival") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("dd-MM-yyyy")>  _
+        Public Property DateFormat() As String
+            Get
+                Return CType(Me("DateFormat"),String)
+            End Get
+            Set
+                Me("DateFormat") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property SendMailBehalf() As Boolean
+            Get
+                Return CType(Me("SendMailBehalf"),Boolean)
+            End Get
+            Set
+                Me("SendMailBehalf") = value
             End Set
         End Property
     End Class

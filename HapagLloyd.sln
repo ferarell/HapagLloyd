@@ -14,6 +14,9 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataProcessing", "AppNet.DataProcessing\DataProcessing.vbproj", "{39F6B59F-2F04-4031-8DB0-72A255417784}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Notifications", "AppNet.Notificaciones\Notifications.vbproj", "{204ECBC9-52F1-4F34-B250-47964442AF9C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{769E7877-C4DC-4BAE-A4C3-D5241EC1AE69} = {769E7877-C4DC-4BAE-A4C3-D5241EC1AE69}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Operaciones", "AppNet.Operaciones\Operaciones.vbproj", "{468CC86D-B01C-4E77-A47B-11822671E779}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -39,6 +42,11 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "OutlookAddIn.Robot-GT", "OutlookAddIn.Robot-GT\OutlookAddIn.Robot-GT.vbproj", "{13D7374A-486A-4133-8015-332ED80DC170}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ExcelAddIn.Customizations", "ExcelAddIn.Customizations\ExcelAddIn.Customizations.vbproj", "{23424E71-4B7E-40D3-88EF-E46CDD0FBE36}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Notifications-DEV", "AppNet.Notificaciones-DEV\Notifications-DEV.vbproj", "{9E93552A-114A-4213-8AED-B5D1A8F92D71}"
+	ProjectSection(ProjectDependencies) = postProject
+		{769E7877-C4DC-4BAE-A4C3-D5241EC1AE69} = {769E7877-C4DC-4BAE-A4C3-D5241EC1AE69}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -184,6 +192,14 @@ Global
 		{23424E71-4B7E-40D3-88EF-E46CDD0FBE36}.Release|Any CPU.Build.0 = Release|Any CPU
 		{23424E71-4B7E-40D3-88EF-E46CDD0FBE36}.Release|x86.ActiveCfg = Release|Any CPU
 		{23424E71-4B7E-40D3-88EF-E46CDD0FBE36}.Release|x86.Build.0 = Release|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Debug|x86.Build.0 = Debug|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Release|x86.ActiveCfg = Release|Any CPU
+		{9E93552A-114A-4213-8AED-B5D1A8F92D71}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

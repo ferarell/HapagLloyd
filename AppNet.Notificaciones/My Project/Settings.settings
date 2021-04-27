@@ -9,7 +9,7 @@
       <Value Profile="(Default)">dbNotifications.accdb</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">VS2010</Value>
+      <Value Profile="(Default)">Visual Studio 2013 Blue</Value>
     </Setting>
     <Setting Name="PaintStyle" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -22,6 +22,18 @@
     </Setting>
     <Setting Name="TimeBetweenMails" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="MailFrom" Type="System.String" Scope="User">
+      <Value Profile="(Default)">chile@service.hlag.com</Value>
+    </Setting>
+    <Setting Name="DaysBeforeArrival" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
+    </Setting>
+    <Setting Name="DateFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">dd-MM-yyyy</Value>
+    </Setting>
+    <Setting Name="SendMailBehalf" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

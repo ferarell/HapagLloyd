@@ -20,6 +20,10 @@ Public Class PreferencesForm
             My.Settings.EmailQuantityBySend = seEQuantity.Text
             My.Settings.TimeBetweenMails = seWaitTime.Text
             My.Settings.Country = lueCountry.EditValue
+            My.Settings.SendMailBehalf = tsSendMailBehalf.EditValue
+            My.Settings.MailFrom = teMailFrom.Text
+            My.Settings.DaysBeforeArrival = seDaysBeforeArrival.EditValue
+            My.Settings.DateFormat = teDateFormat.Text
             My.Settings.Save()
             NotificationsWcfForm.bsiCountry.Caption = "Country: " & My.Settings.Country
         Catch ex As Exception
@@ -34,6 +38,10 @@ Public Class PreferencesForm
         Me.Icon = My.Application.ApplicationContext.MainForm.Icon
         seEQuantity.Text = My.Settings.EmailQuantityBySend
         seWaitTime.Text = My.Settings.TimeBetweenMails
+        tsSendMailBehalf.EditValue = My.Settings.SendMailBehalf
+        teMailFrom.EditValue = My.Settings.MailFrom
+        seDaysBeforeArrival.EditValue = My.Settings.DaysBeforeArrival
+        teDateFormat.EditValue = My.Settings.DateFormat
         For Each cnt In DevExpress.Skins.SkinManager.Default.Skins
             lbcEstilos.Items.Add(cnt.SkinName)
         Next

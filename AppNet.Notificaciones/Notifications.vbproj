@@ -29,7 +29,7 @@
     <PublisherName>Hapag Lloyd Perú</PublisherName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -289,8 +289,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Outlook.ico" />
-    <None Include="Notifications_TemporaryKey.pfx" />
     <None Include="Service References\AppService\HapagLloydService1.disco" />
+    <None Include="Notifications_TemporaryKey.pfx" />
     <None Include="Service References\AppService\HapagLloydService1.wsdl" />
     <None Include="Service References\AppService\HapagLloydService5.xsd">
       <SubType>Designer</SubType>

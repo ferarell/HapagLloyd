@@ -77,10 +77,12 @@ Public Class HapagLloydService
                 With Command.Parameters
                     .Clear()
                     .AddWithValue("@TableVar", dtSource)
-                    If Params.Count > 0 Then
-                        For p = 0 To Params.Count - 1
-                            .AddWithValue(Params.Item(p), Values.Item(p))
-                        Next
+                    If Params IsNot Nothing Then
+                        If Params.Count > 0 Then
+                            For p = 0 To Params.Count - 1
+                                .AddWithValue(Params.Item(p), Values.Item(p))
+                            Next
+                        End If
                     End If
                 End With
                 Command.CommandTimeout = 60000

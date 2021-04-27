@@ -99,6 +99,13 @@ Namespace AppService
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadingsResponse")>  _
         Function InsertColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean)
         
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecution", ReplyAction:="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecutionResponse"),  _
+         System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
+        Function CustomStoredProcedureExecution(ByVal StoreProcedure As String, ByVal ValueList() As Object, ByVal dtSource As System.Data.DataTable) As Object()
+        
+        <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecution", ReplyAction:="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecutionResponse")>  _
+        Function CustomStoredProcedureExecutionAsync(ByVal StoreProcedure As String, ByVal ValueList() As Object, ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object())
+        
         <System.ServiceModel.OperationContractAttribute(Action:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings", ReplyAction:="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadingsResponse"),  _
          System.ServiceModel.ServiceKnownTypeAttribute(GetType(Object()))>  _
         Function DeleteColdTreatmentReadings(ByVal aSource() As Object) As Boolean
@@ -250,6 +257,14 @@ Namespace AppService
         
         Public Function InsertColdTreatmentReadingsAsync(ByVal aSource() As Object) As System.Threading.Tasks.Task(Of Boolean) Implements AppService.IHapagLloydService.InsertColdTreatmentReadingsAsync
             Return MyBase.Channel.InsertColdTreatmentReadingsAsync(aSource)
+        End Function
+        
+        Public Function CustomStoredProcedureExecution(ByVal StoreProcedure As String, ByVal ValueList() As Object, ByVal dtSource As System.Data.DataTable) As Object() Implements AppService.IHapagLloydService.CustomStoredProcedureExecution
+            Return MyBase.Channel.CustomStoredProcedureExecution(StoreProcedure, ValueList, dtSource)
+        End Function
+        
+        Public Function CustomStoredProcedureExecutionAsync(ByVal StoreProcedure As String, ByVal ValueList() As Object, ByVal dtSource As System.Data.DataTable) As System.Threading.Tasks.Task(Of Object()) Implements AppService.IHapagLloydService.CustomStoredProcedureExecutionAsync
+            Return MyBase.Channel.CustomStoredProcedureExecutionAsync(StoreProcedure, ValueList, dtSource)
         End Function
         
         Public Function DeleteColdTreatmentReadings(ByVal aSource() As Object) As Boolean Implements AppService.IHapagLloydService.DeleteColdTreatmentReadings

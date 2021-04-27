@@ -22,13 +22,13 @@
     <MetadataSource Address="http://200.1.129.73:2455/Services/HapagLloydService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="HapagLloydService5.xsd" MetadataType="Schema" ID="3c029551-859a-4a0f-85cc-492ff36c1e2d" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd1" />
-    <MetadataFile FileName="HapagLloydService51.xsd" MetadataType="Schema" ID="3fb0205b-41e1-4b9b-8c98-655a0b319813" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd0" />
-    <MetadataFile FileName="HapagLloydService52.xsd" MetadataType="Schema" ID="40de0190-ffac-426f-b666-758f85c7f6ca" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd2" />
-    <MetadataFile FileName="HapagLloydService53.xsd" MetadataType="Schema" ID="64806801-818c-4b17-82e2-cd2e91f204ad" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd4" />
-    <MetadataFile FileName="HapagLloydService1.disco" MetadataType="Disco" ID="0a103917-0bb8-48d2-ab53-40d511c435b3" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?disco" />
-    <MetadataFile FileName="HapagLloydService54.xsd" MetadataType="Schema" ID="ff37155c-2241-4f6b-90b2-b051f09b7bb1" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd3" />
-    <MetadataFile FileName="HapagLloydService1.wsdl" MetadataType="Wsdl" ID="827d41d1-0c3e-4a4d-a95e-cc20fac01e21" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?wsdl" />
+    <MetadataFile FileName="HapagLloydService5.xsd" MetadataType="Schema" ID="b318af23-b96e-4111-8300-da407d9ff4ea" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HapagLloydService51.xsd" MetadataType="Schema" ID="c0eddbd0-1c79-49a9-af6a-ee12a7b45983" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HapagLloydService52.xsd" MetadataType="Schema" ID="975fe281-29f8-4506-b541-6fe81e319e95" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HapagLloydService53.xsd" MetadataType="Schema" ID="fc53279d-0df1-44fd-9354-c973cbb85615" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd4" />
+    <MetadataFile FileName="HapagLloydService1.disco" MetadataType="Disco" ID="3577eb77-9fd9-44a9-802a-8de72b4c8f15" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?disco" />
+    <MetadataFile FileName="HapagLloydService54.xsd" MetadataType="Schema" ID="3512d401-48ba-4f23-afb4-aa9f7bd87687" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?xsd=xsd3" />
+    <MetadataFile FileName="HapagLloydService1.wsdl" MetadataType="Wsdl" ID="6a65eaaa-7ea3-49ca-94eb-385e7bd8411c" SourceId="1" SourceUrl="http://200.1.129.73:2455/Services/HapagLloydService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

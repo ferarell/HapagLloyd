@@ -10,6 +10,7 @@ Imports System.Runtime.InteropServices
 Imports DevExpress.XtraGrid.Views.Grid
 
 Module SharedObjects
+    Friend AppUser As String = ""
     Friend DBFileName As String = ""
     Friend MDBFileName As String = ""
     Friend SkinName As String
@@ -435,7 +436,7 @@ Module SharedObjects
         End If
     End Sub
 
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Public Function Contains(ByVal str As String, ByVal ParamArray values As String()) As Boolean
         For Each value In values
             If str.Contains(value) Then
