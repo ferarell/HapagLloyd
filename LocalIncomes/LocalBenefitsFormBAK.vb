@@ -5,12 +5,10 @@ Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Imports DevExpress.XtraRichEdit
 Imports DevExpress.XtraSplashScreen
 
-Public Class LocalBenefitsForm
+Public Class LocalBenefitsFormBAK
     Dim oSharePointTransactions As New SharePointListTransactions
     Dim oAppService As New AppService.HapagLloydServiceClient
-    Dim dtLocBenHeader, dtLocBenConcept, dtLocBenCommodity, dtLocBenEqpType As New DataTable
-    Dim dtConceptList, dtCurrencyList, dtCommodityList, dtContainerTypeList As New DataTable
-    Dim dtUserRoleList, dtLocBenHblRol, dtLocBenMblRol As New DataTable
+    Dim dtLocBenHeader, dtLocBenConcept, dtLocBenCommodity, dtLocBenEqpType, dtConceptList, dtCurrencyList, dtCommodityList, dtContainerTypeList, dtUserRoleList As New DataTable
     Dim oDataAcces As New DataAccess
     Dim IsSaveByCloning As Boolean = False
 
@@ -23,8 +21,7 @@ Public Class LocalBenefitsForm
         oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
         GridView2.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
         GridView4.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
-        GridView6.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
-        GridView7.OptionsView.NewItemRowPosition = NewItemRowPosition.Top
+
     End Sub
 
     Private Sub LocalBenefitsForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -45,18 +42,12 @@ Public Class LocalBenefitsForm
     Private Sub LoadPartner()
         Dim dtQuery As New DataTable
         dtQuery = oAppService.ExecuteSQL("EXEC ntf.upGetAllPartnersByFilters 'C'").Tables(0)
-        RepositoryItemLookUpEdit12.DataSource = dtQuery
-        RepositoryItemLookUpEdit12.DisplayMember = "TaxNumber"
-        RepositoryItemLookUpEdit12.ValueMember = "TaxNumber"
-        RepositoryItemLookUpEdit14.DataSource = dtQuery
-        RepositoryItemLookUpEdit14.DisplayMember = "TaxNumber"
-        RepositoryItemLookUpEdit14.ValueMember = "TaxNumber"
-        'lueMblNit.Properties.DataSource = dtQuery
-        'lueMblNit.Properties.DisplayMember = "TaxNumber"
-        'lueMblNit.Properties.ValueMember = "TaxNumber"
-        'lueHblNit.Properties.DataSource = dtQuery
-        'lueHblNit.Properties.DisplayMember = "TaxNumber"
-        'lueHblNit.Properties.ValueMember = "TaxNumber"
+        lueMblNit.Properties.DataSource = dtQuery
+        lueMblNit.Properties.DisplayMember = "TaxNumber"
+        lueMblNit.Properties.ValueMember = "TaxNumber"
+        lueHblNit.Properties.DataSource = dtQuery
+        lueHblNit.Properties.DisplayMember = "TaxNumber"
+        lueHblNit.Properties.ValueMember = "TaxNumber"
     End Sub
     Private Sub LoadCountry()
         Dim dtQuery As New DataTable
@@ -206,9 +197,6 @@ Public Class LocalBenefitsForm
         'dtList = oSharePointTransactions.GetItems()
         dtLocBenHeader = oDataAcces.ExecuteAccessQuery("SELECT * FROM LocalBenefits").Tables(0)
         GridControl1.DataSource = dtLocBenHeader
-        LoadLocalBenefitsConcept(teID.Text)
-        LoadLocalBenefitsHblRol(teID.Text)
-        LoadLocalBenefitsMblRol(teID.Text)
         FormatGrid(GridView1)
         SplashScreenManager.CloseForm(False)
     End Sub
@@ -318,30 +306,6 @@ Public Class LocalBenefitsForm
                 oRow("Checked") = True
             End If
         Next
-        SplashScreenManager.CloseForm(False)
-    End Sub
-
-    Private Sub LoadLocalBenefitsHblRol(IdParent As Integer)
-        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits HBL Rol")
-        If IdParent = 0 Then
-            SplashScreenManager.CloseForm(False)
-            Return
-        End If
-        dtLocBenHblRol = oDataAcces.ExecuteAccessQuery("SELECT * FROM LocalBenefitsHblRol WHERE IdParent = " & IdParent.ToString).Tables(0)
-        gcHblRol.DataSource = dtLocBenHblRol
-        SplashScreenManager.CloseForm(False)
-    End Sub
-
-    Private Sub LoadLocalBenefitsMblRol(IdParent As Integer)
-        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-        SplashScreenManager.Default.SetWaitFormDescription("Get Local Benefits MBL Rol")
-        If IdParent = 0 Then
-            SplashScreenManager.CloseForm(False)
-            Return
-        End If
-        dtLocBenMblRol = oDataAcces.ExecuteAccessQuery("SELECT * FROM LocalBenefitsMblRol WHERE IdParent = " & IdParent.ToString).Tables(0)
-        gcMblRol.DataSource = dtLocBenMblRol
         SplashScreenManager.CloseForm(False)
     End Sub
 
@@ -503,9 +467,9 @@ Public Class LocalBenefitsForm
         Dim drSource As DataRow = GridView1.GetFocusedDataRow
         Dim WarningText As New MemoEdit
         Dim bError As Boolean = False
-        'If teID.Text <> "" Then
-        '    LoadLocalBenefitsConcept(teID.Text)
-        'End If
+        If teID.Text <> "" Then
+            LoadLocalBenefitsConcept(teID.Text)
+        End If
         If GridView2.RowCount = 0 Then
             bError = True
             WarningText.EditValue = "Debe asignar al menos un concepto." & vbNewLine
@@ -705,142 +669,82 @@ Public Class LocalBenefitsForm
             DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
-        ' Save HBL Rol
-        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-        SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits HBL Rol")
-        oSharePointTransactions.SharePointList = "LocalBenefitsHblRol"
-        For r = 0 To dtLocBenHblRol.Rows.Count - 1
-            If dtLocBenHblRol.Rows(r).RowState = DataRowState.Deleted Then
-                dtLocBenHblRol.Rows(r).RejectChanges()
-                oSharePointTransactions.DeleteItem(dtLocBenHblRol.Rows(r)("ID").ToString)
-                Continue For
-            End If
-            oSharePointTransactions.ValuesList.Clear()
-            Dim drSourceHblRol As DataRow = GridView6.GetDataRow(r)
-            Try
-                oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
-                oSharePointTransactions.ValuesList.Add({"PartnerType", drSourceHblRol("PartnerType").ToString})
-                oSharePointTransactions.ValuesList.Add({"NumeroIdentificacionTributaria", drSourceHblRol("NumeroIdentificacionTributaria").ToString})
-                oSharePointTransactions.ValuesList.Add({"RazonSocial", drSourceHblRol("RazonSocial").ToString})
-
-                If dtLocBenHblRol.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
-                    oSharePointTransactions.InsertItem()
-                    'oDataAcces.InsertIntoAccess("LocalBenefitsConcept", drSourceConcept)
-                ElseIf Not dtLocBenHblRol.Rows(r).RowState = DataRowState.Unchanged Then
-                    oSharePointTransactions.UpdateItem(drSourceHblRol("ID").ToString)
-                End If
-            Catch ex As Exception
-                SplashScreenManager.CloseForm(False)
-                DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        Next
-
-        ' Save MBL Rol
-        SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-        SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits MBL Rol")
-        oSharePointTransactions.SharePointList = "LocalBenefitsMblRol"
-        For r = 0 To dtLocBenMblRol.Rows.Count - 1
-            If dtLocBenMblRol.Rows(r).RowState = DataRowState.Deleted Then
-                dtLocBenMblRol.Rows(r).RejectChanges()
-                oSharePointTransactions.DeleteItem(dtLocBenMblRol.Rows(r)("ID").ToString)
-                Continue For
-            End If
-            oSharePointTransactions.ValuesList.Clear()
-            Dim drSourceMblRol As DataRow = GridView7.GetDataRow(r)
-            Try
-                oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
-                oSharePointTransactions.ValuesList.Add({"PartnerType", drSourceMblRol("PartnerType").ToString})
-                oSharePointTransactions.ValuesList.Add({"NumeroIdentificacionTributaria", drSourceMblRol("NumeroIdentificacionTributaria").ToString})
-                oSharePointTransactions.ValuesList.Add({"RazonSocial", drSourceMblRol("RazonSocial").ToString})
-
-                If dtLocBenMblRol.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
-                    oSharePointTransactions.InsertItem()
-                    'oDataAcces.InsertIntoAccess("LocalBenefitsConcept", drSourceConcept)
-                ElseIf Not dtLocBenMblRol.Rows(r).RowState = DataRowState.Unchanged Then
-                    oSharePointTransactions.UpdateItem(drSourceMblRol("ID").ToString)
-                End If
-            Catch ex As Exception
-                SplashScreenManager.CloseForm(False)
-                DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-        Next
-
         ' Save Concepts
         'If GridView2.RowCount > 0 Then
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-            SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Concepts")
-            oSharePointTransactions.SharePointList = "LocalBenefitsConcept"
-            For r = 0 To dtLocBenConcept.Rows.Count - 1
-                If dtLocBenConcept.Rows(r).RowState = DataRowState.Deleted Then
-                    dtLocBenConcept.Rows(r).RejectChanges()
-                    oSharePointTransactions.DeleteItem(dtLocBenConcept.Rows(r)("ID").ToString)
-                    Continue For
-                End If
-                oSharePointTransactions.ValuesList.Clear()
-                Dim drSourceConcept As DataRow = GridView2.GetDataRow(r)
-                Try
-                    oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
-                    oSharePointTransactions.ValuesList.Add({"ConceptCode", GetValueByField("Concept", drSourceConcept("ConceptCode:Código Concepto"))})
-                    oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceConcept("ConceptCurrency:Código Moneda"))})
-                    oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceConcept("ConceptValue").ToString})
+        SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Concepts")
+        oSharePointTransactions.SharePointList = "LocalBenefitsConcept"
+        For r = 0 To dtLocBenConcept.Rows.Count - 1
+            If dtLocBenConcept.Rows(r).RowState = DataRowState.Deleted Then
+                dtLocBenConcept.Rows(r).RejectChanges()
+                oSharePointTransactions.DeleteItem(dtLocBenConcept.Rows(r)("ID").ToString)
+                Continue For
+            End If
+            oSharePointTransactions.ValuesList.Clear()
+            Dim drSourceConcept As DataRow = GridView2.GetDataRow(r)
+            Try
+                oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
+                oSharePointTransactions.ValuesList.Add({"ConceptCode", GetValueByField("Concept", drSourceConcept("ConceptCode:Código Concepto"))})
+                oSharePointTransactions.ValuesList.Add({"ConceptCurrency", GetValueByField("Currency", drSourceConcept("ConceptCurrency:Código Moneda"))})
+                oSharePointTransactions.ValuesList.Add({"ConceptValue", drSourceConcept("ConceptValue").ToString})
 
-                    If dtLocBenConcept.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
-                        oSharePointTransactions.InsertItem()
-                        'oDataAcces.InsertIntoAccess("LocalBenefitsConcept", drSourceConcept)
-                    ElseIf Not dtLocBenConcept.Rows(r).RowState = DataRowState.Unchanged Then
-                        oSharePointTransactions.UpdateItem(drSourceConcept("ID").ToString)
-                        'Dim sValues As String = ""
-                        'For v = 0 To oSharePointTransactions.ValuesList.Count - 1
-                        '    sValues += IIf(v = 0, "[", ",[") & oSharePointTransactions.ValuesList(v)(0) & "]='" & oSharePointTransactions.ValuesList(v)(1) & "'"
-                        'Next
-                        'oDataAcces.UpdateAccess("LocalBenefitsConcept", "ID=" & drSourceConcept("ID").ToString, sValues)
-                    End If
-                    'If oSharePointTransactions.ValuesList.Count > 0 Then
-                    '    LoadLocalBenefitsDetail()
-                    '    GridView2.MoveLast()
-                    'End If
-                Catch ex As Exception
-                    SplashScreenManager.CloseForm(False)
-                    DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            Next
+                If dtLocBenConcept.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
+                    oSharePointTransactions.InsertItem()
+                    'oDataAcces.InsertIntoAccess("LocalBenefitsConcept", drSourceConcept)
+                ElseIf Not dtLocBenConcept.Rows(r).RowState = DataRowState.Unchanged Then
+                    oSharePointTransactions.UpdateItem(drSourceConcept("ID").ToString)
+                    'Dim sValues As String = ""
+                    'For v = 0 To oSharePointTransactions.ValuesList.Count - 1
+                    '    sValues += IIf(v = 0, "[", ",[") & oSharePointTransactions.ValuesList(v)(0) & "]='" & oSharePointTransactions.ValuesList(v)(1) & "'"
+                    'Next
+                    'oDataAcces.UpdateAccess("LocalBenefitsConcept", "ID=" & drSourceConcept("ID").ToString, sValues)
+                End If
+                'If oSharePointTransactions.ValuesList.Count > 0 Then
+                '    LoadLocalBenefitsDetail()
+                '    GridView2.MoveLast()
+                'End If
+            Catch ex As Exception
+                SplashScreenManager.CloseForm(False)
+                DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Next
         'End If
 
         ' Save Commodities
         'If GridView4.RowCount > 0 Then
         SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
-            SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Commodities")
-            oSharePointTransactions.SharePointList = "LocalBenefitsCommodity"
-            For r = 0 To dtLocBenCommodity.Rows.Count - 1
-                If dtLocBenCommodity.Rows(r).RowState = DataRowState.Deleted Then
-                    dtLocBenCommodity.Rows(r).RejectChanges()
-                    'oSharePointTransactions.DeleteItem(dtLocBenCommodity.Rows(r)("ID").ToString)
-                    oDataAcces.DeleteAccess("LocalBenefitsCommodity", "ID=" & dtLocBenCommodity.Rows(r)("ID").ToString)
-                    Continue For
-                End If
-                oSharePointTransactions.ValuesList.Clear()
-                Dim drSourceCommodity As DataRow = GridView4.GetDataRow(r)
-                Try
-                    'drSourceCommodity("IdParent") = drSource("ID")
-                    oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
-                    oSharePointTransactions.ValuesList.Add({"CommodityCode", drSourceCommodity("CommodityCode")})
+        SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits Commodities")
+        oSharePointTransactions.SharePointList = "LocalBenefitsCommodity"
+        For r = 0 To dtLocBenCommodity.Rows.Count - 1
+            If dtLocBenCommodity.Rows(r).RowState = DataRowState.Deleted Then
+                dtLocBenCommodity.Rows(r).RejectChanges()
+                'oSharePointTransactions.DeleteItem(dtLocBenCommodity.Rows(r)("ID").ToString)
+                oDataAcces.DeleteAccess("LocalBenefitsCommodity", "ID=" & dtLocBenCommodity.Rows(r)("ID").ToString)
+                Continue For
+            End If
+            oSharePointTransactions.ValuesList.Clear()
+            Dim drSourceCommodity As DataRow = GridView4.GetDataRow(r)
+            Try
+                'drSourceCommodity("IdParent") = drSource("ID")
+                oSharePointTransactions.ValuesList.Add({"IdParent", drSource("ID").ToString})
+                oSharePointTransactions.ValuesList.Add({"CommodityCode", drSourceCommodity("CommodityCode")})
                 oSharePointTransactions.ValuesList.Add({"CommodityName", GetValueByField("CommodityName", drSourceCommodity("CommodityCode"))})
                 If dtLocBenCommodity.Rows(r).RowState = DataRowState.Added Or IsSaveByCloning Then 'IsDBNull(drSourceConcept("ID")) Then
-                        oSharePointTransactions.InsertItem()
-                        'oDataAcces.InsertIntoAccess("LocalBenefitsCommodity", drSourceCommodity)
-                    ElseIf Not dtLocBenCommodity.Rows(r).RowState = DataRowState.Unchanged Then
-                        'oSharePointTransactions.UpdateItem(drSourceCommodity("ID").ToString)
-                        Dim sValues As String = ""
-                        For v = 0 To oSharePointTransactions.ValuesList.Count - 1
-                            sValues += IIf(v = 0, "[", ",[") & oSharePointTransactions.ValuesList(v)(0) & "]='" & oSharePointTransactions.ValuesList(v)(1) & "'"
-                        Next
-                        oDataAcces.UpdateAccess("LocalBenefitsCommodity", "ID=" & drSourceCommodity("ID").ToString, sValues)
-                    End If
-                Catch ex As Exception
-                    SplashScreenManager.CloseForm(False)
-                    DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End Try
-            Next
+                    oSharePointTransactions.InsertItem()
+                    'oDataAcces.InsertIntoAccess("LocalBenefitsCommodity", drSourceCommodity)
+                ElseIf Not dtLocBenCommodity.Rows(r).RowState = DataRowState.Unchanged Then
+                    'oSharePointTransactions.UpdateItem(drSourceCommodity("ID").ToString)
+                    Dim sValues As String = ""
+                    For v = 0 To oSharePointTransactions.ValuesList.Count - 1
+                        sValues += IIf(v = 0, "[", ",[") & oSharePointTransactions.ValuesList(v)(0) & "]='" & oSharePointTransactions.ValuesList(v)(1) & "'"
+                    Next
+                    oDataAcces.UpdateAccess("LocalBenefitsCommodity", "ID=" & drSourceCommodity("ID").ToString, sValues)
+                End If
+            Catch ex As Exception
+                SplashScreenManager.CloseForm(False)
+                DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        Next
         'End If
 
         ' Save Equipment Types
@@ -995,21 +899,13 @@ Public Class LocalBenefitsForm
         End If
     End Sub
 
-    'Private Sub lueMblNit_EditValueChanged(sender As Object, e As EventArgs) Handles lueMblNit.EditValueChanged
-    '    teMblCompanyName.EditValue = lueMblNit.GetColumnValue("PartnerName")
-    'End Sub
-
-    Private Sub RepositoryItemLookUpEdit12_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit12.EditValueChanged
-        GridView6.SetFocusedRowCellValue("RazonSocial", sender.GetColumnValue("PartnerName"))
+    Private Sub lueMblNit_EditValueChanged(sender As Object, e As EventArgs) Handles lueMblNit.EditValueChanged
+        teMblCompanyName.EditValue = lueMblNit.GetColumnValue("PartnerName")
     End Sub
 
-    Private Sub RepositoryItemLookUpEdit14_EditValueChanged(sender As Object, e As EventArgs) Handles RepositoryItemLookUpEdit14.EditValueChanged
-        GridView7.SetFocusedRowCellValue("RazonSocial", sender.GetColumnValue("PartnerName"))
+    Private Sub lueHblNit_EditValueChanged(sender As Object, e As EventArgs) Handles lueHblNit.EditValueChanged
+        teHblCompanyName.EditValue = lueHblNit.GetColumnValue("PartnerName")
     End Sub
-
-    'Private Sub lueHblNit_EditValueChanged(sender As Object, e As EventArgs) Handles lueHblNit.EditValueChanged
-    '    teHblCompanyName.EditValue = lueHblNit.GetColumnValue("PartnerName")
-    'End Sub
 
     Private Sub XtraTabControl1_SelectedPageChanged(sender As Object, e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
         ShowPageDataTable()
@@ -1043,12 +939,6 @@ Public Class LocalBenefitsForm
             End If
             If XtraTabControl1.SelectedTabPage.Name = "EquipmentType" Then
                 LoadLocalBenefitsContainer(IdParent)
-            End If
-            If XtraTabControl1.SelectedTabPage.Name = "HBL_ROL" Then
-                LoadLocalBenefitsHblRol(IdParent)
-            End If
-            If XtraTabControl1.SelectedTabPage.Name = "MBL_ROL" Then
-                LoadLocalBenefitsMblRol(IdParent)
             End If
         Catch ex As Exception
 
