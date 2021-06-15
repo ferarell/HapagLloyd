@@ -5,6 +5,7 @@ Imports System.Threading
 Imports DevExpress.XtraEditors
 Imports System.Threading.Tasks
 Imports System.Diagnostics
+Imports System.IO
 
 Public Class ThisAddIn
     Public Shared outlookNameSpace As Outlook.NameSpace

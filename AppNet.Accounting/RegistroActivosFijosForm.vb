@@ -30,13 +30,13 @@ Public Class RegistroActivosFijosForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
 
     Private Sub FillLedgerList()
-        lueReport.Properties.DataSource = FillDataTable("LibrosRegistrosSunat", "CodigoLibro=7")
+        lueReport.Properties.DataSource = FillDataTable("LibrosRegistrosSunat", "CodigoLibro=7", "ACC")
         lueReport.Properties.DisplayMember = "NombreLibro"
         lueReport.Properties.ValueMember = "CodigoEstructura"
     End Sub
@@ -129,7 +129,7 @@ Public Class RegistroActivosFijosForm
     Friend Sub NewRowLedger(row As DataRow)
         Dim iPosition As Integer = 0
         Dim sTipDoc As String = ""
-        For i = 0 To 14
+        For i = 0 To 16
             If IsDBNull(row(i)) Then
                 If row.Table.Columns(i).DataType Is System.Type.GetType("System.String") Then
                     row(i) = ""
@@ -149,43 +149,44 @@ Public Class RegistroActivosFijosForm
             dtResult.Rows(iPosition).Item("C3") = "M" & dtResult.Select("C2='" & dtResult.Rows(iPosition).Item("C2") & "'").Length
             dtResult.Rows(iPosition).Item("C4") = "9"
             dtResult.Rows(iPosition).Item("C5") = row(0)
-            dtResult.Rows(iPosition).Item("C6") = GetCodigoExistenciaSunat()
-            dtResult.Rows(iPosition).Item("C7") = "1"
-            dtResult.Rows(iPosition).Item("C8") = GetCuentaContable(row(17).ToString)
-            dtResult.Rows(iPosition).Item("C9") = "9"
-            dtResult.Rows(iPosition).Item("C10") = Mid(row(5).ToString, 1, 40)
-            dtResult.Rows(iPosition).Item("C11") = "-"
+            dtResult.Rows(iPosition).Item("C6") = ""
+            dtResult.Rows(iPosition).Item("C7") = GetCodigoExistenciaSunat()
+            dtResult.Rows(iPosition).Item("C8") = "1"
+            dtResult.Rows(iPosition).Item("C9") = GetCuentaContable(row(17).ToString)
+            dtResult.Rows(iPosition).Item("C10") = "9"
+            dtResult.Rows(iPosition).Item("C11") = Mid(row(5).ToString, 1, 40)
             dtResult.Rows(iPosition).Item("C12") = "-"
             dtResult.Rows(iPosition).Item("C13") = "-"
-            dtResult.Rows(iPosition).Item("C14") = Format(row(8), "0.00")
-            dtResult.Rows(iPosition).Item("C15") = Format(row(9), "0.00")
-            dtResult.Rows(iPosition).Item("C16") = "0.00"
-            dtResult.Rows(iPosition).Item("C17") = Format(row(12), "0.00")
-            dtResult.Rows(iPosition).Item("C18") = "0.00"
+            dtResult.Rows(iPosition).Item("C14") = "-"
+            dtResult.Rows(iPosition).Item("C15") = Format(row(8), "0.00")
+            dtResult.Rows(iPosition).Item("C16") = Format(row(9), "0.00")
+            dtResult.Rows(iPosition).Item("C17") = "0.00"
+            dtResult.Rows(iPosition).Item("C18") = Format(row(12), "0.00")
             dtResult.Rows(iPosition).Item("C19") = "0.00"
             dtResult.Rows(iPosition).Item("C20") = "0.00"
             dtResult.Rows(iPosition).Item("C21") = "0.00"
             dtResult.Rows(iPosition).Item("C22") = "0.00"
+            dtResult.Rows(iPosition).Item("C23") = "0.00"
             If IsDate(row(4)) Then
-                dtResult.Rows(iPosition).Item("C23") = Format(CDate(row(4)), "dd/MM/yyyy")
                 dtResult.Rows(iPosition).Item("C24") = Format(CDate(row(4)), "dd/MM/yyyy")
+                dtResult.Rows(iPosition).Item("C25") = Format(CDate(row(4)), "dd/MM/yyyy")
             End If
-            dtResult.Rows(iPosition).Item("C25") = "1"
-            dtResult.Rows(iPosition).Item("C26") = "0"
+            dtResult.Rows(iPosition).Item("C26") = "1"
+            dtResult.Rows(iPosition).Item("C27") = "0"
             If Not (IsDBNull(row(6)) Or row(6).ToString = "") Then
                 If IsNumeric(Mid(row(6), 1, 3)) Then
-                    dtResult.Rows(iPosition).Item("C27") = Format(CDec(Mid(row(6), 1, 3)), "000.00")
+                    dtResult.Rows(iPosition).Item("C28") = Format(CDec(Mid(row(6), 1, 3)), "000.00")
                 End If
             End If
-            dtResult.Rows(iPosition).Item("C28") = Format(row(15), "0.00")
-            dtResult.Rows(iPosition).Item("C29") = Format(row(14), "0.00")
-            dtResult.Rows(iPosition).Item("C30") = Format(row(13), "0.00")
-            dtResult.Rows(iPosition).Item("C31") = "0.00"
+            dtResult.Rows(iPosition).Item("C29") = Format(row(15), "0.00")
+            dtResult.Rows(iPosition).Item("C30") = Format(row(14), "0.00")
+            dtResult.Rows(iPosition).Item("C31") = Format(row(13), "0.00")
             dtResult.Rows(iPosition).Item("C32") = "0.00"
             dtResult.Rows(iPosition).Item("C33") = "0.00"
             dtResult.Rows(iPosition).Item("C34") = "0.00"
             dtResult.Rows(iPosition).Item("C35") = "0.00"
-            dtResult.Rows(iPosition).Item("C36") = "1"
+            dtResult.Rows(iPosition).Item("C36") = "0.00"
+            dtResult.Rows(iPosition).Item("C37") = "1"
             dtResult.Rows(iPosition).Item("ERR") = ""
         Catch ex As Exception
             If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Fila " & iPosition.ToString & ". " & ex.Message & ". Desea cancelar el proceso?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) = Windows.Forms.DialogResult.Yes Then

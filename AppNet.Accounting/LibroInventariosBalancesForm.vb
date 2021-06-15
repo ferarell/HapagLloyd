@@ -31,13 +31,13 @@ Public Class LibroInventariosBalancesForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
 
     Private Sub FillLedgerList()
-        lueReport.Properties.DataSource = FillDataTable("LibrosRegistrosSunatQry", "CodigoLibro=3")
+        lueReport.Properties.DataSource = FillDataTable("LibrosRegistrosSunatQry", "CodigoLibro=3", "ACC")
         lueReport.Properties.DisplayMember = "NombreLibro"
         lueReport.Properties.ValueMember = "CodigoEstructura"
     End Sub

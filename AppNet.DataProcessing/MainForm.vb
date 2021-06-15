@@ -108,4 +108,8 @@ Public Class MainForm
     Private Sub NavBarItem15_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem15.LinkClicked
         OpenForm(New CustomerDataForm)
     End Sub
+
+    Private Sub NavBarItem16_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem16.LinkClicked
+        OpenForm(New AccrualDataForm)
+    End Sub
 End Class

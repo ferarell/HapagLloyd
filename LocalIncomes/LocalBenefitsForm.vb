@@ -414,8 +414,11 @@ Public Class LocalBenefitsForm
         'If IsDBNull(GridView1.GetFocusedRowCellValue("ID")) Then
         '    Return
         'End If
+        Dim IdParent As Integer = GridView1.GetFocusedRowCellValue("ID")
         EnableButtons(GridView1)
-        'ShowDetailSelected()
+        LoadLocalBenefitsConcept(IdParent)
+        LoadLocalBenefitsMblRol(IdParent)
+        LoadLocalBenefitsHblRol(IdParent)
         ShowPageDataTable()
     End Sub
 
@@ -516,6 +519,14 @@ Public Class LocalBenefitsForm
                 WarningText.EditValue += vpInputs.GetInvalidControls(i).Tag & vbNewLine
             Next
         End If
+        'Validación MBL-Rol
+        If GridView7.RowCount > 0 Then
+            WarningText.EditValue += BlRolValidate(GridView7, "MBL-ROL")
+        End If
+        'Validación HBL-Rol
+        If GridView6.RowCount > 0 Then
+            WarningText.EditValue += BlRolValidate(GridView6, "HBL-ROL")
+        End If
         If Not IsSaveByCloning Then
             If bError Then
                 cbeStatus.EditValue = "Borrador"
@@ -533,9 +544,9 @@ Public Class LocalBenefitsForm
         'If Not IsDBNull(GridView1.GetFocusedRowCellValue("CloneFrom")) Then
         '    cbeStatus.EditValue = "Borrador"
         'End If
-        If cbeStatus.EditValue = "Ingresado" And GridView2.RowCount = 0 Then
-            LoadLocalBenefitsConcept(teID.Text)
-        End If
+        'If cbeStatus.EditValue = "Ingresado" And GridView2.RowCount = 0 Then
+        '    LoadLocalBenefitsConcept(teID.Text)
+        'End If
         Try
             SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
             SplashScreenManager.Default.SetWaitFormDescription("Save Local Benefits")
@@ -590,28 +601,28 @@ Public Class LocalBenefitsForm
             If teID.Text = "" Or drSource("Rate Agreement").ToString <> teRateAgreement.Text Then
                 oSharePointTransactions.ValuesList.Add({"RateAgreement", teRateAgreement.Text})
             End If
-            If Not cbeMblRol.EditValue Is Nothing Then
-                If teID.Text = "" Or drSource("MBL - Rol").ToString <> cbeMblRol.Text Then
-                    oSharePointTransactions.ValuesList.Add({"MBL_Rol", cbeMblRol.EditValue})
-                End If
-            End If
-            If teID.Text = "" Or drSource("MBL - RUC").ToString <> lueMblNit.Text Then
-                oSharePointTransactions.ValuesList.Add({"MBL_RUC", lueMblNit.Text})
-            End If
-            If teID.Text = "" Or drSource("MBL - Razón Social").ToString <> teMblCompanyName.Text Then
-                oSharePointTransactions.ValuesList.Add({"MBL_RazonSocial", teMblCompanyName.Text})
-            End If
-            If teID.Text = "" Or drSource("HBL - Rol").ToString <> cbeHblRol.Text Then
-                oSharePointTransactions.ValuesList.Add({"HBL_Rol", cbeHblRol.EditValue})
-            End If
-            If Not cbeHblRol.EditValue Is Nothing Then
-                If teID.Text = "" Or drSource("HBL - RUC").ToString <> lueHblNit.Text Then
-                    oSharePointTransactions.ValuesList.Add({"HBL_RUC", lueHblNit.Text})
-                End If
-            End If
-            If teID.Text = "" Or drSource("HBL - Razón Social").ToString <> teHblCompanyName.Text Then
-                oSharePointTransactions.ValuesList.Add({"HBL_RazonSocial", teHblCompanyName.Text})
-            End If
+            'If Not cbeMblRol.EditValue Is Nothing Then
+            '    If teID.Text = "" Or drSource("MBL - Rol").ToString <> cbeMblRol.Text Then
+            '        oSharePointTransactions.ValuesList.Add({"MBL_Rol", cbeMblRol.EditValue})
+            '    End If
+            'End If
+            'If teID.Text = "" Or drSource("MBL - RUC").ToString <> lueMblNit.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"MBL_RUC", lueMblNit.Text})
+            'End If
+            'If teID.Text = "" Or drSource("MBL - Razón Social").ToString <> teMblCompanyName.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"MBL_RazonSocial", teMblCompanyName.Text})
+            'End If
+            'If teID.Text = "" Or drSource("HBL - Rol").ToString <> cbeHblRol.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"HBL_Rol", cbeHblRol.EditValue})
+            'End If
+            'If Not cbeHblRol.EditValue Is Nothing Then
+            '    If teID.Text = "" Or drSource("HBL - RUC").ToString <> lueHblNit.Text Then
+            '        oSharePointTransactions.ValuesList.Add({"HBL_RUC", lueHblNit.Text})
+            '    End If
+            'End If
+            'If teID.Text = "" Or drSource("HBL - Razón Social").ToString <> teHblCompanyName.Text Then
+            '    oSharePointTransactions.ValuesList.Add({"HBL_RazonSocial", teHblCompanyName.Text})
+            'End If
             If teID.Text = "" Or drSource("BillOfLading").ToString <> meMasterBillOfLading.Text Then
                 oSharePointTransactions.ValuesList.Add({"BillOfLading", meMasterBillOfLading.Text})
             End If
@@ -900,6 +911,17 @@ Public Class LocalBenefitsForm
         bbiRefresh.PerformClick()
     End Sub
 
+    Function BlRolValidate(oGridView As GridView, tRol As String) As String
+        Dim sResult As String = ""
+        For r = 0 To oGridView.RowCount - 1
+            Dim oRow As DataRow = oGridView.GetDataRow(r)
+            If IsDBNull(oRow("NumeroIdentificacionTributaria")) Then
+                sResult += "Debe asignar la razón social asociada al tipo de rol del ID " & oRow("ID").ToString & " en la tabla " & tRol & vbNewLine
+            End If
+        Next
+        Return sResult
+    End Function
+
     Private Function GetValueByField(FieldName As String, FieldValue As String) As String
         Dim sResult As String = ""
         If FieldName = "Concept" Then
@@ -927,7 +949,22 @@ Public Class LocalBenefitsForm
     End Sub
 
     Private Sub GridView2_FocusedRowChanged(sender As Object, e As DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs) Handles GridView2.FocusedRowChanged
+        If GridView2.FocusedRowHandle < 0 Then
+            Return
+        End If
         GridView2.SetFocusedRowCellValue("IdParent", GridView1.GetFocusedRowCellValue("ID"))
+        If GridView2.GetFocusedRowCellValue("ConceptCode:Código Concepto").ToString.Contains("GATE") Then
+            If Mid(cbeLoadingType.Text, 1, 1) = "E" Then
+                If Mid(lueLoadPort.EditValue, 1, 2) <> "PE" Then
+                    DevExpress.XtraEditors.XtraMessageBox.Show("You must assign the load port. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+            If Mid(cbeLoadingType.Text, 1, 1) = "I" Then
+                If Mid(lueDischargePort.EditValue, 1, 2) <> "PE" Then
+                    DevExpress.XtraEditors.XtraMessageBox.Show("You must assign the discharge port. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub EnableButtons(oGridview As GridView)
@@ -1013,6 +1050,10 @@ Public Class LocalBenefitsForm
 
     Private Sub XtraTabControl1_SelectedPageChanged(sender As Object, e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XtraTabControl1.SelectedPageChanged
         ShowPageDataTable()
+    End Sub
+
+    Private Sub bbiHelp_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiHelp.ItemClick
+        Process.Start("https://hlag.sharepoint.com/:w:/s/ITCPer/ERZfiIqFjM9ApZuG61_4_fQBmOKFLFeXm7LIWxATRh5POA?e=kXjvvL")
     End Sub
 
     Private Sub ShowPageDataTable()

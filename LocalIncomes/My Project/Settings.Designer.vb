@@ -92,7 +92,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Office 2010 Black")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Visual Studio 2013 Blue")>  _
         Public Property LookAndFeel() As String
             Get
                 Return CType(Me("LookAndFeel"),String)

@@ -18,13 +18,13 @@ Public Class BankForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
 
     Private Sub FillAccountBank()
-        lueCuenta.Properties.DataSource = FillDataTable("AccountBank", "CompanyCode='" & lueSociedad.EditValue & "'")
+        lueCuenta.Properties.DataSource = FillDataTable("AccountBank", "CompanyCode='" & lueSociedad.EditValue & "'", "ACC")
         lueCuenta.Properties.DisplayMember = "AccountBankCode"
         lueCuenta.Properties.ValueMember = "AccountBankCode"
     End Sub

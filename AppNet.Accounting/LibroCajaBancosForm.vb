@@ -26,7 +26,7 @@ Public Class LibroCajaBancosForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
@@ -54,7 +54,7 @@ Public Class LibroCajaBancosForm
     'End Sub
 
     Private Sub LoadTypePaytDoc()
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
     End Sub
 
     Private Sub bbiCerrar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCerrar.ItemClick
@@ -683,7 +683,7 @@ Public Class LibroCajaBancosForm
     End Function
 
     Private Sub LoadCashBankAccountMapping()
-        dtAccountMapping = FillDataTable("AccountMapping", "CompanyCode='" & lueSociedad.EditValue & "' AND AccountType IN ('C','B')")
+        dtAccountMapping = FillDataTable("AccountMapping", "CompanyCode='" & lueSociedad.EditValue & "' AND AccountType IN ('C','B')", "ACC")
     End Sub
 
     Private Sub beArchivoVentas_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs) Handles beArchivoVentas.Properties.ButtonClick

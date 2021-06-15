@@ -25,27 +25,27 @@ Partial Class LocalBenefitsForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LocalBenefitsForm))
-        Dim ColumnDefinition8 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition9 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition10 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition15 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition16 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition17 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition18 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition19 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim ColumnDefinition11 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition12 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition13 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim ColumnDefinition14 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
-        Dim RowDefinition20 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition21 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition22 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition23 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition24 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition25 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition26 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition27 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
-        Dim RowDefinition28 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition1 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition2 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition3 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition1 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition2 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition3 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition4 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition5 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim ColumnDefinition4 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition5 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition6 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim ColumnDefinition7 As DevExpress.XtraLayout.ColumnDefinition = New DevExpress.XtraLayout.ColumnDefinition()
+        Dim RowDefinition6 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition7 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition8 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition9 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition10 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition11 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition12 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition13 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
+        Dim RowDefinition14 As DevExpress.XtraLayout.RowDefinition = New DevExpress.XtraLayout.RowDefinition()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.GridColumn17 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -204,16 +204,6 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem42 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem32 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem31 = New DevExpress.XtraLayout.LayoutControlItem()
-        Me.HBL_ROL = New DevExpress.XtraTab.XtraTabPage()
-        Me.gcHblRol = New DevExpress.XtraGrid.GridControl()
-        Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
-        Me.GridColumn57 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemComboBox2 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
-        Me.GridColumn60 = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
-        Me.GridColumn61 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.MBL_ROL = New DevExpress.XtraTab.XtraTabPage()
         Me.gcMblRol = New DevExpress.XtraGrid.GridControl()
         Me.GridView7 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -224,6 +214,16 @@ Partial Class LocalBenefitsForm
         Me.GridColumn65 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.RepositoryItemLookUpEdit14 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
         Me.GridColumn66 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.HBL_ROL = New DevExpress.XtraTab.XtraTabPage()
+        Me.gcHblRol = New DevExpress.XtraGrid.GridControl()
+        Me.GridView6 = New DevExpress.XtraGrid.Views.Grid.GridView()
+        Me.GridColumn57 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn58 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.GridColumn59 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemComboBox2 = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox()
+        Me.GridColumn60 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.RepositoryItemLookUpEdit12 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit()
+        Me.GridColumn61 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Concept = New DevExpress.XtraTab.XtraTabPage()
         Me.gcConcepts = New DevExpress.XtraGrid.GridControl()
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
@@ -271,6 +271,7 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem9 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.LayoutControlItem10 = New DevExpress.XtraLayout.LayoutControlItem()
         Me.vpInputs = New DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(Me.components)
+        Me.bbiHelp = New DevExpress.XtraBars.BarButtonItem()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemMemoEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -371,16 +372,16 @@ Partial Class LocalBenefitsForm
         CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.HBL_ROL.SuspendLayout()
-        CType(Me.gcHblRol, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MBL_ROL.SuspendLayout()
         CType(Me.gcMblRol, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemComboBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit14, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.HBL_ROL.SuspendLayout()
+        CType(Me.gcHblRol, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Concept.SuspendLayout()
         CType(Me.gcConcepts, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -753,8 +754,8 @@ Partial Class LocalBenefitsForm
         Me.bmActions.DockControls.Add(Me.BarDockControl3)
         Me.bmActions.DockControls.Add(Me.BarDockControl4)
         Me.bmActions.Form = Me
-        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiSincronize, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiRefresh, Me.bbiNew, Me.bbiEdit, Me.BarButtonItem2, Me.bbiSave, Me.BarEditItem1, Me.bbiSaveDraft, Me.bbiClone})
-        Me.bmActions.MaxItemId = 37
+        Me.bmActions.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.bbiSincronize, Me.bbiClose, Me.BarButtonItem1, Me.bsiVistas, Me.bbiVistaGrilla, Me.bbiTarjeta, Me.bbiContrato, Me.bbiCronograma, Me.bbiCartaNotarial, Me.bbiLetras, Me.bbiExport, Me.BarButtonItem3, Me.BarButtonItem4, Me.bbiRefresh, Me.bbiNew, Me.bbiEdit, Me.BarButtonItem2, Me.bbiSave, Me.BarEditItem1, Me.bbiSaveDraft, Me.bbiClone, Me.bbiHelp})
+        Me.bmActions.MaxItemId = 38
         Me.bmActions.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.rpiProceso, Me.RepositoryItemLookUpEdit1, Me.RepositoryItemImageComboBox1, Me.RepositoryItemRadioGroup1, Me.RepositoryItemComboBox1, Me.RepositoryItemToggleSwitch1, Me.RepositoryItemToggleSwitch2})
         '
         'bar5
@@ -777,7 +778,7 @@ Partial Class LocalBenefitsForm
         Me.brBarraAcciones.DockRow = 0
         Me.brBarraAcciones.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
         Me.brBarraAcciones.FloatLocation = New System.Drawing.Point(279, 188)
-        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSincronize, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiNew, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSave, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiRefresh, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSaveDraft, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClone, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.BarEditItem1)})
+        Me.brBarraAcciones.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSincronize, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiNew, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiEdit, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSave, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiRefresh, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.bbiExport, True), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiSaveDraft, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClone, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiClose, "", True, True, True, 0, Nothing, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.bbiHelp, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)})
         Me.brBarraAcciones.OptionsBar.AllowQuickCustomization = False
         Me.brBarraAcciones.OptionsBar.UseWholeRow = True
         Me.brBarraAcciones.Text = "Custom 5"
@@ -1051,7 +1052,7 @@ Partial Class LocalBenefitsForm
         Me.XtraTabControl1.SelectedTabPage = Me.General
         Me.XtraTabControl1.Size = New System.Drawing.Size(1039, 227)
         Me.XtraTabControl1.TabIndex = 1
-        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.General, Me.Detail, Me.HBL_ROL, Me.MBL_ROL, Me.Concept, Me.Depot, Me.Commodity, Me.EquipmentType})
+        Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.General, Me.Detail, Me.MBL_ROL, Me.HBL_ROL, Me.Concept, Me.Depot, Me.Commodity, Me.EquipmentType})
         '
         'General
         '
@@ -1245,24 +1246,24 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem30, Me.LayoutControlItem2, Me.LayoutControlItem1, Me.LayoutControlItem12, Me.LayoutControlItem43, Me.LayoutControlItem11, Me.LayoutControlItem5, Me.LayoutControlItem8, Me.LayoutControlItem7, Me.LayoutControlItem6, Me.LayoutControlItem3, Me.LayoutControlItem4})
         Me.LayoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.LayoutControlGroup1.Name = "Root"
-        ColumnDefinition8.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition8.Width = 33.333333333333336R
-        ColumnDefinition9.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition9.Width = 33.333333333333336R
-        ColumnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition10.Width = 33.333333333333336R
-        Me.LayoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition8, ColumnDefinition9, ColumnDefinition10})
-        RowDefinition15.Height = 33.0R
-        RowDefinition15.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition16.Height = 33.0R
-        RowDefinition16.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition17.Height = 33.0R
-        RowDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition18.Height = 33.0R
-        RowDefinition18.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition19.Height = 33.0R
-        RowDefinition19.SizeType = System.Windows.Forms.SizeType.Absolute
-        Me.LayoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition15, RowDefinition16, RowDefinition17, RowDefinition18, RowDefinition19})
+        ColumnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition1.Width = 33.333333333333336R
+        ColumnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition2.Width = 33.333333333333336R
+        ColumnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition3.Width = 33.333333333333336R
+        Me.LayoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition1, ColumnDefinition2, ColumnDefinition3})
+        RowDefinition1.Height = 33.0R
+        RowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition2.Height = 33.0R
+        RowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition3.Height = 33.0R
+        RowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition4.Height = 33.0R
+        RowDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition5.Height = 33.0R
+        RowDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute
+        Me.LayoutControlGroup1.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition1, RowDefinition2, RowDefinition3, RowDefinition4, RowDefinition5})
         Me.LayoutControlGroup1.Size = New System.Drawing.Size(1033, 199)
         Me.LayoutControlGroup1.TextVisible = False
         '
@@ -1455,51 +1456,51 @@ Partial Class LocalBenefitsForm
         '
         'lueUserAuthorization
         '
-        Me.lueUserAuthorization.Location = New System.Drawing.Point(611, 125)
+        Me.lueUserAuthorization.Location = New System.Drawing.Point(619, 125)
         Me.lueUserAuthorization.Name = "lueUserAuthorization"
         Me.lueUserAuthorization.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueUserAuthorization.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserName", "Usuario"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("UserMail", "Mail", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueUserAuthorization.Properties.NullText = ""
-        Me.lueUserAuthorization.Size = New System.Drawing.Size(141, 20)
+        Me.lueUserAuthorization.Size = New System.Drawing.Size(145, 20)
         Me.lueUserAuthorization.StyleController = Me.lcConcessionDetail
         Me.lueUserAuthorization.TabIndex = 20
         Me.lueUserAuthorization.Tag = "Usuario Autorizador:Usuario"
         '
         'lueFinalPort
         '
-        Me.lueFinalPort.Location = New System.Drawing.Point(860, 95)
+        Me.lueFinalPort.Location = New System.Drawing.Point(872, 95)
         Me.lueFinalPort.Name = "lueFinalPort"
         Me.lueFinalPort.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueFinalPort.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueFinalPort.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueFinalPort.Properties.NullText = ""
-        Me.lueFinalPort.Size = New System.Drawing.Size(141, 20)
+        Me.lueFinalPort.Size = New System.Drawing.Size(146, 20)
         Me.lueFinalPort.StyleController = Me.lcConcessionDetail
         Me.lueFinalPort.TabIndex = 16
         Me.lueFinalPort.Tag = "PuertoFinal:PortCode"
         '
         'lueFinalCountry
         '
-        Me.lueFinalCountry.Location = New System.Drawing.Point(611, 95)
+        Me.lueFinalCountry.Location = New System.Drawing.Point(619, 95)
         Me.lueFinalCountry.Name = "lueFinalCountry"
         Me.lueFinalCountry.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueFinalCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueFinalCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueFinalCountry.Properties.NullText = ""
-        Me.lueFinalCountry.Size = New System.Drawing.Size(141, 20)
+        Me.lueFinalCountry.Size = New System.Drawing.Size(145, 20)
         Me.lueFinalCountry.StyleController = Me.lcConcessionDetail
         Me.lueFinalCountry.TabIndex = 15
         Me.lueFinalCountry.Tag = "PaisFinal"
         '
         'lueDischargePort
         '
-        Me.lueDischargePort.Location = New System.Drawing.Point(362, 95)
+        Me.lueDischargePort.Location = New System.Drawing.Point(366, 95)
         Me.lueDischargePort.Name = "lueDischargePort"
         Me.lueDischargePort.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueDischargePort.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueDischargePort.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueDischargePort.Properties.NullText = ""
-        Me.lueDischargePort.Size = New System.Drawing.Size(141, 20)
+        Me.lueDischargePort.Size = New System.Drawing.Size(145, 20)
         Me.lueDischargePort.StyleController = Me.lcConcessionDetail
         Me.lueDischargePort.TabIndex = 14
         Me.lueDischargePort.Tag = "PuertoDescarga:PortCode"
@@ -1512,46 +1513,46 @@ Partial Class LocalBenefitsForm
         Me.lueDischargeCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueDischargeCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueDischargeCountry.Properties.NullText = ""
-        Me.lueDischargeCountry.Size = New System.Drawing.Size(141, 20)
+        Me.lueDischargeCountry.Size = New System.Drawing.Size(145, 20)
         Me.lueDischargeCountry.StyleController = Me.lcConcessionDetail
         Me.lueDischargeCountry.TabIndex = 13
         Me.lueDischargeCountry.Tag = "PaisDescarga"
         '
         'lueLoadPort
         '
-        Me.lueLoadPort.Location = New System.Drawing.Point(860, 65)
+        Me.lueLoadPort.Location = New System.Drawing.Point(872, 65)
         Me.lueLoadPort.Name = "lueLoadPort"
         Me.lueLoadPort.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueLoadPort.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLoadPort.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueLoadPort.Properties.NullText = ""
-        Me.lueLoadPort.Size = New System.Drawing.Size(141, 20)
+        Me.lueLoadPort.Size = New System.Drawing.Size(146, 20)
         Me.lueLoadPort.StyleController = Me.lcConcessionDetail
         Me.lueLoadPort.TabIndex = 12
         Me.lueLoadPort.Tag = "PuertoCarga:PortCode"
         '
         'lueLoadCountry
         '
-        Me.lueLoadCountry.Location = New System.Drawing.Point(611, 65)
+        Me.lueLoadCountry.Location = New System.Drawing.Point(619, 65)
         Me.lueLoadCountry.Name = "lueLoadCountry"
         Me.lueLoadCountry.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueLoadCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueLoadCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueLoadCountry.Properties.NullText = ""
-        Me.lueLoadCountry.Size = New System.Drawing.Size(141, 20)
+        Me.lueLoadCountry.Size = New System.Drawing.Size(145, 20)
         Me.lueLoadCountry.StyleController = Me.lcConcessionDetail
         Me.lueLoadCountry.TabIndex = 11
         Me.lueLoadCountry.Tag = "PaisCarga"
         '
         'lueOriginPort
         '
-        Me.lueOriginPort.Location = New System.Drawing.Point(362, 65)
+        Me.lueOriginPort.Location = New System.Drawing.Point(366, 65)
         Me.lueOriginPort.Name = "lueOriginPort"
         Me.lueOriginPort.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
         Me.lueOriginPort.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueOriginPort.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PortName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueOriginPort.Properties.NullText = ""
-        Me.lueOriginPort.Size = New System.Drawing.Size(141, 20)
+        Me.lueOriginPort.Size = New System.Drawing.Size(145, 20)
         Me.lueOriginPort.StyleController = Me.lcConcessionDetail
         Me.lueOriginPort.TabIndex = 10
         Me.lueOriginPort.Tag = "PuertoOrigen:PortCode"
@@ -1598,7 +1599,7 @@ Partial Class LocalBenefitsForm
         Me.lueOriginCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueOriginCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Código"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryName", "Descripción"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ID", "ID", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default])})
         Me.lueOriginCountry.Properties.NullText = ""
-        Me.lueOriginCountry.Size = New System.Drawing.Size(141, 20)
+        Me.lueOriginCountry.Size = New System.Drawing.Size(145, 20)
         Me.lueOriginCountry.StyleController = Me.lcConcessionDetail
         Me.lueOriginCountry.TabIndex = 9
         Me.lueOriginCountry.Tag = "PaisOrigen"
@@ -1632,7 +1633,7 @@ Partial Class LocalBenefitsForm
         Me.cbeStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cbeStatus.Properties.Items.AddRange(New Object() {"Ingresado", "Rechazado", "Autorizado", "Borrador"})
         Me.cbeStatus.Properties.ReadOnly = True
-        Me.cbeStatus.Size = New System.Drawing.Size(141, 20)
+        Me.cbeStatus.Size = New System.Drawing.Size(145, 20)
         Me.cbeStatus.StyleController = Me.lcConcessionDetail
         Me.cbeStatus.TabIndex = 22
         Me.cbeStatus.Tag = "Estado"
@@ -1641,16 +1642,16 @@ Partial Class LocalBenefitsForm
         '
         Me.teVolumen.Location = New System.Drawing.Point(113, 125)
         Me.teVolumen.Name = "teVolumen"
-        Me.teVolumen.Size = New System.Drawing.Size(141, 20)
+        Me.teVolumen.Size = New System.Drawing.Size(145, 20)
         Me.teVolumen.StyleController = Me.lcConcessionDetail
         Me.teVolumen.TabIndex = 18
         Me.teVolumen.Tag = "Volumen"
         '
         'teProfit
         '
-        Me.teProfit.Location = New System.Drawing.Point(362, 125)
+        Me.teProfit.Location = New System.Drawing.Point(366, 125)
         Me.teProfit.Name = "teProfit"
-        Me.teProfit.Size = New System.Drawing.Size(141, 20)
+        Me.teProfit.Size = New System.Drawing.Size(145, 20)
         Me.teProfit.StyleController = Me.lcConcessionDetail
         Me.teProfit.TabIndex = 19
         Me.teProfit.Tag = "Profit"
@@ -1667,9 +1668,9 @@ Partial Class LocalBenefitsForm
         '
         'teConcessionNumber
         '
-        Me.teConcessionNumber.Location = New System.Drawing.Point(362, 155)
+        Me.teConcessionNumber.Location = New System.Drawing.Point(366, 155)
         Me.teConcessionNumber.Name = "teConcessionNumber"
-        Me.teConcessionNumber.Size = New System.Drawing.Size(141, 20)
+        Me.teConcessionNumber.Size = New System.Drawing.Size(145, 20)
         Me.teConcessionNumber.StyleController = Me.lcConcessionDetail
         Me.teConcessionNumber.TabIndex = 0
         Me.teConcessionNumber.Tag = "NumeroConcesion"
@@ -1687,13 +1688,13 @@ Partial Class LocalBenefitsForm
         'deAuthorizationDate
         '
         Me.deAuthorizationDate.EditValue = Nothing
-        Me.deAuthorizationDate.Location = New System.Drawing.Point(860, 125)
+        Me.deAuthorizationDate.Location = New System.Drawing.Point(872, 125)
         Me.deAuthorizationDate.MenuManager = Me.bmActions
         Me.deAuthorizationDate.Name = "deAuthorizationDate"
         Me.deAuthorizationDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deAuthorizationDate.Properties.CalendarTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.deAuthorizationDate.Properties.ReadOnly = True
-        Me.deAuthorizationDate.Size = New System.Drawing.Size(141, 20)
+        Me.deAuthorizationDate.Size = New System.Drawing.Size(146, 20)
         Me.deAuthorizationDate.StyleController = Me.lcConcessionDetail
         Me.deAuthorizationDate.TabIndex = 21
         Me.deAuthorizationDate.Tag = "FechaAutorizacion"
@@ -1702,34 +1703,34 @@ Partial Class LocalBenefitsForm
         '
         Me.teRateAgreement.Location = New System.Drawing.Point(113, 15)
         Me.teRateAgreement.Name = "teRateAgreement"
-        Me.teRateAgreement.Size = New System.Drawing.Size(141, 40)
+        Me.teRateAgreement.Size = New System.Drawing.Size(145, 40)
         Me.teRateAgreement.StyleController = Me.lcConcessionDetail
         Me.teRateAgreement.TabIndex = 6
         Me.teRateAgreement.Tag = "Rate Agreement"
         '
         'meHouseBillOfLading
         '
-        Me.meHouseBillOfLading.Location = New System.Drawing.Point(860, 15)
+        Me.meHouseBillOfLading.Location = New System.Drawing.Point(872, 15)
         Me.meHouseBillOfLading.Name = "meHouseBillOfLading"
-        Me.meHouseBillOfLading.Size = New System.Drawing.Size(141, 40)
+        Me.meHouseBillOfLading.Size = New System.Drawing.Size(146, 40)
         Me.meHouseBillOfLading.StyleController = Me.lcConcessionDetail
         Me.meHouseBillOfLading.TabIndex = 7
         Me.meHouseBillOfLading.Tag = "HouseBillOfLading"
         '
         'meMasterBillOfLading
         '
-        Me.meMasterBillOfLading.Location = New System.Drawing.Point(611, 15)
+        Me.meMasterBillOfLading.Location = New System.Drawing.Point(619, 15)
         Me.meMasterBillOfLading.Name = "meMasterBillOfLading"
-        Me.meMasterBillOfLading.Size = New System.Drawing.Size(141, 40)
+        Me.meMasterBillOfLading.Size = New System.Drawing.Size(145, 40)
         Me.meMasterBillOfLading.StyleController = Me.lcConcessionDetail
         Me.meMasterBillOfLading.TabIndex = 7
         Me.meMasterBillOfLading.Tag = "BillOfLading"
         '
         'teBooking
         '
-        Me.teBooking.Location = New System.Drawing.Point(362, 15)
+        Me.teBooking.Location = New System.Drawing.Point(366, 15)
         Me.teBooking.Name = "teBooking"
-        Me.teBooking.Size = New System.Drawing.Size(141, 40)
+        Me.teBooking.Size = New System.Drawing.Size(145, 40)
         Me.teBooking.StyleController = Me.lcConcessionDetail
         Me.teBooking.TabIndex = 8
         Me.teBooking.Tag = "Booking"
@@ -1817,35 +1818,35 @@ Partial Class LocalBenefitsForm
         Me.Root.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem22, Me.LayoutControlItem23, Me.LayoutControlItem13, Me.LayoutControlItem21, Me.LayoutControlItem20, Me.LayoutControlItem33, Me.LayoutControlItem24, Me.LayoutControlItem25, Me.LayoutControlItem26, Me.LayoutControlItem27, Me.LayoutControlItem28, Me.LayoutControlItem29, Me.LayoutControlItem38, Me.LayoutControlItem35, Me.LayoutControlItem41, Me.LayoutControlItem42, Me.LayoutControlItem32, Me.LayoutControlItem31})
         Me.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table
         Me.Root.Name = "Root"
-        ColumnDefinition11.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition11.Width = 25.0R
-        ColumnDefinition12.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition12.Width = 25.0R
-        ColumnDefinition13.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition13.Width = 25.0R
-        ColumnDefinition14.SizeType = System.Windows.Forms.SizeType.Percent
-        ColumnDefinition14.Width = 25.0R
-        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition11, ColumnDefinition12, ColumnDefinition13, ColumnDefinition14})
-        RowDefinition20.Height = 50.0R
-        RowDefinition20.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition21.Height = 30.0R
-        RowDefinition21.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition22.Height = 30.0R
-        RowDefinition22.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition23.Height = 30.0R
-        RowDefinition23.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition24.Height = 30.0R
-        RowDefinition24.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition25.Height = 30.0R
-        RowDefinition25.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition26.Height = 30.0R
-        RowDefinition26.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition27.Height = 30.0R
-        RowDefinition27.SizeType = System.Windows.Forms.SizeType.Absolute
-        RowDefinition28.Height = 20.0R
-        RowDefinition28.SizeType = System.Windows.Forms.SizeType.AutoSize
-        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition20, RowDefinition21, RowDefinition22, RowDefinition23, RowDefinition24, RowDefinition25, RowDefinition26, RowDefinition27, RowDefinition28})
-        Me.Root.Size = New System.Drawing.Size(1016, 300)
+        ColumnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition4.Width = 25.0R
+        ColumnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition5.Width = 25.0R
+        ColumnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition6.Width = 25.0R
+        ColumnDefinition7.SizeType = System.Windows.Forms.SizeType.Percent
+        ColumnDefinition7.Width = 25.0R
+        Me.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(New DevExpress.XtraLayout.ColumnDefinition() {ColumnDefinition4, ColumnDefinition5, ColumnDefinition6, ColumnDefinition7})
+        RowDefinition6.Height = 50.0R
+        RowDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition7.Height = 30.0R
+        RowDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition8.Height = 30.0R
+        RowDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition9.Height = 30.0R
+        RowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition10.Height = 30.0R
+        RowDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition11.Height = 30.0R
+        RowDefinition11.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition12.Height = 30.0R
+        RowDefinition12.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition13.Height = 30.0R
+        RowDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute
+        RowDefinition14.Height = 20.0R
+        RowDefinition14.SizeType = System.Windows.Forms.SizeType.AutoSize
+        Me.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(New DevExpress.XtraLayout.RowDefinition() {RowDefinition6, RowDefinition7, RowDefinition8, RowDefinition9, RowDefinition10, RowDefinition11, RowDefinition12, RowDefinition13, RowDefinition14})
+        Me.Root.Size = New System.Drawing.Size(1033, 300)
         Me.Root.TextVisible = False
         '
         'LayoutControlItem22
@@ -1856,7 +1857,7 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem22.Name = "LayoutControlItem22"
         Me.LayoutControlItem22.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem22.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem22.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem22.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem22.Tag = "PaisOrigen"
         Me.LayoutControlItem22.Text = "País Origen"
         Me.LayoutControlItem22.TextSize = New System.Drawing.Size(95, 13)
@@ -1864,12 +1865,12 @@ Partial Class LocalBenefitsForm
         'LayoutControlItem23
         '
         Me.LayoutControlItem23.Control = Me.lueOriginPort
-        Me.LayoutControlItem23.Location = New System.Drawing.Point(249, 50)
+        Me.LayoutControlItem23.Location = New System.Drawing.Point(253, 50)
         Me.LayoutControlItem23.Name = "LayoutControlItem23"
         Me.LayoutControlItem23.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem23.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem23.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem23.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem23.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem23.Text = "Puerto Origen"
         Me.LayoutControlItem23.TextSize = New System.Drawing.Size(95, 13)
         '
@@ -1880,64 +1881,64 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem13.Location = New System.Drawing.Point(0, 0)
         Me.LayoutControlItem13.Name = "LayoutControlItem13"
         Me.LayoutControlItem13.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem13.Size = New System.Drawing.Size(249, 50)
+        Me.LayoutControlItem13.Size = New System.Drawing.Size(253, 50)
         Me.LayoutControlItem13.Text = "Rate Agreement"
         Me.LayoutControlItem13.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem21
         '
         Me.LayoutControlItem21.Control = Me.teBooking
-        Me.LayoutControlItem21.Location = New System.Drawing.Point(249, 0)
+        Me.LayoutControlItem21.Location = New System.Drawing.Point(253, 0)
         Me.LayoutControlItem21.Name = "LayoutControlItem21"
         Me.LayoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem21.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem21.Size = New System.Drawing.Size(249, 50)
+        Me.LayoutControlItem21.Size = New System.Drawing.Size(253, 50)
         Me.LayoutControlItem21.Text = "Booking"
         Me.LayoutControlItem21.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem20
         '
         Me.LayoutControlItem20.Control = Me.meMasterBillOfLading
-        Me.LayoutControlItem20.Location = New System.Drawing.Point(498, 0)
+        Me.LayoutControlItem20.Location = New System.Drawing.Point(506, 0)
         Me.LayoutControlItem20.Name = "LayoutControlItem20"
         Me.LayoutControlItem20.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem20.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem20.Size = New System.Drawing.Size(249, 50)
+        Me.LayoutControlItem20.Size = New System.Drawing.Size(253, 50)
         Me.LayoutControlItem20.Text = "Master Bill of Lading"
         Me.LayoutControlItem20.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem33
         '
         Me.LayoutControlItem33.Control = Me.meHouseBillOfLading
-        Me.LayoutControlItem33.Location = New System.Drawing.Point(747, 0)
+        Me.LayoutControlItem33.Location = New System.Drawing.Point(759, 0)
         Me.LayoutControlItem33.Name = "LayoutControlItem33"
         Me.LayoutControlItem33.OptionsTableLayoutItem.ColumnIndex = 3
         Me.LayoutControlItem33.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem33.Size = New System.Drawing.Size(249, 50)
+        Me.LayoutControlItem33.Size = New System.Drawing.Size(254, 50)
         Me.LayoutControlItem33.Text = "House Bill Of Lading"
         Me.LayoutControlItem33.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem24
         '
         Me.LayoutControlItem24.Control = Me.lueLoadCountry
-        Me.LayoutControlItem24.Location = New System.Drawing.Point(498, 50)
+        Me.LayoutControlItem24.Location = New System.Drawing.Point(506, 50)
         Me.LayoutControlItem24.Name = "LayoutControlItem24"
         Me.LayoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem24.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem24.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem24.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem24.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem24.Text = "País Carga"
         Me.LayoutControlItem24.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem25
         '
         Me.LayoutControlItem25.Control = Me.lueLoadPort
-        Me.LayoutControlItem25.Location = New System.Drawing.Point(747, 50)
+        Me.LayoutControlItem25.Location = New System.Drawing.Point(759, 50)
         Me.LayoutControlItem25.Name = "LayoutControlItem25"
         Me.LayoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 3
         Me.LayoutControlItem25.OptionsTableLayoutItem.RowIndex = 1
         Me.LayoutControlItem25.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem25.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem25.Size = New System.Drawing.Size(254, 30)
         Me.LayoutControlItem25.Text = "Puerto Carga"
         Me.LayoutControlItem25.TextSize = New System.Drawing.Size(95, 13)
         '
@@ -1948,43 +1949,43 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem26.Name = "LayoutControlItem26"
         Me.LayoutControlItem26.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem26.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem26.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem26.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem26.Text = "País Descarga"
         Me.LayoutControlItem26.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem27
         '
         Me.LayoutControlItem27.Control = Me.lueDischargePort
-        Me.LayoutControlItem27.Location = New System.Drawing.Point(249, 80)
+        Me.LayoutControlItem27.Location = New System.Drawing.Point(253, 80)
         Me.LayoutControlItem27.Name = "LayoutControlItem27"
         Me.LayoutControlItem27.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem27.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem27.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem27.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem27.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem27.Text = "Puerto Descarga"
         Me.LayoutControlItem27.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem28
         '
         Me.LayoutControlItem28.Control = Me.lueFinalCountry
-        Me.LayoutControlItem28.Location = New System.Drawing.Point(498, 80)
+        Me.LayoutControlItem28.Location = New System.Drawing.Point(506, 80)
         Me.LayoutControlItem28.Name = "LayoutControlItem28"
         Me.LayoutControlItem28.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem28.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem28.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem28.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem28.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem28.Text = "País Final"
         Me.LayoutControlItem28.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem29
         '
         Me.LayoutControlItem29.Control = Me.lueFinalPort
-        Me.LayoutControlItem29.Location = New System.Drawing.Point(747, 80)
+        Me.LayoutControlItem29.Location = New System.Drawing.Point(759, 80)
         Me.LayoutControlItem29.Name = "LayoutControlItem29"
         Me.LayoutControlItem29.OptionsTableLayoutItem.ColumnIndex = 3
         Me.LayoutControlItem29.OptionsTableLayoutItem.RowIndex = 2
         Me.LayoutControlItem29.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem29.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem29.Size = New System.Drawing.Size(254, 30)
         Me.LayoutControlItem29.Text = "Puerto Final"
         Me.LayoutControlItem29.TextSize = New System.Drawing.Size(95, 13)
         '
@@ -1995,43 +1996,43 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem38.Name = "LayoutControlItem38"
         Me.LayoutControlItem38.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem38.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem38.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem38.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem38.Text = "Volumen"
         Me.LayoutControlItem38.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem35
         '
         Me.LayoutControlItem35.Control = Me.teProfit
-        Me.LayoutControlItem35.Location = New System.Drawing.Point(249, 110)
+        Me.LayoutControlItem35.Location = New System.Drawing.Point(253, 110)
         Me.LayoutControlItem35.Name = "LayoutControlItem35"
         Me.LayoutControlItem35.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem35.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem35.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem35.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem35.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem35.Text = "Profit"
         Me.LayoutControlItem35.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem41
         '
         Me.LayoutControlItem41.Control = Me.lueUserAuthorization
-        Me.LayoutControlItem41.Location = New System.Drawing.Point(498, 110)
+        Me.LayoutControlItem41.Location = New System.Drawing.Point(506, 110)
         Me.LayoutControlItem41.Name = "LayoutControlItem41"
         Me.LayoutControlItem41.OptionsTableLayoutItem.ColumnIndex = 2
         Me.LayoutControlItem41.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem41.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem41.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem41.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem41.Text = "Usuario Autorizador"
         Me.LayoutControlItem41.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem42
         '
         Me.LayoutControlItem42.Control = Me.deAuthorizationDate
-        Me.LayoutControlItem42.Location = New System.Drawing.Point(747, 110)
+        Me.LayoutControlItem42.Location = New System.Drawing.Point(759, 110)
         Me.LayoutControlItem42.Name = "LayoutControlItem42"
         Me.LayoutControlItem42.OptionsTableLayoutItem.ColumnIndex = 3
         Me.LayoutControlItem42.OptionsTableLayoutItem.RowIndex = 3
         Me.LayoutControlItem42.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem42.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem42.Size = New System.Drawing.Size(254, 30)
         Me.LayoutControlItem42.Text = "Fecha Autorización"
         Me.LayoutControlItem42.TextSize = New System.Drawing.Size(95, 13)
         '
@@ -2042,119 +2043,22 @@ Partial Class LocalBenefitsForm
         Me.LayoutControlItem32.Name = "LayoutControlItem32"
         Me.LayoutControlItem32.OptionsTableLayoutItem.RowIndex = 4
         Me.LayoutControlItem32.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem32.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem32.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem32.Text = "Estado"
         Me.LayoutControlItem32.TextSize = New System.Drawing.Size(95, 13)
         '
         'LayoutControlItem31
         '
         Me.LayoutControlItem31.Control = Me.teConcessionNumber
-        Me.LayoutControlItem31.Location = New System.Drawing.Point(249, 140)
+        Me.LayoutControlItem31.Location = New System.Drawing.Point(253, 140)
         Me.LayoutControlItem31.Name = "LayoutControlItem31"
         Me.LayoutControlItem31.OptionsTableLayoutItem.ColumnIndex = 1
         Me.LayoutControlItem31.OptionsTableLayoutItem.RowIndex = 4
         Me.LayoutControlItem31.Padding = New DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5)
-        Me.LayoutControlItem31.Size = New System.Drawing.Size(249, 30)
+        Me.LayoutControlItem31.Size = New System.Drawing.Size(253, 30)
         Me.LayoutControlItem31.Text = "Número Concesión"
         Me.LayoutControlItem31.TextSize = New System.Drawing.Size(95, 13)
         Me.LayoutControlItem31.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never
-        '
-        'HBL_ROL
-        '
-        Me.HBL_ROL.Controls.Add(Me.gcHblRol)
-        Me.HBL_ROL.Name = "HBL_ROL"
-        Me.HBL_ROL.Size = New System.Drawing.Size(1033, 199)
-        Me.HBL_ROL.Text = "HBL - ROL"
-        '
-        'gcHblRol
-        '
-        Me.gcHblRol.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.gcHblRol.Location = New System.Drawing.Point(0, 0)
-        Me.gcHblRol.MainView = Me.GridView6
-        Me.gcHblRol.Name = "gcHblRol"
-        Me.gcHblRol.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit12, Me.RepositoryItemComboBox2})
-        Me.gcHblRol.Size = New System.Drawing.Size(1033, 199)
-        Me.gcHblRol.TabIndex = 2
-        Me.gcHblRol.UseEmbeddedNavigator = True
-        Me.gcHblRol.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
-        '
-        'GridView6
-        '
-        Me.GridView6.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn57, Me.GridColumn58, Me.GridColumn59, Me.GridColumn60, Me.GridColumn61})
-        Me.GridView6.GridControl = Me.gcHblRol
-        Me.GridView6.Name = "GridView6"
-        Me.GridView6.OptionsView.ColumnAutoWidth = False
-        Me.GridView6.OptionsView.ShowGroupPanel = False
-        '
-        'GridColumn57
-        '
-        Me.GridColumn57.Caption = "ID"
-        Me.GridColumn57.FieldName = "ID"
-        Me.GridColumn57.Name = "GridColumn57"
-        Me.GridColumn57.OptionsColumn.AllowFocus = False
-        Me.GridColumn57.OptionsColumn.ReadOnly = True
-        Me.GridColumn57.Visible = True
-        Me.GridColumn57.VisibleIndex = 0
-        '
-        'GridColumn58
-        '
-        Me.GridColumn58.Caption = "ID Padre"
-        Me.GridColumn58.FieldName = "IdParent"
-        Me.GridColumn58.Name = "GridColumn58"
-        Me.GridColumn58.OptionsColumn.AllowFocus = False
-        Me.GridColumn58.OptionsColumn.ReadOnly = True
-        Me.GridColumn58.Visible = True
-        Me.GridColumn58.VisibleIndex = 1
-        '
-        'GridColumn59
-        '
-        Me.GridColumn59.Caption = "Tipo Socio"
-        Me.GridColumn59.ColumnEdit = Me.RepositoryItemComboBox2
-        Me.GridColumn59.FieldName = "PartnerType"
-        Me.GridColumn59.Name = "GridColumn59"
-        Me.GridColumn59.Visible = True
-        Me.GridColumn59.VisibleIndex = 2
-        Me.GridColumn59.Width = 156
-        '
-        'RepositoryItemComboBox2
-        '
-        Me.RepositoryItemComboBox2.AutoHeight = False
-        Me.RepositoryItemComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemComboBox2.Items.AddRange(New Object() {"Embarcador", "Consignatario"})
-        Me.RepositoryItemComboBox2.Name = "RepositoryItemComboBox2"
-        '
-        'GridColumn60
-        '
-        Me.GridColumn60.Caption = "NIT"
-        Me.GridColumn60.ColumnEdit = Me.RepositoryItemLookUpEdit12
-        Me.GridColumn60.FieldName = "NumeroIdentificacionTributaria"
-        Me.GridColumn60.Name = "GridColumn60"
-        Me.GridColumn60.Visible = True
-        Me.GridColumn60.VisibleIndex = 3
-        Me.GridColumn60.Width = 168
-        '
-        'RepositoryItemLookUpEdit12
-        '
-        Me.RepositoryItemLookUpEdit12.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
-        Me.RepositoryItemLookUpEdit12.AutoHeight = False
-        Me.RepositoryItemLookUpEdit12.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
-        Me.RepositoryItemLookUpEdit12.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.RepositoryItemLookUpEdit12.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TaxNumber", "NIT"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PartnerName", "Razón Social")})
-        Me.RepositoryItemLookUpEdit12.HeaderClickMode = DevExpress.XtraEditors.Controls.HeaderClickMode.AutoSearch
-        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
-        Me.RepositoryItemLookUpEdit12.NullText = ""
-        Me.RepositoryItemLookUpEdit12.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete
-        Me.RepositoryItemLookUpEdit12.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-        '
-        'GridColumn61
-        '
-        Me.GridColumn61.Caption = "Razón Social"
-        Me.GridColumn61.FieldName = "RazonSocial"
-        Me.GridColumn61.Name = "GridColumn61"
-        Me.GridColumn61.OptionsColumn.ReadOnly = True
-        Me.GridColumn61.Visible = True
-        Me.GridColumn61.VisibleIndex = 4
-        Me.GridColumn61.Width = 534
         '
         'MBL_ROL
         '
@@ -2205,7 +2109,7 @@ Partial Class LocalBenefitsForm
         '
         'GridColumn64
         '
-        Me.GridColumn64.Caption = "Tipo Socio"
+        Me.GridColumn64.Caption = "Tipo de Rol"
         Me.GridColumn64.ColumnEdit = Me.RepositoryItemComboBox3
         Me.GridColumn64.FieldName = "PartnerType"
         Me.GridColumn64.Name = "GridColumn64"
@@ -2252,6 +2156,103 @@ Partial Class LocalBenefitsForm
         Me.GridColumn66.Visible = True
         Me.GridColumn66.VisibleIndex = 4
         Me.GridColumn66.Width = 534
+        '
+        'HBL_ROL
+        '
+        Me.HBL_ROL.Controls.Add(Me.gcHblRol)
+        Me.HBL_ROL.Name = "HBL_ROL"
+        Me.HBL_ROL.Size = New System.Drawing.Size(1033, 199)
+        Me.HBL_ROL.Text = "HBL - ROL"
+        '
+        'gcHblRol
+        '
+        Me.gcHblRol.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.gcHblRol.Location = New System.Drawing.Point(0, 0)
+        Me.gcHblRol.MainView = Me.GridView6
+        Me.gcHblRol.Name = "gcHblRol"
+        Me.gcHblRol.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit12, Me.RepositoryItemComboBox2})
+        Me.gcHblRol.Size = New System.Drawing.Size(1033, 199)
+        Me.gcHblRol.TabIndex = 2
+        Me.gcHblRol.UseEmbeddedNavigator = True
+        Me.gcHblRol.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView6})
+        '
+        'GridView6
+        '
+        Me.GridView6.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.GridColumn57, Me.GridColumn58, Me.GridColumn59, Me.GridColumn60, Me.GridColumn61})
+        Me.GridView6.GridControl = Me.gcHblRol
+        Me.GridView6.Name = "GridView6"
+        Me.GridView6.OptionsView.ColumnAutoWidth = False
+        Me.GridView6.OptionsView.ShowGroupPanel = False
+        '
+        'GridColumn57
+        '
+        Me.GridColumn57.Caption = "ID"
+        Me.GridColumn57.FieldName = "ID"
+        Me.GridColumn57.Name = "GridColumn57"
+        Me.GridColumn57.OptionsColumn.AllowFocus = False
+        Me.GridColumn57.OptionsColumn.ReadOnly = True
+        Me.GridColumn57.Visible = True
+        Me.GridColumn57.VisibleIndex = 0
+        '
+        'GridColumn58
+        '
+        Me.GridColumn58.Caption = "ID Padre"
+        Me.GridColumn58.FieldName = "IdParent"
+        Me.GridColumn58.Name = "GridColumn58"
+        Me.GridColumn58.OptionsColumn.AllowFocus = False
+        Me.GridColumn58.OptionsColumn.ReadOnly = True
+        Me.GridColumn58.Visible = True
+        Me.GridColumn58.VisibleIndex = 1
+        '
+        'GridColumn59
+        '
+        Me.GridColumn59.Caption = "Tipo de Rol"
+        Me.GridColumn59.ColumnEdit = Me.RepositoryItemComboBox2
+        Me.GridColumn59.FieldName = "PartnerType"
+        Me.GridColumn59.Name = "GridColumn59"
+        Me.GridColumn59.Visible = True
+        Me.GridColumn59.VisibleIndex = 2
+        Me.GridColumn59.Width = 156
+        '
+        'RepositoryItemComboBox2
+        '
+        Me.RepositoryItemComboBox2.AutoHeight = False
+        Me.RepositoryItemComboBox2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemComboBox2.Items.AddRange(New Object() {"Embarcador", "Consignatario"})
+        Me.RepositoryItemComboBox2.Name = "RepositoryItemComboBox2"
+        '
+        'GridColumn60
+        '
+        Me.GridColumn60.Caption = "NIT"
+        Me.GridColumn60.ColumnEdit = Me.RepositoryItemLookUpEdit12
+        Me.GridColumn60.FieldName = "NumeroIdentificacionTributaria"
+        Me.GridColumn60.Name = "GridColumn60"
+        Me.GridColumn60.Visible = True
+        Me.GridColumn60.VisibleIndex = 3
+        Me.GridColumn60.Width = 168
+        '
+        'RepositoryItemLookUpEdit12
+        '
+        Me.RepositoryItemLookUpEdit12.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
+        Me.RepositoryItemLookUpEdit12.AutoHeight = False
+        Me.RepositoryItemLookUpEdit12.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
+        Me.RepositoryItemLookUpEdit12.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit12.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("TaxNumber", "NIT"), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("PartnerName", "Razón Social")})
+        Me.RepositoryItemLookUpEdit12.HeaderClickMode = DevExpress.XtraEditors.Controls.HeaderClickMode.AutoSearch
+        Me.RepositoryItemLookUpEdit12.Name = "RepositoryItemLookUpEdit12"
+        Me.RepositoryItemLookUpEdit12.NullText = ""
+        Me.RepositoryItemLookUpEdit12.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.AutoComplete
+        Me.RepositoryItemLookUpEdit12.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
+        '
+        'GridColumn61
+        '
+        Me.GridColumn61.Caption = "Razón Social"
+        Me.GridColumn61.FieldName = "RazonSocial"
+        Me.GridColumn61.Name = "GridColumn61"
+        Me.GridColumn61.OptionsColumn.ReadOnly = True
+        Me.GridColumn61.Visible = True
+        Me.GridColumn61.VisibleIndex = 4
+        Me.GridColumn61.Width = 534
         '
         'Concept
         '
@@ -2671,6 +2672,14 @@ Partial Class LocalBenefitsForm
         '
         Me.vpInputs.ValidationMode = DevExpress.XtraEditors.DXErrorProvider.ValidationMode.Manual
         '
+        'bbiHelp
+        '
+        Me.bbiHelp.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right
+        Me.bbiHelp.Caption = "&Help"
+        Me.bbiHelp.Id = 37
+        Me.bbiHelp.ImageOptions.Image = CType(resources.GetObject("bbiHelp.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiHelp.Name = "bbiHelp"
+        '
         'LocalBenefitsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2783,16 +2792,16 @@ Partial Class LocalBenefitsForm
         CType(Me.LayoutControlItem42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem32, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayoutControlItem31, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.HBL_ROL.ResumeLayout(False)
-        CType(Me.gcHblRol, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MBL_ROL.ResumeLayout(False)
         CType(Me.gcMblRol, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemComboBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit14, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.HBL_ROL.ResumeLayout(False)
+        CType(Me.gcHblRol, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemComboBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Concept.ResumeLayout(False)
         CType(Me.gcConcepts, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3048,4 +3057,5 @@ Partial Class LocalBenefitsForm
     Friend WithEvents GridColumn66 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemComboBox2 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents RepositoryItemComboBox3 As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
+    Friend WithEvents bbiHelp As DevExpress.XtraBars.BarButtonItem
 End Class

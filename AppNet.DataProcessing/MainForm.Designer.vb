@@ -19,6 +19,7 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.nbcMainMenu = New DevExpress.XtraNavBar.NavBarControl()
         Me.NavBarGroup3 = New DevExpress.XtraNavBar.NavBarGroup()
@@ -27,6 +28,8 @@ Partial Class MainForm
         Me.NavBarGroup2 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem1 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem14 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem15 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem16 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarGroup5 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem13 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem12 = New DevExpress.XtraNavBar.NavBarItem()
@@ -43,9 +46,9 @@ Partial Class MainForm
         Me.NavBarItem17 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem18 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem19 = New DevExpress.XtraNavBar.NavBarItem()
-        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager()
+        Me.XtraTabbedMdiManager1 = New DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(Me.components)
         Me.Bar3 = New DevExpress.XtraBars.Bar()
-        Me.BarManager1 = New DevExpress.XtraBars.BarManager()
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
         Me.Bar1 = New DevExpress.XtraBars.Bar()
         Me.bbiUserApp = New DevExpress.XtraBars.BarButtonItem()
         Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl()
@@ -53,7 +56,6 @@ Partial Class MainForm
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl()
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl()
         Me.RepositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
-        Me.NavBarItem15 = New DevExpress.XtraNavBar.NavBarItem()
         CType(Me.nbcMainMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabbedMdiManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +67,7 @@ Partial Class MainForm
         Me.nbcMainMenu.ActiveGroup = Me.NavBarGroup3
         Me.nbcMainMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.nbcMainMenu.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup2, Me.NavBarGroup3, Me.NavBarGroup5})
-        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19, Me.NavBarItem20, Me.NavBarItem21, Me.NavBarItem1, Me.NavBarItem14, Me.NavBarItem15})
+        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarItem11, Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem17, Me.NavBarItem18, Me.NavBarItem19, Me.NavBarItem20, Me.NavBarItem21, Me.NavBarItem1, Me.NavBarItem14, Me.NavBarItem15, Me.NavBarItem16})
         Me.nbcMainMenu.Location = New System.Drawing.Point(0, 0)
         Me.nbcMainMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.nbcMainMenu.Name = "nbcMainMenu"
@@ -96,7 +98,7 @@ Partial Class MainForm
         '
         Me.NavBarGroup2.Caption = "Data Processing"
         Me.NavBarGroup2.Expanded = True
-        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem14), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15)})
+        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem1), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem14), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem16)})
         Me.NavBarGroup2.Name = "NavBarGroup2"
         '
         'NavBarItem1
@@ -108,6 +110,16 @@ Partial Class MainForm
         '
         Me.NavBarItem14.Caption = "Purchase Order Control"
         Me.NavBarItem14.Name = "NavBarItem14"
+        '
+        'NavBarItem15
+        '
+        Me.NavBarItem15.Caption = "Customer Data"
+        Me.NavBarItem15.Name = "NavBarItem15"
+        '
+        'NavBarItem16
+        '
+        Me.NavBarItem16.Caption = "Accrual Data"
+        Me.NavBarItem16.Name = "NavBarItem16"
         '
         'NavBarGroup5
         '
@@ -237,9 +249,9 @@ Partial Class MainForm
         'bbiUserApp
         '
         Me.bbiUserApp.Caption = "UserApp"
-        Me.bbiUserApp.Glyph = CType(resources.GetObject("bbiUserApp.Glyph"), System.Drawing.Image)
         Me.bbiUserApp.Id = 3
-        Me.bbiUserApp.LargeGlyph = CType(resources.GetObject("bbiUserApp.LargeGlyph"), System.Drawing.Image)
+        Me.bbiUserApp.ImageOptions.Image = CType(resources.GetObject("bbiUserApp.ImageOptions.Image"), System.Drawing.Image)
+        Me.bbiUserApp.ImageOptions.LargeImage = CType(resources.GetObject("bbiUserApp.ImageOptions.LargeImage"), System.Drawing.Image)
         Me.bbiUserApp.Name = "bbiUserApp"
         '
         'barDockControlTop
@@ -247,6 +259,7 @@ Partial Class MainForm
         Me.barDockControlTop.CausesValidation = False
         Me.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top
         Me.barDockControlTop.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlTop.Manager = Me.BarManager1
         Me.barDockControlTop.Margin = New System.Windows.Forms.Padding(2)
         Me.barDockControlTop.Size = New System.Drawing.Size(643, 0)
         '
@@ -255,6 +268,7 @@ Partial Class MainForm
         Me.barDockControlBottom.CausesValidation = False
         Me.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.barDockControlBottom.Location = New System.Drawing.Point(0, 398)
+        Me.barDockControlBottom.Manager = Me.BarManager1
         Me.barDockControlBottom.Margin = New System.Windows.Forms.Padding(2)
         Me.barDockControlBottom.Size = New System.Drawing.Size(643, 27)
         '
@@ -263,6 +277,7 @@ Partial Class MainForm
         Me.barDockControlLeft.CausesValidation = False
         Me.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left
         Me.barDockControlLeft.Location = New System.Drawing.Point(0, 0)
+        Me.barDockControlLeft.Manager = Me.BarManager1
         Me.barDockControlLeft.Margin = New System.Windows.Forms.Padding(2)
         Me.barDockControlLeft.Size = New System.Drawing.Size(0, 398)
         '
@@ -271,17 +286,13 @@ Partial Class MainForm
         Me.barDockControlRight.CausesValidation = False
         Me.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right
         Me.barDockControlRight.Location = New System.Drawing.Point(643, 0)
+        Me.barDockControlRight.Manager = Me.BarManager1
         Me.barDockControlRight.Margin = New System.Windows.Forms.Padding(2)
         Me.barDockControlRight.Size = New System.Drawing.Size(0, 398)
         '
         'RepositoryItemPictureEdit1
         '
         Me.RepositoryItemPictureEdit1.Name = "RepositoryItemPictureEdit1"
-        '
-        'NavBarItem15
-        '
-        Me.NavBarItem15.Caption = "Customer Data"
-        Me.NavBarItem15.Name = "NavBarItem15"
         '
         'MainForm
         '
@@ -305,6 +316,7 @@ Partial Class MainForm
         CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents nbcMainMenu As DevExpress.XtraNavBar.NavBarControl
@@ -341,4 +353,5 @@ Partial Class MainForm
     Friend WithEvents NavBarItem1 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem14 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem15 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem16 As DevExpress.XtraNavBar.NavBarItem
 End Class

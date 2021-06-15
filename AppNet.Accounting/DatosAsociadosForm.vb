@@ -27,7 +27,7 @@ Public Class DatosAsociadosForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub

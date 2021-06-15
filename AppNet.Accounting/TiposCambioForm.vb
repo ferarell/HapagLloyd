@@ -137,7 +137,7 @@ Public Class TiposCambioForm
     End Sub
 
     Private Sub LoadCurrency()
-        lueMoneda.Properties.DataSource = FillDataTable("Currency", "")
+        lueMoneda.Properties.DataSource = FillDataTable("Currency", "", "ACC")
         lueMoneda.Properties.DisplayMember = "CurrencyCode"
         lueMoneda.Properties.ValueMember = "CurrencyCode"
     End Sub

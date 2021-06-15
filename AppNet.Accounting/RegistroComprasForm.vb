@@ -26,7 +26,7 @@ Public Class RegistroComprasForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
@@ -54,7 +54,7 @@ Public Class RegistroComprasForm
     End Sub
 
     Private Sub LoadTypePaytDoc()
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
     End Sub
 
     Private Sub bbiCerrar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCerrar.ItemClick
@@ -99,7 +99,10 @@ Public Class RegistroComprasForm
                 For r = 0 To dsExcel.Tables(0).Rows.Count - 1
                     SplashScreenManager.Default.SetWaitFormDescription("Procesando Fila " & r.ToString & " de " & (dsExcel.Tables(0).Rows.Count - 1).ToString)
                     Dim oRow As DataRow = dsExcel.Tables(0).Rows(r)
-                    If Not IsDBNull(oRow(0)) Then
+                    If IsDBNull(oRow(0)) Then
+                        oRow(0) = ""
+                    End If
+                    If oRow(0) <> "" Then
                         sTipDoc = Microsoft.VisualBasic.Strings.Left(oRow(2), 2)
                         If sTipDoc = "91" Or sTipDoc = "97" Or sTipDoc = "98" Then
                             If bProcess Then

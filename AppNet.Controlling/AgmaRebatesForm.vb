@@ -168,7 +168,7 @@ Public Class AgmaRebatesForm
     End Sub
 
     Private Sub bbiUpdate_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiUpdate.ItemClick
-        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to update?", "Confirmation", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.No Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to update?", "Confirmation", MessageBoxButtons.YesNo) = DialogResult.No Then
             Return
         End If
         Try
@@ -210,7 +210,7 @@ Public Class AgmaRebatesForm
             Return
         End If
         Dim aReturn As New ArrayList
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete the selected record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete the selected record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Dim oGridView As New GridView
             If GridView1.IsFocusedView Then
                 oGridView = GridView1

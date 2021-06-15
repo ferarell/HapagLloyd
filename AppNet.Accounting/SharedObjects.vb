@@ -8,6 +8,7 @@ Imports System.Collections
 Imports Microsoft.Office.Interop
 
 Module SharedObjects
+    Dim oAppService As New AppService.HapagLloydServiceClient
     Friend DBFileName As String = ""
     Friend MDBFileName As String = ""
     Friend SkinName As String = ""
@@ -234,8 +235,13 @@ Module SharedObjects
         Return dtProcess
     End Function
 
-    Friend Function FillDataTable(Table As String, Condition As String) As DataTable
-        Return ExecuteAccessQuery("select * from " & Table & IIf(Condition = "", "", " where ") & Condition).Tables(0)
+    Friend Function FillDataTable(Table As String, Condition As String, Origin As String) As DataTable
+        If Origin = "SQL" Then
+            Return oAppService.ExecuteSQL("select * from " & Table & IIf(Condition = "", "", " where ") & Condition).Tables(0)
+        Else
+            Return ExecuteAccessQuery("select * from " & Table & IIf(Condition = "", "", " where ") & Condition).Tables(0)
+        End If
+
     End Function
 
     Friend Sub ExportarExcel(sender As System.Object)
@@ -271,7 +277,7 @@ Module SharedObjects
         Return bResult
     End Function
 
-    <System.Runtime.CompilerServices.Extension> _
+    <System.Runtime.CompilerServices.Extension>
     Public Function Contains(ByVal str As String, ByVal ParamArray values As String()) As Boolean
         For Each value In values
             If str.Contains(value) Then

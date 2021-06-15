@@ -28,7 +28,7 @@ Public Class LibroDiarioForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
@@ -56,11 +56,11 @@ Public Class LibroDiarioForm
     'End Sub
 
     Private Sub LoadTypePaytDoc()
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
     End Sub
 
     Private Sub LoadAccountMapping()
-        dtAccountMapping = FillDataTable("AccountMapping", "CompanyCode='" & lueSociedad.EditValue & "'")
+        dtAccountMapping = FillDataTable("AccountMapping", "CompanyCode='" & lueSociedad.EditValue & "'", "ACC")
     End Sub
 
     Private Sub LoadSalesFile(SalesFile As String)
@@ -91,7 +91,7 @@ Public Class LibroDiarioForm
     Private Sub bbiProcesar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiProcesar.ItemClick
         Me.Refresh()
         LoadAccountMapping()
-        dtCashBankMapping = FillDataTable("AccountMapping", "AccountType='B'")
+        dtCashBankMapping = FillDataTable("AccountMapping", "AccountType='B'", "ACC")
         'dtAccountMapping.Select("AccountType] = 'B'").CopyToDataTable()
         bFlatFileGenerate = True
         bProcess = True

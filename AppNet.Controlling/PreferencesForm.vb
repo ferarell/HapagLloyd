@@ -2,7 +2,7 @@
 
     Private Sub beArchivoOrigen_Properties_ButtonClick(sender As Object, e As DevExpress.XtraEditors.Controls.ButtonPressedEventArgs)
         FolderBrowserDialog1.SelectedPath = sender.text
-        If FolderBrowserDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+        If FolderBrowserDialog1.ShowDialog = DialogResult.OK Then
             sender.EditValue = FolderBrowserDialog1.SelectedPath
         End If
     End Sub
@@ -29,7 +29,7 @@
     End Sub
 
     Private Sub bbiReset_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiReset.ItemClick
-        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to reset?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to reset?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             My.Settings.Reset()
             Me.PreferencesForm_Load(sender, e)
         End If

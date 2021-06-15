@@ -156,31 +156,31 @@ Partial Class PreferencesForm
         Me.BarDockControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.BarDockControl1.Location = New System.Drawing.Point(0, 0)
         Me.BarDockControl1.Manager = Me.bmActions
-        Me.BarDockControl1.Size = New System.Drawing.Size(905, 41)
+        Me.BarDockControl1.Size = New System.Drawing.Size(905, 47)
         '
         'BarDockControl2
         '
         Me.BarDockControl2.CausesValidation = False
         Me.BarDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BarDockControl2.Location = New System.Drawing.Point(0, 479)
+        Me.BarDockControl2.Location = New System.Drawing.Point(0, 473)
         Me.BarDockControl2.Manager = Me.bmActions
-        Me.BarDockControl2.Size = New System.Drawing.Size(905, 23)
+        Me.BarDockControl2.Size = New System.Drawing.Size(905, 29)
         '
         'BarDockControl3
         '
         Me.BarDockControl3.CausesValidation = False
         Me.BarDockControl3.Dock = System.Windows.Forms.DockStyle.Left
-        Me.BarDockControl3.Location = New System.Drawing.Point(0, 41)
+        Me.BarDockControl3.Location = New System.Drawing.Point(0, 47)
         Me.BarDockControl3.Manager = Me.bmActions
-        Me.BarDockControl3.Size = New System.Drawing.Size(0, 438)
+        Me.BarDockControl3.Size = New System.Drawing.Size(0, 426)
         '
         'BarDockControl4
         '
         Me.BarDockControl4.CausesValidation = False
         Me.BarDockControl4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BarDockControl4.Location = New System.Drawing.Point(905, 41)
+        Me.BarDockControl4.Location = New System.Drawing.Point(905, 47)
         Me.BarDockControl4.Manager = Me.bmActions
-        Me.BarDockControl4.Size = New System.Drawing.Size(0, 438)
+        Me.BarDockControl4.Size = New System.Drawing.Size(0, 426)
         '
         'imActionsBar24x24
         '
@@ -246,7 +246,7 @@ Partial Class PreferencesForm
         Me.GroupControl2.Location = New System.Drawing.Point(0, 0)
         Me.GroupControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupControl2.Name = "GroupControl2"
-        Me.GroupControl2.Size = New System.Drawing.Size(626, 131)
+        Me.GroupControl2.Size = New System.Drawing.Size(625, 131)
         Me.GroupControl2.TabIndex = 0
         Me.GroupControl2.Text = "General"
         '
@@ -299,8 +299,10 @@ Partial Class PreferencesForm
         Me.lueCountry.Location = New System.Drawing.Point(162, 39)
         Me.lueCountry.MenuManager = Me.bmActions
         Me.lueCountry.Name = "lueCountry"
+        Me.lueCountry.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup
         Me.lueCountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.lueCountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryCode", "Code", 20, DevExpress.Utils.FormatType.None, "", False, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.[Default]), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("CountryDescription", "Description")})
+        Me.lueCountry.Properties.DropDownRows = 15
         Me.lueCountry.Properties.NullText = ""
         Me.lueCountry.Size = New System.Drawing.Size(126, 20)
         Me.lueCountry.TabIndex = 0
@@ -318,7 +320,7 @@ Partial Class PreferencesForm
         '
         Me.SplitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1
         Me.SplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 41)
+        Me.SplitContainerControl1.Location = New System.Drawing.Point(0, 47)
         Me.SplitContainerControl1.Name = "SplitContainerControl1"
         Me.SplitContainerControl1.Panel1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.SplitContainerControl1.Panel1.Controls.Add(Me.gcEstilos)
@@ -327,7 +329,7 @@ Partial Class PreferencesForm
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl1)
         Me.SplitContainerControl1.Panel2.Controls.Add(Me.GroupControl2)
         Me.SplitContainerControl1.Panel2.Text = "Panel2"
-        Me.SplitContainerControl1.Size = New System.Drawing.Size(905, 438)
+        Me.SplitContainerControl1.Size = New System.Drawing.Size(905, 426)
         Me.SplitContainerControl1.SplitterPosition = 275
         Me.SplitContainerControl1.TabIndex = 5
         Me.SplitContainerControl1.Text = "SplitContainerControl1"
@@ -339,7 +341,7 @@ Partial Class PreferencesForm
         Me.gcEstilos.Dock = System.Windows.Forms.DockStyle.Left
         Me.gcEstilos.Location = New System.Drawing.Point(0, 0)
         Me.gcEstilos.Name = "gcEstilos"
-        Me.gcEstilos.Size = New System.Drawing.Size(268, 434)
+        Me.gcEstilos.Size = New System.Drawing.Size(268, 422)
         Me.gcEstilos.TabIndex = 1
         Me.gcEstilos.Text = "Seleccione la nueva apariencia del sistema."
         '
@@ -347,17 +349,17 @@ Partial Class PreferencesForm
         '
         Me.lbcEstilos.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.lbcEstilos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lbcEstilos.Location = New System.Drawing.Point(2, 58)
+        Me.lbcEstilos.Location = New System.Drawing.Point(2, 56)
         Me.lbcEstilos.Name = "lbcEstilos"
         Me.lbcEstilos.Padding = New System.Windows.Forms.Padding(1)
-        Me.lbcEstilos.Size = New System.Drawing.Size(264, 374)
+        Me.lbcEstilos.Size = New System.Drawing.Size(264, 364)
         Me.lbcEstilos.TabIndex = 2
         '
         'rgPaintStyle
         '
         Me.rgPaintStyle.Dock = System.Windows.Forms.DockStyle.Top
         Me.rgPaintStyle.EditValue = "ExplorerBar"
-        Me.rgPaintStyle.Location = New System.Drawing.Point(2, 22)
+        Me.rgPaintStyle.Location = New System.Drawing.Point(2, 20)
         Me.rgPaintStyle.Margin = New System.Windows.Forms.Padding(2)
         Me.rgPaintStyle.Name = "rgPaintStyle"
         Me.rgPaintStyle.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
@@ -376,7 +378,7 @@ Partial Class PreferencesForm
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControl3.Location = New System.Drawing.Point(0, 231)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(626, 98)
+        Me.GroupControl3.Size = New System.Drawing.Size(625, 98)
         Me.GroupControl3.TabIndex = 2
         Me.GroupControl3.Text = "Message"
         '
@@ -430,7 +432,7 @@ Partial Class PreferencesForm
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControl1.Location = New System.Drawing.Point(0, 131)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(626, 100)
+        Me.GroupControl1.Size = New System.Drawing.Size(625, 100)
         Me.GroupControl1.TabIndex = 1
         Me.GroupControl1.Text = "Mailbox"
         '

@@ -321,6 +321,8 @@
     <Compile Include="ManifestUpdate.vb" />
     <Compile Include="ProcessIdentifier.vb" />
     <Compile Include="BasicResponse.vb" />
+    <Compile Include="SealQuery.vb" />
+    <Compile Include="SealUpdate.vb" />
     <Compile Include="SettingsForm.Designer.vb">
       <DependentUpon>SettingsForm.vb</DependentUpon>
     </Compile>

@@ -35,6 +35,8 @@ Partial Class WaitForm
         Me.progressPanel1.AppearanceCaption.Options.UseFont = True
         Me.progressPanel1.AppearanceDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.progressPanel1.AppearanceDescription.Options.UseFont = True
+        Me.progressPanel1.BarAnimationElementThickness = 2
+        Me.progressPanel1.Caption = "Please wait"
         Me.progressPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.progressPanel1.ImageHorzOffset = 20
         Me.progressPanel1.Location = New System.Drawing.Point(0, 17)
@@ -42,7 +44,7 @@ Partial Class WaitForm
         Me.progressPanel1.Name = "progressPanel1"
         Me.progressPanel1.Size = New System.Drawing.Size(353, 39)
         Me.progressPanel1.TabIndex = 0
-        Me.progressPanel1.Text = "progressPanel1"
+        Me.progressPanel1.Text = "Processing..."
         '
         'tableLayoutPanel1
         '

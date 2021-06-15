@@ -12,6 +12,9 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Controlling", "AppNet.Controlling\Controlling.vbproj", "{81069BE1-7B9A-4944-B755-BABA7D6C6352}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DataProcessing", "AppNet.DataProcessing\DataProcessing.vbproj", "{39F6B59F-2F04-4031-8DB0-72A255417784}"
+	ProjectSection(ProjectDependencies) = postProject
+		{769E7877-C4DC-4BAE-A4C3-D5241EC1AE69} = {769E7877-C4DC-4BAE-A4C3-D5241EC1AE69}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Notifications", "AppNet.Notificaciones\Notifications.vbproj", "{204ECBC9-52F1-4F34-B250-47964442AF9C}"
 	ProjectSection(ProjectDependencies) = postProject

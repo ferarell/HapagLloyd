@@ -55,4 +55,7 @@ Public Interface IHapagLloydService
     <OperationContract()>
     Function InsertPartners(ByVal dtSource As DataTable) As Boolean
 
+    <OperationContract()>
+    Function GetLocalChargeInvoicing(DateFrom As DateTime, DateTo As DateTime, Country As String) As DataTable
+
 End Interface

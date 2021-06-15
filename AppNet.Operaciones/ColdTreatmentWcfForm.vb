@@ -287,11 +287,15 @@ Public Class ColdTreatmentWcfForm
             If i = 1 Then
                 ContainerNumber = Microsoft.VisualBasic.Left(lines(i), 11)
             End If
+            Dim iLen1 As Integer = 3
             If lines(0).ToUpper.Contains("TIME") And lines(0).Contains("USDA") Then
                 iTime = IIf(iTime = 0, InStr(lines(0), "TIME") - 1, iTime)
-                iUSDA1 = IIf(iUSDA1 = 0, InStr(lines(0), "USDA1") - 3, iUSDA1)
-                iUSDA2 = IIf(iUSDA2 = 0, InStr(lines(0), "USDA2") - 3, iUSDA2)
-                iUSDA3 = IIf(iUSDA3 = 0, InStr(lines(0), "USDA3") - 3, iUSDA3)
+                If Mid(lines(1), InStr(lines(0), "USDA1") - 4, 1) = ":" Then
+                    iLen1 = 1
+                End If
+                iUSDA1 = IIf(iUSDA1 = 0, InStr(lines(0), "USDA1") - iLen1, iUSDA1)
+                iUSDA2 = IIf(iUSDA2 = 0, InStr(lines(0), "USDA2") - iLen1, iUSDA2)
+                iUSDA3 = IIf(iUSDA3 = 0, InStr(lines(0), "USDA3") - iLen1, iUSDA3)
             End If
             If IsDate(lines(i).Substring(12, 10)) Then
                 C1 = Format(CDate(lines(i).Substring(12, 10)), "yyyy-MM-dd")
@@ -299,13 +303,14 @@ Public Class ColdTreatmentWcfForm
                 C1 = CDate(Replace(lines(i).Substring(12, 10), "/", "-")).ToString.Substring(0, 10)
             End If
             C2 = lines(i).Substring(iTime, 5)
-            If lines(i).Substring(iUSDA1, 7).Trim = "" Or lines(i).Substring(iUSDA2, 7) = "" Or lines(i).Substring(iUSDA3, 7) = "" Then
+            Dim iLen2 As Integer = IIf(iLen1 = 1, 6, 7)
+            If lines(i).Substring(iUSDA1, iLen2).Trim = "" Or lines(i).Substring(iUSDA2, iLen2).Trim = "" Or lines(i).Substring(iUSDA3, iLen2).Trim = "" Then
                 Continue For
             End If
-            If TextContain(lines(i).Substring(iUSDA1, 7).Trim, "OnlyNumbers") And TextContain(lines(i).Substring(iUSDA2, 7).Trim, "OnlyNumbers") And TextContain(lines(i).Substring(iUSDA3, 7).Trim, "OnlyNumbers") Then
-                C3 = Replace(lines(i).Substring(iUSDA1, 7), ",", ".")
-                C4 = Replace(lines(i).Substring(iUSDA2, 7), ",", ".")
-                C5 = Replace(lines(i).Substring(iUSDA3, 7), ",", ".")
+            If TextContain(lines(i).Substring(iUSDA1, iLen2).Trim, "OnlyNumbers") And TextContain(lines(i).Substring(iUSDA2, iLen2).Trim, "OnlyNumbers") And TextContain(lines(i).Substring(iUSDA3, iLen2).Trim, "OnlyNumbers") Then
+                C3 = Replace(lines(i).Substring(iUSDA1, iLen2), ",", ".")
+                C4 = Replace(lines(i).Substring(iUSDA2, iLen2), ",", ".")
+                C5 = Replace(lines(i).Substring(iUSDA3, iLen2), ",", ".")
             Else
                 bSkip = True
             End If

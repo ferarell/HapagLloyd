@@ -65,9 +65,9 @@ Public Class MainForm
         Next
     End Sub
 
-    Private Sub OpenForm(AppForm As Windows.Forms.Form)
+    Private Sub OpenForm(AppForm As Form)
         Try
-            Dim myForm As New Windows.Forms.Form
+            Dim myForm As New Form
             myForm = AppForm
             If Me.Controls.Find(myForm.Name, True).Count = 0 Then
                 myForm.MdiParent = Me
@@ -85,7 +85,7 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Are you sure to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             e.Cancel = True
         End If
     End Sub
@@ -136,5 +136,9 @@ Public Class MainForm
 
     Private Sub NavBarItem16_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem16.LinkClicked
         OpenForm(New IncomeReconciliationForm)
+    End Sub
+
+    Private Sub NavBarItem18_LinkClicked(sender As Object, e As DevExpress.XtraNavBar.NavBarLinkEventArgs) Handles NavBarItem18.LinkClicked
+        OpenForm(New LocalChargesInvoicingForm)
     End Sub
 End Class

@@ -12,7 +12,7 @@
       <Value Profile="(Default)">https://hlag.sharepoint.com/sites/ITCPer</Value>
     </Setting>
     <Setting Name="LookAndFeel" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Office 2010 Black</Value>
+      <Value Profile="(Default)">Visual Studio 2013 Blue</Value>
     </Setting>
     <Setting Name="DBFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">.\SharePointList.accdb</Value>

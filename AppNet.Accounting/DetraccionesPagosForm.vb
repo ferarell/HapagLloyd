@@ -3,9 +3,11 @@ Imports DevExpress.XtraGrid.Views.Grid
 Imports System.Drawing
 Imports DevExpress.XtraSplashScreen
 Imports System.Threading
+Imports DevExpress.XtraEditors
 
 Public Class DetraccionesPagosForm
 
+    Dim oAppService As New AppService.HapagLloydServiceClient
     Dim dsMain As New dsSunat
     Dim dtTypePaytDoc, dtHeader, dtDetail As New DataTable
     Dim DetraFileName As String = ""
@@ -16,7 +18,7 @@ Public Class DetraccionesPagosForm
 
     Private Sub DetraccionesForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         FolderBrowserDialog1.SelectedPath = IIf(My.Settings.DetraTargetDirectory <> "", My.Settings.DetraTargetDirectory, "")
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
         EnableButtons(False)
         FiltersEnabled()
         FillCompany()
@@ -46,7 +48,7 @@ Public Class DetraccionesPagosForm
     Friend Function ExisteLote() As Boolean
         bExisteLote = False
         Dim sQuery As String = "select * from PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "' and [Numero Lote] = '" & seLote.Text & "'"
-        If ExecuteAccessQuery(sQuery).Tables(0).Rows.Count > 0 Then
+        If oAppService.ExecuteSQL(sQuery).Tables(0).Rows.Count > 0 Then
             bExisteLote = True
         End If
         Return bExisteLote
@@ -76,16 +78,20 @@ Public Class DetraccionesPagosForm
     End Sub
 
     Friend Function EliminaLote() As Boolean
-        Dim bResult As Boolean
-        bResult = ExecuteAccessNonQuery("DELETE FROM PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "' and [Numero Lote] = '" & seLote.Text & "'")
-        Return bResult
+        'Dim bResult As Boolean = True
+        Dim aResult As New ArrayList
+        aResult.AddRange(oAppService.ExecuteSQLNonQuery("DELETE FROM PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "' and [Numero Lote] = '" & seLote.Text & "'"))
+        'If aResult(0) = 0 Then
+        '    bResult = False
+        'End If
+        Return aResult(0)
     End Function
 
     Friend Function ActualizaLote() As Boolean
         Dim bResult As Boolean = True
         Dim dtPagos As New DataTable
         Dim iPos As Integer = 0
-        dtPagos = ExecuteAccessQuery("select * from PagosDetracciones where [Numero RUC Empresa] = ''").Tables(0)
+        dtPagos = oAppService.ExecuteSQL("select * from PagosDetracciones where [Numero RUC Empresa] = ''").Tables(0)
         For Each row As DataRow In dtDetail.Rows
             dtPagos.Rows.Add()
             iPos = dtPagos.Rows.Count - 1
@@ -184,7 +190,7 @@ Public Class DetraccionesPagosForm
     Friend Function GetLoteByDoc(ruc As String, tipdoc As String, serdoc As String, numdoc As String) As String
         Dim sLote As String = ""
         Dim dtQuery As New DataTable
-        dtQuery = ExecuteAccessQuery("select [Numero Lote] from PagosDetracciones where [Numero Documento Identidad]='" & ruc & "' and [Tipo Comprobante]='" & tipdoc & "' and [Serie Comprobante]='" & serdoc & "' and [Numero Comprobante]='" & numdoc & "'").Tables(0)
+        dtQuery = oAppService.ExecuteSQL("select [Numero Lote] from PagosDetracciones where [Numero Documento Identidad]='" & ruc & "' and [Tipo Comprobante]='" & tipdoc & "' and [Serie Comprobante]='" & serdoc & "' and [Numero Comprobante]='" & numdoc & "'").Tables(0)
         If dtQuery.Rows.Count > 0 Then
             sLote = dtQuery.Rows(0)(0)
         End If
@@ -213,8 +219,8 @@ Public Class DetraccionesPagosForm
     Friend Function GetAccVendor(ruc As String) As String
         Dim sResult As String = ""
         Try
-            If ExecuteAccessQuery("select [CuentaBN] from Proveedores where [NoRUC] = '" & ruc & "'").Tables(0).Rows.Count > 0 Then
-                sResult = ExecuteAccessQuery("select [CuentaBN] from Proveedores where [NoRUC] = '" & ruc & "'").Tables(0).Rows(0)(0)
+            If oAppService.ExecuteSQL("select [CuentaBN] from Proveedores where [NoRUC] = '" & ruc & "'").Tables(0).Rows.Count > 0 Then
+                sResult = oAppService.ExecuteSQL("select [CuentaBN] from Proveedores where [NoRUC] = '" & ruc & "'").Tables(0).Rows(0)(0)
             End If
         Catch ex As Exception
             'MessageBox.Show(ex.Message)
@@ -256,7 +262,7 @@ Public Class DetraccionesPagosForm
         If seLote.EditValue > 0 Then
             sCondition &= IIf(sCondition = "", " where ", " and ") & "[Numero Lote]='" & seLote.Text & "'"
         End If
-        dtTarget = ExecuteAccessQuery("select * from PagosDetracciones" & sCondition).Tables(0)
+        dtTarget = oAppService.ExecuteSQL("select * from acc.DetraccionesPagos" & sCondition).Tables(0)
         gcDetracciones.DataSource = dtTarget
         GridView1.PopulateColumns()
         GridView1.Columns("Importe Deposito").SummaryItem.SetSummary(DevExpress.Data.SummaryItemType.Sum, "{0:n2}")
@@ -329,13 +335,15 @@ Public Class DetraccionesPagosForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        Dim dtQuery As New DataTable
+        dtQuery = oAppService.ExecuteSQL(" SELECT * FROM acc.Company").Tables(0)
+        lueSociedad.Properties.DataSource = dtQuery
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
 
     Private Sub lueSociedad_EditValueChanged(sender As Object, e As EventArgs) Handles lueSociedad.EditValueChanged
-        seLote.EditValue = ExecuteAccessQuery("select iif(IsNull(max([Numero Lote])),  0,  max([Numero Lote])) + 1 as Lote from PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "'").Tables(0).Rows(0)(0)
+        seLote.EditValue = oAppService.ExecuteSQL("select iif(IsNull(max([Numero Lote])),  0,  max([Numero Lote])) + 1 as Lote from PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "'").Tables(0).Rows(0)(0)
         DetraFileName = "D" & lueSociedad.GetColumnValue("CompanyTaxCode") & seLote.Text & ".TXT"
         If My.Settings.DetraTargetDirectory <> "" Then
             beArchivoSalida.EditValue = FolderBrowserDialog1.SelectedPath & "\" & DetraFileName
@@ -492,8 +500,13 @@ Public Class DetraccionesPagosForm
 
     Private Sub bbiEliminar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiEliminar.ItemClick
         Validate()
+        Dim aResult As New ArrayList
         If DevExpress.XtraEditors.XtraMessageBox.Show(Me.LookAndFeel, "Esta seguro de eliminar el lote?", "Salir", MessageBoxButtons.YesNo) = Windows.Forms.DialogResult.Yes Then
-            ExecuteAccessNonQuery("DELETE FROM PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "' and [Numero Lote] = '" & seLote.Text & "'")
+            aResult.AddRange(oAppService.ExecuteSQLNonQuery("DELETE FROM PagosDetracciones where [Numero RUC Empresa] = '" & lueSociedad.GetColumnValue("CompanyTaxCode") & "' and [Numero Lote] = '" & seLote.Text & "'"))
+            If aResult(0) = 0 Then
+                XtraMessageBox.Show(aResult(1), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
         End If
         bbiConsultar.PerformClick()
     End Sub

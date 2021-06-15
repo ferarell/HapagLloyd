@@ -9232,6 +9232,8 @@ Partial Public Class dsSunat
         
         Private columnC36 As Global.System.Data.DataColumn
         
+        Private columnC37 As Global.System.Data.DataColumn
+        
         Private columnERR As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9559,6 +9561,14 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property C37Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnC37
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property ERRColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnERR
@@ -9639,9 +9649,10 @@ Partial Public Class dsSunat
                     ByVal C34 As String,  _
                     ByVal C35 As String,  _
                     ByVal C36 As String,  _
+                    ByVal C37 As String,  _
                     ByVal ERR As String) As RegistroActivosFijos1Row
             Dim rowRegistroActivosFijos1Row As RegistroActivosFijos1Row = CType(Me.NewRow,RegistroActivosFijos1Row)
-            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, ERR}
+            Dim columnValuesArray() As Object = New Object() {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15, C16, C17, C18, C19, C20, C21, C22, C23, C24, C25, C26, C27, C28, C29, C30, C31, C32, C33, C34, C35, C36, C37, ERR}
             rowRegistroActivosFijos1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowRegistroActivosFijos1Row)
             Return rowRegistroActivosFijos1Row
@@ -9700,6 +9711,7 @@ Partial Public Class dsSunat
             Me.columnC34 = MyBase.Columns("C34")
             Me.columnC35 = MyBase.Columns("C35")
             Me.columnC36 = MyBase.Columns("C36")
+            Me.columnC37 = MyBase.Columns("C37")
             Me.columnERR = MyBase.Columns("ERR")
         End Sub
         
@@ -9778,6 +9790,8 @@ Partial Public Class dsSunat
             MyBase.Columns.Add(Me.columnC35)
             Me.columnC36 = New Global.System.Data.DataColumn("C36", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnC36)
+            Me.columnC37 = New Global.System.Data.DataColumn("C37", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnC37)
             Me.columnERR = New Global.System.Data.DataColumn("ERR", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnERR)
             Me.columnC1.Caption = "Periodo"
@@ -9792,42 +9806,43 @@ Partial Public Class dsSunat
                 "la 13."
             Me.columnC5.Caption = "Código propio del activo fijo correspondiente al catálogo señalado en el campo 3."& _ 
                 " "
-            Me.columnC6.Caption = "Código de la existencia, de acuerdo al Catálogo Único de Bienes, Servicios y Obra"& _ 
+            Me.columnC6.Caption = "Código del catálogo utilizado"
+            Me.columnC7.Caption = "Código de la existencia, de acuerdo al Catálogo Único de Bienes, Servicios y Obra"& _ 
                 "s (*)  establecido por el Organismo Supervisor de las Contrataciones del Estado "& _ 
                 "(OSCE) vigente cada año."
-            Me.columnC7.Caption = "Código del tipo de Activo Fijo"
-            Me.columnC8.Caption = "Código de la Cuenta Contable del Activo Fijo, desagregada hasta el nivel máximo d"& _ 
+            Me.columnC8.Caption = "Código del tipo de Activo Fijo"
+            Me.columnC9.Caption = "Código de la Cuenta Contable del Activo Fijo, desagregada hasta el nivel máximo d"& _ 
                 "e dígitos utilizado "
-            Me.columnC9.Caption = "Estado del Activo Fijo"
-            Me.columnC10.Caption = "Descripción del Activo Fijo"
-            Me.columnC11.Caption = "Marca del Activo Fijo"
-            Me.columnC12.Caption = "Modelo del Activo Fijo"
-            Me.columnC13.Caption = "Número de serie y/o placa del Activo Fijo"
-            Me.columnC14.Caption = "Importe del saldo inicial del Activo Fijo"
-            Me.columnC15.Caption = "Importe de las adquisiciones o adiciones de Activo Fijo"
-            Me.columnC16.Caption = "Importe de las mejoras del Activo Fijo"
-            Me.columnC17.Caption = "Importe de los retiros y/o bajas del Activo Fijo"
-            Me.columnC18.Caption = "Importe por otros ajustes en el valor del Activo Fijo"
-            Me.columnC19.Caption = "Valor de la revaluación voluntaria efectuada"
-            Me.columnC20.Caption = "Valor de la revaluación efectuada por reorganización de sociedades"
-            Me.columnC21.Caption = "Valor de otras revaluaciones efectuada"
-            Me.columnC22.Caption = "Importe del valor del ajuste por inflación del Activo Fijo"
-            Me.columnC23.Caption = "Fecha de adquisición del Activo Fijo"
-            Me.columnC24.Caption = "Fecha de inicio del Uso del Activo Fijo"
-            Me.columnC25.Caption = "Código del Método aplicado en el cálculo de la depreciación"
-            Me.columnC26.Caption = "Número de documento de autorización para cambiar el método de la depreciación"
-            Me.columnC27.Caption = "Porcentaje de la depreciación"
-            Me.columnC28.Caption = "Depreciación acumulada al cierre del ejercicio anterior."
-            Me.columnC29.Caption = "Valor de la depreciación del ejercicio sin considerar la revaluación"
-            Me.columnC30.Caption = "Valor de la depreciación del ejercicio relacionada con los retiros y/o bajas del "& _ 
+            Me.columnC10.Caption = "Estado del Activo Fijo"
+            Me.columnC11.Caption = "Descripción del Activo Fijo"
+            Me.columnC12.Caption = "Marca del Activo Fijo"
+            Me.columnC13.Caption = "Modelo del Activo Fijo"
+            Me.columnC14.Caption = "Número de serie y/o placa del Activo Fijo"
+            Me.columnC15.Caption = "Importe del saldo inicial del Activo Fijo"
+            Me.columnC16.Caption = "Importe de las adquisiciones o adiciones de Activo Fijo"
+            Me.columnC17.Caption = "Importe de las mejoras del Activo Fijo"
+            Me.columnC18.Caption = "Importe de los retiros y/o bajas del Activo Fijo"
+            Me.columnC19.Caption = "Importe por otros ajustes en el valor del Activo Fijo"
+            Me.columnC20.Caption = "Valor de la revaluación voluntaria efectuada"
+            Me.columnC21.Caption = "Valor de la revaluación efectuada por reorganización de sociedades"
+            Me.columnC22.Caption = "Valor de otras revaluaciones efectuada"
+            Me.columnC23.Caption = "Importe del valor del ajuste por inflación del Activo Fijo"
+            Me.columnC24.Caption = "Fecha de adquisición del Activo Fijo"
+            Me.columnC25.Caption = "Fecha de inicio del Uso del Activo Fijo"
+            Me.columnC26.Caption = "Código del Método aplicado en el cálculo de la depreciación"
+            Me.columnC27.Caption = "Número de documento de autorización para cambiar el método de la depreciación"
+            Me.columnC28.Caption = "Porcentaje de la depreciación"
+            Me.columnC29.Caption = "Depreciación acumulada al cierre del ejercicio anterior."
+            Me.columnC30.Caption = "Valor de la depreciación del ejercicio sin considerar la revaluación"
+            Me.columnC31.Caption = "Valor de la depreciación del ejercicio relacionada con los retiros y/o bajas del "& _ 
                 "Activo Fijo"
-            Me.columnC31.Caption = "Valor de la depreciación relacionada con otros ajustes"
-            Me.columnC32.Caption = "Valor de la depreciación de la revaluación voluntaria efectuada"
-            Me.columnC33.Caption = "Valor de la depreciación de la revaluación efectuada por reorganización de socied"& _ 
+            Me.columnC32.Caption = "Valor de la depreciación relacionada con otros ajustes"
+            Me.columnC33.Caption = "Valor de la depreciación de la revaluación voluntaria efectuada"
+            Me.columnC34.Caption = "Valor de la depreciación de la revaluación efectuada por reorganización de socied"& _ 
                 "ades"
-            Me.columnC34.Caption = "Valor de la depreciación de otras revaluaciones efectuadas"
-            Me.columnC35.Caption = "Valor del ajuste por inflación de la depreciación"
-            Me.columnC36.Caption = "Indica el estado de la operación"
+            Me.columnC35.Caption = "Valor de la depreciación de otras revaluaciones efectuadas"
+            Me.columnC36.Caption = "Valor del ajuste por inflación de la depreciación"
+            Me.columnC37.Caption = "Indica el estado de la operación"
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -25454,6 +25469,21 @@ Partial Public Class dsSunat
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property C37() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRegistroActivosFijos1.C37Column),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'C37' de la tabla 'RegistroActivosFijos1' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRegistroActivosFijos1.C37Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property ERR() As String
             Get
                 Try 
@@ -25897,6 +25927,18 @@ Partial Public Class dsSunat
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetC36Null()
             Me(Me.tableRegistroActivosFijos1.C36Column) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function IsC37Null() As Boolean
+            Return Me.IsNull(Me.tableRegistroActivosFijos1.C37Column)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub SetC37Null()
+            Me(Me.tableRegistroActivosFijos1.C37Column) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

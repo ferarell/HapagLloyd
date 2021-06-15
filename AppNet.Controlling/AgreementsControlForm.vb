@@ -437,7 +437,7 @@ Public Class AgreementsControlForm
         If gcMainData.FocusedView.Name = "GridView2" Or gcMainData.MainView.RowCount = 0 Then
             Return
         End If
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to update the assigned invoice(s)? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to update the assigned invoice(s)? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
             Return
         End If
         For r = 0 To GridView1.RowCount - 1
@@ -468,7 +468,7 @@ Public Class AgreementsControlForm
             Return
         End If
         Dim aReturn As New ArrayList
-        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete the selected record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        If DevExpress.XtraEditors.XtraMessageBox.Show("Are you sure you want to delete the selected record? ", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Dim oGridView As New GridView
             If GridView1.IsFocusedView Then
                 oGridView = GridView1

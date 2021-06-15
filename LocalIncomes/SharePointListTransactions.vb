@@ -18,7 +18,7 @@ Public Class SharePointListTransactions
     Friend ValuesList, FieldsList As New ArrayList
 
     Public Sub New()
-        Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
+        'Thread.CurrentThread.CurrentCulture = New CultureInfo("en-US")
         For Each c As Char In My.Settings.SharePoint_Password
             Password.AppendChar(c)
         Next

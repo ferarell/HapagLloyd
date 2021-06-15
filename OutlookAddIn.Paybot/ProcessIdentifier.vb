@@ -23,6 +23,12 @@ Public Class ProcessIdentifier
             ElseIf oMailItems.Subject.ToUpper.Contains("VOYC2502") Then
                 Dim oScheduleLocalVoyageUpdate As New ScheduleLocalVoyageUpdate
                 oScheduleLocalVoyageUpdate.StartProcess(oMailItems)
+            ElseIf oMailItems.Subject.ToUpper.Contains("INVS0201") Then
+                Dim oLocalChargesInvoicing As New LocalChargesInvoicing
+                oLocalChargesInvoicing.StartProcess(oMailItems)
+            ElseIf oMailItems.Subject.ToUpper.Contains("EQEO1601") Then
+                Dim oEquipmentEvents As New EquipmentEvents
+                oEquipmentEvents.StartProcess(oMailItems)
                 'ElseIf oMailItems.Subject.ToUpper.Contains("EQEO0801") Then
                 '    Dim oReeferDataMasterUpdate As New ReeferDataMasterUpdate
                 '    tProc = New Thread(Sub() oReeferDataMasterUpdate.DataProcess(sFileName))

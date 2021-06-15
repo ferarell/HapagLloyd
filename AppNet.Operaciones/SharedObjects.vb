@@ -446,7 +446,7 @@ Module SharedObjects
 
     Friend Function GetReadingDate(CustomDate As String) As String
         Dim sResult As String = ""
-        sResult = ConvertShortMonthAsNumber(CustomDate.Substring(0, 3)) & "/" & CustomDate.Substring(4, 2) & "/" & CustomDate.Substring(8, 4)
+        sResult = CustomDate.Substring(4, 2) & "/" & ConvertShortMonthAsNumber(CustomDate.Substring(0, 3)) & "/" & CustomDate.Substring(8, 4)
         Return sResult
     End Function
 

@@ -9,6 +9,7 @@ Public Class TramarsaGatesOut
     Dim oLogFileGenerate As New LogFileGenerate
     Dim sBooking As String = ""
     Dim oMailItems As Outlook.MailItem
+    Dim oSharePointTransactions As New SharePointListTransactions
     'Dim oGateOutService As New GateOutService.GateOutServicioClient
 
     Friend Sub StartProcess(Items As Outlook.MailItem)
@@ -193,30 +194,30 @@ Public Class TramarsaGatesOut
         Catch ex As Exception
             _BookingListErr.AppendText(sField & ex.Message & "<br>")
         End Try
-        sField = sListName & "(FechaEstimadaArribo) "
-        oBooking.FechaEstimadaArribo = CDate("01/01/1900")
+        sField = sListName & "(FechaEstimadaZarpe) "
+        oBooking.FechaEstimadaZarpe = CDate("01/01/1900")
         Try
             If oBooking.Estado = "0" Then
                 sFindTxt = GetRowCellValueByPosition(dtLines, "Flag", 0, 1, "") & Space(1) & GetRowCellValueByPosition(dtLines, "Flag", 5, 2, "")
                 If sFindTxt.Trim <> "" Then
-                    sField = sListName & "(FechaEstimadaArribo) "
+                    sField = sListName & "(FechaEstimadaZarpe) "
                     If IsDate(sFindTxt) Then
-                        oBooking.FechaEstimadaArribo = CDate(sFindTxt)
+                        oBooking.FechaEstimadaZarpe = CDate(sFindTxt)
                     End If
                 End If
             End If
         Catch ex As Exception
             _BookingListErr.AppendText(sField & ex.Message & "<br>")
         End Try
-        sField = sListName & "(FechaEstimadaZarpe) "
-        oBooking.FechaEstimadaZarpe = CDate("01/01/1900")
+        sField = sListName & "(FechaEstimadaArribo) "
+        oBooking.FechaEstimadaArribo = CDate("01/01/1900")
         Try
             If oBooking.Estado = "0" Then
                 sFindTxt = GetRowCellValueByPosition(dtLines, "Flag", 0, 3, "") & Space(1) & GetRowCellValueByPosition(dtLines, "Flag", 5, 4, "")
                 If sFindTxt.Trim <> "" Then
-                    sField = sListName & "(FechaEstimadaZarpe) "
+                    sField = sListName & "(FechaEstimadaArribo) "
                     If IsDate(sFindTxt) Then
-                        oBooking.FechaEstimadaZarpe = CDate(sFindTxt)
+                        oBooking.FechaEstimadaArribo = CDate(sFindTxt)
                     End If
                 End If
             End If
@@ -756,9 +757,68 @@ Public Class TramarsaGatesOut
             oMailItems.Move(DestinationFolder)
         End If
 
+        Try
+            If oBooking.Observaciones.Contains(" HID ") Then
+                oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
+                oSharePointTransactions.SharePointList = "ColdTreatmentDevice"
+                oSharePointTransactions.ValuesList.Clear()
+                oSharePointTransactions.ValuesList.Add({"BookingNumber", oBooking.Numero})
+                oSharePointTransactions.ValuesList.Add({"BookingVersion", oBooking.VersionDocumento})
+                oSharePointTransactions.ValuesList.Add({"ContainerType", oContainer.TipoContenedor})
+                oSharePointTransactions.ValuesList.Add({"ContainerNumber", oContainer.NroContenedor})
+                oSharePointTransactions.ValuesList.Add({"VesselName", oBooking.NombreNave})
+                oSharePointTransactions.ValuesList.Add({"VoyageNumber", oBooking.NroViaje})
+                oSharePointTransactions.ValuesList.Add({"DPVoyage", oBooking.DPvoyage})
+                oSharePointTransactions.ValuesList.Add({"PortOfLoading", oBooking.PuertoOrigen})
+                oSharePointTransactions.ValuesList.Add({"PortOfDischarge", oBooking.PuertoDestino})
+                oSharePointTransactions.ValuesList.Add({"Remarks", OnlyLetters(oBooking.Observaciones)})
+                oSharePointTransactions.ValuesList.Add({"ShipperName", oBooking.ClienteNombre})
+                oSharePointTransactions.ValuesList.Add({"ContractNumber", oBooking.NroContrato})
+                oSharePointTransactions.ValuesList.Add({"IssuedDate", oBooking.FechaEmision})
+                oSharePointTransactions.ValuesList.Add({"EmptyDepot", oBooking.DepositoVacioNombre})
+                oSharePointTransactions.ValuesList.Add({"ArrivalDate", oBooking.FechaEstimadaArribo})
+                oSharePointTransactions.ValuesList.Add({"DepartureDate", oBooking.FechaEstimadaZarpe})
+                oSharePointTransactions.ValuesList.Add({"Cancelled", IIf(oBooking.Estado = 0, "0", "1")})
+
+                Dim dtList As New DataTable
+                dtList = ExecuteAccessQuery("SELECT ID, BookingNumber FROM ColdTreatmentDevice WHERE BookingNumber = '" & oBooking.Numero & "'", "").Tables(0)
+                If dtList.Rows.Count = 0 Then
+                    oSharePointTransactions.InsertItem()
+                Else
+                    oSharePointTransactions.UpdateItem(dtList.Rows(0)("ID"))
+                End If
+            End If
+        Catch ex As Exception
+            oLogFileGenerate.TextFileUpdate("GATE OUT", "Error al actualizar la lista ColdTreatmentDevice. " & ex.Message)
+        End Try
+
         Me.Finalize()
 
     End Sub
+
+    'Private Sub UpdateSharePointList(aSource As ArrayList)
+    '    oSharePointTransactions.SharePointUrl = My.Settings.SharePoint_Url
+    '    oSharePointTransactions.SharePointList = "ColdTreatmentDevice"
+    '    For r = 0 To dtSource.Rows.Count - 1
+    '        Dim oDPVoyage, oPol As String
+    '        oDPVoyage = dtSource.Rows(r)("DPVOYAGE")
+    '        oPol = dtSource.Rows(r)("POL")
+    '        If ExecuteAccessQuery("SELECT DPVOYAGE FROM ScheduleVoyage WHERE DPVOYAGE = '" & oDPVoyage & "' AND POL = '" & oPol & "'", "").Tables(0).Rows.Count = 0 Then
+    '            oSharePointTransactions.ValuesList.Clear()
+    '            oSharePointTransactions.ValuesList.Add({"POL", dtSource.Rows(r)("POL")})
+    '            oSharePointTransactions.ValuesList.Add({"DPVOYAGE", dtSource.Rows(r)("DPVOYAGE")})
+    '            oSharePointTransactions.ValuesList.Add({"VESSEL_NAME", dtSource.Rows(r)("VESSEL_NAME")})
+    '            oSharePointTransactions.ValuesList.Add({"SCHEDULE", dtSource.Rows(r)("SCHEDULE")})
+    '            oSharePointTransactions.ValuesList.Add({"SERVICE", dtSource.Rows(r)("SERVICE")})
+    '            If dtSource.Rows(r)("DOC_CLOSE").ToString <> "" Then
+    '                oSharePointTransactions.ValuesList.Add({"DOC_CLOSE", dtSource.Rows(r)("DOC_CLOSE")})
+    '            End If
+    '            oSharePointTransactions.ValuesList.Add({"ETA", dtSource.Rows(r)("ETA")})
+    '            oSharePointTransactions.ValuesList.Add({"ETD", dtSource.Rows(r)("ETD")})
+    '            oSharePointTransactions.InsertItem()
+    '        End If
+    '    Next
+    'End Sub
 
     Function GetValueFound(sLine As String, aEqpTypeDet As ArrayList) As String
         Dim sResult As String = ""

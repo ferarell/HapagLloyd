@@ -27,7 +27,7 @@ Public Class BalanceGeneralForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
@@ -51,11 +51,11 @@ Public Class BalanceGeneralForm
     End Sub
 
     Private Sub LoadPaytTerms()
-        dtPaytTerms = FillDataTable("CondPago", "")
+        dtPaytTerms = FillDataTable("CondPago", "", "ACC")
     End Sub
 
     Private Sub LoadTypePaytDoc()
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
     End Sub
 
     Private Sub bbiCerrar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCerrar.ItemClick

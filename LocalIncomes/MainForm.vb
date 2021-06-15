@@ -8,8 +8,8 @@ Public Class MainForm
     Dim oDataAcces As New DataAccess
     Dim dtUserMappingList As New DataTable
     Public Sub New()
-        'Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
-        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("es-PE")
+        Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo(CultureInfo.CurrentCulture.Name)
+        'Dim currentWithOverriddenNumber As CultureInfo = New CultureInfo("es-PE")
         currentWithOverriddenNumber.NumberFormat.CurrencyPositivePattern = 0 '; // make sure there is no space between symbol and number
         'currentWithOverriddenNumber.NumberFormat.CurrencySymbol = "" '; // no currency symbol
         currentWithOverriddenNumber.NumberFormat.CurrencyDecimalSeparator = "." '; //decimal separator

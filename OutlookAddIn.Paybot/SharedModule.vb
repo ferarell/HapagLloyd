@@ -21,6 +21,7 @@ Module SharedModule
     Friend oIdentifier, oHtmlFile As String
     Friend drConfig As DataRow
     Dim oDirectory As String = Path.GetDirectoryName(My.Settings.DBFileName)
+    Friend AppPath As String = Path.GetDirectoryName(New Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase).LocalPath)
 
     Friend Function LoadExcel(ByVal FileName As String, ByRef Hoja As String) As DataSet
         Dim dsResult As New DataSet
@@ -90,6 +91,61 @@ Module SharedModule
             End Try
             Return dsResult
         End Using
+    End Function
+
+    Friend Function LoadExcelWCH(ByVal FileName As String, ByRef Hoja As String, HeaderPosition As Integer, Condition As String) As DataTable
+        Dim dsResult As New DataSet
+        Dim dtResult As New DataTable
+        Dim ExcelConnectionString As String = "provider=Microsoft.ACE.OLEDB.12.0; Data Source='" & FileName & "'; Extended Properties='Excel 12.0 Xml;HDR=No;IMEX=1'"
+        Using connection As New System.Data.OleDb.OleDbConnection(ExcelConnectionString)
+            Try
+                connection.Open()
+                If Hoja = "{0}" Then
+                    For r = 0 To connection.GetSchema("Tables").Rows.Count - 1
+                        'If Not connection.GetSchema("Tables").Rows(r)("TABLE_NAME").toupper.contains("FILTER") Then
+                        Hoja = connection.GetSchema("Tables").Rows(r)("TABLE_NAME")
+                        Exit For
+                        'End If
+                    Next
+                End If
+                Dim Command As New System.Data.OleDb.OleDbDataAdapter("select * from [" & Hoja & "] WHERE F1 IS NOT NULL", connection) ' & IIf(Condition <> "", " where " & Condition, ""), connection)
+                Command.Fill(dsResult)
+                connection.Close()
+                Dim iPos As Integer = 0
+                'HeaderPosition -= 1
+                dtResult = CopyDataTable(dsResult.Tables(0), HeaderPosition)
+                For r = 0 To dsResult.Tables(0).Rows.Count - 1
+                    If r <= HeaderPosition - 2 Then
+                        Continue For
+                    End If
+                    dtResult.Rows.Add()
+                    iPos = dtResult.Rows.Count - 1
+                    For c = 0 To dtResult.Columns.Count - 1
+                        dtResult(iPos)(c) = dsResult.Tables(0).Rows(r)(c)
+                    Next
+                Next
+            Catch ex As Exception
+                DevExpress.XtraEditors.XtraMessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                connection.Close()
+            End Try
+            Return dtResult
+        End Using
+    End Function
+
+    Function CopyDataTable(OriginalTable As DataTable, iRow As Integer) As DataTable
+        Dim dtResult As New DataTable
+        iRow -= 2
+        For r = 0 To iRow
+            If r = iRow Then
+                For c = 0 To OriginalTable.Columns.Count - 1
+                    If Not IsDBNull(OriginalTable.Rows(r)(c)) Then
+                        dtResult.Columns.Add(OriginalTable.Rows(r)(c), OriginalTable.Columns(c).DataType)
+                    End If
+                Next
+            End If
+        Next
+        Return dtResult
     End Function
 
     Friend Function QueryExcel(FileName As String, Query As String) As DataSet
@@ -544,7 +600,7 @@ Module SharedModule
         Dim txtpos As String = ""
         Dim iPosCol As Integer = 0
         Dim line As New StreamReader(FileName, False)
-        Dim sFila As String = line.ReadLine
+        Dim sFila As String = line.ReadLine & LstSpr
         For i = 1 To sFila.Count + 1
             txtpos = Mid(sFila, i, 1)
             If txtpos = LstSpr Then 'Or i = sFila.Count + 1 Then
@@ -568,7 +624,7 @@ Module SharedModule
             Dim bExit As Boolean = False
             Dim sColumnValue As String = ""
             Do While Not sr.EndOfStream
-                lines.Add(sr.ReadLine())
+                lines.Add(sr.ReadLine() & LstSpr)
             Loop
             For i As Integer = 1 To lines.Count - 1
                 iPosCol = 0

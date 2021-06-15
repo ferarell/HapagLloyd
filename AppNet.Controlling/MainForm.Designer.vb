@@ -30,6 +30,7 @@ Partial Class MainForm
         Me.NavBarItem7 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem10 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem15 = New DevExpress.XtraNavBar.NavBarItem()
+        Me.NavBarItem18 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarGroup1 = New DevExpress.XtraNavBar.NavBarGroup()
         Me.NavBarItem11 = New DevExpress.XtraNavBar.NavBarItem()
         Me.NavBarItem16 = New DevExpress.XtraNavBar.NavBarItem()
@@ -56,13 +57,13 @@ Partial Class MainForm
         Me.nbcMainMenu.ActiveGroup = Me.NavBarGroup2
         Me.nbcMainMenu.Dock = System.Windows.Forms.DockStyle.Left
         Me.nbcMainMenu.Groups.AddRange(New DevExpress.XtraNavBar.NavBarGroup() {Me.NavBarGroup2, Me.NavBarGroup1, Me.NavBarGroup3, Me.NavBarGroup5})
-        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem14, Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarSeparatorItem1, Me.NavBarSeparatorItem2, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarSeparatorItem3, Me.NavBarItem11, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem17})
+        Me.nbcMainMenu.Items.AddRange(New DevExpress.XtraNavBar.NavBarItem() {Me.NavBarItem12, Me.NavBarItem13, Me.NavBarItem14, Me.NavBarItem1, Me.NavBarItem2, Me.NavBarItem3, Me.NavBarItem4, Me.NavBarSeparatorItem1, Me.NavBarSeparatorItem2, Me.NavBarItem5, Me.NavBarItem6, Me.NavBarItem7, Me.NavBarItem8, Me.NavBarItem9, Me.NavBarItem10, Me.NavBarSeparatorItem3, Me.NavBarItem11, Me.NavBarItem15, Me.NavBarItem16, Me.NavBarItem17, Me.NavBarItem18})
         Me.nbcMainMenu.Location = New System.Drawing.Point(0, 0)
         Me.nbcMainMenu.Margin = New System.Windows.Forms.Padding(2)
         Me.nbcMainMenu.Name = "nbcMainMenu"
-        Me.nbcMainMenu.OptionsNavPane.ExpandedWidth = 173
+        Me.nbcMainMenu.OptionsNavPane.ExpandedWidth = 182
         Me.nbcMainMenu.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.ExplorerBar
-        Me.nbcMainMenu.Size = New System.Drawing.Size(173, 381)
+        Me.nbcMainMenu.Size = New System.Drawing.Size(182, 381)
         Me.nbcMainMenu.StoreDefaultPaintStyleName = True
         Me.nbcMainMenu.TabIndex = 3
         Me.nbcMainMenu.Text = "Data Master"
@@ -71,7 +72,7 @@ Partial Class MainForm
         '
         Me.NavBarGroup2.Caption = "Port Agency"
         Me.NavBarGroup2.Expanded = True
-        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem8), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem9), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem7), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem10), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15)})
+        Me.NavBarGroup2.ItemLinks.AddRange(New DevExpress.XtraNavBar.NavBarItemLink() {New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem6), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarSeparatorItem3), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem8), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem9), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem7), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem10), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem15), New DevExpress.XtraNavBar.NavBarItemLink(Me.NavBarItem18)})
         Me.NavBarGroup2.Name = "NavBarGroup2"
         '
         'NavBarItem6
@@ -85,11 +86,7 @@ Partial Class MainForm
         Me.NavBarSeparatorItem3.CanDrag = False
         Me.NavBarSeparatorItem3.Enabled = False
         Me.NavBarSeparatorItem3.Hint = Nothing
-        Me.NavBarSeparatorItem3.LargeImageIndex = 0
-        Me.NavBarSeparatorItem3.LargeImageSize = New System.Drawing.Size(0, 0)
         Me.NavBarSeparatorItem3.Name = "NavBarSeparatorItem3"
-        Me.NavBarSeparatorItem3.SmallImageIndex = 0
-        Me.NavBarSeparatorItem3.SmallImageSize = New System.Drawing.Size(0, 0)
         '
         'NavBarItem8
         '
@@ -120,6 +117,11 @@ Partial Class MainForm
         Me.NavBarItem15.Caption = "Rebates"
         Me.NavBarItem15.Hint = " Comisiones AGMA"
         Me.NavBarItem15.Name = "NavBarItem15"
+        '
+        'NavBarItem18
+        '
+        Me.NavBarItem18.Caption = "Local Charges FIS Invoicing"
+        Me.NavBarItem18.Name = "NavBarItem18"
         '
         'NavBarGroup1
         '
@@ -200,22 +202,14 @@ Partial Class MainForm
         Me.NavBarSeparatorItem1.CanDrag = False
         Me.NavBarSeparatorItem1.Enabled = False
         Me.NavBarSeparatorItem1.Hint = Nothing
-        Me.NavBarSeparatorItem1.LargeImageIndex = 0
-        Me.NavBarSeparatorItem1.LargeImageSize = New System.Drawing.Size(0, 0)
         Me.NavBarSeparatorItem1.Name = "NavBarSeparatorItem1"
-        Me.NavBarSeparatorItem1.SmallImageIndex = 0
-        Me.NavBarSeparatorItem1.SmallImageSize = New System.Drawing.Size(0, 0)
         '
         'NavBarSeparatorItem2
         '
         Me.NavBarSeparatorItem2.CanDrag = False
         Me.NavBarSeparatorItem2.Enabled = False
         Me.NavBarSeparatorItem2.Hint = Nothing
-        Me.NavBarSeparatorItem2.LargeImageIndex = 0
-        Me.NavBarSeparatorItem2.LargeImageSize = New System.Drawing.Size(0, 0)
         Me.NavBarSeparatorItem2.Name = "NavBarSeparatorItem2"
-        Me.NavBarSeparatorItem2.SmallImageIndex = 0
-        Me.NavBarSeparatorItem2.SmallImageSize = New System.Drawing.Size(0, 0)
         '
         'NavBarItem5
         '
@@ -232,7 +226,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(753, 381)
+        Me.ClientSize = New System.Drawing.Size(761, 381)
         Me.Controls.Add(Me.nbcMainMenu)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -272,4 +266,5 @@ Partial Class MainForm
     Friend WithEvents NavBarItem15 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem16 As DevExpress.XtraNavBar.NavBarItem
     Friend WithEvents NavBarItem17 As DevExpress.XtraNavBar.NavBarItem
+    Friend WithEvents NavBarItem18 As DevExpress.XtraNavBar.NavBarItem
 End Class

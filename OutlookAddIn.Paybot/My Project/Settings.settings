@@ -15,7 +15,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AttachedFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Paybot</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Paybot\Attached</Value>
     </Setting>
     <Setting Name="ReplyAllMails" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -33,7 +33,7 @@
       <Value Profile="(Default)">aremonfe@gmail.com</Value>
     </Setting>
     <Setting Name="LogFilePath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Paybot\Log</Value>
+      <Value Profile="(Default)">C:\Users\ferar\Documents\Paybot\Log</Value>
     </Setting>
     <Setting Name="TRM_UserRest" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

@@ -81,6 +81,12 @@
   <wsdl:message name="IHapagLloydService_InsertColdTreatmentReadings_OutputMessage">
     <wsdl:part name="parameters" element="tns:InsertColdTreatmentReadingsResponse" />
   </wsdl:message>
+  <wsdl:message name="IHapagLloydService_CustomStoredProcedureExecution_InputMessage">
+    <wsdl:part name="parameters" element="tns:CustomStoredProcedureExecution" />
+  </wsdl:message>
+  <wsdl:message name="IHapagLloydService_CustomStoredProcedureExecution_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CustomStoredProcedureExecutionResponse" />
+  </wsdl:message>
   <wsdl:message name="IHapagLloydService_DeleteColdTreatmentReadings_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteColdTreatmentReadings" />
   </wsdl:message>
@@ -153,6 +159,10 @@
     <wsdl:operation name="InsertColdTreatmentReadings">
       <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings" message="tns:IHapagLloydService_InsertColdTreatmentReadings_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadingsResponse" message="tns:IHapagLloydService_InsertColdTreatmentReadings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomStoredProcedureExecution">
+      <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecution" message="tns:IHapagLloydService_CustomStoredProcedureExecution_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecutionResponse" message="tns:IHapagLloydService_CustomStoredProcedureExecution_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteColdTreatmentReadings">
       <wsdl:input wsaw:Action="http://tempuri.org/IHapagLloydService/DeleteColdTreatmentReadings" message="tns:IHapagLloydService_DeleteColdTreatmentReadings_InputMessage" />
@@ -274,6 +284,15 @@
     </wsdl:operation>
     <wsdl:operation name="InsertColdTreatmentReadings">
       <soap:operation soapAction="http://tempuri.org/IHapagLloydService/InsertColdTreatmentReadings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomStoredProcedureExecution">
+      <soap:operation soapAction="http://tempuri.org/IHapagLloydService/CustomStoredProcedureExecution" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

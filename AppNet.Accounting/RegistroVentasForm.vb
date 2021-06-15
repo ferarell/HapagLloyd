@@ -31,7 +31,7 @@ Public Class RegistroVentasForm
     End Sub
 
     Private Sub FillCompany()
-        lueSociedad.Properties.DataSource = FillDataTable("Company", "")
+        lueSociedad.Properties.DataSource = FillDataTable("Company", "", "ACC")
         lueSociedad.Properties.DisplayMember = "CompanyDescription"
         lueSociedad.Properties.ValueMember = "CompanyCode"
     End Sub
@@ -59,7 +59,7 @@ Public Class RegistroVentasForm
     End Sub
 
     Private Sub LoadTypePaytDoc()
-        dtTypePaytDoc = FillDataTable("TipoComprobante", "")
+        dtTypePaytDoc = FillDataTable("TipoComprobante", "", "ACC")
     End Sub
 
     Private Sub bbiCerrar_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles bbiCerrar.ItemClick
@@ -75,7 +75,9 @@ Public Class RegistroVentasForm
                 SplashScreenManager.ShowForm(Me, GetType(WaitForm), True, True, False)
                 dsLibroSunat.Tables(LibroSunat).Rows.Clear()
                 ProcessLedger()
-                ValidationSequence()
+                If dtResult.Rows.Count > 0 Then
+                    ValidationSequence()
+                End If
             Catch ex As Exception
                 bProcess = False
                 SplashScreenManager.CloseForm(False)
@@ -140,10 +142,13 @@ Public Class RegistroVentasForm
         If dsExcel.Tables(0).Rows.Count > 0 Then
             Try
                 dtResult = dsLibroSunat.Tables(LibroSunat)
-                For Each row As DataRow In dsExcel.Tables(0).Rows
+                For Each oRow As DataRow In dsExcel.Tables(0).Rows
                     If bProcess Then
-                        If Not IsDBNull(row(0)) Then
-                            NewRowLedger(row)
+                        If IsDBNull(oRow(0)) Then
+                            oRow(0) = ""
+                        End If
+                        If oRow(0) <> "" Then
+                            NewRowLedger(oRow)
                         End If
                     End If
                 Next

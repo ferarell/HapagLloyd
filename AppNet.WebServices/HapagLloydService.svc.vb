@@ -660,6 +660,17 @@ Public Class HapagLloydService
 
 #End Region
 
+    Public Function GetLocalChargeInvoicing(DateFrom As DateTime, DateTo As DateTime, Country As String) As DataTable Implements IHapagLloydService.GetLocalChargeInvoicing
+        Dim dtResult As New DataTable
+        Try
+            dtResult = ExecuteSQL("ctr.upGetLocalChargeInvoicing '" & Format(DateFrom, "yyyy-MM-dd") & "', '" & Format(DateTo, "yyyy-MM-dd") & "', '" & Country & "'").Tables(0)
+        Catch ex As Exception
+            Throw New System.Exception(ex.Message)
+        End Try
+
+        Return dtResult
+    End Function
+
 #Region "REEFER SALES"
     Public Function InsertReeferDataMaster(ByVal dtSource As DataTable) As Boolean Implements IHapagLloydService.InsertReeferDataMaster
         Dim bResult As Boolean = True
